@@ -1,0 +1,97 @@
+[
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T01:42:10.296047",
+    "date_readable": "2026-08-22 01:42:10"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-22T01:42:47.488519",
+    "date_readable": "2026-08-22 01:42:47"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:01:21.431219",
+    "date_readable": "2026-08-22 02:01:21"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-08-22T02:01:28.330757",
+    "date_readable": "2026-08-22 02:01:28"
+  },
+  {
+    "concept_type": "facts_trivia",
+    "date": "2026-08-22T02:03:49.369136",
+    "date_readable": "2026-08-22 02:03:49"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-08-22T02:04:45.022148",
+    "date_readable": "2026-08-22 02:04:45"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:20:00.983747",
+    "date_readable": "2026-08-22 02:20:00"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-08-22T02:20:14.149259",
+    "date_readable": "2026-08-22 02:20:14"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:36:06.082732",
+    "date_readable": "2026-08-22 02:36:06"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-08-22T02:36:16.842197",
+    "date_readable": "2026-08-22 02:36:16"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-08-22T02:36:38.443778",
+    "date_readable": "2026-08-22 02:36:38"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:37:51.465546",
+    "date_readable": "2026-08-22 02:37:51"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:38:04.198805",
+    "date_readable": "2026-08-22 02:38:04"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:38:18.054531",
+    "date_readable": "2026-08-22 02:38:18"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-08-22T02:38:29.437635",
+    "date_readable": "2026-08-22 02:38:29"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:49:38.622274",
+    "date_readable": "2026-08-22 02:49:38"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-22T02:49:51.257494",
+    "date_readable": "2026-08-22 02:49:51"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T02:50:49.030760",
+    "date_readable": "2026-08-22 02:50:49"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-08-22T02:51:01.913792",
+    "date_readable": "2026-08-22 02:51:01"
+  }
+]

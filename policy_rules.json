@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-08-22",
+  "policy_rules": {
+    "repetitive_inauthentic_content": {
+      "name": "Repetitive & Inauthentic Content Policy",
+      "description": "Prevents mass-produced, repetitive script formulas, robotic voiceovers without value-add, or template spam.",
+      "check_points": [
+        "Script must feature distinct, tailored analysis/reasons for each anime.",
+        "Script must avoid identical structural patterns reused across consecutive videos.",
+        "Spoken narration must sound natural and conversational."
+      ],
+      "forbidden_phrases": [
+        "in a world where",
+        "buckle up",
+        "smash that like button right now or else"
+      ]
+    },
+    "reused_content": {
+      "name": "Reused & Copyrighted Content Policy",
+      "description": "Requires original commentary, educational framing, or fair-use editorial presentation without using raw episode footage or manga scans.",
+      "check_points": [
+        "Visuals must use official promotional key visuals or posters.",
+        "No raw anime episode video clips or pirated manga scans.",
+        "Substantial original audio narration must be present throughout the video."
+      ]
+    },
+    "misleading_metadata": {
+      "name": "Misleading Metadata & Clickbait Policy",
+      "description": "Ensures title, description, thumbnail visual, and tags accurately describe the featured anime.",
+      "check_points": [
+        "Featured anime titles must be mentioned accurately in the description.",
+        "Title must reflect the specific Short concept type."
+      ]
+    },
+    "copyright_rights_verification": {
+      "name": "Asset Rights & License Status",
+      "description": "Ensures every visual image and audio file has verified source attribution and legal usage clearance.",
+      "check_points": [
+        "Image assets must be official promotional posters or public domain visuals.",
+        "Background music must be royalty-free or public domain audio.",
+        "Assets with unclear or unknown rights must be flagged and blocked."
+      ]
+    },
+    "ai_synthetic_content_disclosure": {
+      "name": "AI & Synthetic Content Transparency",
+      "description": "Ensures compliance with YouTube requirements for disclosing AI-generated voiceover and synthetic scripts.",
+      "check_points": [
+        "Description must include synthetic media disclosure note where required."
+      ]
+    }
+  }
+}
