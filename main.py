@@ -120,7 +120,7 @@ def run_phase_5(image_paths=None, audio_path=None, subtitles_path=None, concept_
     return output_video
 
 def run_phase_6(video_path=None, candidates=None, script_data=None):
-    """Phase 6: YouTube Upload (Private Guardrail)"""
+    """Phase 6: YouTube Upload with pre-upload validation and safe error reporting."""
     logger.info(">>> STARTING PHASE 6: YouTube Upload (Private Guardrail)")
     if not video_path:
         video_path = config.OUTPUT_DIR / "final_short.mp4"
@@ -135,8 +135,19 @@ def run_phase_6(video_path=None, candidates=None, script_data=None):
 
     from src.youtube_uploader import upload_short_to_youtube
     upload_res = upload_short_to_youtube(video_path=video_path, candidates=candidates, privacy_status="private")
-    logger.info(f"Phase 6 complete! Result: {upload_res}")
+
+    if upload_res.get("success"):
+        logger.info(f"Phase 6 complete! Video uploaded: {upload_res.get('youtube_url')}")
+    else:
+        logger.warning(
+            f"Phase 6: Upload not completed. "
+            f"error_type={upload_res.get('error_type')} | "
+            f"api_reason={upload_res.get('api_reason')} | "
+            f"upload_attempted={upload_res.get('upload_attempted')} | "
+            f"video_preserved={upload_res.get('video_preserved')}"
+        )
     return upload_res
+
 
 def run_full_pipeline():
     """Runs full pipeline end-to-end with QA evaluators, retries, and upload safety."""
@@ -214,15 +225,22 @@ def run_full_pipeline():
     upload_res = None
     if final_qa_res["pass"]:
         upload_res = run_phase_6(video_path, candidates, script_data)
-        record_short_history(
-            concept_type=concept_key,
-            title=metadata["title"],
-            hook=first_sentence,
-            script=script_data["full_text"],
-            video_id=upload_res.get("video_id")
-        )
+        if upload_res.get("success"):
+            record_short_history(
+                concept_type=concept_key,
+                title=metadata["title"],
+                hook=first_sentence,
+                script=script_data["full_text"],
+                video_id=upload_res.get("video_id")
+            )
+        else:
+            logger.warning(
+                f"Upload did not succeed — history not recorded. "
+                f"Reason: {upload_res.get('message', 'unknown')}"
+            )
     else:
         logger.error("❌ FINAL QA FAILED! YouTube upload BLOCKED to prevent uploading partial/defective video.")
+
 
     # Step 13: Daily Review Summary Email Report
     from src.notifier import send_daily_summary_email
