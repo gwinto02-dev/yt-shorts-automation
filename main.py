@@ -169,7 +169,8 @@ def run_full_pipeline():
 
     # Step 7: Visuals Sourcing & Rights Check
     image_paths = run_phase_3(candidates)
-    rights_res = check_asset_rights(image_paths)
+    rights_res = check_asset_rights(image_paths, candidates=candidates)
+
 
     # Step 8: Voice (TTS) & Subtitles
     audio_path, subtitles_path, segment_timestamps = run_phase_4(script_data, candidates=candidates)

@@ -80,11 +80,12 @@ def fetch_fallback_kitsu_cover(title: str) -> str:
 def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
     """
     Downloads official cover artwork for each candidate anime.
-    Attaches explicit copyright/rights status metadata.
+    Attaches structured asset_rights metadata — source/type only; does NOT
+    make legal fair-use determinations or assert commercial licence clearance.
     Returns list of downloaded image file paths in order.
     """
     downloaded_paths = []
-    
+
     # Clean previous images in assets/images/
     for old_file in config.IMAGES_DIR.glob("cover_*"):
         try:
@@ -97,28 +98,28 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
         clean_title = sanitize_filename(title)
         cover_url = candidate.get("cover_image")
         source = candidate.get("source", "API")
-        
+
         ext = "jpg"
         if cover_url and cover_url.lower().endswith(".png"):
             ext = "png"
-            
+
         filename = f"cover_{idx}_{clean_title}.{ext}"
         target_path = config.IMAGES_DIR / filename
-        
+
         logger.info(f"Downloading cover for #{idx}: {title}")
         success = False
-        
+
         # 1. Try primary URL
         if cover_url:
             success = download_image(cover_url, target_path, timeout=8)
-            
+
         # 2. Try Jikan fallback if primary failed
         if not success:
             logger.info(f"Primary image source failed for '{title}'. Trying Jikan API...")
             fallback_url = fetch_fallback_jikan_cover(title)
             if fallback_url:
                 success = download_image(fallback_url, target_path, timeout=10)
-                
+
         # 3. Try Kitsu fallback if still failed
         if not success:
             logger.info(f"Jikan fallback failed for '{title}'. Trying Kitsu API...")
@@ -126,21 +127,56 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
             if fallback_url_2:
                 success = download_image(fallback_url_2, target_path, timeout=10)
 
+        # Attach structured rights metadata.
+        # Source/type describe what the asset IS.
+        # license_status and commercial_use_verified describe what we actually KNOW.
+        # We do NOT claim fair use or any commercial licence for promotional API artwork.
         if success:
             downloaded_paths.append(target_path)
             candidate["local_image_path"] = str(target_path)
-            candidate["rights_status"] = "Official Promotional Artwork (Fair Use Editorial)"
-            candidate["rights_verified"] = True
+            candidate["asset_rights"] = {
+                "asset_id": filename,
+                "source": source,
+                "source_url": cover_url or "",
+                "asset_type": "Official Promotional Artwork",
+                "license_status": "LICENSE_UNKNOWN",
+                "commercial_use_verified": False,
+                "risk_level": "REVIEW",
+                "note": (
+                    f"Downloaded from {source} API. Official promotional artwork — "
+                    "licence status unknown. Requires human review before commercial use."
+                )
+            }
         else:
-            candidate["rights_status"] = "Unclear / Download Failed"
-            candidate["rights_verified"] = False
+            candidate["asset_rights"] = {
+                "asset_id": filename,
+                "source": source,
+                "source_url": cover_url or "",
+                "asset_type": "Unknown",
+                "license_status": "LICENSE_RESTRICTED",
+                "commercial_use_verified": False,
+                "risk_level": "HIGH",
+                "note": "Download failed. Asset unavailable — do not use."
+            }
             logger.error(f"Could not download artwork for '{title}' after primary and fallback attempts.")
 
     if not downloaded_paths:
         raise RuntimeError("Phase 3 Failed: No official cover images were successfully downloaded!")
 
-    logger.info(f"Visuals Sourcing Complete: Downloaded {len(downloaded_paths)}/{len(candidates)} images with verified rights metadata.")
+    # Write human-readable manifest for review
+    manifest_path = config.OUTPUT_DIR / "asset_rights_manifest.json"
+    import json
+    manifest = [c.get("asset_rights", {}) for c in candidates]
+    try:
+        with open(manifest_path, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, indent=2, ensure_ascii=False)
+        logger.info(f"Asset rights manifest written to {manifest_path}")
+    except Exception as e:
+        logger.warning(f"Could not write asset_rights_manifest.json: {e}")
+
+    logger.info(f"Visuals Sourcing Complete: Downloaded {len(downloaded_paths)}/{len(candidates)} images with rights metadata.")
     return downloaded_paths
+
 
 def get_cached_image_paths() -> List[Path]:
     """Retrieve existing cover image paths sorted by index."""

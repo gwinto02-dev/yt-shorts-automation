@@ -49,13 +49,38 @@ def build_summary_html(
     rights_table_rows = ""
     assets = rights_res.get("assets", [])
     for a in assets:
-        badge_color = "#059669" if a.get("verified") else "#dc2626"
+        rl = a.get("risk_level", "REVIEW")
+        ls = a.get("license_status", "LICENSE_UNKNOWN")
+        if ls == "LICENSE_VERIFIED":
+            badge_color = "#059669"
+        elif rl == "HIGH" or ls == "LICENSE_RESTRICTED":
+            badge_color = "#dc2626"
+        else:
+            badge_color = "#d97706"  # amber for REVIEW/UNKNOWN
         rights_table_rows += f"""
         <tr>
             <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">{a.get('asset_name')}</td>
             <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">{a.get('type')}</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">{a.get('source', 'Unknown')}</td>
             <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: {badge_color}; font-weight: bold;">{a.get('rights_status')}</td>
         </tr>
+        """
+
+    # Review-flagged assets banner (shown when LICENSE_UNKNOWN assets are present)
+    flagged_assets = rights_res.get("flagged_for_review", [])
+    review_banner = ""
+    if flagged_assets:
+        flagged_names = ", ".join(a.get('asset_name', '') for a in flagged_assets)
+        review_banner = f"""
+        <div style="background:#fffbeb; border-left:4px solid #f59e0b; padding:12px; margin:16px 0; border-radius:4px;">
+            <strong style="color:#92400e;">⚠️ HUMAN REVIEW REQUIRED — Asset Rights</strong>
+            <p style="margin:4px 0 0 0; color:#78350f; font-size:13px;">
+                {len(flagged_assets)} asset(s) have <strong>LICENSE_UNKNOWN</strong> status.
+                Commercial use rights have not been confirmed. Review these assets before
+                making the private video public:<br/>
+                <strong>{flagged_names}</strong>
+            </p>
+        </div>
         """
 
     # Retry count summary
@@ -146,12 +171,14 @@ def build_summary_html(
             {f'<p><a href="{studio_url}" class="btn" target="_blank">🔗 Review Private Video on YouTube Studio</a></p>' if upload_res and studio_url != '#' else ''}
 
             <h3 style="margin-top: 25px;">⚖️ Copyright & Asset Rights Status</h3>
+            {review_banner}
             <table>
                 <thead>
                     <tr style="background:#f3f4f6; text-align:left;">
                         <th style="padding:6px 10px;">Asset</th>
                         <th style="padding:6px 10px;">Type</th>
-                        <th style="padding:6px 10px;">Rights Clearance</th>
+                        <th style="padding:6px 10px;">Source</th>
+                        <th style="padding:6px 10px;">License Status</th>
                     </tr>
                 </thead>
                 <tbody>

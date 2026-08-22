@@ -225,65 +225,161 @@ def check_youtube_policy_compliance(script_text: str, title: str, candidates: Li
 
 # ==================== RIGHTS & COPYRIGHT QA ====================
 
-def check_asset_rights(image_paths: List[Path], bg_music_path: Path = None) -> Dict[str, Any]:
+def check_asset_rights(
+    image_paths: List[Path],
+    candidates: List[Dict[str, Any]] = None,
+    bg_music_path: Path = None
+) -> Dict[str, Any]:
     """
-    Tracks and verifies legal rights status for image & audio assets.
+    Verifies asset rights using structured metadata attached by visuals.py.
+    Does NOT rely on filename patterns or make legal fair-use determinations.
 
-    A missing bg_music file is NOT counted as an unverified-rights failure —
-    it is a missing-asset problem that is caught by the Audio/Subtitle QA stage.
-    Rights QA only flags assets that exist but have unclear/unverified clearance.
+    Licence tiers:
+      LICENSE_VERIFIED   → commercially cleared; clean pass.
+      LICENSE_UNKNOWN    → source known, commercial status unconfirmed;
+                          pipeline continues but asset is flagged for your
+                          human review of the private video.
+      LICENSE_RESTRICTED → download failed or explicit restriction present;
+                          pass=False, upload is blocked.
+
+    Missing bg_music is a missing-asset problem (caught by Audio QA),
+    not a rights failure, and is never counted in unverified_count.
     """
     logger.info(">>> RUNNING ASSET RIGHTS & COPYRIGHT QA")
     assets_table = []
-    unverified_count = 0
-    missing_assets = []
+    flagged_for_review: List[Dict[str, Any]] = []
+    high_risk_count = 0
+    missing_assets: List[str] = []
+
+    # Build a lookup from filename → asset_rights dict using candidates metadata.
+    # Falls back gracefully when candidates list is not supplied (e.g. in unit tests
+    # that construct their own fixture data and pass rights_metadata directly).
+    rights_by_filename: Dict[str, Dict[str, Any]] = {}
+    if candidates:
+        for c in candidates:
+            ar = c.get("asset_rights")
+            if ar and ar.get("asset_id"):
+                rights_by_filename[ar["asset_id"]] = ar
 
     for img_path in image_paths:
-        if "cover_" in img_path.name:
-            rights = "Official Promotional Artwork (Fair Use Editorial)"
-            is_verified = True
+        fname = img_path.name
+        ar = rights_by_filename.get(fname)
+
+        if ar is None:
+            # No metadata attached — treat conservatively as unknown
+            ar = {
+                "asset_id": fname,
+                "source": "Unknown",
+                "source_url": "",
+                "asset_type": "Unknown",
+                "license_status": "LICENSE_UNKNOWN",
+                "commercial_use_verified": False,
+                "risk_level": "REVIEW",
+                "note": "No rights metadata attached. Manual review required."
+            }
+
+        license_status = ar.get("license_status", "LICENSE_UNKNOWN")
+        risk_level = ar.get("risk_level", "REVIEW")
+        commercial_ok = ar.get("commercial_use_verified", False)
+
+        if license_status == "LICENSE_RESTRICTED" or risk_level == "HIGH":
+            high_risk_count += 1
+            entry = {
+                "asset_name": fname,
+                "type": ar.get("asset_type", "Image"),
+                "source": ar.get("source", "Unknown"),
+                "license_status": license_status,
+                "commercial_use_verified": commercial_ok,
+                "risk_level": risk_level,
+                "note": ar.get("note", ""),
+                "rights_status": f"{license_status} ⛔ HIGH RISK",
+                "verified": False,
+            }
+        elif license_status == "LICENSE_VERIFIED" and commercial_ok:
+            entry = {
+                "asset_name": fname,
+                "type": ar.get("asset_type", "Image"),
+                "source": ar.get("source", "Unknown"),
+                "license_status": license_status,
+                "commercial_use_verified": True,
+                "risk_level": "LOW",
+                "note": ar.get("note", ""),
+                "rights_status": "LICENSE_VERIFIED ✅ Commercially Cleared",
+                "verified": True,
+            }
         else:
-            rights = "Unclear / High Risk"
-            is_verified = False
-            unverified_count += 1
+            # LICENSE_UNKNOWN / REVIEW — continue the pipeline but flag for review
+            entry = {
+                "asset_name": fname,
+                "type": ar.get("asset_type", "Image"),
+                "source": ar.get("source", "Unknown"),
+                "license_status": license_status,
+                "commercial_use_verified": False,
+                "risk_level": risk_level,
+                "note": ar.get("note", ""),
+                "rights_status": "LICENSE_UNKNOWN ⚠️ Needs Human Review",
+                "verified": False,
+            }
+            flagged_for_review.append(entry)
 
-        assets_table.append({
-            "asset_name": img_path.name,
-            "type": "Image",
-            "rights_status": rights,
-            "verified": is_verified
-        })
+        assets_table.append(entry)
 
-    # Only evaluate bg_music rights if the file actually exists.
-    # A missing file is a missing-asset problem, not a rights-clearance problem.
+    # BG music: only check rights if the file exists; missing file → audio QA handles it
     music_file = bg_music_path or config.DEFAULT_BG_MUSIC
     if music_file.exists():
         assets_table.append({
             "asset_name": music_file.name,
             "type": "Audio (Background Music)",
-            "rights_status": "Royalty-Free Public Domain / Fair Use",
-            "verified": True
+            "source": "Local",
+            "license_status": "LICENSE_VERIFIED",
+            "commercial_use_verified": True,
+            "risk_level": "LOW",
+            "note": "Royalty-free track confirmed at project setup.",
+            "rights_status": "LICENSE_VERIFIED ✅ Royalty-Free",
+            "verified": True,
         })
     else:
         missing_assets.append(str(music_file))
-        logger.debug(f"[Rights QA] BG music file not found at '{music_file}' — skipping rights entry (not a rights issue).")
+        logger.debug(
+            f"[Rights QA] BG music not found at '{music_file}' — "
+            "recorded as missing asset (not a rights failure)."
+        )
 
-    all_clear = unverified_count == 0
-    reason = (
-        "All assets verified for fair-use/royalty-free commercial compliance."
-        if all_clear
-        else f"{unverified_count} asset(s) have unverified/unclear rights: "
-             + ", ".join(a["asset_name"] for a in assets_table if not a["verified"])
+    # Only HIGH/RESTRICTED assets block the upload.
+    # LICENSE_UNKNOWN assets are surfaced for human review but do not block.
+    all_clear = high_risk_count == 0
+
+    if all_clear and flagged_for_review:
+        reason = (
+            f"Pipeline continues. {len(flagged_for_review)} asset(s) have "
+            f"LICENSE_UNKNOWN status and are flagged for your human review of the "
+            f"private video: {', '.join(a['asset_name'] for a in flagged_for_review)}"
+        )
+    elif all_clear:
+        reason = "All assets verified — no rights issues detected."
+    else:
+        reason = (
+            f"{high_risk_count} asset(s) are LICENSE_RESTRICTED or HIGH RISK — "
+            f"upload blocked: {', '.join(a['asset_name'] for a in assets_table if not a['verified'] and a['risk_level'] == 'HIGH')}"
+        )
+
+    logger.info(
+        f"[Rights QA Result] Pass: {all_clear} | "
+        f"HIGH_RISK: {high_risk_count} | "
+        f"LICENSE_UNKNOWN (flagged for review): {len(flagged_for_review)} | "
+        f"Missing assets (audio QA): {len(missing_assets)}"
     )
-
-    logger.info(f"[Rights QA Result] Pass: {all_clear} | Unverified Assets: {unverified_count}")
     return {
         "pass": all_clear,
         "assets": assets_table,
-        "unverified_count": unverified_count,
+        "high_risk_count": high_risk_count,
+        "flagged_for_review": flagged_for_review,
         "missing_assets": missing_assets,
-        "reason": reason
+        "reason": reason,
+        # Keep legacy field so notifier/run_final_video_qa don't break
+        "unverified_count": high_risk_count,
     }
+
 
 # ==================== VISUAL SEGMENTS DISTINCTNESS & ALIGNMENT QA ====================
 

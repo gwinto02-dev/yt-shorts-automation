@@ -237,45 +237,132 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
 
     def test_asset_rights_checker(self):
         """
-        Verify rights status tagging for downloaded assets.
+        Verify structured rights metadata classification.
 
-        Three cases must all behave correctly:
-        1. Official promo artwork (cover_* filename) → pass: True,
-           even when the bg_music file is absent (missing file ≠ rights issue).
-        2. Asset with no recognized rights tag (no cover_ prefix) → pass: False.
-        3. Mix of verified + unverified images → pass: False, flagging only
-           the unverified one.
+        Requirements:
+        1. Official promotional artwork from AniList/Jikan → LICENSE_UNKNOWN,
+           commercial_use_verified=False, pipeline continues (pass=True),
+           asset appears in flagged_for_review for human inspection.
+        2. Explicitly licensed asset (e.g. CC0) → LICENSE_VERIFIED,
+           commercial_use_verified=True, pass=True, NOT in flagged_for_review.
+        3. High-risk / restricted asset → LICENSE_RESTRICTED / HIGH,
+           pass=False (upload blocked).
+        4. Missing bg_music file → missing_assets list only, NOT a rights
+           failure, does not affect pass result.
+        5. No candidate metadata supplied → fallback to LICENSE_UNKNOWN /
+           REVIEW (conservative), still not blocked (pass=True), but flagged.
         """
-        # Case 1: cover_ image, no bg_music → should PASS (missing audio is not a rights failure)
-        res = check_asset_rights([Path("assets/images/cover_1_test.jpg")])
-        self.assertIn("assets", res)
+        # ---- Case 1: Typical AniList download → LICENSE_UNKNOWN, not commercially verified ----
+        candidate_unknown = {
+            "title": "Attack on Titan",
+            "asset_rights": {
+                "asset_id": "cover_1_attack_on_titan.jpg",
+                "source": "AniList",
+                "source_url": "https://cdn.anilist.co/attack_on_titan.jpg",
+                "asset_type": "Official Promotional Artwork",
+                "license_status": "LICENSE_UNKNOWN",
+                "commercial_use_verified": False,
+                "risk_level": "REVIEW",
+                "note": "Downloaded from AniList API. Licence status unknown."
+            }
+        }
+        res1 = check_asset_rights(
+            [Path("cover_1_attack_on_titan.jpg")],
+            candidates=[candidate_unknown]
+        )
         self.assertTrue(
-            res["pass"],
-            f"Expected pass=True for cover_ image but got pass=False. "
-            f"Reason: {res.get('reason')} | Missing assets: {res.get('missing_assets')}"
+            res1["pass"],
+            "LICENSE_UNKNOWN artwork must NOT block upload (human reviews private video)."
         )
-        self.assertEqual(res["unverified_count"], 0)
-        # bg_music missing → listed in missing_assets, NOT in unverified_count
-        self.assertIsInstance(res.get("missing_assets"), list)
-
-        # Case 2: non-cover_ image (no recognized rights tag) → should FAIL
-        res2 = check_asset_rights([Path("some_screenshot_downloaded.jpg")])
         self.assertFalse(
-            res2["pass"],
-            "Expected pass=False for asset without 'cover_' prefix (unclear rights)."
+            res1["assets"][0]["commercial_use_verified"],
+            "Official promotional artwork from AniList must NOT be marked commercially verified."
         )
-        self.assertGreater(res2["unverified_count"], 0)
+        self.assertEqual(
+            res1["assets"][0]["license_status"],
+            "LICENSE_UNKNOWN",
+            "AniList artwork must be reported as LICENSE_UNKNOWN, not VERIFIED."
+        )
+        self.assertEqual(res1["assets"][0]["risk_level"], "REVIEW")
+        self.assertEqual(len(res1["flagged_for_review"]), 1,
+            "LICENSE_UNKNOWN asset must appear in flagged_for_review for human inspection.")
+        self.assertEqual(res1["high_risk_count"], 0)
+        self.assertIsInstance(res1.get("missing_assets"), list)
 
-        # Case 3: mix — one verified cover_ image, one unverified image → FAIL
-        res3 = check_asset_rights([
-            Path("assets/cover_2_official.jpg"),
-            Path("random_fanart.png"),
-        ])
-        self.assertFalse(
-            res3["pass"],
-            "Expected pass=False when at least one asset has unclear rights."
+        # ---- Case 2: Explicitly licensed asset (e.g. CC0 / royalty-free image pack) ----
+        candidate_verified = {
+            "title": "CC0 Illustration",
+            "asset_rights": {
+                "asset_id": "cover_2_cc0_art.jpg",
+                "source": "CreativeCommons",
+                "source_url": "https://example.com/cc0_art.jpg",
+                "asset_type": "Royalty-Free Illustration",
+                "license_status": "LICENSE_VERIFIED",
+                "commercial_use_verified": True,
+                "risk_level": "LOW",
+                "note": "CC0 Public Domain — no rights reserved."
+            }
+        }
+        res2 = check_asset_rights(
+            [Path("cover_2_cc0_art.jpg")],
+            candidates=[candidate_verified]
         )
-        self.assertEqual(res3["unverified_count"], 1)
+        self.assertTrue(res2["pass"], "LICENSE_VERIFIED asset should pass cleanly.")
+        self.assertTrue(res2["assets"][0]["commercial_use_verified"],
+            "Explicitly licensed CC0 asset must be marked commercial_use_verified=True.")
+        self.assertEqual(res2["assets"][0]["license_status"], "LICENSE_VERIFIED")
+        self.assertEqual(len(res2["flagged_for_review"]), 0,
+            "LICENSE_VERIFIED asset must NOT appear in flagged_for_review.")
+        self.assertEqual(res2["high_risk_count"], 0)
+
+        # ---- Case 3: High-risk / restricted asset → upload BLOCKED ----
+        candidate_restricted = {
+            "title": "Watermarked Screenshot",
+            "asset_rights": {
+                "asset_id": "screenshot_watermarked.jpg",
+                "source": "Unknown",
+                "source_url": "",
+                "asset_type": "Unknown",
+                "license_status": "LICENSE_RESTRICTED",
+                "commercial_use_verified": False,
+                "risk_level": "HIGH",
+                "note": "Download failed or explicit restriction."
+            }
+        }
+        res3 = check_asset_rights(
+            [Path("screenshot_watermarked.jpg")],
+            candidates=[candidate_restricted]
+        )
+        self.assertFalse(res3["pass"],
+            "LICENSE_RESTRICTED / HIGH risk asset must block upload (pass=False).")
+        self.assertGreater(res3["high_risk_count"], 0)
+        self.assertFalse(res3["assets"][0]["commercial_use_verified"])
+
+        # ---- Case 4: Missing bg_music file must NOT be a rights failure ----
+        res4 = check_asset_rights(
+            [Path("cover_1_attack_on_titan.jpg")],
+            candidates=[candidate_unknown],
+            bg_music_path=Path("non_existent_music_file.mp3")
+        )
+        self.assertTrue(res4["pass"],
+            "Missing bg_music must NOT cause rights QA to fail.")
+        self.assertIn(
+            "non_existent_music_file.mp3",
+            " ".join(res4.get("missing_assets", [])),
+            "Missing bg_music must be recorded in missing_assets, not in rights failure."
+        )
+        self.assertEqual(res4["high_risk_count"], 0)
+
+        # ---- Case 5: No candidates → fallback to LICENSE_UNKNOWN (conservative) ----
+        res5 = check_asset_rights([Path("some_image_no_metadata.jpg")])
+        self.assertTrue(res5["pass"],
+            "Unknown asset with no metadata must default to LICENSE_UNKNOWN (not blocked).")
+        self.assertEqual(res5["assets"][0]["license_status"], "LICENSE_UNKNOWN")
+        self.assertFalse(res5["assets"][0]["commercial_use_verified"])
+        self.assertEqual(len(res5["flagged_for_review"]), 1,
+            "Asset with no metadata must appear in flagged_for_review.")
+
+
 
 
 if __name__ == "__main__":
