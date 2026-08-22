@@ -236,10 +236,47 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
         self.assertTrue(is_nearing_rate_limit())
 
     def test_asset_rights_checker(self):
-        """Verify rights status tagging for downloaded assets."""
+        """
+        Verify rights status tagging for downloaded assets.
+
+        Three cases must all behave correctly:
+        1. Official promo artwork (cover_* filename) → pass: True,
+           even when the bg_music file is absent (missing file ≠ rights issue).
+        2. Asset with no recognized rights tag (no cover_ prefix) → pass: False.
+        3. Mix of verified + unverified images → pass: False, flagging only
+           the unverified one.
+        """
+        # Case 1: cover_ image, no bg_music → should PASS (missing audio is not a rights failure)
         res = check_asset_rights([Path("assets/images/cover_1_test.jpg")])
         self.assertIn("assets", res)
-        self.assertTrue(res["pass"])
+        self.assertTrue(
+            res["pass"],
+            f"Expected pass=True for cover_ image but got pass=False. "
+            f"Reason: {res.get('reason')} | Missing assets: {res.get('missing_assets')}"
+        )
+        self.assertEqual(res["unverified_count"], 0)
+        # bg_music missing → listed in missing_assets, NOT in unverified_count
+        self.assertIsInstance(res.get("missing_assets"), list)
+
+        # Case 2: non-cover_ image (no recognized rights tag) → should FAIL
+        res2 = check_asset_rights([Path("some_screenshot_downloaded.jpg")])
+        self.assertFalse(
+            res2["pass"],
+            "Expected pass=False for asset without 'cover_' prefix (unclear rights)."
+        )
+        self.assertGreater(res2["unverified_count"], 0)
+
+        # Case 3: mix — one verified cover_ image, one unverified image → FAIL
+        res3 = check_asset_rights([
+            Path("assets/cover_2_official.jpg"),
+            Path("random_fanart.png"),
+        ])
+        self.assertFalse(
+            res3["pass"],
+            "Expected pass=False when at least one asset has unclear rights."
+        )
+        self.assertEqual(res3["unverified_count"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

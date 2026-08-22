@@ -93,5 +93,10 @@
     "concept_type": "hidden_gems",
     "date": "2026-08-22T02:51:01.913792",
     "date_readable": "2026-08-22 02:51:01"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T05:12:32.260837",
+    "date_readable": "2026-08-22 05:12:32"
   }
 ]

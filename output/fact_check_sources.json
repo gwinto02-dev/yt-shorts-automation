@@ -1,64 +1,23 @@
 [
   {
-    "anime_title": "Link Click Season 3",
-    "verified_score": "8.3/10",
-    "score_numeric": 8.3,
-    "release_year": "N/A",
-    "studio": "N/A",
-    "episodes": 24,
+    "anime_title": "Frieren: Beyond Journey's End",
+    "verified_score": "9.1/10",
+    "score_numeric": 9.1,
+    "release_year": 2023,
+    "studio": "MADHOUSE",
+    "episodes": 28,
     "genres": [
+      "Adventure",
       "Drama",
-      "Mystery",
-      "Supernatural",
-      "Thriller"
-    ],
-    "lead_characters": [
-      "Vein",
-      "Fei Xia"
-    ],
-    "synopsis_snippet": "The third season of Shiguang Dailiren.",
-    "primary_source": "AniList GraphQL",
-    "source_id": "191832",
-    "citation_url": "https://anilist.co/anime/191832"
-  },
-  {
-    "anime_title": "Saga of Tanya the Evil Season 2",
-    "verified_score": "8.1/10",
-    "score_numeric": 8.1,
-    "release_year": 2026,
-    "studio": "NUT",
-    "episodes": 12,
-    "genres": [
-      "Action",
       "Fantasy"
     ],
     "lead_characters": [
-      "Heishi",
-      "Shoukou"
+      "Take no Ojii-san",
+      "Sanretsu-sha C"
     ],
-    "synopsis_snippet": "The second season of Youjo Senki.",
+    "synopsis_snippet": "The adventure is over but life goes on for an elf mage just beginning to learn what living is all about. Elf mage Frieren and her courageous fellow adventurers have defeated the Demon King and brought",
     "primary_source": "AniList GraphQL",
-    "source_id": "135865",
-    "citation_url": "https://anilist.co/anime/135865"
-  },
-  {
-    "anime_title": "The Elusive Samurai Season 2",
-    "verified_score": "7.6/10",
-    "score_numeric": 7.6,
-    "release_year": 2026,
-    "studio": "CloverWorks",
-    "episodes": 12,
-    "genres": [
-      "Action",
-      "Adventure"
-    ],
-    "lead_characters": [
-      "Kojirou Nezu",
-      "Shizuku"
-    ],
-    "synopsis_snippet": "The second season of Nige Jouzu no Wakagimi.",
-    "primary_source": "AniList GraphQL",
-    "source_id": "182616",
-    "citation_url": "https://anilist.co/anime/182616"
+    "source_id": "154587",
+    "citation_url": "https://anilist.co/anime/154587"
   }
 ]

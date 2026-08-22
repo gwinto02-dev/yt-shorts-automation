@@ -228,10 +228,15 @@ def check_youtube_policy_compliance(script_text: str, title: str, candidates: Li
 def check_asset_rights(image_paths: List[Path], bg_music_path: Path = None) -> Dict[str, Any]:
     """
     Tracks and verifies legal rights status for image & audio assets.
+
+    A missing bg_music file is NOT counted as an unverified-rights failure —
+    it is a missing-asset problem that is caught by the Audio/Subtitle QA stage.
+    Rights QA only flags assets that exist but have unclear/unverified clearance.
     """
     logger.info(">>> RUNNING ASSET RIGHTS & COPYRIGHT QA")
     assets_table = []
     unverified_count = 0
+    missing_assets = []
 
     for img_path in image_paths:
         if "cover_" in img_path.name:
@@ -241,7 +246,7 @@ def check_asset_rights(image_paths: List[Path], bg_music_path: Path = None) -> D
             rights = "Unclear / High Risk"
             is_verified = False
             unverified_count += 1
-            
+
         assets_table.append({
             "asset_name": img_path.name,
             "type": "Image",
@@ -249,6 +254,8 @@ def check_asset_rights(image_paths: List[Path], bg_music_path: Path = None) -> D
             "verified": is_verified
         })
 
+    # Only evaluate bg_music rights if the file actually exists.
+    # A missing file is a missing-asset problem, not a rights-clearance problem.
     music_file = bg_music_path or config.DEFAULT_BG_MUSIC
     if music_file.exists():
         assets_table.append({
@@ -258,22 +265,23 @@ def check_asset_rights(image_paths: List[Path], bg_music_path: Path = None) -> D
             "verified": True
         })
     else:
-        assets_table.append({
-            "asset_name": "Missing BG Music",
-            "type": "Audio",
-            "rights_status": "Missing File",
-            "verified": False
-        })
-        unverified_count += 1
+        missing_assets.append(str(music_file))
+        logger.debug(f"[Rights QA] BG music file not found at '{music_file}' — skipping rights entry (not a rights issue).")
 
     all_clear = unverified_count == 0
-    reason = "All assets verified for fair-use/royalty-free commercial compliance." if all_clear else f"{unverified_count} asset(s) have unverified/unclear rights."
-    
+    reason = (
+        "All assets verified for fair-use/royalty-free commercial compliance."
+        if all_clear
+        else f"{unverified_count} asset(s) have unverified/unclear rights: "
+             + ", ".join(a["asset_name"] for a in assets_table if not a["verified"])
+    )
+
     logger.info(f"[Rights QA Result] Pass: {all_clear} | Unverified Assets: {unverified_count}")
     return {
         "pass": all_clear,
         "assets": assets_table,
         "unverified_count": unverified_count,
+        "missing_assets": missing_assets,
         "reason": reason
     }
 

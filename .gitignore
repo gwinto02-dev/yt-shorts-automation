@@ -1,6 +1,11 @@
 __pycache__/
 *.pyc
+
 output/*.mp4
 output/*.mp3
 output/*.wav
+
 assets/music/*.mp3
+
+client_secret.json
+token.json
