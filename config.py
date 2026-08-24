@@ -18,6 +18,8 @@ DATA_DIR = BASE_DIR / "data"
 POLICY_RULES_FILE = BASE_DIR / "policy_rules.json"
 SHORTS_HISTORY_FILE = DATA_DIR / "shorts_history.json"
 CONCEPT_HISTORY_FILE = DATA_DIR / "concept_history.json"
+TITLE_HISTORY_FILE = DATA_DIR / "title_history.json"
+VIDEO_TITLE_HISTORY_FILE = DATA_DIR / "video_title_history.json"
 
 # Create directories if they do not exist
 for path in [ASSETS_DIR, IMAGES_DIR, MUSIC_DIR, FONTS_DIR, OUTPUT_DIR, DATA_DIR]:
@@ -26,6 +28,8 @@ for path in [ASSETS_DIR, IMAGES_DIR, MUSIC_DIR, FONTS_DIR, OUTPUT_DIR, DATA_DIR]
 # Guardrails & Free-Tier Limits
 MAX_STAGE_RETRIES = 2
 CONCEPT_COOLDOWN_DAYS = 5
+ANIME_TITLE_COOLDOWN_DAYS = 30
+VIDEO_TITLE_COOLDOWN_DAYS = 30
 LLM_CALL_WARNING_THRESHOLD = 15  # Warning limit if run exceeds ~80% of daily free allowance
 YT_DAILY_QUOTA_ESTIMATE = 1600   # Estimated quota units per video upload (out of 10,000 daily free limit)
 

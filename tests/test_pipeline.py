@@ -362,8 +362,145 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
         self.assertEqual(len(res5["flagged_for_review"]), 1,
             "Asset with no metadata must appear in flagged_for_review.")
 
+    def test_anime_title_30day_cooldown(self):
+        """Regression test for Issue 1: Confirm 5-day old title is excluded, 40-day old allowed."""
+        from src.history_manager import is_anime_title_allowed_by_history, _save_json_file
+        from datetime import datetime, timedelta
 
+        # Insert a 5-day old entry and a 40-day old entry in title_history.json
+        now = datetime.now()
+        history = [
+            {
+                "title": "Recent Title Five Days Ago",
+                "normalized_title": "recent title five days ago",
+                "anime_id": 9991,
+                "date": (now - timedelta(days=5)).isoformat(),
+                "date_readable": (now - timedelta(days=5)).strftime("%Y-%m-%d")
+            },
+            {
+                "title": "Old Title Forty Days Ago",
+                "normalized_title": "old title forty days ago",
+                "anime_id": 9992,
+                "date": (now - timedelta(days=40)).isoformat(),
+                "date_readable": (now - timedelta(days=40)).strftime("%Y-%m-%d")
+            }
+        ]
+        _save_json_file(config.TITLE_HISTORY_FILE, history)
+
+        allowed_5d, reason_5d = is_anime_title_allowed_by_history("Recent Title Five Days Ago", 9991, days=30)
+        self.assertFalse(allowed_5d, "Title featured 5 days ago MUST be excluded within 30-day cooldown.")
+
+        allowed_40d, reason_40d = is_anime_title_allowed_by_history("Old Title Forty Days Ago", 9992, days=30)
+        self.assertTrue(allowed_40d, "Title featured 40 days ago MUST be allowed back in after 30-day cooldown expires.")
+
+    def test_missing_score_narration_framing(self):
+        """Regression test for Issue 2: Confirm missing scores use anticipation framing and NO 'N/A' text."""
+        candidates = [
+            {"title": "Upcoming Hero Anime", "average_score": 0.0, "status": "NOT_YET_RELEASED", "is_upcoming": True},
+            {"title": "Mystery Show", "average_score": None, "status": "RELEASING"}
+        ]
+
+        script_text = generate_fallback_template_script(candidates, {"name": "Upcoming Trio"})
+        self.assertNotIn("N/A", script_text, "Narration script must NEVER contain literal 'N/A' text.")
+        self.assertNotIn("0.0/10", script_text, "Narration script must NEVER cite 0.0/10 for unrated shows.")
+
+        # Test Fact Audit QA flags literal "N/A"
+        bad_script = "Check out this show rated N/A in today's spotlight."
+        audit_res = check_script_factual_alignment(bad_script, [])
+        self.assertFalse(audit_res["pass"])
+        self.assertIn("forbidden literal placeholder text", audit_res["reason"])
+
+    def test_supervisor_qa_gate_consolidation(self):
+        """Regression test for Issue 3: Consolidated Supervisor QA Gate checks all 11 gates and produces clear verdict."""
+        from src.qa_checker import run_supervisor_qa_gate
+
+        res = run_supervisor_qa_gate(
+            video_path=Path("non_existent.mp4"),
+            image_paths=[],
+            audio_path=Path("non_existent.mp3"),
+            srt_path=Path("non_existent.ass"),
+            candidates=[],
+            concept_key="top_recommendations",
+            video_title="Top 3 Recommendations You Need To Watch 🍿 #Shorts",
+            policy_res={"risk_level": "LOW", "flagged_issues": []},
+            rights_res={"pass": True, "reason": "Clear"},
+            script_qa_res={"pass": True, "reason": "Good"},
+            retention_qa_res={"pass": True, "reason": "Good"},
+            originality_res={"pass": True, "reason": "Good"},
+            script_text="Valid narration script text without cliches."
+        )
+
+        self.assertIn("verdict", res)
+        self.assertEqual(len(res["checks"]), 12, "Supervisor QA Gate MUST run and report exactly 12 individual QA checks.")
+        self.assertFalse(res["pass"], "Missing video file must cause overall Supervisor QA verdict to be BLOCKED.")
+        self.assertIn("BLOCKED", res["verdict"])
+
+    def test_video_title_variety_and_concept_signal(self):
+        """Regression test for Issue 4: Confirm title concept signal check and non-duplicate similarity check."""
+        from src.script_generator import verify_title_concept_signal, generate_video_title
+        from src.history_manager import check_video_title_similarity, record_video_title_usage
+
+        # Concept signal test
+        signal_ok, _ = verify_title_concept_signal("Top 3 Underrated Anime You're Sleeping On 🍿 #Shorts", "hidden_gems")
+        self.assertTrue(signal_ok, "Title with 'underrated' keyword must pass concept signal check for hidden_gems.")
+
+        signal_fail, _ = verify_title_concept_signal("Generic 3 Anime You Should Watch 🍿 #Shorts", "hidden_gems")
+        self.assertFalse(signal_fail, "Title missing 'underrated' signal must fail concept signal check for hidden_gems.")
+
+        # Similarity test against history
+        past_title = "Top 3 Underrated Anime You Need To Watch Right Now 🍿 #Shorts"
+        record_video_title_usage(past_title, concept_type="hidden_gems")
+
+        sim_res = check_video_title_similarity(past_title, days=30)
+        self.assertFalse(sim_res["pass"], "Near-duplicate video title must fail similarity check.")
+
+    def test_youtube_upload_safety_settings(self):
+        """Regression test for Issue 5: Confirm Made for Kids is explicitly False on upload."""
+        from src.youtube_uploader import upload_short_to_youtube
+
+        upload_res = upload_short_to_youtube(
+            video_path=Path("sample.mp4"),
+            candidates=[],
+            privacy_status="private"
+        )
+        self.assertIn("made_for_kids", upload_res)
+        self.assertFalse(upload_res["made_for_kids"], "Made for Kids setting MUST be explicitly False.")
+        self.assertIn("synthetic_content_status", upload_res)
+        self.assertIn("comment_moderation", upload_res)
+
+    def test_structural_variety_qa_detects_pattern_sameness(self):
+        """Regression test: verify structural fingerprinting flags scripts with identical structural patterns."""
+        from src.history_manager import record_short_history, check_structural_variety_against_history, extract_structural_fingerprint
+        from src.script_generator import generate_fallback_template_script
+
+        candidates1 = [
+            {"title": "Anime Alpha", "average_score": 8.5, "verified_facts": {"studio": "Studio A", "release_year": 2022, "genres": ["Action"]}},
+            {"title": "Anime Beta", "average_score": 8.4, "verified_facts": {"studio": "Studio B", "release_year": 2023, "genres": ["Fantasy"]}},
+        ]
+
+        # Generate a script with explicit QUESTION opening and QUESTION_TO_VIEWER closing
+        script1 = generate_fallback_template_script(candidates1, {"name": "Top Recommendations"}, target_opening_style="QUESTION", target_closing_style="QUESTION_TO_VIEWER")
+        record_short_history("top_recommendations", "Title Alpha Beta", "Hook Alpha", script1)
+
+        # Generate second script with different anime titles BUT same structural pattern
+        candidates2 = [
+            {"title": "Anime Gamma", "average_score": 8.9, "verified_facts": {"studio": "Studio X", "release_year": 2024, "genres": ["Sci-Fi"]}},
+            {"title": "Anime Delta", "average_score": 8.8, "verified_facts": {"studio": "Studio Y", "release_year": 2025, "genres": ["Drama"]}},
+        ]
+        script2 = generate_fallback_template_script(candidates2, {"name": "Top Recommendations"}, target_opening_style="QUESTION", target_closing_style="QUESTION_TO_VIEWER")
+
+        # Evaluate script2 against history -> must fail structural check due to consecutive structural pattern sameness
+        struct_res = check_structural_variety_against_history(script2)
+        self.assertFalse(struct_res["pass"], "Script with identical opening style and closing style pattern must fail structural variety QA.")
+        self.assertIn("Consecutive structural repetition", struct_res["reason"])
+
+        # Generate third script with rotated BOLD_CLAIM opening and DIRECT_RECOMMENDATION closing -> must pass!
+        script3 = generate_fallback_template_script(candidates2, {"name": "Top Recommendations"}, target_opening_style="BOLD_CLAIM", target_closing_style="DIRECT_RECOMMENDATION")
+        struct_res3 = check_structural_variety_against_history(script3)
+        self.assertTrue(struct_res3["pass"], "Script with rotated opening and closing styles MUST pass structural variety QA.")
 
 
 if __name__ == "__main__":
     unittest.main()
+
+

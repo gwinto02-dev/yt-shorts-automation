@@ -10,8 +10,6 @@
             .header h2 { margin: 0; color: #6d28d9; font-size: 22px; }
             .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: bold; margin-right: 6px; }
             .btn { display: inline-block; background-color: #7c3aed; color: #ffffff !important; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-top: 15px; }
-            .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 15px 0; }
-            .metric-card { background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; }
             .script-box { background-color: #f8fafc; border-left: 4px solid #8b5cf6; padding: 14px; font-family: monospace; font-size: 13px; white-space: pre-wrap; margin-top: 10px; }
             table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
         </style>
@@ -19,7 +17,7 @@
     <body>
         <div class="card">
             <div class="header">
-                <h2>🎬 Daily Anime Short Review Report — August 22, 2026</h2>
+                <h2>🎬 Daily Anime Short Review Report — August 24, 2026</h2>
                 <div style="margin-top: 8px;">
                     <span class="badge" style="background:#ede9fe; color:#6d28d9;">Concept: Underrated Trio</span>
                     <span class="badge" style="background:#d1fae5; color:#065f46;">
@@ -30,70 +28,169 @@
 
             
 
-            <h3>📊 Quality & QA Results Dashboard</h3>
-            <div class="metric-grid">
-                <div class="metric-card">
-                    <strong>Script Quality QA:</strong> 🟢 PASSED<br/>
-                    <small style="color:#6b7280;">Reason: Script passed rule-based checks (134 words, natural phrasing).</small>
+            <h3>🛡️ Supervisor QA Summary</h3>
+            <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+                <div style="font-size: 15px; font-weight: bold; margin-bottom: 10px;">
+                    Overall Verdict: <span style="color: #059669; font-size: 17px;">APPROVED 🟢</span>
                 </div>
-                <div class="metric-card">
-                    <strong>Originality QA:</strong> 🟢 PASSED<br/>
-                    <small style="color:#6b7280;">No previous Shorts in history to compare against.</small>
-                </div>
-                <div class="metric-card">
-                    <strong>YouTube Policy Risk:</strong> 🟢 LOW RISK<br/>
-                    <small style="color:#6b7280;">Flagged: 0 issue(s)</small>
-                </div>
-                <div class="metric-card">
-                    <strong>Fact Check Verification:</strong> 🟢 VERIFIED<br/>
-                    <small style="color:#6b7280;">Sources stored in fact_check_sources.json</small>
-                </div>
+                <table>
+                    <thead>
+                        <tr style="background:#f1f5f9; text-align:left;">
+                            <th style="padding:6px 10px;">Check Name</th>
+                            <th style="padding:6px 10px;">Status</th>
+                            <th style="padding:6px 10px;">Details / Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Resolution & Format QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">1080x1920 (9:16 vertical) resolution verified.</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Audio & Subtitles Sync QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Caption sync verified (Last caption end: 52.54s, Audio duration: 53.40s, Drift: 0.86s <= 1.5s).</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Visual Segment Alignment QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Multi-image visual segment alignment verified (Frame pixel diff at 6.7s vs 25.7s: 92.65 >= 5.0).</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Natural Script Quality QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Script passed rule-based checks (125 words, natural phrasing).</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Retention QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">All retention elements passed.</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Post-Generation Fact Audit QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">All script factual claims match verified API data and script is free of N/A placeholders.</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">YouTube Policy Risk QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Risk level: 🟢 LOW RISK (0 issues)</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Copyright & Asset Rights QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Pipeline continues. 3 asset(s) have LICENSE_UNKNOWN status and are flagged for human review.</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Content Originality QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Originality confirmed (Highest text overlap with past Shorts: 21%).</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Structural Variety QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Structural variety confirmed across last 7 videos (Opening: SCENARIO, Outro: SIMPLE_SIGNOFF).</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Video Title Variety & Signal QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">Video title '3 Hidden Gem Anime Nobody's Talking About 💎 #Shorts' passed concept signal and non-duplicate wording checks.</td>
+            </tr>
+            
+            <tr>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Anime Title Cooldown QA</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">PASS ✅</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #4b5563;">All 3 featured anime titles are clear of the 30-day cooldown window.</td>
+            </tr>
+            
+                    </tbody>
+                </table>
             </div>
+
+            <h3>⚙️ Channel Safety Settings</h3>
+            <ul style="font-size: 13px; color: #374151;">
+                <li><strong>Made for Kids:</strong> No (<code>selfDeclaredMadeForKids = False</code> explicitly set on upload)</li>
+                <li><strong>Altered / Synthetic Content Disclosure:</strong> Exempt (Official anime artwork + AI voiceover recommendations)</li>
+                <li><strong>Comment Moderation:</strong> Channel Level (Configured in YouTube Studio under Settings &gt; Community &gt; Defaults)</li>
+                <li><strong>Upload Privacy Status:</strong> PRIVATE</li>
+            </ul>
+
+            <h3>🚫 Excluded Anime Titles Audit Log (30-Day Cooldown)</h3>
+            <ul style="font-size: 12px; color: #4b5563; max-height: 140px; overflow-y: auto; background: #f9fafb; padding: 10px 20px; border-radius: 6px; border: 1px solid #e5e7eb;">
+                <li><em>No anime titles excluded in this run.</em></li>
+            </ul>
 
             <h3>🆓 Free-Tier Safeguards & Usage Summary</h3>
             <ul style="font-size: 13px; color: #374151;">
                 <li><strong>LLM API Calls Used:</strong> 0 calls (Warning Threshold: 15)</li>
                 <li><strong>YouTube Data API Quota Usage:</strong> ~1600 / 10,000 daily free units</li>
                 <li><strong>TTS Service (Edge-TTS):</strong> Free Tier Active & Healthy</li>
-                <li><strong>Repository Visibility:</strong> Public (Unlimited Free GitHub Actions Minutes)</li>
                 <li><strong>Stage Retry Summary:</strong> script_qa: 0, originality_qa: 0</li>
             </ul>
 
-            <p><a href="https://studio.youtube.com/video/DRY_RUN_ID/edit" class="btn" target="_blank">🔗 Review Private Video on YouTube Studio</a></p>
+            <p><a href="https://studio.youtube.com/video/NhhnwOALj9U/edit" class="btn" target="_blank">🔗 Review Private Video on YouTube Studio</a></p>
 
             <h3 style="margin-top: 25px;">⚖️ Copyright & Asset Rights Status</h3>
+            
+        <div style="background:#fffbeb; border-left:4px solid #f59e0b; padding:12px; margin:16px 0; border-radius:4px;">
+            <strong style="color:#92400e;">⚠️ HUMAN REVIEW REQUIRED — Asset Rights</strong>
+            <p style="margin:4px 0 0 0; color:#78350f; font-size:13px;">
+                3 asset(s) have <strong>LICENSE_UNKNOWN</strong> status.
+                Commercial use rights have not been confirmed. Review these assets before
+                making the private video public:<br/>
+                <strong>cover_1_BLEACH__Thousand-Year_Blood_War_-_The_Calamity.jpg, cover_2_Grand_Blue_Dreaming_Season_3.jpg, cover_3_You_and_I_Are_Polar_Opposites_Season_2.jpg</strong>
+            </p>
+        </div>
+        
             <table>
                 <thead>
                     <tr style="background:#f3f4f6; text-align:left;">
                         <th style="padding:6px 10px;">Asset</th>
                         <th style="padding:6px 10px;">Type</th>
-                        <th style="padding:6px 10px;">Rights Clearance</th>
+                        <th style="padding:6px 10px;">Source</th>
+                        <th style="padding:6px 10px;">License Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     
         <tr>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">cover_1_Link_Click_Season_3.png</td>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Image</td>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">Official Promotional Artwork (Fair Use Editorial)</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">cover_1_BLEACH__Thousand-Year_Blood_War_-_The_Calamity.jpg</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Official Promotional Artwork</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">AniList</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #d97706; font-weight: bold;">LICENSE_UNKNOWN ⚠️ Needs Human Review</td>
         </tr>
         
         <tr>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">cover_2_Saga_of_Tanya_the_Evil_Season_2.png</td>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Image</td>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">Official Promotional Artwork (Fair Use Editorial)</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">cover_2_Grand_Blue_Dreaming_Season_3.jpg</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Official Promotional Artwork</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">AniList</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #d97706; font-weight: bold;">LICENSE_UNKNOWN ⚠️ Needs Human Review</td>
         </tr>
         
         <tr>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">cover_3_The_Elusive_Samurai_Season_2.jpg</td>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Image</td>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">Official Promotional Artwork (Fair Use Editorial)</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">cover_3_You_and_I_Are_Polar_Opposites_Season_2.jpg</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Official Promotional Artwork</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">AniList</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #d97706; font-weight: bold;">LICENSE_UNKNOWN ⚠️ Needs Human Review</td>
         </tr>
         
         <tr>
             <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">bg_music.mp3</td>
             <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Audio (Background Music)</td>
-            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">Royalty-Free Public Domain / Fair Use</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb;">Local</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #059669; font-weight: bold;">LICENSE_VERIFIED ✅ Royalty-Free</td>
         </tr>
         
                 </tbody>
@@ -103,34 +200,35 @@
             <ul>
                 
         <li style="margin-bottom: 12px;">
-            <strong>#1: Link Click Season 3</strong> [Underrated Hidden Gem]<br/>
-            <em>Rating:</em> 8.3/10 | <em>Genres:</em> Drama, Mystery, Supernatural, Thriller<br/>
-            <em>Qualification Reasoning:</em> Qualifies for Hidden Gems (Score: 8.3/10, not mainstream).<br/>
+            <strong>#1: BLEACH: Thousand-Year Blood War - The Calamity</strong> [Underrated Hidden Gem]<br/>
+            <em>Rating:</em> 8.9/10 | <em>Genres:</em> Action, Adventure, Supernatural<br/>
+            <em>Qualification Reasoning:</em> Qualifies for Hidden Gems (Score: 8.9/10, not mainstream).<br/>
             <em>Fact Check:</em> <span style="color:#059669;">Verified (Source: AniList)</span>
         </li>
         
         <li style="margin-bottom: 12px;">
-            <strong>#2: Saga of Tanya the Evil Season 2</strong> [Underrated Hidden Gem]<br/>
-            <em>Rating:</em> 8.1/10 | <em>Genres:</em> Action, Fantasy<br/>
-            <em>Qualification Reasoning:</em> Qualifies for Hidden Gems (Score: 8.1/10, not mainstream).<br/>
+            <strong>#2: Grand Blue Dreaming Season 3</strong> [Underrated Hidden Gem]<br/>
+            <em>Rating:</em> 8.2/10 | <em>Genres:</em> Comedy, Slice of Life, Sports<br/>
+            <em>Qualification Reasoning:</em> Qualifies for Hidden Gems (Score: 8.2/10, not mainstream).<br/>
             <em>Fact Check:</em> <span style="color:#059669;">Verified (Source: AniList)</span>
         </li>
         
         <li style="margin-bottom: 12px;">
-            <strong>#3: The Elusive Samurai Season 2</strong> [Underrated Hidden Gem]<br/>
-            <em>Rating:</em> 7.6/10 | <em>Genres:</em> Action, Adventure<br/>
-            <em>Qualification Reasoning:</em> Qualifies for Hidden Gems (Score: 7.6/10, not mainstream).<br/>
+            <strong>#3: You and I Are Polar Opposites Season 2</strong> [Underrated Hidden Gem]<br/>
+            <em>Rating:</em> 8.2/10 | <em>Genres:</em> Comedy, Drama, Romance, Slice of Life<br/>
+            <em>Qualification Reasoning:</em> Qualifies for Hidden Gems (Score: 8.2/10, not mainstream).<br/>
             <em>Fact Check:</em> <span style="color:#059669;">Verified (Source: AniList)</span>
         </li>
         
             </ul>
 
-            <h3 style="margin-top: 25px;">📜 Spoken Narration Script (134 words)</h3>
-            <div class="script-box">Looking for peak anime content? Here are 3 incredible shows featured in today's Underrated Trio spotlight. Also featured in today's spotlight is The Elusive Samurai Season 2, an outstanding Action, Adventure pick rated 7.6/10 that stays with you long after the final episode. Number two: Saga of Tanya the Evil Season 2. Rated 8.1/10, this phenomenal Action, Fantasy series crafted by NUT delivers unforgettable character moments and intense plot twists you can't skip. Number one on our list is Link Click Season 3. Rated a staggering 8.3/10, this acclaimed Underrated Hidden Gem produced by top animation teams  delivers incredible Drama, Mystery storytelling that will blow you away. Which of these incredible anime will you start watching first? Drop your thoughts in the comments below, hit that like button, and subscribe for daily anime recommendations!</div>
+            <h3 style="margin-top: 25px;">📌 Video Title: 3 Hidden Gem Anime Nobody's Talking About 💎 #Shorts</h3>
+            <h3>📜 Spoken Narration Script (125 words)</h3>
+            <div class="script-box">Picture this: it's Friday night and you need an anime that hooks you instantly. Here are 3 top picks. Starting strong with, animated by Lapin Track in 2026, we have You and I Are Polar Opposites Season 2. Rated 8.2/10, this Underrated Hidden Gem delivers unforgettable Comedy, Drama moments. Moving over to, Grand Blue Dreaming Season 3 follows an intense journey that hooks you instantly. Holding a 8.2/10 rating, Zero-G crafted this into a peak Comedy, Slice of Life series. Finally, holding a stellar 8.9/10 score, is BLEACH: Thousand-Year Blood War - The Calamity. It's a sensational Action, Adventure pick that stays with you long after the credits roll. Happy watching! Subscribe for daily top-tier anime picks and leave your favorite show in the comments.</div>
 
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin-top: 30px;" />
             <p style="font-size: 12px; color: #6b7280; text-align: center;">
-                Generated automatically by YouTube Anime Shorts Automation Pipeline (Free-Tier Architecture)
+                Generated automatically by YouTube Anime Shorts Automation Pipeline
             </p>
         </div>
     </body>

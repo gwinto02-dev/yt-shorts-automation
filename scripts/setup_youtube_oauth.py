@@ -19,7 +19,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from google_auth_oauthlib.flow import InstalledAppFlow
 import config
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube.readonly",
+]
 
 def main():
     client_secrets_file = config.BASE_DIR / "client_secret.json"

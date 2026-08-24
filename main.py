@@ -42,7 +42,7 @@ def run_phase_1():
     logger.info(f"Phase 1 complete! Selected concept '{concept_key}' with {len(candidates)} titles.")
     return data_payload
 
-def run_phase_2(candidates=None, concept_key="top_recommendations", concept_info=None):
+def run_phase_2(candidates=None, concept_key="top_recommendations", concept_info=None, feedback_notes=None):
     """Phase 2: Script Writing & Natural / Retention QA"""
     logger.info(">>> STARTING PHASE 2: Script Writing & Natural/Retention QA")
     if not candidates:
@@ -56,12 +56,13 @@ def run_phase_2(candidates=None, concept_key="top_recommendations", concept_info
             concept_info = data.get("concept_info", {})
             
     from src.script_generator import generate_recommendation_script
-    script_data = generate_recommendation_script(candidates, concept_key, concept_info)
+    script_data = generate_recommendation_script(candidates, concept_key, concept_info, feedback_notes=feedback_notes)
     script_file = config.OUTPUT_DIR / "script.txt"
     with open(script_file, "w", encoding="utf-8") as f:
         f.write(script_data["full_text"])
     logger.info(f"Phase 2 complete! Script written to {script_file}")
     return script_data
+
 
 def run_phase_3(candidates=None):
     """Phase 3: Visuals Sourcing & Rights Metadata"""
@@ -119,7 +120,7 @@ def run_phase_5(image_paths=None, audio_path=None, subtitles_path=None, concept_
     logger.info(f"Phase 5 complete! Final video output: {output_video}")
     return output_video
 
-def run_phase_6(video_path=None, candidates=None, script_data=None):
+def run_phase_6(video_path=None, candidates=None, script_data=None, custom_title=None):
     """Phase 6: YouTube Upload with pre-upload validation and safe error reporting."""
     logger.info(">>> STARTING PHASE 6: YouTube Upload (Private Guardrail)")
     if not video_path:
@@ -133,11 +134,14 @@ def run_phase_6(video_path=None, candidates=None, script_data=None):
         else:
             candidates = []
 
-    from src.youtube_uploader import upload_short_to_youtube
-    upload_res = upload_short_to_youtube(video_path=video_path, candidates=candidates, privacy_status="private")
+    if not custom_title and isinstance(script_data, dict):
+        custom_title = script_data.get("video_title")
 
-    if upload_res.get("success"):
-        logger.info(f"Phase 6 complete! Video uploaded: {upload_res.get('youtube_url')}")
+    from src.youtube_uploader import upload_short_to_youtube
+    upload_res = upload_short_to_youtube(video_path=video_path, candidates=candidates, privacy_status="private", custom_title=custom_title)
+
+    if upload_res.get("success") or upload_res.get("status") == "dry_run_success":
+        logger.info(f"Phase 6 complete! Upload status: {upload_res.get('youtube_url') or 'Dry-run success'}")
     else:
         logger.warning(
             f"Phase 6: Upload not completed. "
@@ -158,7 +162,9 @@ def run_full_pipeline():
     reset_llm_calls()
     retry_counts = {}
 
-    # Step 1: Concept & Candidate Selection (5-day cooldown)
+    from src.history_manager import record_anime_titles_usage, record_video_title_usage
+
+    # Step 1: Concept & Candidate Selection (5-day concept cooldown & 30-day title cooldown)
     p1_data = run_phase_1()
     candidates = p1_data["candidates"]
     concept_key = p1_data["concept_key"]
@@ -171,17 +177,15 @@ def run_full_pipeline():
     # Step 3 & 4 & 5: Script Generation + Natural & Retention QA (Bounded Retries)
     script_data = run_phase_2(candidates, concept_key, concept_info)
     retry_counts["script_qa"] = script_data.get("retries", 0)
+    video_title = script_data.get("video_title", "Top Anime Short")
 
     # Step 6: Policy QA
-    from src.qa_checker import check_youtube_policy_compliance, check_asset_rights, run_final_video_qa
-    from src.youtube_uploader import generate_video_metadata
-    metadata = generate_video_metadata(candidates)
-    policy_res = check_youtube_policy_compliance(script_data["full_text"], metadata["title"], candidates)
+    from src.qa_checker import check_youtube_policy_compliance, check_asset_rights, run_supervisor_qa_gate
+    policy_res = check_youtube_policy_compliance(script_data["full_text"], video_title, candidates)
 
     # Step 7: Visuals Sourcing & Rights Check
     image_paths = run_phase_3(candidates)
     rights_res = check_asset_rights(image_paths, candidates=candidates)
-
 
     # Step 8: Voice (TTS) & Subtitles
     audio_path, subtitles_path, segment_timestamps = run_phase_4(script_data, candidates=candidates)
@@ -189,58 +193,73 @@ def run_full_pipeline():
     # Step 9: Video Assembly with Visual Variety & Segment Alignment
     video_path = run_phase_5(image_paths, audio_path, subtitles_path, concept_key, candidates, segment_timestamps=segment_timestamps)
 
-    # Step 10: Originality Check against Past Shorts History (Bounded Retries)
+    # Step 10: Content Originality QA & Structural Variety QA against Past Shorts History (Bounded Retries)
+    from src.history_manager import check_structural_variety_against_history
     first_sentence = script_data["full_text"].split(".")[0] if "." in script_data["full_text"] else script_data["full_text"][:50]
     orig_retries = 0
-    originality_res = check_originality_against_history(script_data["full_text"], first_sentence, metadata["title"])
+    
+    originality_res = check_originality_against_history(script_data["full_text"], first_sentence, video_title)
+    structural_variety_res = check_structural_variety_against_history(script_data["full_text"])
 
-    while not originality_res["pass"] and orig_retries < config.MAX_STAGE_RETRIES:
+    while (not originality_res["pass"] or not structural_variety_res["pass"]) and orig_retries < config.MAX_STAGE_RETRIES:
         orig_retries += 1
-        logger.warning(f"[Originality QA Retry {orig_retries}/{config.MAX_STAGE_RETRIES}] Script too similar to history. Regenerating script...")
-        script_data = run_phase_2(candidates, concept_key, concept_info)
+        fail_reason = originality_res.get("reason") if not originality_res["pass"] else structural_variety_res.get("reason")
+        logger.warning(f"[Script Variety QA Retry {orig_retries}/{config.MAX_STAGE_RETRIES}] {fail_reason}. Regenerating script with distinct structural style...")
+        
+        feedback_notes = f"REWRITE REQUIRED: {fail_reason}. Change the opening hook style, per-title phrasing structure, and closing outro style."
+        script_data = run_phase_2(candidates, concept_key, concept_info, feedback_notes=feedback_notes)
+        video_title = script_data.get("video_title", video_title)
+        
         audio_path, subtitles_path, segment_timestamps = run_phase_4(script_data, candidates=candidates)
         video_path = run_phase_5(image_paths, audio_path, subtitles_path, concept_key, candidates, segment_timestamps=segment_timestamps)
-        originality_res = check_originality_against_history(script_data["full_text"], first_sentence, metadata["title"])
+        
+        originality_res = check_originality_against_history(script_data["full_text"], first_sentence, video_title)
+        structural_variety_res = check_structural_variety_against_history(script_data["full_text"])
 
     retry_counts["originality_qa"] = orig_retries
 
-    # Step 11: Final Video QA Pre-Upload Check
-    final_qa_res = run_final_video_qa(
+    # Step 11: Consolidated Supervisor QA Gate Pre-Upload Check
+    final_qa_res = run_supervisor_qa_gate(
         video_path=video_path,
         image_paths=image_paths,
         audio_path=audio_path,
         srt_path=subtitles_path,
+        candidates=candidates,
+        concept_key=concept_key,
+        video_title=video_title,
         policy_res=policy_res,
         rights_res=rights_res,
         script_qa_res=script_data.get("script_qa_res", {"pass": True}),
+        retention_qa_res=script_data.get("retention_qa_res", {"pass": True}),
         originality_res=originality_res,
+        structural_variety_res=structural_variety_res,
         fact_sources=fact_check_res.get("sources"),
         script_text=script_data.get("full_text", ""),
         segment_timestamps=segment_timestamps
     )
 
 
-
-    # Step 12: Upload to YouTube PRIVATE ONLY if Final QA Passes
+    # Step 12: Upload to YouTube PRIVATE ONLY if Supervisor QA Passes
     upload_res = None
     if final_qa_res["pass"]:
-        upload_res = run_phase_6(video_path, candidates, script_data)
-        if upload_res.get("success"):
+        upload_res = run_phase_6(video_path, candidates, script_data, custom_title=video_title)
+        if upload_res.get("success") or upload_res.get("status") == "dry_run_success":
             record_short_history(
                 concept_type=concept_key,
-                title=metadata["title"],
+                title=video_title,
                 hook=first_sentence,
                 script=script_data["full_text"],
                 video_id=upload_res.get("video_id")
             )
+            record_anime_titles_usage(candidates, concept_type=concept_key)
+            record_video_title_usage(video_title, concept_type=concept_key)
         else:
             logger.warning(
                 f"Upload did not succeed — history not recorded. "
                 f"Reason: {upload_res.get('message', 'unknown')}"
             )
     else:
-        logger.error("❌ FINAL QA FAILED! YouTube upload BLOCKED to prevent uploading partial/defective video.")
-
+        logger.error("❌ SUPERVISOR QA GATE FAILED! YouTube upload BLOCKED to prevent uploading broken/non-compliant content.")
 
     # Step 13: Daily Review Summary Email Report
     from src.notifier import send_daily_summary_email

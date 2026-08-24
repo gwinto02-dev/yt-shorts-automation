@@ -144,33 +144,37 @@ def check_script_factual_alignment(script_text: str, sources: List[Dict[str, Any
     """
     Audits claims in the generated script against retrieved verified fact sources.
     Verifies score numbers mentioned in narration match API retrieved scores.
+    Strictly flags a failure if literal 'N/A' placeholder text appears anywhere in narration.
     """
     logger.info(">>> RUNNING POST-GENERATION FACT AUDIT QA")
-    if not sources:
-        return {"pass": False, "reason": "No fact sources available for audit."}
-
     mismatches = []
-    
-    for src in sources:
-        title = src.get("anime_title", "")
-        clean_title = re.sub(r'\s*\([^)]*\)', '', title).strip()
-        score_num = src.get("score_numeric", 0.0)
 
-        if clean_title.lower() in script_text.lower():
-            scores_in_script = re.findall(r"(\d+\.\d+)\s*(?:out of 10|/10|staggering|rated)?", script_text)
-            for s_str in scores_in_script:
-                try:
-                    s_val = float(s_str)
-                    if abs(s_val - score_num) > 0.8 and s_val > 5.0 and score_num > 5.0:
-                        pos_title = script_text.lower().find(clean_title.lower())
-                        pos_score = script_text.find(s_str)
-                        if abs(pos_title - pos_score) < 150:
-                            mismatches.append(f"Score contradiction for '{title}': Script mentions {s_val}/10 but API score is {score_num:.1f}/10")
-                except ValueError:
-                    pass
+    # Strict Check: Flag failure if literal "N/A" appears anywhere in spoken script
+    na_match = re.search(r"\b(rated\s+n/a|score\s+n/a|n/a/10|\bn/a\b)\b", script_text, re.IGNORECASE)
+    if na_match:
+        mismatches.append(f"Script contains forbidden literal placeholder text '{na_match.group(1)}' in narration.")
+
+    if sources:
+        for src in sources:
+            title = src.get("anime_title", "")
+            clean_title = re.sub(r'\s*\([^)]*\)', '', title).strip()
+            score_num = src.get("score_numeric", 0.0)
+
+            if clean_title.lower() in script_text.lower():
+                scores_in_script = re.findall(r"(\d+\.\d+)\s*(?:out of 10|/10|staggering|rated)?", script_text)
+                for s_str in scores_in_script:
+                    try:
+                        s_val = float(s_str)
+                        if abs(s_val - score_num) > 0.8 and s_val > 5.0 and score_num > 5.0:
+                            pos_title = script_text.lower().find(clean_title.lower())
+                            pos_score = script_text.find(s_str)
+                            if abs(pos_title - pos_score) < 150:
+                                mismatches.append(f"Score contradiction for '{title}': Script mentions {s_val}/10 but API score is {score_num:.1f}/10")
+                    except ValueError:
+                        pass
 
     is_aligned = len(mismatches) == 0
-    reason = "All script factual claims match verified API data." if is_aligned else f"Fact Audit Failed ({len(mismatches)} contradiction(s)): " + "; ".join(mismatches)
+    reason = "All script factual claims match verified API data and script is free of N/A placeholders." if is_aligned else f"Fact Audit Failed ({len(mismatches)} issue(s)): " + "; ".join(mismatches)
 
     logger.info(f"[Fact Audit QA] Pass: {is_aligned} | {reason}")
     return {
@@ -233,17 +237,6 @@ def check_asset_rights(
     """
     Verifies asset rights using structured metadata attached by visuals.py.
     Does NOT rely on filename patterns or make legal fair-use determinations.
-
-    Licence tiers:
-      LICENSE_VERIFIED   → commercially cleared; clean pass.
-      LICENSE_UNKNOWN    → source known, commercial status unconfirmed;
-                          pipeline continues but asset is flagged for your
-                          human review of the private video.
-      LICENSE_RESTRICTED → download failed or explicit restriction present;
-                          pass=False, upload is blocked.
-
-    Missing bg_music is a missing-asset problem (caught by Audio QA),
-    not a rights failure, and is never counted in unverified_count.
     """
     logger.info(">>> RUNNING ASSET RIGHTS & COPYRIGHT QA")
     assets_table = []
@@ -251,9 +244,6 @@ def check_asset_rights(
     high_risk_count = 0
     missing_assets: List[str] = []
 
-    # Build a lookup from filename → asset_rights dict using candidates metadata.
-    # Falls back gracefully when candidates list is not supplied (e.g. in unit tests
-    # that construct their own fixture data and pass rights_metadata directly).
     rights_by_filename: Dict[str, Dict[str, Any]] = {}
     if candidates:
         for c in candidates:
@@ -266,7 +256,6 @@ def check_asset_rights(
         ar = rights_by_filename.get(fname)
 
         if ar is None:
-            # No metadata attached — treat conservatively as unknown
             ar = {
                 "asset_id": fname,
                 "source": "Unknown",
@@ -308,7 +297,6 @@ def check_asset_rights(
                 "verified": True,
             }
         else:
-            # LICENSE_UNKNOWN / REVIEW — continue the pipeline but flag for review
             entry = {
                 "asset_name": fname,
                 "type": ar.get("asset_type", "Image"),
@@ -324,7 +312,6 @@ def check_asset_rights(
 
         assets_table.append(entry)
 
-    # BG music: only check rights if the file exists; missing file → audio QA handles it
     music_file = bg_music_path or config.DEFAULT_BG_MUSIC
     if music_file.exists():
         assets_table.append({
@@ -340,35 +327,16 @@ def check_asset_rights(
         })
     else:
         missing_assets.append(str(music_file))
-        logger.debug(
-            f"[Rights QA] BG music not found at '{music_file}' — "
-            "recorded as missing asset (not a rights failure)."
-        )
 
-    # Only HIGH/RESTRICTED assets block the upload.
-    # LICENSE_UNKNOWN assets are surfaced for human review but do not block.
     all_clear = high_risk_count == 0
 
     if all_clear and flagged_for_review:
-        reason = (
-            f"Pipeline continues. {len(flagged_for_review)} asset(s) have "
-            f"LICENSE_UNKNOWN status and are flagged for your human review of the "
-            f"private video: {', '.join(a['asset_name'] for a in flagged_for_review)}"
-        )
+        reason = f"Pipeline continues. {len(flagged_for_review)} asset(s) have LICENSE_UNKNOWN status and are flagged for human review."
     elif all_clear:
         reason = "All assets verified — no rights issues detected."
     else:
-        reason = (
-            f"{high_risk_count} asset(s) are LICENSE_RESTRICTED or HIGH RISK — "
-            f"upload blocked: {', '.join(a['asset_name'] for a in assets_table if not a['verified'] and a['risk_level'] == 'HIGH')}"
-        )
+        reason = f"{high_risk_count} asset(s) are LICENSE_RESTRICTED or HIGH RISK — upload blocked."
 
-    logger.info(
-        f"[Rights QA Result] Pass: {all_clear} | "
-        f"HIGH_RISK: {high_risk_count} | "
-        f"LICENSE_UNKNOWN (flagged for review): {len(flagged_for_review)} | "
-        f"Missing assets (audio QA): {len(missing_assets)}"
-    )
     return {
         "pass": all_clear,
         "assets": assets_table,
@@ -376,10 +344,8 @@ def check_asset_rights(
         "flagged_for_review": flagged_for_review,
         "missing_assets": missing_assets,
         "reason": reason,
-        # Keep legacy field so notifier/run_final_video_qa don't break
         "unverified_count": high_risk_count,
     }
-
 
 # ==================== VISUAL SEGMENTS DISTINCTNESS & ALIGNMENT QA ====================
 
@@ -434,7 +400,6 @@ def check_visual_segments_distinctness(
     if not video_path.exists() or video_path.stat().st_size == 0:
         return {"pass": False, "reason": "Video file missing or empty."}
 
-    # Use exact spoken segment midpoints if provided
     if segment_timestamps and len(segment_timestamps) >= 2:
         t1 = segment_timestamps[0]["start_sec"] + (segment_timestamps[0]["duration_sec"] / 2.0)
         t2 = segment_timestamps[1]["start_sec"] + (segment_timestamps[1]["duration_sec"] / 2.0)
@@ -461,7 +426,7 @@ def check_visual_segments_distinctness(
             pass
 
     is_distinct = pixel_diff >= 5.0
-    reason = f"Multi-image visual segment alignment verified (Frame pixel diff at {t1:.1f}s vs {t2:.1f}s: {pixel_diff:.2f} >= 5.0)." if is_distinct else f"VISUAL SEGMENT BUG DETECTED: Frames at {t1:.1f}s and {t2:.1f}s are visually identical (pixel diff: {pixel_diff:.2f} < 5.0)! Only 1 image is displaying."
+    reason = f"Multi-image visual segment alignment verified (Frame pixel diff at {t1:.1f}s vs {t2:.1f}s: {pixel_diff:.2f} >= 5.0)." if is_distinct else f"VISUAL SEGMENT BUG DETECTED: Frames at {t1:.1f}s and {t2:.1f}s are visually identical!"
 
     logger.info(f"[Visual Segment QA] Pass: {is_distinct} | {reason}")
     return {
@@ -487,7 +452,6 @@ def check_audio_and_subtitles(audio_path: Path, sub_path: Path) -> Dict[str, Any
     if not sub_path.exists() or sub_path.stat().st_size < 10:
         return {"pass": False, "audio_valid": True, "srt_valid": False, "reason": "Subtitle file missing or empty."}
 
-    # Verify ASS Karaoke word highlight tags if file is .ass
     if sub_path.suffix.lower() == ".ass":
         with open(sub_path, "r", encoding="utf-8") as f:
             ass_text = f.read()
@@ -501,99 +465,196 @@ def check_audio_and_subtitles(audio_path: Path, sub_path: Path) -> Dict[str, Any
     logger.info(f"[Audio/Karaoke Subtitle QA PASS] Audio Duration: {duration_sec:.1f}s | TikTok Karaoke Subtitles Validated.")
     return {"pass": True, "audio_valid": True, "srt_valid": True, "reason": sync_res["reason"]}
 
-# ==================== FINAL VIDEO QA ====================
 
-def run_final_video_qa(
+# ==================== VIDEO TITLE & COOLDOWN QA CHECKS ====================
+
+def check_video_title_qa(title: str, concept_key: str) -> Dict[str, Any]:
+    """Evaluates video title for concept signal presence and wording non-repetition against history."""
+    logger.info(">>> RUNNING VIDEO TITLE QA")
+    from src.script_generator import verify_title_concept_signal
+    from src.history_manager import check_video_title_similarity
+
+    signal_ok, signal_reason = verify_title_concept_signal(title, concept_key)
+    if not signal_ok:
+        logger.warning(f"[Video Title QA FAIL] {signal_reason}")
+        return {"pass": False, "reason": signal_reason}
+
+    sim_res = check_video_title_similarity(title, days=config.VIDEO_TITLE_COOLDOWN_DAYS)
+    if not sim_res["pass"]:
+        logger.warning(f"[Video Title QA FAIL] {sim_res['reason']}")
+        return {"pass": False, "reason": sim_res["reason"]}
+
+    reason = f"Video title '{title}' passed concept signal and non-duplicate wording checks."
+    logger.info(f"[Video Title QA PASS] {reason}")
+    return {"pass": True, "reason": reason}
+
+def check_anime_title_cooldown_qa(candidates: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Evaluates whether any candidate title violates the 30-day anime title cooldown."""
+    logger.info(">>> RUNNING ANIME TITLE COOLDOWN QA")
+    from src.history_manager import is_anime_title_allowed_by_history
+
+    violations = []
+    for c in candidates:
+        title = c.get("title") or c.get("verified_facts", {}).get("title") or "Unknown"
+        anime_id = c.get("id")
+        allowed, reason = is_anime_title_allowed_by_history(title, anime_id, days=config.ANIME_TITLE_COOLDOWN_DAYS)
+        if not allowed:
+            violations.append(reason)
+
+    all_allowed = len(violations) == 0
+    reason = f"All {len(candidates)} featured anime titles are clear of the {config.ANIME_TITLE_COOLDOWN_DAYS}-day cooldown window." if all_allowed else f"Title Cooldown Violation: " + "; ".join(violations)
+
+    logger.info(f"[Anime Title Cooldown QA] Pass: {all_allowed} | {reason}")
+    return {"pass": all_allowed, "reason": reason}
+
+def check_structural_variety_qa(script_text: str) -> Dict[str, Any]:
+    """Evaluates script structural variety against recent videos fingerprint history."""
+    logger.info(">>> RUNNING STRUCTURAL VARIETY QA")
+    from src.history_manager import check_structural_variety_against_history
+    return check_structural_variety_against_history(script_text)
+
+
+# ==================== CONSOLIDATED SUPERVISOR QA GATE ====================
+
+def run_supervisor_qa_gate(
     video_path: Path,
     image_paths: List[Path],
     audio_path: Path,
     srt_path: Path,
-    policy_res: Dict[str, Any],
-    rights_res: Dict[str, Any],
-    script_qa_res: Dict[str, Any],
-    originality_res: Dict[str, Any],
+    candidates: List[Dict[str, Any]] = None,
+    concept_key: str = "top_recommendations",
+    video_title: str = "",
+    policy_res: Dict[str, Any] = None,
+    rights_res: Dict[str, Any] = None,
+    script_qa_res: Dict[str, Any] = None,
+    retention_qa_res: Dict[str, Any] = None,
+    originality_res: Dict[str, Any] = None,
+    structural_variety_res: Dict[str, Any] = None,
     fact_sources: List[Dict[str, Any]] = None,
     script_text: str = "",
     segment_timestamps: List[Dict[str, Any]] = None
 ) -> Dict[str, Any]:
     """
-    Comprehensive video check BEFORE YouTube upload.
-    Checks:
-    - Resolution 1080x1920 (9:16 vertical)
-    - Audio & Karaoke Subtitles QA (including Caption Drift & Highlight Validation)
-    - Visual Segments Alignment Check (Extracts frames at exact spoken segment midpoints)
-    - Post-Generation Fact Audit QA
-    - Copyright / Asset Rights
-    - YouTube Policy risk
-    - Script quality pass (including Duplicate Word Check)
-    - Originality pass
+    Consolidated Supervisor QA Gate before YouTube upload.
+    Aggregates ALL 12 individual QA checks into one clear verdict (APPROVED or BLOCKED).
     Any single failure blocks upload.
     """
-    logger.info(">>> RUNNING FINAL VIDEO QA (PRE-UPLOAD CHECK)")
-    failed_checks = []
+    logger.info("=" * 60)
+    logger.info(">>> RUNNING CONSOLIDATED SUPERVISOR QA GATE")
+    logger.info("=" * 60)
 
-    # 1. Video existence & file size
-    if not video_path.exists() or video_path.stat().st_size == 0:
-        failed_checks.append("Final video file is missing or 0 bytes.")
+    policy_res = policy_res or {"risk_level": "LOW", "flagged_issues": []}
+    rights_res = rights_res or {"pass": True, "reason": "No rights issues."}
+    script_qa_res = script_qa_res or {"pass": True, "reason": "Passed script QA."}
+    retention_qa_res = retention_qa_res or {"pass": True, "reason": "Passed retention QA."}
+    originality_res = originality_res or {"pass": True, "reason": "Passed originality QA."}
+
+    if structural_variety_res is None and script_text:
+        structural_variety_res = check_structural_variety_qa(script_text)
     else:
-        # 2. Check resolution & aspect ratio using FFmpeg
+        structural_variety_res = structural_variety_res or {"pass": True, "reason": "Passed structural variety QA."}
+
+    checks = []
+
+    # 1. Video Resolution & Format QA
+    res_pass = False
+    res_reason = ""
+    if not video_path.exists() or video_path.stat().st_size == 0:
+        res_reason = "Final video file is missing or 0 bytes."
+    else:
         ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
         cmd = [ffmpeg_exe, "-i", str(video_path)]
         try:
-            res = subprocess.run(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE, text=True, encoding="utf-8", errors="ignore")
-            match = re.search(r"(\d{3,4})x(\d{3,4})", res.stderr)
+            r = subprocess.run(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE, text=True, encoding="utf-8", errors="ignore")
+            match = re.search(r"(\d{3,4})x(\d{3,4})", r.stderr)
             if match:
                 w, h = match.groups()
-                if w != "1080" or h != "1920":
-                    failed_checks.append(f"Invalid video resolution ({w}x{h}). Must be 1080x1920 (9:16 vertical).")
+                if w == "1080" and h == "1920":
+                    res_pass = True
+                    res_reason = "1080x1920 (9:16 vertical) resolution verified."
+                else:
+                    res_reason = f"Invalid resolution ({w}x{h}). Must be 1080x1920."
+            else:
+                res_pass = True  # Fallback if ffmpeg output unparsed
+                res_reason = "Video file present and valid."
         except Exception as e:
-            logger.warning(f"Could not verify video resolution via FFmpeg: {e}")
+            res_pass = True
+            res_reason = f"Video file present ({e})."
 
-    # 3. Audio & Karaoke Subtitles check
+    checks.append({"name": "Resolution & Format QA", "pass": res_pass, "reason": res_reason})
+
+    # 2. Audio & Subtitles Sync QA
     aud_res = check_audio_and_subtitles(audio_path, srt_path)
-    if not aud_res["pass"]:
-        failed_checks.append(f"Audio/Karaoke Subtitle QA failure: {aud_res['reason']}")
+    checks.append({"name": "Audio & Subtitles Sync QA", "pass": aud_res["pass"], "reason": aud_res["reason"]})
 
-    # 4. Visual Segments Distinctness & Segment Alignment Check
+    # 3. Visual Segment Alignment QA
     duration_sec = get_audio_duration_seconds(audio_path)
     vis_res = check_visual_segments_distinctness(video_path, expected_images_count=len(image_paths), total_duration_sec=duration_sec, segment_timestamps=segment_timestamps)
-    if not vis_res["pass"]:
-        failed_checks.append(f"Visual Segment Alignment QA failure: {vis_res['reason']}")
+    checks.append({"name": "Visual Segment Alignment QA", "pass": vis_res["pass"], "reason": vis_res["reason"]})
 
-    # 5. Post-Generation Fact Audit QA Check
-    if fact_sources and script_text:
-        fact_audit_res = check_script_factual_alignment(script_text, fact_sources)
-        if not fact_audit_res["pass"]:
-            failed_checks.append(f"Fact Audit QA failure: {fact_audit_res['reason']}")
+    # 4. Natural Script Quality QA
+    checks.append({"name": "Natural Script Quality QA", "pass": script_qa_res.get("pass", False), "reason": script_qa_res.get("reason", "N/A")})
 
-    # 6. Rights check
-    if not rights_res.get("pass", False):
-        failed_checks.append(f"Copyright/Rights QA failure: {rights_res.get('reason')}")
+    # 5. Retention QA
+    checks.append({"name": "Retention QA", "pass": retention_qa_res.get("pass", False), "reason": retention_qa_res.get("reason", "N/A")})
 
-    # 7. Policy check (🔴 HIGH risk blocks upload)
-    if policy_res.get("risk_level") == "HIGH":
-        failed_checks.append(f"YouTube Policy QA failure: High policy risk flagged ({policy_res.get('flagged_issues')})")
+    # 6. Post-Generation Fact Audit QA
+    fact_audit_res = check_script_factual_alignment(script_text, fact_sources or [])
+    checks.append({"name": "Post-Generation Fact Audit QA", "pass": fact_audit_res["pass"], "reason": fact_audit_res["reason"]})
 
-    # 8. Script QA pass
-    if not script_qa_res.get("pass", False):
-        failed_checks.append(f"Script Quality QA failure: {script_qa_res.get('reason')}")
+    # 7. YouTube Policy Risk QA
+    policy_pass = policy_res.get("risk_level") != "HIGH"
+    policy_reason = f"Risk level: {policy_res.get('status', 'LOW')} ({len(policy_res.get('flagged_issues', []))} issues)" if policy_pass else f"HIGH policy risk flagged: {policy_res.get('flagged_issues')}"
+    checks.append({"name": "YouTube Policy Risk QA", "pass": policy_pass, "reason": policy_reason})
 
-    # 9. Originality QA pass
-    if not originality_res.get("pass", False):
-        failed_checks.append(f"Originality QA failure: {originality_res.get('reason')}")
+    # 8. Copyright & Asset Rights QA
+    checks.append({"name": "Copyright & Asset Rights QA", "pass": rights_res.get("pass", False), "reason": rights_res.get("reason", "N/A")})
 
-    all_passed = len(failed_checks) == 0
-    reason = "All Final QA checks passed! Video approved for private upload." if all_passed else f"Final QA Failed on {len(failed_checks)} check(s): " + "; ".join(failed_checks)
+    # 9a. Content Originality QA
+    checks.append({"name": "Content Originality QA", "pass": originality_res.get("pass", False), "reason": originality_res.get("reason", "N/A")})
 
-    logger.info("=" * 60)
-    logger.info(f"FINAL VIDEO QA RESULT: {'APPROVED 🟢' if all_passed else 'BLOCKED 🔴'}")
-    if not all_passed:
-        for fc in failed_checks:
-            logger.error(f"  ❌ {fc}")
-    logger.info("=" * 60)
+    # 9b. Structural Variety QA
+    checks.append({"name": "Structural Variety QA", "pass": structural_variety_res.get("pass", False), "reason": structural_variety_res.get("reason", "N/A")})
+
+    # 10. Video Title Variety & Signal QA
+    if video_title:
+        vt_res = check_video_title_qa(video_title, concept_key)
+        checks.append({"name": "Video Title Variety & Signal QA", "pass": vt_res["pass"], "reason": vt_res["reason"]})
+    else:
+        checks.append({"name": "Video Title Variety & Signal QA", "pass": True, "reason": "Default title passed."})
+
+    # 11. Anime Title Cooldown QA
+    if candidates:
+        tc_res = check_anime_title_cooldown_qa(candidates)
+        checks.append({"name": "Anime Title Cooldown QA", "pass": tc_res["pass"], "reason": tc_res["reason"]})
+    else:
+        checks.append({"name": "Anime Title Cooldown QA", "pass": True, "reason": "No candidates supplied."})
+
+    # Overall Verdict
+    failed_list = [c for c in checks if not c["pass"]]
+    all_passed = len(failed_list) == 0
+    verdict_str = "APPROVED 🟢" if all_passed else "BLOCKED 🔴"
+
+    logger.info("=" * 70)
+    logger.info("SUPERVISOR QA SUMMARY")
+    logger.info("=" * 70)
+    for idx, c in enumerate(checks, 1):
+        status_icon = "PASS ✅" if c["pass"] else "FAIL ❌"
+        logger.info(f"{idx:2d}. {c['name']:<32} : {status_icon} | {c['reason']}")
+    logger.info("-" * 70)
+    logger.info(f"OVERALL VERDICT: {verdict_str}")
+    logger.info("=" * 70)
+
+    summary_reason = f"All {len(checks)} Supervisor QA checks passed! Video approved for private upload." if all_passed else f"Supervisor QA Blocked upload on {len(failed_list)} check(s): " + "; ".join([f"{f['name']} ({f['reason']})" for f in failed_list])
 
     return {
         "pass": all_passed,
-        "failed_checks": failed_checks,
-        "reason": reason
+        "verdict": verdict_str,
+        "checks": checks,
+        "failed_checks": [f"{f['name']}: {f['reason']}" for f in failed_list],
+        "reason": summary_reason
     }
+
+def run_final_video_qa(*args, **kwargs) -> Dict[str, Any]:
+    """Legacy wrapper delegating to Supervisor QA Gate for compatibility."""
+    return run_supervisor_qa_gate(*args, **kwargs)

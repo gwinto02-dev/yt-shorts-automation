@@ -110,23 +110,29 @@ def get_youtube_client() -> Optional[object]:
 # Video metadata
 # ---------------------------------------------------------------------------
 
-def generate_video_metadata(candidates: List[Dict[str, Any]]) -> Dict[str, Any]:
+def generate_video_metadata(candidates: List[Dict[str, Any]], custom_title: str = None) -> Dict[str, Any]:
+
     """Generate title, description, and tags for YouTube Short."""
     if candidates:
         top_title = candidates[0]["title"]
     else:
         top_title = "Anime Recommendation"
 
-    today_str = datetime.now().strftime("%b %d, %Y")
-    title = f"Top {len(candidates)} Anime You Need To Watch Today! 🍿 ({today_str}) #Shorts"
-    if len(title) > 100:
-        title = "Top Anime You Need To Watch Today! 🍿 #Shorts"
+    if custom_title:
+        title = custom_title
+    else:
+        today_str = datetime.now().strftime("%b %d, %Y")
+        title = f"Top {len(candidates)} Anime You Need To Watch Today! 🍿 ({today_str}) #Shorts"
+        if len(title) > 100:
+            title = "Top Anime You Need To Watch Today! 🍿 #Shorts"
 
     description = "Looking for your next anime binge? Here are today's top recommendations:\n\n"
     for idx, c in enumerate(candidates, 1):
-        score = c.get("average_score", "N/A")
+        raw_score = c.get("average_score") or c.get("verified_facts", {}).get("score_numeric", 0.0)
+        verified_score = c.get("verified_facts", {}).get("verified_score", "")
+        score_str = f"{raw_score:.1f}/10" if (isinstance(raw_score, (int, float)) and raw_score > 0.0 and verified_score != "N/A") else "Upcoming Pick"
         cat = c.get("selection_category", "Must-Watch")
-        description += f"{idx}. {c['title']} - [{cat}] (Rating: {score}/10)\n"
+        description += f"{idx}. {c['title']} - [{cat}] ({score_str})\n"
 
     description += (
         "\n\nSubscribe for daily anime recommendations and hidden gems!\n\n"
@@ -180,18 +186,6 @@ def validate_youtube_channel(youtube) -> Dict[str, Any]:
     """
     Call the YouTube Channels API (mine=True) to confirm the authenticated
     account has an active, upload-eligible channel.
-
-    Returns a dict:
-      {
-        "valid": bool,
-        "channel_id": str | None,
-        "channel_title": str | None,
-        "channel_status": str | None,
-        "error_type": str | None,
-        "api_reason": str | None,
-        "http_status": int | None,
-        "message": str,
-      }
     """
     logger.info("→ YouTube account/channel validation...")
     try:
@@ -392,19 +386,11 @@ def upload_short_to_youtube(
     video_path: Path,
     candidates: List[Dict[str, Any]],
     privacy_status: str = "private",
+    custom_title: str = None
 ) -> Dict[str, Any]:
     """
-    Phase 6: YouTube Upload with pre-upload validation and structured error reporting.
-
-    Safety guarantees:
-    - Privacy status is enforced as private/scheduled before anything else.
-    - Public uploads are categorically rejected.
-    - Credentials are never logged.
-    - Failed auth/channel validation prevents upload attempt.
-    - Permanent API failures are not retried.
-    - A failed upload never returns success=True.
-    - A failed auth never reports a YouTube URL.
-    - The generated video is always preserved (not deleted on failure).
+    Phase 6: YouTube Upload with pre-upload validation and safe error reporting.
+    Explicitly sets selfDeclaredMadeForKids=False on every upload.
     """
     logger.info("=" * 60)
     logger.info("PHASE 6: YouTube Upload")
@@ -417,6 +403,16 @@ def upload_short_to_youtube(
 
     video_preserved = video_path.exists() and video_path.stat().st_size > 0
 
+    # Safety settings audit parameters
+    made_for_kids_setting = False
+    synthetic_media_disclosure = "Exempt (Official anime artwork + AI voiceover recommendations)"
+    comment_moderation_setting = "Channel Level (YouTube Studio)"
+
+    logger.info(f"→ Channel Safety Settings:")
+    logger.info(f"  Made for Kids        : No (selfDeclaredMadeForKids = False) ✅")
+    logger.info(f"  Synthetic Disclosure : {synthetic_media_disclosure} ✅")
+    logger.info(f"  Comment Moderation   : {comment_moderation_setting}")
+
     # ---- Step 1: Credential check / dry-run shortcut --------------------
     logger.info("→ YouTube authentication validation...")
     youtube = get_youtube_client()
@@ -427,13 +423,16 @@ def upload_short_to_youtube(
             "(YOUTUBE_REFRESH_TOKEN / token.json missing). "
             "Running in dry-run mode — no upload attempted."
         )
-        metadata = generate_video_metadata(candidates)
+        metadata = generate_video_metadata(candidates, custom_title=custom_title)
         return {
             "success": False,
             "authenticated": False,
             "channel_valid": False,
             "upload_attempted": False,
             "privacy_status": valid_privacy,
+            "made_for_kids": made_for_kids_setting,
+            "synthetic_content_status": synthetic_media_disclosure,
+            "comment_moderation": comment_moderation_setting,
             "error_type": "no_credentials",
             "api_reason": None,
             "http_status": None,
@@ -458,6 +457,9 @@ def upload_short_to_youtube(
             "channel_valid": False,
             "upload_attempted": False,
             "privacy_status": valid_privacy,
+            "made_for_kids": made_for_kids_setting,
+            "synthetic_content_status": synthetic_media_disclosure,
+            "comment_moderation": comment_moderation_setting,
             "error_type": "video_file_missing",
             "api_reason": None,
             "http_status": None,
@@ -486,6 +488,9 @@ def upload_short_to_youtube(
             "channel_valid": False,
             "upload_attempted": False,
             "privacy_status": valid_privacy,
+            "made_for_kids": made_for_kids_setting,
+            "synthetic_content_status": synthetic_media_disclosure,
+            "comment_moderation": comment_moderation_setting,
             "error_type": channel_res.get("error_type", "channel_validation_failed"),
             "api_reason": reason,
             "http_status": channel_res.get("http_status"),
@@ -496,7 +501,7 @@ def upload_short_to_youtube(
     logger.info(f"  Account/channel validation: PASS ✅ ({channel_res['channel_title']})")
 
     # ---- Step 3: Build request body -------------------------------------
-    metadata = generate_video_metadata(candidates)
+    metadata = generate_video_metadata(candidates, custom_title=custom_title)
     body = {
         "snippet": {
             "title": metadata["title"],
@@ -506,19 +511,21 @@ def upload_short_to_youtube(
         },
         "status": {
             "privacyStatus": valid_privacy,
-            "selfDeclaredMadeForKids": False,
+            "selfDeclaredMadeForKids": made_for_kids_setting,
         },
     }
 
     # ---- Step 4: Upload -------------------------------------------------
-    logger.info(f"→ Upload attempt: {video_path.name} (privacy={valid_privacy})...")
+    logger.info(f"→ Upload attempt: {video_path.name} (privacy={valid_privacy}, selfDeclaredMadeForKids={made_for_kids_setting})...")
     upload_res = _attempt_upload(youtube, video_path, body)
 
     if upload_res["success"]:
         logger.info("=" * 60)
         logger.info("PHASE 6 RESULT: UPLOAD SUCCESS ✅")
         logger.info(f"  Video ID      : {upload_res['video_id']}")
+        logger.info(f"  Title         : {metadata['title']}")
         logger.info(f"  Privacy       : {valid_privacy}")
+        logger.info(f"  Made for Kids : No (False)")
         logger.info(f"  YouTube URL   : {upload_res['youtube_url']}")
         logger.info(f"  Studio URL    : {upload_res['studio_url']}")
         logger.info("=" * 60)
@@ -528,6 +535,9 @@ def upload_short_to_youtube(
             "channel_valid": True,
             "upload_attempted": True,
             "privacy_status": valid_privacy,
+            "made_for_kids": made_for_kids_setting,
+            "synthetic_content_status": synthetic_media_disclosure,
+            "comment_moderation": comment_moderation_setting,
             "error_type": None,
             "api_reason": None,
             "http_status": None,
@@ -556,6 +566,9 @@ def upload_short_to_youtube(
             "channel_valid": True,
             "upload_attempted": True,
             "privacy_status": valid_privacy,
+            "made_for_kids": made_for_kids_setting,
+            "synthetic_content_status": synthetic_media_disclosure,
+            "comment_moderation": comment_moderation_setting,
             "error_type": upload_res.get("error_type"),
             "api_reason": upload_res.get("api_reason"),
             "http_status": upload_res.get("http_status"),
@@ -568,3 +581,4 @@ if __name__ == "__main__":
     vid = config.OUTPUT_DIR / "final_short.mp4"
     res = upload_short_to_youtube(vid, candidates=[])
     print("Upload Result:", json.dumps({k: v for k, v in res.items() if k not in ("studio_url",)}, indent=2))
+

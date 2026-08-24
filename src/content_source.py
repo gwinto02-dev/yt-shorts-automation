@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Tuple
 
 import requests
 import config
-from src.history_manager import is_concept_allowed_by_history, record_concept_usage
+from src.history_manager import is_concept_allowed_by_history, record_concept_usage, is_anime_title_allowed_by_history
 from src.popularity_filter import can_qualify_as_hidden_gem, is_mainstream_anime
 
 logger = logging.getLogger(__name__)
@@ -124,10 +124,10 @@ def fetch_local_trend_data() -> List[Dict[str, Any]]:
         
     return []
 
-def fetch_anilist_trending(count: int = 25) -> List[Dict[str, Any]]:
-    """Fetch trending anime list directly from AniList GraphQL API."""
-    logger.info("Fetching trending anime from AniList GraphQL API...")
-    variables = {"page": 1, "perPage": count}
+def fetch_anilist_trending(count: int = 50, page: int = 1) -> List[Dict[str, Any]]:
+    """Fetch trending anime list directly from AniList GraphQL API with expanded pool size."""
+    logger.info(f"Fetching trending anime from AniList GraphQL API (page={page}, count={count})...")
+    variables = {"page": page, "perPage": count}
     try:
         response = requests.post(
             config.ANILIST_GRAPHQL_URL,
@@ -160,10 +160,10 @@ def fetch_anilist_trending(count: int = 25) -> List[Dict[str, Any]]:
         logger.error(f"Error fetching from AniList API: {e}")
         return []
 
-def fetch_anilist_upcoming(count: int = 25) -> List[Dict[str, Any]]:
-    """Fetch upcoming unreleased anime list directly from AniList GraphQL API."""
-    logger.info("Fetching upcoming anime from AniList GraphQL API...")
-    variables = {"page": 1, "perPage": count}
+def fetch_anilist_upcoming(count: int = 50, page: int = 1) -> List[Dict[str, Any]]:
+    """Fetch upcoming unreleased anime list directly from AniList GraphQL API with expanded pool size."""
+    logger.info(f"Fetching upcoming anime from AniList GraphQL API (page={page}, count={count})...")
+    variables = {"page": page, "perPage": count}
     try:
         response = requests.post(
             config.ANILIST_GRAPHQL_URL,
@@ -197,9 +197,9 @@ def fetch_anilist_upcoming(count: int = 25) -> List[Dict[str, Any]]:
         logger.error(f"Error fetching upcoming anime from AniList API: {e}")
         return []
 
-def fetch_jikan_top(count: int = 25) -> List[Dict[str, Any]]:
+def fetch_jikan_top(count: int = 50) -> List[Dict[str, Any]]:
     """Fallback: Fetch top anime list from Jikan v4 REST API."""
-    logger.info("Fetching top anime from Jikan REST API...")
+    logger.info(f"Fetching top anime from Jikan REST API (count={count})...")
     url = f"{config.JIKAN_API_BASE_URL}/top/anime?limit={count}"
     try:
         response = requests.get(url, timeout=10)
@@ -250,28 +250,77 @@ def select_today_concept() -> Tuple[str, Dict[str, Any]]:
 def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) -> Tuple[List[Dict[str, Any]], str, Dict[str, Any]]:
     """
     Selects candidate titles tailored to today's Short concept type.
-    Enforces strict selection mode criteria (Genre-Diverse Trio, Underrated Trio, Upcoming Trio).
-    Raises ValueError if a mode's criteria cannot be satisfied.
+    Enforces 30-day anime title cooldown filtering and search pool expansion.
     """
     if not concept_key:
         concept_key, concept_info = select_today_concept()
     else:
         concept_info = CONCEPT_TYPES.get(concept_key, CONCEPT_TYPES["top_recommendations"])
 
-    # Fetch pool based on concept mode
+    # Fetch expanded pool based on concept mode (50-100 titles)
     if concept_key == "upcoming_spotlight":
-        candidates = fetch_anilist_upcoming(30)
+        candidates = fetch_anilist_upcoming(50)
     else:
         candidates = fetch_local_trend_data()
+        if not candidates or len(candidates) < 15:
+            anilist_pool = fetch_anilist_trending(50, page=1)
+            # Combine local and AniList
+            existing_ids = {c.get("id") for c in candidates}
+            for item in anilist_pool:
+                if item.get("id") not in existing_ids:
+                    candidates.append(item)
+                    existing_ids.add(item.get("id"))
         if not candidates:
-            candidates = fetch_anilist_trending(30)
-        if not candidates:
-            candidates = fetch_jikan_top(30)
+            candidates = fetch_jikan_top(50)
 
     if not candidates:
         raise RuntimeError("Failed to retrieve anime candidate data from API or local files!")
 
     valid_candidates = [c for c in candidates if c.get("title") and c.get("cover_image")]
+
+    # Apply 30-day Anime Title Cooldown Filter
+    uncooldowned_candidates = []
+    excluded_candidates = []
+
+    for c in valid_candidates:
+        allowed, reason = is_anime_title_allowed_by_history(c["title"], c.get("id"), days=config.ANIME_TITLE_COOLDOWN_DAYS)
+        if allowed:
+            uncooldowned_candidates.append(c)
+        else:
+            excluded_candidates.append({"title": c["title"], "id": c.get("id"), "reason": reason})
+
+    logger.info("=" * 60)
+    logger.info(f"[Title Cooldown Audit] {len(uncooldowned_candidates)} titles available, {len(excluded_candidates)} excluded by 30-day cooldown:")
+    for ex in excluded_candidates[:10]:  # Log first 10 excluded
+        logger.info(f"  - EXCLUDED: '{ex['title']}' -> Reason: {ex['reason']}")
+    logger.info("=" * 60)
+
+    # Search pool expansion if uncooldowned pool is too small
+    if len(uncooldowned_candidates) < num_candidates:
+        logger.warning(f"Uncooldowned pool low ({len(uncooldowned_candidates)} titles). Expanding AniList search pool (Page 2 & Jikan)...")
+        extra_candidates = []
+        if concept_key == "upcoming_spotlight":
+            extra_candidates = fetch_anilist_upcoming(50, page=2)
+        else:
+            extra_candidates = fetch_anilist_trending(50, page=2) + fetch_jikan_top(50)
+
+        seen_in_uncooldowned = {c["id"] for c in uncooldowned_candidates}
+        for c in extra_candidates:
+            if c.get("id") in seen_in_uncooldowned or not c.get("title") or not c.get("cover_image"):
+                continue
+            allowed, reason = is_anime_title_allowed_by_history(c["title"], c.get("id"), days=config.ANIME_TITLE_COOLDOWN_DAYS)
+            if allowed:
+                uncooldowned_candidates.append(c)
+                seen_in_uncooldowned.add(c["id"])
+            else:
+                excluded_candidates.append({"title": c["title"], "id": c.get("id"), "reason": reason})
+
+    # If still empty/insufficient, fall back to valid_candidates with warning as absolute last resort
+    if len(uncooldowned_candidates) < num_candidates:
+        logger.warning(f"LAST RESORT FALLBACK: Uncooldowned pool exhausted even after expansion. Repeating titles to satisfy selection count.")
+        selection_pool = valid_candidates
+    else:
+        selection_pool = uncooldowned_candidates
 
     selected: List[Dict[str, Any]] = []
     seen_ids = set()
@@ -279,7 +328,7 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
     # ==================== MODE 1: GENRE-DIVERSE TRIO ====================
     if concept_key == "genre_spotlight":
         used_genres = set()
-        sorted_candidates = sorted(valid_candidates, key=lambda x: x.get("average_score", 0), reverse=True)
+        sorted_candidates = sorted(selection_pool, key=lambda x: x.get("average_score", 0), reverse=True)
         
         for c in sorted_candidates:
             if len(selected) >= num_candidates:
@@ -293,6 +342,7 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
             if primary_genre not in used_genres:
                 c["selection_category"] = "Genre-Diverse Pick"
                 c["selection_reasoning"] = f"Primary Genre: '{primary_genre}' (Zero genre overlap with other picks in trio)."
+                c["excluded_in_run"] = excluded_candidates
                 selected.append(c)
                 seen_ids.add(c["id"])
                 used_genres.add(primary_genre)
@@ -304,7 +354,7 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
 
     # ==================== MODE 2: UNDERRATED TRIO ====================
     elif concept_key == "hidden_gems":
-        sorted_candidates = sorted(valid_candidates, key=lambda x: x.get("average_score", 0), reverse=True)
+        sorted_candidates = sorted(selection_pool, key=lambda x: x.get("average_score", 0), reverse=True)
         
         for c in sorted_candidates:
             if len(selected) >= num_candidates:
@@ -315,6 +365,7 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
             if qualifies:
                 c["selection_category"] = "Underrated Hidden Gem"
                 c["selection_reasoning"] = reasoning
+                c["excluded_in_run"] = excluded_candidates
                 selected.append(c)
                 seen_ids.add(c["id"])
             else:
@@ -327,7 +378,7 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
 
     # ==================== MODE 3: UPCOMING TRIO ====================
     elif concept_key == "upcoming_spotlight":
-        for c in valid_candidates:
+        for c in selection_pool:
             if len(selected) >= num_candidates:
                 break
             if c["id"] in seen_ids:
@@ -339,6 +390,7 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
             if is_upcoming:
                 c["selection_category"] = "Upcoming Hype Pick"
                 c["selection_reasoning"] = f"Upcoming Title (Release Status: '{status or 'NOT_YET_RELEASED'}', Year: {year})."
+                c["excluded_in_run"] = excluded_candidates
                 selected.append(c)
                 seen_ids.add(c["id"])
 
@@ -349,22 +401,24 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
 
     # ==================== OTHER CONCEPTS ====================
     elif concept_key == "anime_comparison":
-        sorted_candidates = sorted(valid_candidates, key=lambda x: x.get("average_score", 0), reverse=True)
+        sorted_candidates = sorted(selection_pool, key=lambda x: x.get("average_score", 0), reverse=True)
         for c in sorted_candidates[:num_candidates]:
             if c["id"] not in seen_ids:
                 c["selection_category"] = "Matchup Contender"
                 c["selection_reasoning"] = f"Top tier powerhouse contender (Score: {c.get('average_score', 'N/A')}/10)."
+                c["excluded_in_run"] = excluded_candidates
                 selected.append(c)
                 seen_ids.add(c["id"])
     else:
         # Default balanced mix: 1 top trending + 2 top rated
-        sorted_by_trending = sorted(valid_candidates, key=lambda x: x.get("trending_score", 0), reverse=True)
-        sorted_by_score = sorted(valid_candidates, key=lambda x: x.get("average_score", 0), reverse=True)
+        sorted_by_trending = sorted(selection_pool, key=lambda x: x.get("trending_score", 0), reverse=True)
+        sorted_by_score = sorted(selection_pool, key=lambda x: x.get("average_score", 0), reverse=True)
         
         for c in sorted_by_trending:
             if c["id"] not in seen_ids:
                 c["selection_category"] = "Rising Trend"
                 c["selection_reasoning"] = f"Top trending title with high current buzz index (Score: {c.get('average_score', 'N/A')}/10)."
+                c["excluded_in_run"] = excluded_candidates
                 selected.append(c)
                 seen_ids.add(c["id"])
                 break
@@ -375,8 +429,13 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
             if c["id"] not in seen_ids:
                 c["selection_category"] = "Must-Watch Masterpiece"
                 c["selection_reasoning"] = f"Peak story and rating ({c.get('average_score', 'N/A')}/10)."
+                c["excluded_in_run"] = excluded_candidates
                 selected.append(c)
                 seen_ids.add(c["id"])
+
+    # Attach excluded candidates list to the first candidate for global reference
+    if selected:
+        selected[0]["all_excluded_candidates"] = excluded_candidates
 
     logger.info("=" * 60)
     logger.info(f"SELECTED {len(selected)} ANIME CANDIDATES FOR MODE '{concept_info['name']}':")

@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Recent Title Five Days Ago",
+    "normalized_title": "recent title five days ago",
+    "anime_id": 9991,
+    "date": "2026-08-19T23:31:14.483514",
+    "date_readable": "2026-08-19"
+  },
+  {
+    "title": "Old Title Forty Days Ago",
+    "normalized_title": "old title forty days ago",
+    "anime_id": 9992,
+    "date": "2026-07-15T23:31:14.483514",
+    "date_readable": "2026-07-15"
+  }
+]

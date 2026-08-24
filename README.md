@@ -34,14 +34,12 @@ Research → Concept (5-Day Cooldown) → Fact Check → Script → Natural Scri
 ## Key Features & Safety Guardrails
 
 - **Strict YouTube Private Upload Guardrail**: Uploaded videos default strictly to **"Private"**. Any attempt to set visibility to `Public` programmatically is blocked by built-in safety assertions.
-- **Natural Script Generation**: Conversational tone free of generic AI tropes ("in a world where", "buckle up", "masterpiece").
-- **Content Variety (5-Day Cooldown Rule)**: Supports multiple concept types (`top_recommendations`, `hidden_gems`, `character_spotlight`, `anime_comparison`, `facts_trivia`, `genre_spotlight`). Enforces a 5-day history cooldown so concept types are not repeated too frequently.
-- **Originality Checker**: Stores past Shorts history (`data/shorts_history.json`) and flags near-duplicate scripts/hooks before rendering.
-- **YouTube Policy Checker**: Documented in `policy_rules.json` to check for repetitive content, reused content, misleading metadata, copyright risks, and AI content disclosure.
-- **Copyright & Rights Tracking**: Source and license clearance tracking for all images and audio assets.
-- **Visual Variety**: Alternating Ken Burns pan/zoom movements (zoom-in, zoom-out, pan-left, pan-right) without using raw anime video clips or pirated manga scans.
-- **Final Video QA**: Aggregated pre-upload check (1080x1920 vertical resolution, black/frozen frames, audio duration, subtitle sync, rights status, policy risk). Any single failure blocks YouTube upload.
-- **Bounded Error Recovery**: Maximum 2 retries per QA stage. If a check still fails after retries, execution stops cleanly and sends a diagnostic failure email without uploading broken content.
+- **Explicit Made For Kids Setting**: Uploads explicitly set `selfDeclaredMadeForKids = False` on every upload to prevent auto-classification issues.
+- **Natural Script Generation & Graceful Missing Score Handling**: Conversational tone free of generic AI tropes or spoken "N/A" placeholders. Unrated titles automatically use anticipation/hype framing ("highly anticipated", "one to watch").
+- **30-Day Specific Anime Title Cooldown**: Prevents featuring the same anime titles across videos within a 30-day window (`data/title_history.json`). Expands candidate search pools (50-100 titles) across AniList & Jikan.
+- **Dynamic Video Title Variety**: Video titles require explicit concept-type signal keywords (e.g. "underrated", "upcoming") and are checked against recent past titles to ensure wording variety (`data/video_title_history.json`).
+- **Consolidated Supervisor QA Gate**: Unified pre-upload gate aggregating all 11 QA checks into one clear verdict (`APPROVED` or `BLOCKED`).
+- **One-Time Manual Comment Moderation Setting**: Note that YouTube Data API v3 does not support per-video comment moderation toggles on upload. To enable comment moderation, configure it once in **YouTube Studio**: Go to **Settings > Community > Defaults** and set **Comments on your channel** to *"Hold potentially inappropriate comments for review"*.
 
 ---
 

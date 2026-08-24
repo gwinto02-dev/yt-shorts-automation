@@ -123,5 +123,75 @@
     "concept_type": "test_cooldown_concept_type",
     "date": "2026-08-22T05:54:10.711929",
     "date_readable": "2026-08-22 05:54:10"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T06:23:29.853986",
+    "date_readable": "2026-08-22 06:23:29"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-22T06:49:13.804469",
+    "date_readable": "2026-08-22 06:49:13"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T07:07:58.634798",
+    "date_readable": "2026-08-22 07:07:58"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T07:08:22.281680",
+    "date_readable": "2026-08-22 07:08:22"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T07:09:29.195387",
+    "date_readable": "2026-08-22 07:09:29"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-22T07:20:50.698224",
+    "date_readable": "2026-08-22 07:20:50"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-24T23:15:22.172857",
+    "date_readable": "2026-08-24 23:15:22"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-24T23:20:19.811833",
+    "date_readable": "2026-08-24 23:20:19"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-24T23:20:47.419746",
+    "date_readable": "2026-08-24 23:20:47"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-08-24T23:20:57.868414",
+    "date_readable": "2026-08-24 23:20:57"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-24T23:26:04.641994",
+    "date_readable": "2026-08-24 23:26:04"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-24T23:26:24.166807",
+    "date_readable": "2026-08-24 23:26:24"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-08-24T23:26:31.828300",
+    "date_readable": "2026-08-24 23:26:31"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-24T23:31:14.515286",
+    "date_readable": "2026-08-24 23:31:14"
   }
 ]
