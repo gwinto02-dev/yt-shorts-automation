@@ -193,5 +193,10 @@
     "concept_type": "test_cooldown_concept_type",
     "date": "2026-08-24T23:31:14.515286",
     "date_readable": "2026-08-24 23:31:14"
+  },
+  {
+    "concept_type": "test_cooldown_concept_type",
+    "date": "2026-08-25T00:17:27.327721",
+    "date_readable": "2026-08-25 00:17:27"
   }
 ]

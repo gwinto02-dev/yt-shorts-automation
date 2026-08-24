@@ -120,7 +120,7 @@ def run_phase_5(image_paths=None, audio_path=None, subtitles_path=None, concept_
     logger.info(f"Phase 5 complete! Final video output: {output_video}")
     return output_video
 
-def run_phase_6(video_path=None, candidates=None, script_data=None, custom_title=None):
+def run_phase_6(video_path=None, candidates=None, script_data=None, custom_title=None, final_qa_verdict=None):
     """Phase 6: YouTube Upload with pre-upload validation and safe error reporting."""
     logger.info(">>> STARTING PHASE 6: YouTube Upload (Private Guardrail)")
     if not video_path:
@@ -138,7 +138,13 @@ def run_phase_6(video_path=None, candidates=None, script_data=None, custom_title
         custom_title = script_data.get("video_title")
 
     from src.youtube_uploader import upload_short_to_youtube
-    upload_res = upload_short_to_youtube(video_path=video_path, candidates=candidates, privacy_status="private", custom_title=custom_title)
+    upload_res = upload_short_to_youtube(
+        video_path=video_path,
+        candidates=candidates,
+        privacy_status="private",
+        custom_title=custom_title,
+        final_qa_verdict=final_qa_verdict
+    )
 
     if upload_res.get("success") or upload_res.get("status") == "dry_run_success":
         logger.info(f"Phase 6 complete! Upload status: {upload_res.get('youtube_url') or 'Dry-run success'}")
@@ -218,6 +224,16 @@ def run_full_pipeline():
 
     retry_counts["originality_qa"] = orig_retries
 
+    # Log explicitly if retries were exhausted with QA still failing
+    if not originality_res["pass"] or not structural_variety_res["pass"]:
+        failing_check = "Originality" if not originality_res["pass"] else "Structural Variety"
+        failing_reason = originality_res.get("reason") if not originality_res["pass"] else structural_variety_res.get("reason")
+        logger.error(
+            f"[{failing_check} QA] Maximum retries ({config.MAX_STAGE_RETRIES}) exhausted — QA still FAILING. "
+            f"Reason: {failing_reason}. "
+            "Supervisor QA Gate will block upload."
+        )
+
     # Step 11: Consolidated Supervisor QA Gate Pre-Upload Check
     final_qa_res = run_supervisor_qa_gate(
         video_path=video_path,
@@ -242,7 +258,7 @@ def run_full_pipeline():
     # Step 12: Upload to YouTube PRIVATE ONLY if Supervisor QA Passes
     upload_res = None
     if final_qa_res["pass"]:
-        upload_res = run_phase_6(video_path, candidates, script_data, custom_title=video_title)
+        upload_res = run_phase_6(video_path, candidates, script_data, custom_title=video_title, final_qa_verdict=True)
         if upload_res.get("success") or upload_res.get("status") == "dry_run_success":
             record_short_history(
                 concept_type=concept_key,

@@ -352,7 +352,7 @@ class TestUploadShortToYoutube(unittest.TestCase):
         # videos().insert() must NOT have been called
         youtube.videos().insert.assert_not_called()
 
-    # ---- Video missing -------------------------------------------------
+    # ---- Missing video file -------------------------------------------------
 
     @patch("src.youtube_uploader.get_youtube_client")
     def test_missing_video_file_returns_structured_failure(self, mock_client):
@@ -365,6 +365,97 @@ class TestUploadShortToYoutube(unittest.TestCase):
         self.assertFalse(res["upload_attempted"])
         self.assertEqual(res["error_type"], "video_file_missing")
 
+    # ---- QA defensive invariant -------------------------------------------
+
+    def test_qa_blocked_verdict_refuses_upload_before_any_api_call(self):
+        """
+        REGRESSION (defensive gate): When upload_short_to_youtube() is called with
+        final_qa_verdict=False, the function must immediately return a BLOCKED result
+        without making any YouTube API calls.
+
+        This is the defensive second gate. Even if the first gate (main.py if-block)
+        is accidentally bypassed in future, the uploader itself refuses.
+        """
+        with patch("src.youtube_uploader.get_youtube_client") as mock_client:
+            res = upload_short_to_youtube(
+                self._video,
+                candidates=[],
+                privacy_status="private",
+                final_qa_verdict=False,  # Supervisor QA is BLOCKED
+            )
+
+        # Must refuse immediately — no credentials checked, no API called
+        mock_client.assert_not_called()
+        self.assertFalse(res["success"],
+            "Upload must fail when final_qa_verdict=False.")
+        self.assertFalse(res["upload_attempted"],
+            "Upload must NOT be attempted when QA verdict is BLOCKED.")
+        self.assertEqual(res["error_type"], "upload_blocked_by_qa_gate",
+            "Error type must identify the QA gate as the reason.")
+        self.assertEqual(res.get("upload_type"), "blocked_by_qa",
+            "upload_type must be 'blocked_by_qa' so the notifier can identify this state.")
+        self.assertNotIn("youtube_url", res,
+            "No YouTube URL must be present when upload is blocked by QA.")
+
+    def test_qa_pass_verdict_does_not_block_upload(self):
+        """
+        Sanity check: final_qa_verdict=True must NOT trigger the defensive refusal.
+        Upload proceeds normally (will fall through to dry-run since no credentials).
+        """
+        with patch("src.youtube_uploader.get_youtube_client", return_value=None):
+            res = upload_short_to_youtube(
+                self._video,
+                candidates=[],
+                privacy_status="private",
+                final_qa_verdict=True,  # QA passed
+            )
+
+        # Should reach dry-run (no credentials), not the defensive gate
+        self.assertNotEqual(res.get("error_type"), "upload_blocked_by_qa_gate",
+            "final_qa_verdict=True must NOT trigger the defensive QA refusal.")
+        self.assertEqual(res.get("error_type"), "no_credentials",
+            "With final_qa_verdict=True and no credentials, should reach dry-run.")
+        self.assertEqual(res.get("upload_type"), "dry_run",
+            "Dry-run response must carry upload_type='dry_run' for notifier disambiguation.")
+
+    def test_qa_none_verdict_does_not_block_upload(self):
+        """
+        Backward compatibility: final_qa_verdict=None (default / legacy callers)
+        must NOT trigger the defensive refusal — only explicit False blocks.
+        """
+        with patch("src.youtube_uploader.get_youtube_client", return_value=None):
+            res = upload_short_to_youtube(
+                self._video,
+                candidates=[],
+                privacy_status="private",
+                # final_qa_verdict not supplied → defaults to None
+            )
+
+        self.assertNotEqual(res.get("error_type"), "upload_blocked_by_qa_gate",
+            "final_qa_verdict=None must not trigger the defensive QA refusal.")
+
+    def test_dry_run_response_has_upload_type_field(self):
+        """
+        REGRESSION: Dry-run response must include upload_type='dry_run' so the
+        notifier can distinguish it from a real upload and not display 'PRIVATE'.
+        This was the root cause of the misleading 'uploaded' status in reports.
+        """
+        with patch("src.youtube_uploader.get_youtube_client", return_value=None):
+            res = upload_short_to_youtube(
+                self._video,
+                candidates=[],
+                privacy_status="private",
+            )
+
+        self.assertEqual(res.get("upload_type"), "dry_run",
+            "Dry-run response MUST have upload_type='dry_run' to prevent the "
+            "notifier from displaying it as a real 'PRIVATE' upload.")
+        self.assertFalse(res.get("success"),
+            "Dry-run must never report success=True.")
+        self.assertFalse(res.get("upload_attempted"),
+            "Dry-run must never report upload_attempted=True.")
+
 
 if __name__ == "__main__":
     unittest.main()
+

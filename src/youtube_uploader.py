@@ -386,12 +386,42 @@ def upload_short_to_youtube(
     video_path: Path,
     candidates: List[Dict[str, Any]],
     privacy_status: str = "private",
-    custom_title: str = None
+    custom_title: str = None,
+    final_qa_verdict: bool = None
 ) -> Dict[str, Any]:
     """
     Phase 6: YouTube Upload with pre-upload validation and safe error reporting.
     Explicitly sets selfDeclaredMadeForKids=False on every upload.
+
+    Args:
+        final_qa_verdict: The boolean pass/fail result from run_supervisor_qa_gate().
+            If explicitly False, the upload is refused immediately as a defensive
+            second gate — no API calls are made. Pass None to skip this check
+            (legacy / test callers that do not supply the verdict).
     """
+    # ---- Defensive QA invariant (must be first, before any side effects) ----
+    if final_qa_verdict is False:
+        logger.error(
+            "UPLOAD REFUSED: Supervisor QA verdict is BLOCKED. "
+            "upload_short_to_youtube() must never be called when final QA failed. "
+            "This is a defensive second gate — check the caller."
+        )
+        return {
+            "success": False,
+            "authenticated": False,
+            "channel_valid": False,
+            "upload_attempted": False,
+            "upload_type": "blocked_by_qa",
+            "privacy_status": privacy_status or "private",
+            "made_for_kids": False,
+            "synthetic_content_status": "N/A",
+            "comment_moderation": "N/A",
+            "error_type": "upload_blocked_by_qa_gate",
+            "api_reason": None,
+            "http_status": None,
+            "message": "Upload refused: Supervisor QA gate verdict is BLOCKED.",
+            "video_preserved": video_path.exists() and video_path.stat().st_size > 0,
+        }
     logger.info("=" * 60)
     logger.info("PHASE 6: YouTube Upload")
     logger.info("=" * 60)
@@ -429,6 +459,10 @@ def upload_short_to_youtube(
             "authenticated": False,
             "channel_valid": False,
             "upload_attempted": False,
+            # 'upload_type' lets the notifier distinguish dry-run from a real upload.
+            # IMPORTANT: 'privacy_status' is intentionally NOT set to 'private' here
+            # so the notifier cannot mistake this dry-run for a real uploaded video.
+            "upload_type": "dry_run",
             "privacy_status": valid_privacy,
             "made_for_kids": made_for_kids_setting,
             "synthetic_content_status": synthetic_media_disclosure,
@@ -436,7 +470,7 @@ def upload_short_to_youtube(
             "error_type": "no_credentials",
             "api_reason": None,
             "http_status": None,
-            "message": "No YouTube credentials available. Dry-run only.",
+            "message": "No YouTube credentials available. Dry-run only — video was NOT uploaded.",
             "video_preserved": video_preserved,
             # Legacy fields kept so notifier/history-manager don't break
             "status": "dry_run_success",

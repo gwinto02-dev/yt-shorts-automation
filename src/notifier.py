@@ -129,8 +129,24 @@ def build_summary_html(
 
     # Status badges
     final_qa_pass = final_qa_res.get("pass", False)
-    
-    upload_status_str = upload_res.get("privacy_status", "private").upper() if upload_res else "BLOCKED / NOT UPLOADED"
+
+    # Determine upload status label — must clearly distinguish:
+    #   1. QA blocked (upload_res is None)           → UPLOAD BLOCKED
+    #   2. Dry-run (no credentials, not uploaded)    → DRY RUN
+    #   3. Real upload success                       → PRIVATE (uploaded)
+    #   4. Real upload attempted but failed          → UPLOAD FAILED
+    if upload_res is None:
+        upload_status_str = "UPLOAD BLOCKED — QA FAILED"
+    elif upload_res.get("upload_type") == "dry_run":
+        upload_status_str = "DRY RUN — Not uploaded (no credentials)"
+    elif upload_res.get("upload_type") == "blocked_by_qa":
+        upload_status_str = "UPLOAD BLOCKED — QA FAILED (defensive gate)"
+    elif upload_res.get("success"):
+        privacy = upload_res.get("privacy_status", "private").upper()
+        upload_status_str = f"{privacy} — Uploaded to YouTube"
+    else:
+        upload_status_str = "UPLOAD FAILED — API ERROR"
+
     studio_url = upload_res.get("studio_url", "#") if upload_res else "#"
 
     # Free-tier warning banner
@@ -138,10 +154,28 @@ def build_summary_html(
     if llm_warning:
         warning_banner = f"""
         <div style="background-color: #fef2f2; border-left: 4px solid #ef4444; padding: 12px; margin-bottom: 20px; border-radius: 4px;">
-            <strong style="color: #991b1b;">⚠️ FREE-TIER RATE LIMIT WARNING:</strong>
+            <strong style="color: #991b1b;">&#9888;&#65039; FREE-TIER RATE LIMIT WARNING:</strong>
             <p style="margin: 4px 0 0 0; color: #7f1d1d; font-size: 13px;">
                 Total LLM API calls in this run reached <strong>{llm_calls}</strong> (exceeds 80% daily warning limit of {config.LLM_CALL_WARNING_THRESHOLD}).
             </p>
+        </div>
+        """
+
+    # Upload blocked alert banner (shown prominently when QA prevents upload)
+    upload_blocked_banner = ""
+    is_upload_blocked = upload_res is None or upload_res.get("upload_type") in ("blocked_by_qa", "dry_run")
+    if not final_qa_pass:
+        failed_checks = final_qa_res.get("failed_checks", [])
+        failed_list_html = "".join(f"<li style='margin: 4px 0;'>{fc}</li>" for fc in failed_checks)
+        upload_blocked_banner = f"""
+        <div style="background-color: #fef2f2; border-left: 5px solid #dc2626; padding: 16px; margin-bottom: 20px; border-radius: 6px;">
+            <strong style="color: #991b1b; font-size: 15px;">&#10060; UPLOAD BLOCKED — Supervisor QA FAILED</strong>
+            <p style="margin: 8px 0 4px 0; color: #7f1d1d; font-size: 13px;">
+                <strong>The video was NOT uploaded.</strong> The following QA check(s) failed:
+            </p>
+            <ul style="margin: 4px 0; padding-left: 20px; color: #7f1d1d; font-size: 13px;">
+                {failed_list_html if failed_list_html else '<li>See Supervisor QA Summary table below for details.</li>'}
+            </ul>
         </div>
         """
 
@@ -174,6 +208,7 @@ def build_summary_html(
             </div>
 
             {warning_banner}
+            {upload_blocked_banner}
 
             <h3>🛡️ Supervisor QA Summary</h3>
             <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 20px;">

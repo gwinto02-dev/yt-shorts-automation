@@ -176,5 +176,40 @@
       ]
     },
     "video_id": "N/A"
+  },
+  {
+    "date": "2026-08-25T00:17:28.236863",
+    "date_readable": "2026-08-25",
+    "concept_type": "top_recommendations",
+    "title": "Originality Test Title",
+    "hook": "Hook text",
+    "script": "This is a unique test script for checking duplicate detection in shorts history.",
+    "structural_fingerprint": {
+      "opening_style": "DIRECT_STATEMENT",
+      "opening_prefix": "this is a unique test",
+      "closing_style": "SIMPLE_SIGNOFF",
+      "closing_prefix": "duplicate detection in shorts history",
+      "transition_markers": []
+    },
+    "video_id": "N/A"
+  },
+  {
+    "date": "2026-08-25T00:17:28.328410",
+    "date_readable": "2026-08-25",
+    "concept_type": "top_recommendations",
+    "title": "Title Alpha Beta",
+    "hook": "Hook Alpha",
+    "script": "Looking for peak anime that will actually blow your mind? Here are 2 incredible shows in today's Top Recommendations spotlight. First off, animated by Studio B in 2023, we have Anime Beta. Standing as a highly anticipated Must-Watch, this delivers unforgettable Fantasy moments. Next up, Anime Alpha follows an intense journey that hooks you instantly. Recognized as one to watch, Studio A crafted this into a peak Action series. Which of these three are you adding to your watchlist first? Drop your thoughts below and hit subscribe!",
+    "structural_fingerprint": {
+      "opening_style": "QUESTION",
+      "opening_prefix": "looking for peak anime that",
+      "closing_style": "QUESTION_TO_VIEWER",
+      "closing_prefix": "thoughts below and hit subscribe",
+      "transition_markers": [
+        "first off",
+        "next up"
+      ]
+    },
+    "video_id": "N/A"
   }
 ]
