@@ -109,9 +109,12 @@ def generate_script_with_gemini(
     feedback_notes: str = None,
     target_opening_style: str = None,
     target_closing_style: str = None,
-    target_transition_style: str = None
+    target_transition_style: str = None,
+    avoid_phrases: List[str] = None,
+    recent_hooks: List[str] = None,
+    recent_outros: List[str] = None
 ) -> str:
-    """Generate natural script using Google Gemini API with explicit structural style directives."""
+    """Generate natural script using Google Gemini API with explicit structural style directives and anti-repetition constraints."""
     if not config.GEMINI_API_KEY:
         raise ValueError("GEMINI_API_KEY is not set in environment.")
 
@@ -132,6 +135,20 @@ def generate_script_with_gemini(
         cl_dir = CLOSING_STYLE_DIRECTIVES[cl_key]
         tr_dir = TRANSITION_STYLE_DIRECTIVES[tr_key]
 
+        anti_repetition_directives = ""
+        if avoid_phrases:
+            phrases_str = ", ".join([f"'{p}'" for p in avoid_phrases if p])
+            if phrases_str:
+                anti_repetition_directives += f"\n- CRITICAL PHRASE EXCLUSION: Do NOT use or paraphrase any of these exact conflicting phrases: {phrases_str}."
+        if recent_hooks:
+            hooks_str = "\n".join([f"  * \"{h}\"" for h in recent_hooks[:5] if h])
+            if hooks_str:
+                anti_repetition_directives += f"\n- PREVIOUS OPENING HOOKS USED RECENTLY (DO NOT REPEAT OR PARAPHRASE THESE):\n{hooks_str}\nWrite a distinctly different opening hook structure."
+        if recent_outros:
+            outros_str = "\n".join([f"  * \"{o}\"" for o in recent_outros[:5] if o])
+            if outros_str:
+                anti_repetition_directives += f"\n- PREVIOUS CLOSING OUTROS USED RECENTLY (DO NOT REPEAT OR PARAPHRASE THESE):\n{outros_str}\nWrite a distinctly different closing outro."
+
         structural_directives = (
             f"REQUIRED STRUCTURAL STYLE INSTRUCTIONS FOR THIS SCRIPT:\n"
             f"- {op_dir}\n"
@@ -140,7 +157,7 @@ def generate_script_with_gemini(
             f"- PER-TITLE DESCRIPTION VARIETY: Order of details MUST differ for each title. "
             f"Title 1: start with animation studio/visuals then plot premise. "
             f"Title 2: start with lead character/story hook then score/hype. "
-            f"Title 3: start with rating/hype then plot hook.\n"
+            f"Title 3: start with rating/hype then plot hook.{anti_repetition_directives}\n"
         )
 
         prompt_content = f"Concept: {concept_name} - {concept_info.get('tagline')}\n"
@@ -347,7 +364,13 @@ def generate_recommendation_script(
     candidates: List[Dict[str, Any]],
     concept_key: str = "top_recommendations",
     concept_info: Dict[str, Any] = None,
-    feedback_notes: str = None
+    feedback_notes: str = None,
+    target_opening_style: str = None,
+    target_closing_style: str = None,
+    target_transition_style: str = None,
+    avoid_phrases: List[str] = None,
+    recent_hooks: List[str] = None,
+    recent_outros: List[str] = None
 ) -> Dict[str, Any]:
     """
     Generates script and dynamic video title with automated QA retry loop.
@@ -368,11 +391,31 @@ def generate_recommendation_script(
         # Generate draft
         if config.GEMINI_API_KEY:
             try:
-                script_text = generate_script_with_gemini(candidates, concept_info, feedback_notes)
+                script_text = generate_script_with_gemini(
+                    candidates,
+                    concept_info,
+                    feedback_notes=feedback_notes,
+                    target_opening_style=target_opening_style,
+                    target_closing_style=target_closing_style,
+                    target_transition_style=target_transition_style,
+                    avoid_phrases=avoid_phrases,
+                    recent_hooks=recent_hooks,
+                    recent_outros=recent_outros
+                )
             except Exception:
-                script_text = generate_fallback_template_script(candidates, concept_info)
+                script_text = generate_fallback_template_script(
+                    candidates,
+                    concept_info,
+                    target_opening_style=target_opening_style,
+                    target_closing_style=target_closing_style
+                )
         else:
-            script_text = generate_fallback_template_script(candidates, concept_info)
+            script_text = generate_fallback_template_script(
+                candidates,
+                concept_info,
+                target_opening_style=target_opening_style,
+                target_closing_style=target_closing_style
+            )
 
         # Run QA checks
         script_qa_res = check_natural_script_quality(script_text)

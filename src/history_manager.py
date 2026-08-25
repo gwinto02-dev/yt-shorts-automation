@@ -165,6 +165,65 @@ def _calculate_jaccard_similarity(text1: str, text2: str) -> float:
     return len(intersection) / len(union)
 
 
+def get_recent_hooks_and_outros(days: int = 30, limit: int = 5) -> Dict[str, Any]:
+    """
+    Retrieve opening hooks, closing outros, and structural styles used in recent Shorts history.
+    Used to pass explicit anti-repetition guidance into script regeneration prompts.
+    """
+    history = _load_json_file(config.SHORTS_HISTORY_FILE)
+    cutoff = datetime.now() - timedelta(days=days)
+    recent_entries = []
+    for item in reversed(history):
+        d_str = item.get("date")
+        if d_str:
+            try:
+                dt = datetime.fromisoformat(d_str)
+                if dt >= cutoff:
+                    recent_entries.append(item)
+            except ValueError:
+                recent_entries.append(item)
+        else:
+            recent_entries.append(item)
+        if len(recent_entries) >= limit:
+            break
+
+    recent_hooks = []
+    recent_outros = []
+    opening_styles = []
+    closing_styles = []
+
+    for entry in recent_entries:
+        hook = entry.get("hook")
+        script = entry.get("script", "")
+        fp = entry.get("structural_fingerprint") or extract_structural_fingerprint(script)
+        
+        if hook:
+            recent_hooks.append(hook)
+        elif script:
+            first_sent = [s.strip() for s in re.split(r"[.!?]+", script) if s.strip()]
+            if first_sent:
+                recent_hooks.append(first_sent[0])
+                
+        if fp.get("closing_prefix"):
+            recent_outros.append(fp["closing_prefix"])
+        elif script:
+            last_sent = [s.strip() for s in re.split(r"[.!?]+", script) if s.strip()]
+            if last_sent:
+                recent_outros.append(last_sent[-1])
+                
+        if fp.get("opening_style"):
+            opening_styles.append(fp["opening_style"])
+        if fp.get("closing_style"):
+            closing_styles.append(fp["closing_style"])
+
+    return {
+        "hooks": recent_hooks,
+        "outros": recent_outros,
+        "opening_styles": opening_styles,
+        "closing_styles": closing_styles
+    }
+
+
 def check_structural_variety_against_history(script_text: str, days: int = 30, limit: int = 7) -> Dict[str, Any]:
     """
     Evaluates script structural variety against recent videos history (last limit entries).
@@ -176,7 +235,17 @@ def check_structural_variety_against_history(script_text: str, days: int = 30, l
 
     if not history:
         logger.info("[Structural Variety QA PASS] History is empty. Script passed.")
-        return {"pass": True, "reason": "No past history entries to compare against.", "fingerprint": new_fp}
+        return {
+            "pass": True,
+            "reason": "No past history entries to compare against.",
+            "fingerprint": new_fp,
+            "matched_issues": [],
+            "forbidden_phrases": [],
+            "forbidden_opening_styles": [],
+            "forbidden_closing_styles": [],
+            "recent_hooks": [],
+            "recent_outros": []
+        }
 
     # Inspect recent past entries
     cutoff = datetime.now() - timedelta(days=days)
@@ -196,6 +265,24 @@ def check_structural_variety_against_history(script_text: str, days: int = 30, l
             break
 
     matched_issues = []
+    forbidden_phrases = []
+    forbidden_opening_styles = []
+    forbidden_closing_styles = []
+    recent_hooks = []
+    recent_outros = []
+
+    for entry in recent_entries:
+        hook = entry.get("hook")
+        script = entry.get("script", "")
+        fp = entry.get("structural_fingerprint") or extract_structural_fingerprint(script)
+        if hook:
+            recent_hooks.append(hook)
+        if fp.get("closing_prefix"):
+            recent_outros.append(fp["closing_prefix"])
+        if fp.get("opening_style") and fp["opening_style"] not in forbidden_opening_styles:
+            forbidden_opening_styles.append(fp["opening_style"])
+        if fp.get("closing_style") and fp["closing_style"] not in forbidden_closing_styles:
+            forbidden_closing_styles.append(fp["closing_style"])
 
     # Check 1: Consecutive structural pattern sameness (opening style AND closing style match immediate previous)
     if recent_entries:
@@ -217,6 +304,7 @@ def check_structural_variety_against_history(script_text: str, days: int = 30, l
                 matched_issues.append(
                     f"Opening hook phrasing '{new_fp['opening_prefix']}' matches recent video #{idx} ('{prev.get('title')}')."
                 )
+                forbidden_phrases.append(new_fp["opening_prefix"])
 
         # Closing prefix sameness
         if new_fp["closing_prefix"] and prev_fp["closing_prefix"]:
@@ -224,6 +312,7 @@ def check_structural_variety_against_history(script_text: str, days: int = 30, l
                 matched_issues.append(
                     f"Closing outro phrasing '{new_fp['closing_prefix']}' matches recent video #{idx} ('{prev.get('title')}')."
                 )
+                forbidden_phrases.append(new_fp["closing_prefix"])
 
     is_pass = len(matched_issues) == 0
     reason = (
@@ -237,7 +326,12 @@ def check_structural_variety_against_history(script_text: str, days: int = 30, l
         "pass": is_pass,
         "reason": reason,
         "fingerprint": new_fp,
-        "matched_issues": matched_issues
+        "matched_issues": matched_issues,
+        "forbidden_phrases": forbidden_phrases,
+        "forbidden_opening_styles": forbidden_opening_styles,
+        "forbidden_closing_styles": forbidden_closing_styles,
+        "recent_hooks": recent_hooks,
+        "recent_outros": recent_outros
     }
 
 

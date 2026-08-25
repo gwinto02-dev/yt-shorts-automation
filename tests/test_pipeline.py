@@ -20,7 +20,30 @@ from src.qa_checker import (
 from src.tts import generate_tiktok_karaoke_ass, compute_title_segment_timestamps, validate_caption_sync
 from src.llm_tracker import reset_llm_calls, increment_llm_calls, get_llm_call_count, is_nearing_rate_limit
 
+from unittest.mock import patch, MagicMock
+
 class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
+
+    def setUp(self):
+        import tempfile
+        self.tmp_dir = tempfile.TemporaryDirectory()
+        tmp_path = Path(self.tmp_dir.name)
+        
+        self.patchers = [
+            patch.object(config, "SHORTS_HISTORY_FILE", tmp_path / "shorts_history.json"),
+            patch.object(config, "CONCEPT_HISTORY_FILE", tmp_path / "concept_history.json"),
+            patch.object(config, "TITLE_HISTORY_FILE", tmp_path / "title_history.json"),
+            patch.object(config, "VIDEO_TITLE_HISTORY_FILE", tmp_path / "video_title_history.json"),
+            patch.object(config, "OUTPUT_DIR", tmp_path / "output"),
+        ]
+        for p in self.patchers:
+            p.start()
+        (tmp_path / "output").mkdir(parents=True, exist_ok=True)
+
+    def tearDown(self):
+        for p in self.patchers:
+            p.stop()
+        self.tmp_dir.cleanup()
 
     def test_youtube_privacy_guardrail_blocks_public(self):
         """CRITICAL: Ensure setting privacy status to 'public' raises ValueError."""

@@ -42,7 +42,18 @@ def run_phase_1():
     logger.info(f"Phase 1 complete! Selected concept '{concept_key}' with {len(candidates)} titles.")
     return data_payload
 
-def run_phase_2(candidates=None, concept_key="top_recommendations", concept_info=None, feedback_notes=None):
+def run_phase_2(
+    candidates=None,
+    concept_key="top_recommendations",
+    concept_info=None,
+    feedback_notes=None,
+    target_opening_style=None,
+    target_closing_style=None,
+    target_transition_style=None,
+    avoid_phrases=None,
+    recent_hooks=None,
+    recent_outros=None
+):
     """Phase 2: Script Writing & Natural / Retention QA"""
     logger.info(">>> STARTING PHASE 2: Script Writing & Natural/Retention QA")
     if not candidates:
@@ -56,7 +67,18 @@ def run_phase_2(candidates=None, concept_key="top_recommendations", concept_info
             concept_info = data.get("concept_info", {})
             
     from src.script_generator import generate_recommendation_script
-    script_data = generate_recommendation_script(candidates, concept_key, concept_info, feedback_notes=feedback_notes)
+    script_data = generate_recommendation_script(
+        candidates,
+        concept_key,
+        concept_info,
+        feedback_notes=feedback_notes,
+        target_opening_style=target_opening_style,
+        target_closing_style=target_closing_style,
+        target_transition_style=target_transition_style,
+        avoid_phrases=avoid_phrases,
+        recent_hooks=recent_hooks,
+        recent_outros=recent_outros
+    )
     script_file = config.OUTPUT_DIR / "script.txt"
     with open(script_file, "w", encoding="utf-8") as f:
         f.write(script_data["full_text"])
@@ -200,21 +222,58 @@ def run_full_pipeline():
     video_path = run_phase_5(image_paths, audio_path, subtitles_path, concept_key, candidates, segment_timestamps=segment_timestamps)
 
     # Step 10: Content Originality QA & Structural Variety QA against Past Shorts History (Bounded Retries)
-    from src.history_manager import check_structural_variety_against_history
+    from src.history_manager import check_structural_variety_against_history, get_recent_hooks_and_outros
     first_sentence = script_data["full_text"].split(".")[0] if "." in script_data["full_text"] else script_data["full_text"][:50]
     orig_retries = 0
     
     originality_res = check_originality_against_history(script_data["full_text"], first_sentence, video_title)
     structural_variety_res = check_structural_variety_against_history(script_data["full_text"])
 
+    ALL_OPENINGS = ["QUESTION", "BOLD_CLAIM", "YOU_WONT_BELIEVE", "DIRECT_STATEMENT", "SCENARIO"]
+    ALL_CLOSINGS = ["QUESTION_TO_VIEWER", "DIRECT_RECOMMENDATION", "TEASER_TOMORROW", "SIMPLE_SIGNOFF"]
+
     while (not originality_res["pass"] or not structural_variety_res["pass"]) and orig_retries < config.MAX_STAGE_RETRIES:
         orig_retries += 1
         fail_reason = originality_res.get("reason") if not originality_res["pass"] else structural_variety_res.get("reason")
         logger.warning(f"[Script Variety QA Retry {orig_retries}/{config.MAX_STAGE_RETRIES}] {fail_reason}. Regenerating script with distinct structural style...")
         
-        feedback_notes = f"REWRITE REQUIRED: {fail_reason}. Change the opening hook style, per-title phrasing structure, and closing outro style."
-        script_data = run_phase_2(candidates, concept_key, concept_info, feedback_notes=feedback_notes)
+        recent_info = get_recent_hooks_and_outros(days=30, limit=5)
+        forbidden_phrases = list(structural_variety_res.get("forbidden_phrases", []))
+        
+        fp = structural_variety_res.get("fingerprint", {})
+        if fp.get("opening_prefix"):
+            forbidden_phrases.append(fp["opening_prefix"])
+        if fp.get("closing_prefix"):
+            forbidden_phrases.append(fp["closing_prefix"])
+
+        forbidden_ops = set(recent_info.get("opening_styles", []) + ([fp.get("opening_style")] if fp.get("opening_style") else []))
+        forbidden_cls = set(recent_info.get("closing_styles", []) + ([fp.get("closing_style")] if fp.get("closing_style") else []))
+
+        avail_ops = [s for s in ALL_OPENINGS if s not in forbidden_ops] or ALL_OPENINGS
+        avail_cls = [s for s in ALL_CLOSINGS if s not in forbidden_cls] or ALL_CLOSINGS
+
+        target_op = avail_ops[(orig_retries - 1) % len(avail_ops)]
+        target_cl = avail_cls[(orig_retries - 1) % len(avail_cls)]
+
+        feedback_notes = (
+            f"REWRITE REQUIRED: {fail_reason}. "
+            f"Do NOT use phrase(s): {', '.join(forbidden_phrases)}. "
+            f"Target Opening Style: {target_op}. Target Closing Style: {target_cl}."
+        )
+
+        script_data = run_phase_2(
+            candidates,
+            concept_key,
+            concept_info,
+            feedback_notes=feedback_notes,
+            target_opening_style=target_op,
+            target_closing_style=target_cl,
+            avoid_phrases=forbidden_phrases,
+            recent_hooks=recent_info.get("hooks", []),
+            recent_outros=recent_info.get("outros", [])
+        )
         video_title = script_data.get("video_title", video_title)
+        first_sentence = script_data["full_text"].split(".")[0] if "." in script_data["full_text"] else script_data["full_text"][:50]
         
         audio_path, subtitles_path, segment_timestamps = run_phase_4(script_data, candidates=candidates)
         video_path = run_phase_5(image_paths, audio_path, subtitles_path, concept_key, candidates, segment_timestamps=segment_timestamps)
