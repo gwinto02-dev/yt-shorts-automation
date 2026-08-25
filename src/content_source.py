@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Tuple
 
 import requests
 import config
-from src.history_manager import is_concept_allowed_by_history, record_concept_usage, is_anime_title_allowed_by_history
+from src.history_manager import is_concept_allowed_by_history, record_concept_usage, is_anime_title_allowed_by_history, record_anime_titles_usage
 from src.popularity_filter import can_qualify_as_hidden_gem, is_mainstream_anime
 
 logger = logging.getLogger(__name__)
@@ -442,6 +442,10 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
     for idx, item in enumerate(selected, 1):
         logger.info(f"  {idx}. [{item['selection_category']}] {item['title']} -> Reasoning: {item.get('selection_reasoning')}")
     logger.info("=" * 60)
+
+    # Immediately record selected anime titles to title_history.json for 30-day cooldown (Phase 1)
+    if selected:
+        record_anime_titles_usage(selected, concept_type=concept_key)
 
     return selected, concept_key, concept_info
 

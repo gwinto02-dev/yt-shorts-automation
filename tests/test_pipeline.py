@@ -795,6 +795,38 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
                 self.assertIn("BLOCKED", final_qa["verdict"],
                     f"Verdict string must contain 'BLOCKED' for scenario '{scenario_name}'.")
 
+    def test_blocked_run_records_title_cooldown_history(self):
+        """
+        REGRESSION: Confirm candidate anime titles are recorded in title_history.json
+        at Phase 1 selection time even when the run later gets BLOCKED by Supervisor QA.
+        Subsequent selection attempts must exclude those candidates.
+        """
+        from src.content_source import select_candidate_titles
+        from src.history_manager import is_anime_title_allowed_by_history, _load_json_file
+        from unittest.mock import patch
+
+        pool = [
+            {"id": 1001, "title": "Test Show Alpha", "cover_image": "img1.jpg", "average_score": 8.8, "popularity": 10000},
+            {"id": 1002, "title": "Test Show Beta", "cover_image": "img2.jpg", "average_score": 8.7, "popularity": 10000},
+            {"id": 1003, "title": "Test Show Gamma", "cover_image": "img3.jpg", "average_score": 8.6, "popularity": 10000},
+            {"id": 1004, "title": "Test Show Delta", "cover_image": "img4.jpg", "average_score": 8.5, "popularity": 10000},
+        ]
+
+        with patch("src.content_source.fetch_local_trend_data", return_value=pool):
+            candidates, concept_key, info = select_candidate_titles(num_candidates=3, concept_key="top_recommendations")
+
+        self.assertEqual(len(candidates), 3)
+        selected_titles = [c["title"] for c in candidates]
+
+        # Verify title_history.json immediately contains the selected titles
+        history = _load_json_file(config.TITLE_HISTORY_FILE)
+        recorded_titles = [h["title"] for h in history]
+
+        for st in selected_titles:
+            self.assertIn(st, recorded_titles, f"Title '{st}' MUST be recorded in title_history.json at Phase 1 selection time!")
+            allowed, reason = is_anime_title_allowed_by_history(st, days=30)
+            self.assertFalse(allowed, f"Title '{st}' MUST be excluded from future runs by 30-day cooldown!")
+
 
 if __name__ == "__main__":
     unittest.main()

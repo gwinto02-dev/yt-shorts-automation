@@ -445,24 +445,55 @@ def _normalize_title_text(text: str) -> str:
     return " ".join(cleaned.split())
 
 def record_anime_titles_usage(candidates: List[Dict[str, Any]], concept_type: str = "general"):
-    """Record all featured anime titles from candidate list into title_history.json."""
+    """Record all featured anime titles from candidate list into title_history.json with deduplication guard."""
     history = _load_json_file(config.TITLE_HISTORY_FILE)
-    now_iso = datetime.now().isoformat()
-    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.now()
+    now_iso = now.isoformat()
+    now_str = now.strftime("%Y-%m-%d %H:%M:%S")
 
+    # Build set of recently recorded titles (within last 10 minutes) to prevent duplicates in single run
+    recent_cutoff = now - timedelta(minutes=10)
+    recently_recorded = set()
+    for entry in history:
+        date_str = entry.get("date")
+        if date_str:
+            try:
+                dt = datetime.fromisoformat(date_str)
+                if dt >= recent_cutoff:
+                    norm = entry.get("normalized_title") or _normalize_title_text(entry.get("title", ""))
+                    if norm:
+                        recently_recorded.add(norm)
+                    if entry.get("anime_id"):
+                        recently_recorded.add(str(entry["anime_id"]))
+            except ValueError:
+                pass
+
+    added_count = 0
     for item in candidates:
         title = item.get("title") or item.get("verified_facts", {}).get("title") or "Unknown Title"
+        norm_title = _normalize_title_text(title)
         anime_id = item.get("id")
+
+        if norm_title in recently_recorded or (anime_id and str(anime_id) in recently_recorded):
+            logger.debug(f"[HistoryManager] Title '{title}' already recorded in recent 10m window, skipping duplicate log.")
+            continue
+
         history.append({
             "title": title,
-            "normalized_title": _normalize_title_text(title),
+            "normalized_title": norm_title,
             "anime_id": anime_id,
             "concept_type": concept_type,
             "date": now_iso,
             "date_readable": now_str
         })
-    _save_json_file(config.TITLE_HISTORY_FILE, history)
-    logger.info(f"[HistoryManager] Recorded {len(candidates)} anime title(s) to title_history.json")
+        recently_recorded.add(norm_title)
+        if anime_id:
+            recently_recorded.add(str(anime_id))
+        added_count += 1
+
+    if added_count > 0:
+        _save_json_file(config.TITLE_HISTORY_FILE, history)
+        logger.info(f"[HistoryManager] Recorded {added_count} anime title(s) to title_history.json (Concept: {concept_type})")
 
 def get_recent_anime_titles(days: int = config.ANIME_TITLE_COOLDOWN_DAYS) -> List[Dict[str, Any]]:
     """Retrieve anime titles featured in videos within the last `days` days."""
