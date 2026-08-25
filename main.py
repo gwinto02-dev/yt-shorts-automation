@@ -351,6 +351,10 @@ def run_full_pipeline():
         retry_counts=retry_counts
     )
 
+    if not final_qa_res["pass"]:
+        logger.error("=== FULL PIPELINE FINISHED: BLOCKED BY SUPERVISOR QA ===")
+        sys.exit(1)
+
     logger.info("=== FULL PIPELINE COMPLETED SUCCESSFULLY ===")
 
 def main():

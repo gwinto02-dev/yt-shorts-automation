@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Code
@@ -47,6 +49,20 @@ jobs:
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
         run: |
           python main.py --all
+
+      - name: Commit and Push Updated History Files
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No history changes to commit."
+          else
+            git commit -m "Update history data [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi
 
       - name: Upload Video Artifact on Failure or Completion
         if: always()

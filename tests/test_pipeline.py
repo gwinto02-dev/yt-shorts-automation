@@ -827,6 +827,39 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
             allowed, reason = is_anime_title_allowed_by_history(st, days=30)
             self.assertFalse(allowed, f"Title '{st}' MUST be excluded from future runs by 30-day cooldown!")
 
+    def test_pipeline_exits_nonzero_on_qa_block(self):
+        """
+        REGRESSION: Confirm run_full_pipeline() raises SystemExit(1) when Supervisor QA
+        blocks a run, allowing GitHub Actions step to fail visibly while always-run
+        commit action persists history data.
+        """
+        from main import run_full_pipeline
+        from unittest.mock import patch, MagicMock
+
+        with patch("main.run_phase_1") as mock_p1, \
+             patch("src.fact_checker.verify_candidate_facts", return_value={"sources": []}), \
+             patch("main.run_phase_2", return_value={"full_text": "Script text", "video_title": "Title", "retries": 0}), \
+             patch("src.qa_checker.check_youtube_policy_compliance", return_value={"risk_level": "LOW"}), \
+             patch("main.run_phase_3", return_value=[]), \
+             patch("src.qa_checker.check_asset_rights", return_value={"pass": True}), \
+             patch("main.run_phase_4", return_value=(Path("audio.mp3"), Path("sub.ass"), [])), \
+             patch("main.run_phase_5", return_value=Path("video.mp4")), \
+             patch("src.history_manager.check_originality_against_history", return_value={"pass": True}), \
+             patch("src.history_manager.check_structural_variety_against_history", return_value={"pass": True}), \
+             patch("src.qa_checker.run_supervisor_qa_gate", return_value={"pass": False, "verdict": "BLOCKED"}), \
+             patch("src.notifier.send_daily_summary_email"):
+
+            mock_p1.return_value = {
+                "candidates": [{"id": 501, "title": "Blocked Anime"}],
+                "concept_key": "top_recommendations",
+                "concept_info": {"name": "Top Recs"}
+            }
+
+            with self.assertRaises(SystemExit) as ctx:
+                run_full_pipeline()
+
+            self.assertEqual(ctx.exception.code, 1, "Pipeline MUST exit with code 1 when Supervisor QA verdict is BLOCKED!")
+
 
 if __name__ == "__main__":
     unittest.main()
