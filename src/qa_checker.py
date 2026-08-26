@@ -107,7 +107,22 @@ def check_retention_elements(script_text: str) -> Dict[str, Any]:
     words = script_text.split()
     first_sentence = script_text.split(".")[0] if "." in script_text else script_text[:50]
     
-    has_strong_hook = "?" in first_sentence or any(w in first_sentence.lower() for w in ["stop", "looking", "ever wonder", "secret", "best", "unbelievable", "need", "binge", "ready"])
+    has_strong_hook = (
+        "?" in first_sentence
+        or any(w in first_sentence.lower() for w in [
+            # Original curiosity/question-style triggers
+            "stop", "looking", "ever wonder", "secret", "best", "unbelievable", "need", "binge", "ready",
+            # Bold-claim style triggers (matches the BOLD_CLAIM category recognized
+            # by the Structural Variety classifier in history_manager.py — a hook
+            # using this style is genuinely strong and should not be penalized here
+            # just because it isn't phrased as a question)
+            "ruin ordinary", "stop wasting", "absolute tier", "will completely",
+            # "You won't believe" style triggers
+            "won't believe", "no idea", "hidden revelation",
+            # Scenario-style triggers
+            "picture this", "imagine", "friday night",
+        ])
+    )
     hook_res = {"pass": has_strong_hook, "reason": "Strong curiosity hook detected." if has_strong_hook else "Hook lacks curiosity trigger or question."}
     
     word_count = len(words)
