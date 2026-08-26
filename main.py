@@ -186,7 +186,16 @@ def run_full_pipeline():
     logger.info("=========================================================")
     logger.info("=== STARTING YOUTUBE SHORTS AUTOMATION FULL PIPELINE ===")
     logger.info("=========================================================")
-    
+
+    # Capture the run's start time BEFORE any history writes happen (Phase 1
+    # records the selected titles to title_history.json for cooldown
+    # persistence purposes, even on runs that later get blocked). The
+    # Supervisor QA's cooldown check later in this same run must exclude
+    # entries written at or after this timestamp, so it never flags this
+    # run's own just-written selection as a violation of itself.
+    from datetime import datetime
+    run_start_time = datetime.now()
+
     reset_llm_calls()
     retry_counts = {}
 
@@ -310,7 +319,8 @@ def run_full_pipeline():
         structural_variety_res=structural_variety_res,
         fact_sources=fact_check_res.get("sources"),
         script_text=script_data.get("full_text", ""),
-        segment_timestamps=segment_timestamps
+        segment_timestamps=segment_timestamps,
+        run_start_time=run_start_time
     )
 
 

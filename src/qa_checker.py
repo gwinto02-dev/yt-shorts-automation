@@ -3,7 +3,7 @@ import logging
 import re
 import subprocess
 from pathlib import Path
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 import imageio_ffmpeg
 from PIL import Image
@@ -488,8 +488,14 @@ def check_video_title_qa(title: str, concept_key: str) -> Dict[str, Any]:
     logger.info(f"[Video Title QA PASS] {reason}")
     return {"pass": True, "reason": reason}
 
-def check_anime_title_cooldown_qa(candidates: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Evaluates whether any candidate title violates the 30-day anime title cooldown."""
+def check_anime_title_cooldown_qa(candidates: List[Dict[str, Any]], exclude_after: Optional[Any] = None) -> Dict[str, Any]:
+    """Evaluates whether any candidate title violates the 30-day anime title cooldown.
+
+    `exclude_after` should be the current pipeline run's start time, so this
+    check never flags the run's own just-written selection as a violation
+    of itself (that selection was recorded to history earlier in this same
+    run, at Phase 1, for blocked-run cooldown persistence purposes).
+    """
     logger.info(">>> RUNNING ANIME TITLE COOLDOWN QA")
     from src.history_manager import is_anime_title_allowed_by_history
 
@@ -497,7 +503,9 @@ def check_anime_title_cooldown_qa(candidates: List[Dict[str, Any]]) -> Dict[str,
     for c in candidates:
         title = c.get("title") or c.get("verified_facts", {}).get("title") or "Unknown"
         anime_id = c.get("id")
-        allowed, reason = is_anime_title_allowed_by_history(title, anime_id, days=config.ANIME_TITLE_COOLDOWN_DAYS)
+        allowed, reason = is_anime_title_allowed_by_history(
+            title, anime_id, days=config.ANIME_TITLE_COOLDOWN_DAYS, exclude_after=exclude_after
+        )
         if not allowed:
             violations.append(reason)
 
@@ -532,12 +540,18 @@ def run_supervisor_qa_gate(
     structural_variety_res: Dict[str, Any] = None,
     fact_sources: List[Dict[str, Any]] = None,
     script_text: str = "",
-    segment_timestamps: List[Dict[str, Any]] = None
+    segment_timestamps: List[Dict[str, Any]] = None,
+    run_start_time: Optional[Any] = None
 ) -> Dict[str, Any]:
     """
     Consolidated Supervisor QA Gate before YouTube upload.
     Aggregates ALL 12 individual QA checks into one clear verdict (APPROVED or BLOCKED).
     Any single failure blocks upload.
+
+    `run_start_time` should be a datetime captured at the very beginning of
+    this pipeline run (before Phase 1 selection). It's passed through to the
+    Anime Title Cooldown check so that the check never flags this run's own
+    just-written title-history entry as a violation of itself.
     """
     logger.info("=" * 60)
     logger.info(">>> RUNNING CONSOLIDATED SUPERVISOR QA GATE")
@@ -625,7 +639,7 @@ def run_supervisor_qa_gate(
 
     # 11. Anime Title Cooldown QA
     if candidates:
-        tc_res = check_anime_title_cooldown_qa(candidates)
+        tc_res = check_anime_title_cooldown_qa(candidates, exclude_after=run_start_time)
         checks.append({"name": "Anime Title Cooldown QA", "pass": tc_res["pass"], "reason": tc_res["reason"]})
     else:
         checks.append({"name": "Anime Title Cooldown QA", "pass": True, "reason": "No candidates supplied."})

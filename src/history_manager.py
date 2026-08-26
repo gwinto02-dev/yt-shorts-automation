@@ -495,8 +495,17 @@ def record_anime_titles_usage(candidates: List[Dict[str, Any]], concept_type: st
         _save_json_file(config.TITLE_HISTORY_FILE, history)
         logger.info(f"[HistoryManager] Recorded {added_count} anime title(s) to title_history.json (Concept: {concept_type})")
 
-def get_recent_anime_titles(days: int = config.ANIME_TITLE_COOLDOWN_DAYS) -> List[Dict[str, Any]]:
-    """Retrieve anime titles featured in videos within the last `days` days."""
+def get_recent_anime_titles(
+    days: int = config.ANIME_TITLE_COOLDOWN_DAYS,
+    exclude_after: Optional[datetime] = None
+) -> List[Dict[str, Any]]:
+    """Retrieve anime titles featured in videos within the last `days` days.
+
+    If `exclude_after` is provided, entries written at or after that
+    timestamp are excluded — this prevents a run from seeing its own
+    just-written selection as a "past" entry when checking cooldown later
+    in the same execution.
+    """
     history = _load_json_file(config.TITLE_HISTORY_FILE)
     cutoff_date = datetime.now() - timedelta(days=days)
 
@@ -507,6 +516,8 @@ def get_recent_anime_titles(days: int = config.ANIME_TITLE_COOLDOWN_DAYS) -> Lis
             try:
                 entry_date = datetime.fromisoformat(date_str)
                 if entry_date >= cutoff_date:
+                    if exclude_after is not None and entry_date >= exclude_after:
+                        continue
                     recent_entries.append(entry)
             except ValueError:
                 pass
@@ -515,13 +526,18 @@ def get_recent_anime_titles(days: int = config.ANIME_TITLE_COOLDOWN_DAYS) -> Lis
 def is_anime_title_allowed_by_history(
     title: str,
     anime_id: Optional[int] = None,
-    days: int = config.ANIME_TITLE_COOLDOWN_DAYS
+    days: int = config.ANIME_TITLE_COOLDOWN_DAYS,
+    exclude_after: Optional[datetime] = None
 ) -> Tuple[bool, str]:
     """
     Returns (allowed: bool, reason: str).
     Checks whether a specific anime title (or ID) was featured within the last `days` days.
+
+    `exclude_after` should be set to the current pipeline run's start time,
+    so this check only considers genuinely prior runs — not the entry this
+    same run may have already written to history moments earlier.
     """
-    recent_entries = get_recent_anime_titles(days)
+    recent_entries = get_recent_anime_titles(days, exclude_after=exclude_after)
     norm_new = _normalize_title_text(title)
 
     for entry in recent_entries:
