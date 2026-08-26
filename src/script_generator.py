@@ -222,18 +222,27 @@ def generate_fallback_template_script(
     count = len(candidates)
     reversed_candidates = list(reversed(candidates))
     concept_name = concept_info.get("name", "Recommendations")
-    clean_concept_name = re.sub(r"\s+spotlight$", "", concept_name, flags=re.IGNORECASE).strip()
+
+    def _name_without_trailing(word: str) -> str:
+        """Strip a specific trailing word (e.g. 'spotlight', 'recommendations',
+        'lineup') from concept_name, case-insensitively, if concept_name
+        already ends with it. This prevents accidental duplicate words like
+        'Top Recommendations recommendations' when a hook template appends
+        that same word again after the concept name — computed per-template,
+        since different hook styles append different trailing words, so no
+        single shared cleaned name can safely serve all of them at once."""
+        return re.sub(rf"\s+{re.escape(word)}$", "", concept_name, flags=re.IGNORECASE).strip()
 
     op_style = target_opening_style or random.choice(["QUESTION", "BOLD_CLAIM", "YOU_WONT_BELIEVE", "DIRECT_STATEMENT", "SCENARIO"])
     cl_style = target_closing_style or random.choice(["QUESTION_TO_VIEWER", "DIRECT_RECOMMENDATION", "TEASER_TOMORROW", "SIMPLE_SIGNOFF"])
     
     # Opening Hooks by Style
     if op_style == "QUESTION":
-        hook = f"Looking for peak anime that will actually blow your mind? Here are {count} incredible shows in today's {clean_concept_name} spotlight."
+        hook = f"Looking for peak anime that will actually blow your mind? Here are {count} incredible shows in today's {_name_without_trailing('spotlight')} spotlight."
     elif op_style == "BOLD_CLAIM":
-        hook = f"These {count} anime will ruin ordinary shows for you. Here are today's {clean_concept_name} recommendations."
+        hook = f"These {count} anime will ruin ordinary shows for you. Here are today's {_name_without_trailing('recommendations')} recommendations."
     elif op_style == "YOU_WONT_BELIEVE":
-        hook = f"You won't believe how incredible these {count} anime actually are. Welcome to today's {clean_concept_name} lineup."
+        hook = f"You won't believe how incredible these {count} anime actually are. Welcome to today's {_name_without_trailing('lineup')} lineup."
     elif op_style == "SCENARIO":
         hook = f"Picture this: it's Friday night and you need an anime that hooks you instantly. Here are {count} top picks."
     else: # DIRECT_STATEMENT
