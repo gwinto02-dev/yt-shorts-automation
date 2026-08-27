@@ -60,13 +60,34 @@ jobs:
             echo "No history changes to commit."
           else
             git commit -m "Update history data [skip ci]"
-            # Stash anything else left over from this run (e.g. pipeline
-            # output/log files outside data/) so the rebase below has a
-            # fully clean working tree to operate on. This runner is
-            # disposed of after the job finishes, so there's no need to
-            # restore the stash afterward.
-            git stash --include-untracked || true
-            git pull --rebase origin main
+
+            # Instead of a git-level rebase/merge (which fails with text
+            # conflicts on these JSON array files whenever two runs append
+            # different entries), fetch the remote's current version of
+            # each history file and merge them at the JSON content level
+            # using merge_history_json.py — this treats each file as an
+            # append-only log and unions entries, avoiding conflicts
+            # entirely for this file shape.
+            git fetch origin main
+            for f in data/*.json; do
+              if git cat-file -e origin/main:"$f" 2>/dev/null; then
+                git show origin/main:"$f" > /tmp/remote_$(basename "$f") 2>/dev/null || echo "[]" > /tmp/remote_$(basename "$f")
+                python scripts/merge_history_json.py "$f" /tmp/remote_$(basename "$f") "$f"
+              fi
+            done
+
+            git add data/
+            if git diff --cached --quiet; then
+              echo "Merge resulted in no net changes."
+            else
+              git commit -m "Merge history data with remote [skip ci]" --amend --no-edit || git commit -m "Merge history data with remote [skip ci]"
+            fi
+
+            # Rebase onto whatever else may have landed since the fetch
+            # above (rare, but possible) — the working tree is clean now
+            # since the JSON merge already resolved the only files that
+            # were diverging, so this should apply cleanly.
+            git pull --rebase origin main || (echo "Rebase still failed after JSON merge — forcing history files to the merged local state." && git rebase --abort && git push --force-with-lease)
             git push
           fi
 

@@ -203,7 +203,7 @@ def generate_script_with_gemini(
             )
 
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.6-flash',
             contents=f"{NATURAL_SYSTEM_PROMPT}\n\n{prompt_content}"
         )
         return response.text.strip()
@@ -339,7 +339,7 @@ def generate_video_title(candidates: List[Dict[str, Any]], concept_key: str, con
                 )
 
                 response = client.models.generate_content(
-                    model='gemini-2.5-flash',
+                    model='gemini-3.6-flash',
                     contents=prompt
                 )
                 proposed_title = response.text.strip().replace('"', '')

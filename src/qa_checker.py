@@ -77,7 +77,7 @@ def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
                 '{"pass": true/false, "reason": "Short explanation of score"}'
             )
             response = client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.6-flash',
                 contents=prompt
             )
             raw = response.text.strip()

@@ -400,7 +400,7 @@ def check_originality_against_history(new_script: str, new_hook: str, new_title:
             )
 
             response = client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.6-flash',
                 contents=prompt
             )
             raw_text = response.text.strip()

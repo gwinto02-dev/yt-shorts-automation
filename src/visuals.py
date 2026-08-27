@@ -22,7 +22,10 @@ def sanitize_filename(name: str) -> str:
 def clean_search_title(name: str) -> str:
     """Clean title by removing bracketed info like (2011) or Season 4 for better API matching."""
     cleaned = re.sub(r'\s*\([^)]*\)', '', name)
-    cleaned = re.sub(r'\s*-\s*Season\s*\d+', '', cleaned, flags=re.IGNORECASE)
+    # Strip a trailing "Season N" whether or not it's preceded by a dash —
+    # most AniList titles use "Title Season N" with no dash (see the same
+    # fix applied in tts.py's segment-matching keyword extraction).
+    cleaned = re.sub(r'\s*-?\s*Season\s*\d+\s*$', '', cleaned, flags=re.IGNORECASE)
     return cleaned.strip()
 
 def download_image(url: str, output_path: Path, timeout: int = 8) -> bool:
