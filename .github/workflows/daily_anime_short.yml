@@ -60,6 +60,12 @@ jobs:
             echo "No history changes to commit."
           else
             git commit -m "Update history data [skip ci]"
+            # Stash anything else left over from this run (e.g. pipeline
+            # output/log files outside data/) so the rebase below has a
+            # fully clean working tree to operate on. This runner is
+            # disposed of after the job finishes, so there's no need to
+            # restore the stash afterward.
+            git stash --include-untracked || true
             git pull --rebase origin main
             git push
           fi
