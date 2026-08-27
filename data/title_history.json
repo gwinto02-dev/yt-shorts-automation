@@ -22,5 +22,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-08-27T15:30:19.936264",
     "date_readable": "2026-08-27 15:30:19"
+  },
+  {
+    "title": "Hunter x Hunter (2011)",
+    "normalized_title": "hunter x hunter 2011",
+    "anime_id": 11061,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-27T15:35:10.018328",
+    "date_readable": "2026-08-27 15:35:10"
+  },
+  {
+    "title": "The Apothecary Diaries",
+    "normalized_title": "the apothecary diaries",
+    "anime_id": 161645,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-27T15:35:10.018328",
+    "date_readable": "2026-08-27 15:35:10"
+  },
+  {
+    "title": "Monster",
+    "normalized_title": "monster",
+    "anime_id": 19,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-27T15:35:10.018328",
+    "date_readable": "2026-08-27 15:35:10"
   }
 ]
