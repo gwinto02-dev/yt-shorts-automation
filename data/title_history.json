@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 4",
+    "normalized_title": "rezero starting life in another world season 4",
+    "anime_id": 189046,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-27T15:30:19.936264",
+    "date_readable": "2026-08-27 15:30:19"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+    "normalized_title": "bleach thousandyear blood war the calamity",
+    "anime_id": 185874,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-27T15:30:19.936264",
+    "date_readable": "2026-08-27 15:30:19"
+  },
+  {
+    "title": "Fullmetal Alchemist: Brotherhood",
+    "normalized_title": "fullmetal alchemist brotherhood",
+    "anime_id": 5114,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-27T15:30:19.936264",
+    "date_readable": "2026-08-27 15:30:19"
+  }
+]

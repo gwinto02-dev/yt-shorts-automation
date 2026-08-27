@@ -34,5 +34,24 @@
       ]
     },
     "video_id": "NhhnwOALj9U"
+  },
+  {
+    "date": "2026-08-27T15:31:17.792004",
+    "date_readable": "2026-08-27",
+    "concept_type": "top_recommendations",
+    "title": "Top 3 Anime Recommendations You Need To Watch 🍿 #Shorts",
+    "hook": "These 3 anime will ruin ordinary shows for you",
+    "script": "These 3 anime will ruin ordinary shows for you. Here are today's Top recommendations. If you want intense storytelling, animated by bones in 2009, we have Fullmetal Alchemist: Brotherhood. Rated 9.0/10, this Must-Watch Masterpiece delivers unforgettable Action, Adventure moments. Then we have, BLEACH: Thousand-Year Blood War - The Calamity follows an intense journey that hooks you instantly. Holding a 9.0/10 rating, PIERROT FILMS crafted this into a peak Action, Adventure series. To top it all off, holding a stellar 9.0/10 score, is Re:ZERO -Starting Life in Another World- Season 4. It's a sensational Action, Adventure pick that stays with you long after the credits roll. Start with number one tonight — you won't regret it. Subscribe for daily peak anime recommendations!",
+    "structural_fingerprint": {
+      "opening_style": "BOLD_CLAIM",
+      "opening_prefix": "these 3 anime will ruin",
+      "closing_style": "SIMPLE_SIGNOFF",
+      "closing_prefix": "for daily peak anime recommendations",
+      "transition_markers": [
+        "number one",
+        "then we have"
+      ]
+    },
+    "video_id": "MBWNVN5gyIo"
   }
 ]
