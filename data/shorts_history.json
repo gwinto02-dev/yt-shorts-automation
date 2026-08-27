@@ -53,5 +53,25 @@
       ]
     },
     "video_id": "MBWNVN5gyIo"
+  },
+  {
+    "date": "2026-08-27T15:38:52.125211",
+    "date_readable": "2026-08-27",
+    "concept_type": "genre_spotlight",
+    "title": "Must-Watch Anime In 3 Different Genres 🎬 #Shorts",
+    "hook": "You won't believe how incredible these 3 anime actually are",
+    "script": "You won't believe how incredible these 3 anime actually are. Welcome to today's Genre-Diverse Trio lineup. First off, animated by BUG FILMS in 2026, we have Witch Hat Atelier. Rated 8.5/10, this Genre-Diverse Pick delivers unforgettable Adventure, Drama moments. Next up, ONE PIECE follows an intense journey that hooks you instantly. Holding a 8.7/10 rating, Toei Animation crafted this into a peak Action, Adventure series. Rounding out today's picks, holding a stellar 8.8/10 score, is The Apothecary Diaries Season 2. It's a sensational Drama, Mystery pick that stays with you long after the credits roll. Save this Short for binge night and subscribe so you don't miss tomorrow's daily anime spotlight!",
+    "structural_fingerprint": {
+      "opening_style": "YOU_WONT_BELIEVE",
+      "opening_prefix": "you wont believe how incredible",
+      "closing_style": "TEASER_TOMORROW",
+      "closing_prefix": "miss tomorrows daily anime spotlight",
+      "transition_markers": [
+        "first off",
+        "next up",
+        "rounding out"
+      ]
+    },
+    "video_id": "vD9flmWuUnE"
   }
 ]

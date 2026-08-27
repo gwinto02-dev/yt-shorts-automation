@@ -46,5 +46,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-08-27T15:35:10.018328",
     "date_readable": "2026-08-27 15:35:10"
+  },
+  {
+    "title": "The Apothecary Diaries Season 2",
+    "normalized_title": "the apothecary diaries season 2",
+    "anime_id": 176301,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-27T15:38:23.428340",
+    "date_readable": "2026-08-27 15:38:23"
+  },
+  {
+    "title": "ONE PIECE",
+    "normalized_title": "one piece",
+    "anime_id": 21,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-27T15:38:23.428340",
+    "date_readable": "2026-08-27 15:38:23"
+  },
+  {
+    "title": "Witch Hat Atelier",
+    "normalized_title": "witch hat atelier",
+    "anime_id": 147105,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-27T15:38:23.428340",
+    "date_readable": "2026-08-27 15:38:23"
   }
 ]
