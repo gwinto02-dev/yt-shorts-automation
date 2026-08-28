@@ -83,12 +83,30 @@ jobs:
               git commit -m "Merge history data with remote [skip ci]" --amend --no-edit || git commit -m "Merge history data with remote [skip ci]"
             fi
 
+            # Safety net: sweep up any other modified/untracked files left
+            # over from this run (e.g. output/ artifacts, if the .gitignore
+            # ever misses one) so the rebase below always has a genuinely
+            # clean working tree to operate on. This runner is disposed of
+            # after the job finishes, so there's no need to restore the
+            # stash afterward.
+            git stash --include-untracked || true
+
             # Rebase onto whatever else may have landed since the fetch
             # above (rare, but possible) — the working tree is clean now
             # since the JSON merge already resolved the only files that
             # were diverging, so this should apply cleanly.
-            git pull --rebase origin main || (echo "Rebase still failed after JSON merge — forcing history files to the merged local state." && git rebase --abort && git push --force-with-lease)
-            git push
+            if ! git pull --rebase origin main; then
+              echo "Rebase failed — forcing history files to the merged local state."
+              # Only call --abort if a rebase actually started; calling it
+              # otherwise fails with "no rebase in progress" and crashes
+              # this step even though there's nothing left to clean up.
+              if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ]; then
+                git rebase --abort
+              fi
+              git push --force-with-lease
+            else
+              git push
+            fi
           fi
 
       - name: Upload Video Artifact on Failure or Completion

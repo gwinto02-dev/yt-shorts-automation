@@ -1,9 +1,13 @@
 __pycache__/
 *.pyc
 
-output/*.mp4
-output/*.mp3
-output/*.wav
+# The entire output/ directory is regenerated fresh every pipeline run —
+# none of it needs to be tracked in git. Previously only media files were
+# excluded here, leaving script.txt/.json/.ass/.html/.srt files tracked;
+# since those get rewritten every run but were never staged by the history
+# commit-back workflow step, they left the working tree dirty and broke
+# the git rebase used to sync history data back to the repo.
+output/*
 
 assets/music/*.mp3
 
