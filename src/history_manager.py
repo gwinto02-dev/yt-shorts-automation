@@ -8,6 +8,7 @@ from typing import List, Dict, Any, Optional, Tuple, Set
 
 import config
 from src.llm_tracker import increment_llm_calls
+from src.gemini_utils import rate_limited_gemini_call
 
 logger = logging.getLogger(__name__)
 
@@ -399,8 +400,9 @@ def check_originality_against_history(new_script: str, new_hook: str, new_title:
                 "Respond ONLY with valid JSON."
             )
 
-            response = client.models.generate_content(
-                model='gemini-3.6-flash',
+            response = rate_limited_gemini_call(
+                client.models.generate_content,
+                model=config.GEMINI_MODEL,
                 contents=prompt
             )
             raw_text = response.text.strip()

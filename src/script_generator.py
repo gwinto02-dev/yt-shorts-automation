@@ -8,7 +8,7 @@ from typing import List, Dict, Any, Tuple
 import config
 from src.llm_tracker import increment_llm_calls
 from src.qa_checker import check_natural_script_quality, check_retention_elements
-
+from src.gemini_utils import rate_limited_gemini_call
 from src.history_manager import check_video_title_similarity, get_recent_video_titles
 
 logger = logging.getLogger(__name__)
@@ -202,13 +202,161 @@ def generate_script_with_gemini(
                 f"Please fix these structural issues and rewrite with a completely distinct sentence pattern."
             )
 
-        response = client.models.generate_content(
-            model='gemini-3.6-flash',
+        response = rate_limited_gemini_call(
+            client.models.generate_content,
+            model=config.GEMINI_MODEL,
             contents=f"{NATURAL_SYSTEM_PROMPT}\n\n{prompt_content}"
         )
         return response.text.strip()
     except Exception as e:
         logger.warning(f"Gemini API script generation failed: {e}")
+        raise e
+
+def generate_script_and_title_with_gemini(
+    candidates: List[Dict[str, Any]],
+    concept_key: str,
+    concept_info: Dict[str, Any],
+    feedback_notes: str = None,
+    target_opening_style: str = None,
+    target_closing_style: str = None,
+    target_transition_style: str = None,
+    avoid_phrases: List[str] = None,
+    recent_hooks: List[str] = None,
+    recent_outros: List[str] = None
+) -> Tuple[str, str]:
+    """
+    Consolidated single Gemini API call that generates BOTH the spoken script narration
+    and concept-aligned video title in structured JSON format.
+    Reduces total API calls per run by combining script and title generation into 1 request.
+    """
+    if not config.GEMINI_API_KEY:
+        raise ValueError("GEMINI_API_KEY is not set in environment.")
+
+    logger.info("Generating script AND title in single consolidated Google Gemini API call...")
+    increment_llm_calls()
+    try:
+        from google import genai
+        client = genai.Client(api_key=config.GEMINI_API_KEY)
+        
+        recent_titles = get_recent_video_titles(days=config.VIDEO_TITLE_COOLDOWN_DAYS)
+        recent_past_str = "\n".join([f"- {t.get('title')}" for t in recent_titles[-5:]])
+        candidate_titles = ", ".join([c.get("title", "") for c in candidates])
+        concept_name = concept_info.get('name', '')
+
+        # Select structural style directives
+        op_key = target_opening_style or random.choice(list(OPENING_STYLE_DIRECTIVES.keys()))
+        cl_key = target_closing_style or random.choice(list(CLOSING_STYLE_DIRECTIVES.keys()))
+        tr_key = target_transition_style or random.choice(list(TRANSITION_STYLE_DIRECTIVES.keys()))
+
+        op_dir = OPENING_STYLE_DIRECTIVES[op_key]
+        cl_dir = CLOSING_STYLE_DIRECTIVES[cl_key]
+        tr_dir = TRANSITION_STYLE_DIRECTIVES[tr_key]
+
+        anti_repetition_directives = ""
+        if avoid_phrases:
+            phrases_str = ", ".join([f"'{p}'" for p in avoid_phrases if p])
+            if phrases_str:
+                anti_repetition_directives += f"\n- CRITICAL PHRASE EXCLUSION: Do NOT use or paraphrase any of these exact conflicting phrases: {phrases_str}."
+        if recent_hooks:
+            hooks_str = "\n".join([f"  * \"{h}\"" for h in recent_hooks[:5] if h])
+            if hooks_str:
+                anti_repetition_directives += f"\n- PREVIOUS OPENING HOOKS USED RECENTLY (DO NOT REPEAT OR PARAPHRASE THESE):\n{hooks_str}\nWrite a distinctly different opening hook structure."
+        if recent_outros:
+            outros_str = "\n".join([f"  * \"{o}\"" for o in recent_outros[:5] if o])
+            if outros_str:
+                anti_repetition_directives += f"\n- PREVIOUS CLOSING OUTROS USED RECENTLY (DO NOT REPEAT OR PARAPHRASE THESE):\n{outros_str}\nWrite a distinctly different closing outro."
+
+        structural_directives = (
+            f"REQUIRED STRUCTURAL STYLE INSTRUCTIONS FOR THIS SCRIPT:\n"
+            f"- {op_dir}\n"
+            f"- {cl_dir}\n"
+            f"- {tr_dir}\n"
+            f"- PER-TITLE DESCRIPTION VARIETY: Order of details MUST differ for each title. "
+            f"Title 1: start with animation studio/visuals then plot premise. "
+            f"Title 2: start with lead character/story hook then score/hype. "
+            f"Title 3: start with rating/hype then plot hook.{anti_repetition_directives}\n"
+        )
+
+        prompt_content = f"Concept: {concept_name} - {concept_info.get('tagline')}\n"
+        prompt_content += f"{structural_directives}\n"
+        prompt_content += "VERIFIED FACTUAL METADATA FOR FEATURED ANIME:\n"
+        
+        for idx, item in enumerate(reversed(candidates), 1):
+            vf = item.get("verified_facts", {})
+            title = vf.get("title") or item.get("title")
+            raw_score = item.get("average_score") or vf.get("score_numeric", 0.0)
+            verified_score = vf.get("verified_score", "")
+            
+            is_upcoming = item.get("is_upcoming", False) or item.get("status") == "NOT_YET_RELEASED" or concept_name == "Upcoming Trio"
+            score_is_valid = isinstance(raw_score, (int, float)) and raw_score > 0.0 and verified_score not in ["N/A", "0.0/10", ""]
+
+            if score_is_valid:
+                score_str = f"{raw_score:.1f}/10"
+            else:
+                score_str = "Unrated / Upcoming (NO numerical score available yet - DO NOT cite a numerical rating or say 'N/A'. Use anticipation/hype framing instead, e.g. 'highly anticipated', 'one to watch', 'eagerly awaited')."
+
+            studio = vf.get("studio", "N/A")
+            year = vf.get("release_year", "N/A")
+            genres = ", ".join(vf.get("genres", item.get("genres", [])))
+            chars = ", ".join(vf.get("lead_characters", []))
+            synopsis = vf.get("synopsis_snippet", (item.get("synopsis") or "")[:150])
+            
+            prompt_content += (
+                f"#{idx}: {title}\n"
+                f"  - Verified Score: {score_str}\n"
+                f"  - Animation Studio: {studio}\n"
+                f"  - Release Year: {year}\n"
+                f"  - Genres: {genres}\n"
+                f"  - Key Characters: {chars}\n"
+                f"  - Story Premise: {synopsis}\n"
+            )
+
+        if feedback_notes:
+            prompt_content += (
+                f"\nPREVIOUS DRAFT FEEDBACK (STRUCTURAL REWRITE REQUIRED):\n{feedback_notes}\n"
+                f"Please fix these structural issues and rewrite with a completely distinct sentence pattern.\n"
+            )
+
+        title_directives = (
+            f"\nVIDEO TITLE INSTRUCTIONS:\n"
+            f"Also generate an engaging YouTube Short title (max 90 characters) for this video.\n"
+            f"Concept Type: {concept_name} (Key: {concept_key})\n"
+            f"Featured Titles: {candidate_titles}\n"
+            f"Requirements: 1) Must include concept signal wording (e.g. 'underrated', 'hidden gem', 'upcoming'). "
+            f"2) 1 emoji & '#Shorts' at end. 3) Avoid similarity with recent titles: {recent_past_str}\n"
+        )
+
+        full_prompt = (
+            f"{NATURAL_SYSTEM_PROMPT}\n\n{prompt_content}\n{title_directives}\n"
+            f"OUTPUT FORMAT REQUIREMENT:\n"
+            f"Respond STRICTLY with a single valid JSON object containing keys 'script' and 'video_title':\n"
+            f'{{\n  "script": "spoken narration text...",\n  "video_title": "Video Title 🍿 #Shorts"\n}}'
+        )
+
+        response = rate_limited_gemini_call(
+            client.models.generate_content,
+            model=config.GEMINI_MODEL,
+            contents=full_prompt
+        )
+
+        raw = response.text.strip()
+        if raw.startswith("```json"):
+            raw = raw[7:]
+        if raw.startswith("```"):
+            raw = raw[3:]
+        if raw.endswith("```"):
+            raw = raw[:-3]
+
+        parsed = json.loads(raw.strip())
+        script_text = parsed.get("script", "").strip()
+        video_title = parsed.get("video_title", "").strip().replace('"', '')
+
+        if script_text and video_title:
+            return script_text, video_title
+        raise ValueError("Combined Gemini JSON output missing 'script' or 'video_title' field.")
+
+    except Exception as e:
+        logger.warning(f"Consolidated Gemini script+title call failed/unparsed: {e}")
         raise e
 
 def generate_fallback_template_script(
@@ -338,8 +486,9 @@ def generate_video_title(candidates: List[Dict[str, Any]], concept_key: str, con
                     "Output ONLY the plain title text, nothing else."
                 )
 
-                response = client.models.generate_content(
-                    model='gemini-3.6-flash',
+                response = rate_limited_gemini_call(
+                    client.models.generate_content,
+                    model=config.GEMINI_MODEL,
                     contents=prompt
                 )
                 proposed_title = response.text.strip().replace('"', '')
@@ -393,6 +542,8 @@ def generate_recommendation_script(
     script_qa_res = {"pass": False, "reason": "Not run"}
     retention_qa_res = {"pass": False, "reason": "Not run"}
 
+    combined_video_title = None
+
     while retries <= config.MAX_STAGE_RETRIES:
         if retries > 0:
             logger.info(f"[Script Rewrite Retry {retries}/{config.MAX_STAGE_RETRIES}] Rewriting script based on QA feedback...")
@@ -400,8 +551,9 @@ def generate_recommendation_script(
         # Generate draft
         if config.GEMINI_API_KEY:
             try:
-                script_text = generate_script_with_gemini(
+                script_text, combined_video_title = generate_script_and_title_with_gemini(
                     candidates,
+                    concept_key,
                     concept_info,
                     feedback_notes=feedback_notes,
                     target_opening_style=target_opening_style,
@@ -412,12 +564,25 @@ def generate_recommendation_script(
                     recent_outros=recent_outros
                 )
             except Exception:
-                script_text = generate_fallback_template_script(
-                    candidates,
-                    concept_info,
-                    target_opening_style=target_opening_style,
-                    target_closing_style=target_closing_style
-                )
+                try:
+                    script_text = generate_script_with_gemini(
+                        candidates,
+                        concept_info,
+                        feedback_notes=feedback_notes,
+                        target_opening_style=target_opening_style,
+                        target_closing_style=target_closing_style,
+                        target_transition_style=target_transition_style,
+                        avoid_phrases=avoid_phrases,
+                        recent_hooks=recent_hooks,
+                        recent_outros=recent_outros
+                    )
+                except Exception:
+                    script_text = generate_fallback_template_script(
+                        candidates,
+                        concept_info,
+                        target_opening_style=target_opening_style,
+                        target_closing_style=target_closing_style
+                    )
         else:
             script_text = generate_fallback_template_script(
                 candidates,
@@ -444,8 +609,16 @@ def generate_recommendation_script(
         feedback_notes = "; ".join(feedback_parts)
         retries += 1
 
-    # Generate concept-aligned, varied video title
-    video_title = generate_video_title(candidates, concept_key, concept_info)
+    # Use combined title if obtained and valid, else generate video title
+    if combined_video_title:
+        signal_ok, _ = verify_title_concept_signal(combined_video_title, concept_key)
+        sim_res = check_video_title_similarity(combined_video_title, days=config.VIDEO_TITLE_COOLDOWN_DAYS)
+        if signal_ok and sim_res["pass"]:
+            video_title = combined_video_title
+        else:
+            video_title = generate_video_title(candidates, concept_key, concept_info)
+    else:
+        video_title = generate_video_title(candidates, concept_key, concept_info)
 
     word_count = len(script_text.split())
     logger.info("-" * 50)

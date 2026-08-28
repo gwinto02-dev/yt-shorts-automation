@@ -11,6 +11,7 @@ from PIL import Image
 import config
 from src.llm_tracker import increment_llm_calls
 from src.tts import validate_caption_sync, get_audio_duration_seconds
+from src.gemini_utils import rate_limited_gemini_call
 
 logger = logging.getLogger(__name__)
 
@@ -76,8 +77,9 @@ def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
                 "Respond strictly with a JSON object:\n"
                 '{"pass": true/false, "reason": "Short explanation of score"}'
             )
-            response = client.models.generate_content(
-                model='gemini-3.6-flash',
+            response = rate_limited_gemini_call(
+                client.models.generate_content,
+                model=config.GEMINI_MODEL,
                 contents=prompt
             )
             raw = response.text.strip()

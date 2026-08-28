@@ -187,6 +187,16 @@ def run_full_pipeline():
     logger.info("=== STARTING YOUTUBE SHORTS AUTOMATION FULL PIPELINE ===")
     logger.info("=========================================================")
 
+    # Step 0: Pre-flight Gemini API Quota & Reachability Check
+    if config.GEMINI_API_KEY:
+        from src.gemini_utils import check_gemini_quota_preflight
+        quota_ok, quota_msg = check_gemini_quota_preflight()
+        if not quota_ok:
+            logger.error(f"❌ PIPELINE ABORTED: Pre-flight Gemini API Check Failed!\nReason: {quota_msg}")
+            sys.exit(1)
+    else:
+        logger.info("[Pre-flight Quota Check] GEMINI_API_KEY not set. Operating in template fallback mode.")
+
     # Capture the run's start time BEFORE any history writes happen (Phase 1
     # records the selected titles to title_history.json for cooldown
     # persistence purposes, even on runs that later get blocked). The
@@ -371,9 +381,14 @@ def main():
     parser = argparse.ArgumentParser(description="Daily Anime Recommendation Shorts Automation")
     parser.add_argument("--phase", type=int, choices=[1, 2, 3, 4, 5, 6, 7], help="Run a specific phase (1-7)")
     parser.add_argument("--all", action="store_true", help="Run full pipeline end-to-end")
+    parser.add_argument("--check-quota", action="store_true", help="Run pre-flight Gemini API quota check and exit")
     args = parser.parse_args()
 
-    if args.phase:
+    if args.check_quota:
+        from src.gemini_utils import check_gemini_quota_preflight
+        ok, msg = check_gemini_quota_preflight()
+        sys.exit(0 if ok else 1)
+    elif args.phase:
         phase_map = {
             1: run_phase_1,
             2: run_phase_2,
