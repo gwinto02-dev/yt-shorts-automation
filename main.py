@@ -187,15 +187,15 @@ def run_full_pipeline():
     logger.info("=== STARTING YOUTUBE SHORTS AUTOMATION FULL PIPELINE ===")
     logger.info("=========================================================")
 
-    # Step 0: Pre-flight Gemini API Quota & Reachability Check
-    if config.GEMINI_API_KEY:
-        from src.gemini_utils import check_gemini_quota_preflight
-        quota_ok, quota_msg = check_gemini_quota_preflight()
+    # Step 0: Pre-flight Groq API Quota & Reachability Check
+    if config.GROQ_API_KEY or config.GEMINI_API_KEY:
+        from src.groq_utils import check_groq_quota_preflight
+        quota_ok, quota_msg = check_groq_quota_preflight()
         if not quota_ok:
-            logger.error(f"❌ PIPELINE ABORTED: Pre-flight Gemini API Check Failed!\nReason: {quota_msg}")
+            logger.error(f"❌ PIPELINE ABORTED: Pre-flight Groq API Check Failed!\nReason: {quota_msg}")
             sys.exit(1)
     else:
-        logger.info("[Pre-flight Quota Check] GEMINI_API_KEY not set. Operating in template fallback mode.")
+        logger.info("[Pre-flight Quota Check] GROQ_API_KEY not set. Operating in template fallback mode.")
 
     # Capture the run's start time BEFORE any history writes happen (Phase 1
     # records the selected titles to title_history.json for cooldown
@@ -381,12 +381,12 @@ def main():
     parser = argparse.ArgumentParser(description="Daily Anime Recommendation Shorts Automation")
     parser.add_argument("--phase", type=int, choices=[1, 2, 3, 4, 5, 6, 7], help="Run a specific phase (1-7)")
     parser.add_argument("--all", action="store_true", help="Run full pipeline end-to-end")
-    parser.add_argument("--check-quota", action="store_true", help="Run pre-flight Gemini API quota check and exit")
+    parser.add_argument("--check-quota", action="store_true", help="Run pre-flight Groq API quota check and exit")
     args = parser.parse_args()
 
     if args.check_quota:
-        from src.gemini_utils import check_gemini_quota_preflight
-        ok, msg = check_gemini_quota_preflight()
+        from src.groq_utils import check_groq_quota_preflight
+        ok, msg = check_groq_quota_preflight()
         sys.exit(0 if ok else 1)
     elif args.phase:
         phase_map = {

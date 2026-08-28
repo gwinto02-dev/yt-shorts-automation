@@ -11,7 +11,7 @@ from PIL import Image
 import config
 from src.llm_tracker import increment_llm_calls
 from src.tts import validate_caption_sync, get_audio_duration_seconds
-from src.gemini_utils import rate_limited_gemini_call
+from src.groq_utils import rate_limited_groq_call
 
 logger = logging.getLogger(__name__)
 
@@ -62,11 +62,12 @@ def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
         logger.warning(f"[Natural Script QA FAIL] {reason}")
         return {"pass": False, "reason": reason}
 
-    # 4. Use Gemini LLM if API key is present for nuanced tone evaluation
-    if config.GEMINI_API_KEY:
+    # 4. Use Groq LLM if API key is present for nuanced tone evaluation
+    api_key = config.GROQ_API_KEY or config.GEMINI_API_KEY
+    if api_key:
         try:
-            from google import genai
-            client = genai.Client(api_key=config.GEMINI_API_KEY)
+            from groq import Groq
+            client = Groq(api_key=api_key)
             increment_llm_calls()
             
             prompt = (
@@ -77,12 +78,12 @@ def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
                 "Respond strictly with a JSON object:\n"
                 '{"pass": true/false, "reason": "Short explanation of score"}'
             )
-            response = rate_limited_gemini_call(
-                client.models.generate_content,
-                model=config.GEMINI_MODEL,
-                contents=prompt
+            response = rate_limited_groq_call(
+                client.chat.completions.create,
+                model=config.GROQ_MODEL,
+                messages=[{"role": "user", "content": prompt}]
             )
-            raw = response.text.strip()
+            raw = response.choices[0].message.content.strip()
             if raw.startswith("```json"):
                 raw = raw[7:]
             if raw.endswith("```"):
@@ -94,7 +95,7 @@ def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
                 "reason": res_json.get("reason", "Passed natural script quality checks.")
             }
         except Exception as e:
-            logger.warning(f"Gemini LLM Natural Script QA failed: {e}. Falling back to rule-based PASS.")
+            logger.warning(f"Groq LLM Natural Script QA failed: {e}. Falling back to rule-based PASS.")
 
     return {"pass": True, "reason": f"Script passed rule-based checks ({word_count} words, natural phrasing)."}
 

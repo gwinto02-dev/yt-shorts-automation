@@ -39,10 +39,15 @@ ANILIST_GRAPHQL_URL = "https://graphql.anilist.co"
 JIKAN_API_BASE_URL = "https://api.jikan.moe/v4"
 
 # LLM & API Keys
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MIN_CALL_INTERVAL = float(os.getenv("GROQ_MIN_CALL_INTERVAL", "2.0"))  # Seconds delay between sequential Groq calls
+GROQ_MAX_RETRIES = int(os.getenv("GROQ_MAX_RETRIES", "2"))
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
-GEMINI_MIN_CALL_INTERVAL = float(os.getenv("GEMINI_MIN_CALL_INTERVAL", "14.0"))  # Seconds delay between sequential Gemini calls (Free tier: max 5 req/min)
+GEMINI_MIN_CALL_INTERVAL = float(os.getenv("GEMINI_MIN_CALL_INTERVAL", "14.0"))
 GEMINI_MAX_RETRIES = int(os.getenv("GEMINI_MAX_RETRIES", "2"))
 
 # YouTube Upload Settings & Guardrails

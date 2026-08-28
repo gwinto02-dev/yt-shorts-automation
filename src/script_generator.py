@@ -8,7 +8,8 @@ from typing import List, Dict, Any, Tuple
 import config
 from src.llm_tracker import increment_llm_calls
 from src.qa_checker import check_natural_script_quality, check_retention_elements
-from src.gemini_utils import rate_limited_gemini_call
+from src.groq_utils import rate_limited_groq_call
+
 from src.history_manager import check_video_title_similarity, get_recent_video_titles
 
 logger = logging.getLogger(__name__)
@@ -103,7 +104,7 @@ def verify_title_concept_signal(title: str, concept_key: str) -> Tuple[bool, str
     
     return False, f"Title lacks required concept signal keywords ({', '.join(signals)}) for concept '{concept_key}'."
 
-def generate_script_with_gemini(
+def generate_script_with_groq(
     candidates: List[Dict[str, Any]],
     concept_info: Dict[str, Any],
     feedback_notes: str = None,
@@ -114,15 +115,16 @@ def generate_script_with_gemini(
     recent_hooks: List[str] = None,
     recent_outros: List[str] = None
 ) -> str:
-    """Generate natural script using Google Gemini API with explicit structural style directives and anti-repetition constraints."""
-    if not config.GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY is not set in environment.")
+    """Generate natural script using Groq API with explicit structural style directives and anti-repetition constraints."""
+    api_key = config.GROQ_API_KEY or config.GEMINI_API_KEY
+    if not api_key:
+        raise ValueError("GROQ_API_KEY is not set in environment.")
 
-    logger.info("Generating script using Google Gemini API with structural style rotation...")
+    logger.info("Generating script using Groq API with structural style rotation...")
     increment_llm_calls()
     try:
-        from google import genai
-        client = genai.Client(api_key=config.GEMINI_API_KEY)
+        from groq import Groq
+        client = Groq(api_key=api_key)
         
         concept_name = concept_info.get('name', '')
 
@@ -202,17 +204,19 @@ def generate_script_with_gemini(
                 f"Please fix these structural issues and rewrite with a completely distinct sentence pattern."
             )
 
-        response = rate_limited_gemini_call(
-            client.models.generate_content,
-            model=config.GEMINI_MODEL,
-            contents=f"{NATURAL_SYSTEM_PROMPT}\n\n{prompt_content}"
+        response = rate_limited_groq_call(
+            client.chat.completions.create,
+            model=config.GROQ_MODEL,
+            messages=[{"role": "user", "content": f"{NATURAL_SYSTEM_PROMPT}\n\n{prompt_content}"}]
         )
-        return response.text.strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
-        logger.warning(f"Gemini API script generation failed: {e}")
+        logger.warning(f"Groq API script generation failed: {e}")
         raise e
 
-def generate_script_and_title_with_gemini(
+generate_script_with_gemini = generate_script_with_groq
+
+def generate_script_and_title_with_groq(
     candidates: List[Dict[str, Any]],
     concept_key: str,
     concept_info: Dict[str, Any],
@@ -225,18 +229,18 @@ def generate_script_and_title_with_gemini(
     recent_outros: List[str] = None
 ) -> Tuple[str, str]:
     """
-    Consolidated single Gemini API call that generates BOTH the spoken script narration
+    Consolidated single Groq API call that generates BOTH the spoken script narration
     and concept-aligned video title in structured JSON format.
-    Reduces total API calls per run by combining script and title generation into 1 request.
     """
-    if not config.GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY is not set in environment.")
+    api_key = config.GROQ_API_KEY or config.GEMINI_API_KEY
+    if not api_key:
+        raise ValueError("GROQ_API_KEY is not set in environment.")
 
-    logger.info("Generating script AND title in single consolidated Google Gemini API call...")
+    logger.info("Generating script AND title in single consolidated Groq API call...")
     increment_llm_calls()
     try:
-        from google import genai
-        client = genai.Client(api_key=config.GEMINI_API_KEY)
+        from groq import Groq
+        client = Groq(api_key=api_key)
         
         recent_titles = get_recent_video_titles(days=config.VIDEO_TITLE_COOLDOWN_DAYS)
         recent_past_str = "\n".join([f"- {t.get('title')}" for t in recent_titles[-5:]])
@@ -333,13 +337,13 @@ def generate_script_and_title_with_gemini(
             f'{{\n  "script": "spoken narration text...",\n  "video_title": "Video Title 🍿 #Shorts"\n}}'
         )
 
-        response = rate_limited_gemini_call(
-            client.models.generate_content,
-            model=config.GEMINI_MODEL,
-            contents=full_prompt
+        response = rate_limited_groq_call(
+            client.chat.completions.create,
+            model=config.GROQ_MODEL,
+            messages=[{"role": "user", "content": full_prompt}]
         )
 
-        raw = response.text.strip()
+        raw = response.choices[0].message.content.strip()
         if raw.startswith("```json"):
             raw = raw[7:]
         if raw.startswith("```"):
@@ -353,11 +357,13 @@ def generate_script_and_title_with_gemini(
 
         if script_text and video_title:
             return script_text, video_title
-        raise ValueError("Combined Gemini JSON output missing 'script' or 'video_title' field.")
+        raise ValueError("Combined Groq JSON output missing 'script' or 'video_title' field.")
 
     except Exception as e:
-        logger.warning(f"Consolidated Gemini script+title call failed/unparsed: {e}")
+        logger.warning(f"Consolidated Groq script+title call failed/unparsed: {e}")
         raise e
+
+generate_script_and_title_with_gemini = generate_script_and_title_with_groq
 
 def generate_fallback_template_script(
     candidates: List[Dict[str, Any]],
@@ -463,11 +469,12 @@ def generate_video_title(candidates: List[Dict[str, Any]], concept_key: str, con
     retries = 0
     proposed_title = ""
 
+    api_key = config.GROQ_API_KEY or config.GEMINI_API_KEY
     while retries <= config.MAX_STAGE_RETRIES:
-        if config.GEMINI_API_KEY and retries < 2:
+        if api_key and retries < 2:
             try:
-                from google import genai
-                client = genai.Client(api_key=config.GEMINI_API_KEY)
+                from groq import Groq
+                client = Groq(api_key=api_key)
                 increment_llm_calls()
                 
                 recent_past_str = "\n".join([f"- {t.get('title')}" for t in recent_titles[-5:]])
@@ -486,12 +493,12 @@ def generate_video_title(candidates: List[Dict[str, Any]], concept_key: str, con
                     "Output ONLY the plain title text, nothing else."
                 )
 
-                response = rate_limited_gemini_call(
-                    client.models.generate_content,
-                    model=config.GEMINI_MODEL,
-                    contents=prompt
+                response = rate_limited_groq_call(
+                    client.chat.completions.create,
+                    model=config.GROQ_MODEL,
+                    messages=[{"role": "user", "content": prompt}]
                 )
-                proposed_title = response.text.strip().replace('"', '')
+                proposed_title = response.choices[0].message.content.strip().replace('"', '')
             except Exception as e:
                 logger.warning(f"LLM video title generation failed: {e}. Using template fallback.")
                 proposed_title = ""
@@ -543,15 +550,16 @@ def generate_recommendation_script(
     retention_qa_res = {"pass": False, "reason": "Not run"}
 
     combined_video_title = None
+    has_api_key = bool(config.GROQ_API_KEY or config.GEMINI_API_KEY)
 
     while retries <= config.MAX_STAGE_RETRIES:
         if retries > 0:
             logger.info(f"[Script Rewrite Retry {retries}/{config.MAX_STAGE_RETRIES}] Rewriting script based on QA feedback...")
 
         # Generate draft
-        if config.GEMINI_API_KEY:
+        if has_api_key:
             try:
-                script_text, combined_video_title = generate_script_and_title_with_gemini(
+                script_text, combined_video_title = generate_script_and_title_with_groq(
                     candidates,
                     concept_key,
                     concept_info,
@@ -565,7 +573,7 @@ def generate_recommendation_script(
                 )
             except Exception:
                 try:
-                    script_text = generate_script_with_gemini(
+                    script_text = generate_script_with_groq(
                         candidates,
                         concept_info,
                         feedback_notes=feedback_notes,

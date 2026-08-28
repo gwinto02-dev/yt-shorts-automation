@@ -8,7 +8,7 @@ from typing import List, Dict, Any, Optional, Tuple, Set
 
 import config
 from src.llm_tracker import increment_llm_calls
-from src.gemini_utils import rate_limited_gemini_call
+from src.groq_utils import rate_limited_groq_call
 
 logger = logging.getLogger(__name__)
 
@@ -374,10 +374,11 @@ def check_originality_against_history(new_script: str, new_hook: str, new_title:
         }
 
     # 2. LLM Check for semantic/idea similarity if API key is set
-    if config.GEMINI_API_KEY:
+    api_key = config.GROQ_API_KEY or config.GEMINI_API_KEY
+    if api_key:
         try:
-            from google import genai
-            client = genai.Client(api_key=config.GEMINI_API_KEY)
+            from groq import Groq
+            client = Groq(api_key=api_key)
             increment_llm_calls()
             
             # Form summary of recent past 10 Shorts
@@ -400,12 +401,12 @@ def check_originality_against_history(new_script: str, new_hook: str, new_title:
                 "Respond ONLY with valid JSON."
             )
 
-            response = rate_limited_gemini_call(
-                client.models.generate_content,
-                model=config.GEMINI_MODEL,
-                contents=prompt
+            response = rate_limited_groq_call(
+                client.chat.completions.create,
+                model=config.GROQ_MODEL,
+                messages=[{"role": "user", "content": prompt}]
             )
-            raw_text = response.text.strip()
+            raw_text = response.choices[0].message.content.strip()
             # Clean possible markdown formatting
             if raw_text.startswith("```json"):
                 raw_text = raw_text[7:]
@@ -425,7 +426,7 @@ def check_originality_against_history(new_script: str, new_hook: str, new_title:
             }
 
         except Exception as e:
-            logger.warning(f"Gemini LLM Originality check failed: {e}. Falling back to Jaccard result.")
+            logger.warning(f"Groq LLM Originality check failed: {e}. Falling back to Jaccard result.")
 
     reason = f"Originality confirmed (Highest text overlap with past Shorts: {highest_sim:.0%})."
     logger.info(f"[Originality Check PASS] {reason}")
