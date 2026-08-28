@@ -94,5 +94,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-08-27T17:00:02.284728",
     "date_readable": "2026-08-27 17:00:02"
+  },
+  {
+    "title": "Dandadan 3rd Season",
+    "normalized_title": "dandadan 3rd season",
+    "anime_id": 198966,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-28T19:03:12.213571",
+    "date_readable": "2026-08-28 19:03:12"
+  },
+  {
+    "title": "Kage no Jitsuryokusha ni Naritakute!: Zankyou-hen",
+    "normalized_title": "kage no jitsuryokusha ni naritakute zankyouhen",
+    "anime_id": 171952,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-28T19:03:12.213571",
+    "date_readable": "2026-08-28 19:03:12"
+  },
+  {
+    "title": "Tokidoki Bosotto Rossiya-go de Dereru Tonari no Alya-san Season 2",
+    "normalized_title": "tokidoki bosotto rossiyago de dereru tonari no alyasan season 2",
+    "anime_id": 181641,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-28T19:03:12.213571",
+    "date_readable": "2026-08-28 19:03:12"
   }
 ]
