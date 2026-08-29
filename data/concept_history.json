@@ -103,5 +103,10 @@
     "concept_type": "genre_spotlight",
     "date": "2026-08-29T04:31:19.232821",
     "date_readable": "2026-08-29 04:31:19"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-29T04:44:05.932256",
+    "date_readable": "2026-08-29 04:44:05"
   }
 ]

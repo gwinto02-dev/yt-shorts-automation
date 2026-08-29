@@ -166,5 +166,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-08-29T04:31:19.345435",
     "date_readable": "2026-08-29 04:31:19"
+  },
+  {
+    "title": "Delicious in Dungeon Season 2",
+    "normalized_title": "delicious in dungeon season 2",
+    "anime_id": 178031,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-29T04:44:06.084098",
+    "date_readable": "2026-08-29 04:44:06"
+  },
+  {
+    "title": "Sousou no Frieren 3rd Season",
+    "normalized_title": "sousou no frieren 3rd season",
+    "anime_id": 209939,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-29T04:44:06.084098",
+    "date_readable": "2026-08-29 04:44:06"
+  },
+  {
+    "title": "Bocchi the Rock! 2nd Season",
+    "normalized_title": "bocchi the rock 2nd season",
+    "anime_id": 186712,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-29T04:44:06.084098",
+    "date_readable": "2026-08-29 04:44:06"
   }
 ]
