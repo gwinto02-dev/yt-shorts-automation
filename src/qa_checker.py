@@ -34,7 +34,15 @@ FORBIDDEN_CLICHES = [
     "game-changer",
     "game changer",
     "will ruin",
-    "next level"
+    "next level",
+    "stretch its fantasy chops",
+    "stretch its action chops",
+    "kinetic flair",
+    "lights up the screen",
+    "sparked conversation",
+    "generating buzz",
+    "delivers on every front",
+    "packs a punch"
 ]
 
 def check_natural_script_quality(script_text: str) -> Dict[str, Any]:

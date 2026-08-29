@@ -61,41 +61,43 @@ sample_candidates = [
     },
     {
         "id": 3,
-        "title": "Apothecary Diaries",
-        "average_score": 8.8,
-        "selection_category": "Top Recommendation",
-        "genres": ["Mystery", "Historical"],
+        "title": "Frieren Season 2: El Dorado Arc",
+        "average_score": 0.0,
+        "selection_category": "Upcoming Spotlight",
+        "is_upcoming": True,
+        "status": "NOT_YET_RELEASED",
+        "genres": ["Fantasy", "Adventure"],
         "verified_facts": {
-            "title": "The Apothecary Diaries",
-            "score_numeric": 8.8,
-            "verified_score": "8.8/10",
-            "studio": "TOHO Animation STUDIO",
-            "release_year": 2023,
-            "genres": ["Mystery", "Historical"],
-            "lead_characters": ["Maomao", "Jinshi"],
-            "synopsis_snippet": "A sharp-witted young apothecary uses her medical knowledge to solve deadly mysteries within the imperial palace court."
+            "title": "Frieren Season 2: El Dorado Arc",
+            "score_numeric": 0.0,
+            "verified_score": "N/A",
+            "studio": "Madhouse",
+            "release_year": 2026,
+            "genres": ["Fantasy", "Adventure"],
+            "lead_characters": ["Frieren", "Macht", "Denken"],
+            "synopsis_snippet": "Confirmed upcoming second season adapting the El Dorado arc focusing on Macht of the Golden Land."
         }
     }
 ]
 
 concept_info = {
-    "name": "Underrated Masterpieces",
-    "tagline": "Peak Storytelling Anime You Cannot Miss"
+    "name": "Peak Storytelling Spotlight",
+    "tagline": "Must-Watch Series & Upcoming Arcs"
 }
 concept_key = "hidden_gems"
 
 # Explicit fallback mock responses ONLY used when GROQ_API_KEY is not set
 MOCK_GROQ_RESPONSES = [
     {
-        "script": "What happens when an immortal elf mage reflects on mortality long after her legendary hero party defeated the demon king? Frieren: Beyond Journey's End, animated by Madhouse in 2023, is a stunning 9.3 out of 10 fantasy series that redefines slow-burn storytelling and emotional depth. Next up for mystery lovers, detective robot Gesicht investigates a string of high-profile murders across a futuristic society in Pluto, a dark 8.7 out of 10 sci-fi thriller crafted by Studio M2. Finally, holding an 8.8 out of 10 score, sharp-witted Maomao uses her deep medical knowledge to solve deadly royal court mysteries in The Apothecary Diaries. If you love rich world-building and character storytelling, start with Frieren tonight — which of these three are you watching first? Drop your pick in the comments below!",
-        "video_title": "3 Underrated Masterpieces Worth Your Binge 📺 #Shorts"
+        "script": "What happens when an immortal elf mage reflects on mortality long after her legendary hero party defeated the demon king? Frieren: Beyond Journey's End, animated by Madhouse in 2023, is a stunning 9.3 out of 10 fantasy series that redefines slow-burn storytelling and emotional depth. Next up for mystery lovers, detective robot Gesicht investigates a string of high-profile murders across a futuristic society in Pluto, a dark 8.7 out of 10 sci-fi thriller crafted by Studio M2. Finally, Madhouse officially confirmed Frieren Season 2: El Dorado Arc for 2026, adapting Macht's storyline directly from the manga. If you love rich world-building, start with Frieren tonight — which of these three are you watching first? Drop your pick in the comments below!",
+        "video_title": "3 Peak Fantasy Anime You Cannot Miss 📺 #Shorts"
     },
     {
-        "script": "Studio M2 spent over two full years perfecting the intricate robotic world and cinematic fight animation of Pluto for a series that many casual anime fans completely missed. Holding an 8.7 out of 10 rating, this sci-fi murder mystery follows detective Gesicht as he uncovers a conspiracy threatening humanity. Moving over to historical mystery drama, Maomao solves lethal imperial palace conspiracies using herbal poisons in TOHO's impressive 8.8 out of 10 series The Apothecary Diaries. Rounding out today's picks, Madhouse delivered the legendary 9.3 out of 10 fantasy epic Frieren: Beyond Journey's End in 2023. Whether you start with Pluto or save Frieren for the weekend, save this Short for your next binge night and stay tuned!",
+        "script": "Studio M2 spent over two full years perfecting the intricate robotic world and cinematic fight animation of Pluto for a series that many casual anime fans completely missed. Holding an 8.7 out of 10 rating, this dark sci-fi murder mystery follows detective Gesicht as he uncovers a massive conspiracy threatening humanity. Moving over to upcoming announcements, Madhouse officially confirmed Frieren Season 2: El Dorado Arc adapting Macht and Denken's story. Rounding out today's picks, Madhouse delivered the legendary 9.3 out of 10 fantasy epic Frieren: Beyond Journey's End in 2023. Whether you start with Pluto or save Frieren for the weekend, save this Short for your next binge night and stay tuned!",
         "video_title": "Obscure Anime That Deserve Way More Hype 🔥 #Shorts"
     },
     {
-        "script": "Right when you think Maomao is just a quiet palace servant in The Apothecary Diaries, episode three reveals her terrifying expertise with deadly poisons and complex royal court intrigue. TOHO Animation STUDIO produced this incredible 8.8 out of 10 historical mystery series back in 2023. Stepping up next for fantasy lovers, Madhouse brought the legendary 9.3 out of 10 epic Frieren: Beyond Journey's End to life with breathtaking spell animation and unforgettable emotional storytelling. Finally, Studio M2 crafted the compelling 8.7 out of 10 sci-fi murder mystery Pluto. Which of these three distinct story premises caught your attention most tonight? Let me know your thoughts in the comments below and save this Short!",
+        "script": "Right when you think detective Gesicht is solving a routine homicide in Pluto, episode two reveals a terrifying shadowy conspiracy targeting the seven most advanced robots on Earth. Studio M2 produced this compelling 8.7 out of 10 sci-fi mystery series back in 2023. Stepping up next for fantasy lovers, Madhouse brought the legendary 9.3 out of 10 epic Frieren: Beyond Journey's End to life with breathtaking spell animation and emotional storytelling. Finally, Madhouse officially confirmed Frieren Season 2: El Dorado Arc for 2026, covering Denken and Macht's manga battle. Which of these three distinct story premises caught your attention most tonight? Let me know your thoughts in the comments below and save this Short!",
         "video_title": "3 Masterpiece Anime You Haven't Heard Of 🤫 #Shorts"
     }
 ]
