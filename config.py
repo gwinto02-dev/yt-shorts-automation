@@ -40,7 +40,7 @@ JIKAN_API_BASE_URL = "https://api.jikan.moe/v4"
 
 # LLM & API Keys
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 GROQ_MIN_CALL_INTERVAL = float(os.getenv("GROQ_MIN_CALL_INTERVAL", "2.0"))  # Seconds delay between sequential Groq calls
 GROQ_MAX_RETRIES = int(os.getenv("GROQ_MAX_RETRIES", "2"))
 

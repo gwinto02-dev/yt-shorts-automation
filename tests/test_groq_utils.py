@@ -19,8 +19,8 @@ from src.groq_utils import (
 class TestGroqUtils(unittest.TestCase):
 
     def test_config_model_name_consistency(self):
-        """Verify central GROQ_MODEL setting is llama-3.3-70b-versatile."""
-        self.assertEqual(config.GROQ_MODEL, "llama-3.3-70b-versatile")
+        """Verify central GROQ_MODEL setting is openai/gpt-oss-120b."""
+        self.assertEqual(config.GROQ_MODEL, "openai/gpt-oss-120b")
 
     def test_parse_retry_delay_from_error(self):
         """Test retryDelay parsing from various Groq API error string formats."""
