@@ -142,5 +142,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-08-29T04:02:57.688918",
     "date_readable": "2026-08-29 04:02:57"
+  },
+  {
+    "title": "Frieren: Beyond Journey’s End",
+    "normalized_title": "frieren beyond journeys end",
+    "anime_id": 154587,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T04:31:19.345435",
+    "date_readable": "2026-08-29 04:31:19"
+  },
+  {
+    "title": "Attack on Titan",
+    "normalized_title": "attack on titan",
+    "anime_id": 16498,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T04:31:19.345435",
+    "date_readable": "2026-08-29 04:31:19"
+  },
+  {
+    "title": "Death Note",
+    "normalized_title": "death note",
+    "anime_id": 1535,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T04:31:19.345435",
+    "date_readable": "2026-08-29 04:31:19"
   }
 ]
