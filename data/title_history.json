@@ -118,5 +118,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-08-28T19:03:12.213571",
     "date_readable": "2026-08-28 19:03:12"
+  },
+  {
+    "title": "The Ramparts of Ice",
+    "normalized_title": "the ramparts of ice",
+    "anime_id": 186497,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-29T04:02:57.688918",
+    "date_readable": "2026-08-29 04:02:57"
+  },
+  {
+    "title": "You and I Are Polar Opposites Season 2",
+    "normalized_title": "you and i are polar opposites season 2",
+    "anime_id": 210031,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-29T04:02:57.688918",
+    "date_readable": "2026-08-29 04:02:57"
+  },
+  {
+    "title": "Saga of Tanya the Evil Season 2",
+    "normalized_title": "saga of tanya the evil season 2",
+    "anime_id": 135865,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-29T04:02:57.688918",
+    "date_readable": "2026-08-29 04:02:57"
   }
 ]
