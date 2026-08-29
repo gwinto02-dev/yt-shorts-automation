@@ -75,6 +75,30 @@
     "video_id": "vD9flmWuUnE"
   },
   {
+    "date": "2026-08-29T05:16:20.239937",
+    "date_readable": "2026-08-29",
+    "concept_type": "anime_comparison",
+    "title": "Mushoku Tensei S3 vs Link Click S3 vs Jujutsu Kaisen: Epic Anime Matchup ⚔️ #Shorts",
+    "hook": "What happens when a sorcerer chasing the perfect death, a pair swapping lives through a single photograph, and a reincarnated mage battling his own legacy all tackle the weight of regret?\n\nStarting with MAPPA’s sharp, high‑contrast animation in Jujutsu Kaisen, the series paints curses as literal manifestations of human shame, and Kinji Hakari prowls the streets seeking that 'right death",
+    "script": "What happens when a sorcerer chasing the perfect death, a pair swapping lives through a single photograph, and a reincarnated mage battling his own legacy all tackle the weight of regret?\n\nStarting with MAPPA’s sharp, high‑contrast animation in Jujutsu Kaisen, the series paints curses as literal manifestations of human shame, and Kinji Hakari prowls the streets seeking that 'right death.'\n\nThen we have Vein and Fei Xia diving into a treasured photo to rewrite a tragic moment, and the third season carries an 8.4 /10 rating on MyAnimeList, keeping the mystery‑thriller edge alive.\n\nFinally, an 8.4 /10 score follows Mushoku Tensei’s third season, where Studio Bind’s detailed world shows Rudeus, now a seasoned mage, entangled in Adoldia’s political schemes while trying to amend his past missteps.\n\nEach flips regret differently—curses in Jujutsu Kaisen, photo loops in Link Click, kingdom intrigue in Mushoku Tensei. Which approach resonates most with you? Let me know which angle you prefer in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when a sorcerer",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "you prefer in the comments",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "uBoLf6Lrn7I",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
+  },
+  {
     "date": "2026-08-29T09:14:09.554431",
     "date_readable": "2026-08-29",
     "concept_type": "hidden_gems",
