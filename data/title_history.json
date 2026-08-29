@@ -238,5 +238,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-08-29T05:14:16.331559",
     "date_readable": "2026-08-29 05:14:16"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 3",
+    "normalized_title": "rezero starting life in another world season 3",
+    "anime_id": 163134,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T05:22:34.047540",
+    "date_readable": "2026-08-29 05:22:34"
+  },
+  {
+    "title": "Smoking Behind the Supermarket with You",
+    "normalized_title": "smoking behind the supermarket with you",
+    "anime_id": 196187,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T05:22:34.047540",
+    "date_readable": "2026-08-29 05:22:34"
+  },
+  {
+    "title": "Jaadugar: A Witch in Mongolia",
+    "normalized_title": "jaadugar a witch in mongolia",
+    "anime_id": 190569,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T05:22:34.047540",
+    "date_readable": "2026-08-29 05:22:34"
   }
 ]

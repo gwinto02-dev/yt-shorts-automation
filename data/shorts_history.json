@@ -99,6 +99,27 @@
     }
   },
   {
+    "date": "2026-08-29T05:23:09.520123",
+    "date_readable": "2026-08-29",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight: Re:ZERO S3, Supermarket Smoking, Mongolian Witch 🧙‍♂️ #Shorts",
+    "hook": "Which anime matches the exact vibe you're craving—pulse‑pounding action, a mystery that keeps you guessing, or a quiet romance that hits home?\n\nScience SARU gives Jaadugar its signature fluid animation, letting us follow Sitara as she trades loss for a scholar family’s knowledge on the Mongolian steppes, a plot that feels like a careful puzzle",
+    "script": "Which anime matches the exact vibe you're craving—pulse‑pounding action, a mystery that keeps you guessing, or a quiet romance that hits home?\n\nScience SARU gives Jaadugar its signature fluid animation, letting us follow Sitara as she trades loss for a scholar family’s knowledge on the Mongolian steppes, a plot that feels like a careful puzzle.\n\nMoving to a softer tempo, Sasaki, a burned‑out salaryman who lives off cigarettes and the smile of clerk Yamada, anchors Smoking Behind the Supermarket with You, a slice‑of‑life romance that earned an 8.2 on MyAnimeList and explores everyday longing.\n\nAnd for when you need an adrenaline rush, at 8.4 Re:ZERO’s third season throws Subaru into a post‑victory world where a cryptic letter and a looming royal selection spark fresh peril.\n\nIf Yamada’s bright smile stayed with you, tell me which mood you’re in and drop your pick below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "which anime matches the exact",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "and drop your pick below",
+      "transition_markers": []
+    },
+    "video_id": "ymkJR2W_JzU",
+    "concept_angle": {
+      "key": "MOOD_BASED",
+      "label": "Match Your Viewing Mood",
+      "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
+    }
+  },
+  {
     "date": "2026-08-29T09:14:09.554431",
     "date_readable": "2026-08-29",
     "concept_type": "hidden_gems",

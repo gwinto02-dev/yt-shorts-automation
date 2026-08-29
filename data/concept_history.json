@@ -119,5 +119,11 @@
     "date": "2026-08-29T05:14:16.205786",
     "date_readable": "2026-08-29 05:14:16",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T05:22:33.699176",
+    "date_readable": "2026-08-29 05:22:33",
+    "angle_key": "MOOD_BASED"
   }
 ]
