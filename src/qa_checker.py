@@ -22,9 +22,19 @@ FORBIDDEN_CLICHES = [
     "buckle up",
     "absolute masterpiece",
     "mind blown",
+    "mind-blowing",
     "without further ado",
     "smash that like button right now",
-    "unpopluar opinion but"
+    "unpopluar opinion but",
+    "shatter the way you judge",
+    "leads the charge",
+    "hidden gem",
+    "hidden gems",
+    "you won't believe",
+    "game-changer",
+    "game changer",
+    "will ruin",
+    "next level"
 ]
 
 def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
@@ -113,20 +123,17 @@ def check_retention_elements(script_text: str) -> Dict[str, Any]:
     has_strong_hook = (
         "?" in first_sentence
         or any(w in first_sentence.lower() for w in [
-            # Original curiosity/question-style triggers
+            # 1. SPECIFIC_QUESTION / Curiosity Triggers
             "stop", "looking", "ever wonder", "secret", "best", "unbelievable", "need", "binge", "ready",
-            # Bold-claim style triggers (matches the BOLD_CLAIM category recognized
-            # by the Structural Variety classifier in history_manager.py — a hook
-            # using this style is genuinely strong and should not be penalized here
-            # just because it isn't phrased as a question)
-            "ruin ordinary", "stop wasting", "absolute tier", "will completely",
-            # "You won't believe" style triggers
-            "won't believe", "no idea", "hidden revelation",
-            # Scenario-style triggers
-            "picture this", "imagine", "friday night",
+            # 2. SURPRISING_FACT / Concrete Detail Triggers
+            "spent", "animated", "produced", "fact", "turns out", "nobody", "detail", "rated", "studio", "years",
+            # 3. IN_SCENE_MID_THOUGHT / Story Triggers
+            "right when", "episode", "chapter", "the moment", "just when", "before you", "picture this", "imagine",
+            # Additional hook triggers
+            "ruin ordinary", "stop wasting", "absolute tier", "will completely", "won't believe", "no idea", "hidden revelation", "friday night"
         ])
     )
-    hook_res = {"pass": has_strong_hook, "reason": "Strong curiosity hook detected." if has_strong_hook else "Hook lacks curiosity trigger or question."}
+    hook_res = {"pass": has_strong_hook, "reason": "Strong curiosity/fact/scene hook detected." if has_strong_hook else "Hook lacks curiosity trigger, concrete fact, or scene entry."}
     
     word_count = len(words)
     pacing_pass = 110 <= word_count <= 210
@@ -135,7 +142,7 @@ def check_retention_elements(script_text: str) -> Dict[str, Any]:
     payoff_pass = any(w in script_text.lower() for w in ["masterpiece", "twist", "animation", "story", "watch", "legendary", "reason", "insane", "incredible", "show", "rated", "series", "spotlight"])
     payoff_res = {"pass": payoff_pass, "reason": "Clear value/reason to watch included." if payoff_pass else "Lacks concrete payoff/reason to watch."}
     
-    ending_pass = any(w in script_text[-100:].lower() for w in ["comment", "subscribe", "like", "watchlist", "next", "which one", "start"])
+    ending_pass = any(w in script_text[-120:].lower() for w in ["comment", "subscribe", "like", "watchlist", "next", "which one", "start", "watching", "thoughts", "below", "pick", "drop", "first"])
     ending_res = {"pass": ending_pass, "reason": "Strong Call to Action at ending." if ending_pass else "Missing call to action or closing loop."}
 
     all_passed = hook_res["pass"] and pacing_res["pass"] and payoff_res["pass"] and ending_res["pass"]

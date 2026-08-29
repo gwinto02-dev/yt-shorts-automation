@@ -15,33 +15,40 @@ from src.history_manager import check_video_title_similarity, get_recent_video_t
 logger = logging.getLogger(__name__)
 
 NATURAL_SYSTEM_PROMPT = """You are a passionate anime storyteller creating a fast-paced, highly engaging 30-40 second YouTube Short narration.
-Write like a genuine human creator sharing exciting anime recommendations with fellow fans.
+Write like a knowledgeable friend casually recommending anime to fellow fans — focus on specific, concrete details about the actual show (plot hook, character trait, animation style, studio) rather than vague hype adjectives.
 
 CRITICAL RULES:
-1. NEVER use generic AI filler phrases: "in a world where", "buckle up", "absolute masterpiece", "without further ado", "smash that like button right now".
-2. Word count MUST be between 115 and 165 words.
-3. USE THE SPECIFIC RETRIEVED FACTS PROVIDED: Mention exact scores, studio names, release years, or specific story premises provided in the prompt context.
-4. UNRATED / UPCOMING ANIME: If score is listed as "Unrated" or missing, DO NOT cite a numerical rating or say "N/A". Use anticipation/hype framing instead (e.g., "highly anticipated", "one to watch", "eagerly awaited").
-5. STRUCTURAL VARIETY MANDATE:
-   - DO NOT use the same sentence formula for each title (e.g., avoid repeating "Rated X/10, this Y pick produced by Z...").
+1. ABSOLUTELY BANNED HYPE & CLICKBAIT PHRASES:
+   NEVER use generic AI clickbait phrases or constructions, including: "shatter the way you judge", "leads the charge", "hidden gems", "hidden gem", "you won't believe", "mind-blowing", "game-changer", "will ruin", "next level", "in a world where", "buckle up", "absolute masterpiece", "without further ado", "smash that like button right now", "unpopular opinion but".
+2. WORD COUNT: Script MUST be between 115 and 165 words total.
+3. USE SPECIFIC RETRIEVED FACTS: Mention exact scores, studio names, release years, or specific story premises provided in the prompt context.
+4. UNRATED / UPCOMING ANIME: If score is listed as "Unrated" or missing, DO NOT cite a numerical rating or say "N/A". Use natural anticipation framing instead (e.g., "highly anticipated", "one to watch", "eagerly awaited").
+5. OPENING HOOK REQUIREMENT (CRITICAL):
+   The very first sentence MUST do ONE of these three things:
+   - Option A (Specific Question): Pose a specific, curiosity-driving question about the content itself (e.g., "What happens when a disgraced knight gets a second chance at life in a world of high-stakes magic?"). DO NOT use generic "did you know" or "ever wondered".
+   - Option B (Surprising Fact): State a surprising or specific concrete fact about one of the three picks (e.g., "Mappa spent over two years animating a single tournament fight for a show almost nobody watched.").
+   - Option C (In-Scene Mid-Thought): Open mid-thought or in-scene rather than announcing the video's premise (e.g., "Right when you think this fantasy thriller is a standard revenge story, episode four completely flips the table.").
+   NEVER open by announcing the video (e.g., avoid "Here are 3 anime...", "Today we have 3 shows...").
+6. CLOSING OUTRO REQUIREMENT (CRITICAL):
+   The ending MUST include a concrete callback/reference to a specific detail or title mentioned earlier in the video BEFORE any call-to-action.
+   Vary the call-to-action phrasing across generations (e.g., "Which of these three are you watching first?", "Drop your pick in the comments", "Save this for your next binge night"). NEVER use a generic isolated "Subscribe for more".
+7. STRUCTURAL VARIETY MANDATE:
+   - DO NOT use the same sentence formula for each title.
    - Vary what information comes first for each title (studio vs. rating vs. character vs. plot hook).
    - Use varied natural transition phrases between titles instead of repeating "Number two:" or "Number one on our list is".
-6. Output ONLY raw spoken narration text. Do NOT include scene cues, timestamps, or stage directions.
+8. Output ONLY raw spoken narration text (or JSON when requested). Do NOT include scene cues, timestamps, or stage directions.
 """
 
 OPENING_STYLE_DIRECTIVES = {
-    "QUESTION": "OPENING HOOK STYLE: Ask a compelling, curiosity-driven question directly to the viewer (e.g., 'Ever wondered which anime deserve your attention tonight?').",
-    "BOLD_CLAIM": "OPENING HOOK STYLE: Make a bold, high-stakes claim that grabs attention instantly (e.g., 'These three anime will completely ruin ordinary shows for you once you start.').",
-    "YOU_WONT_BELIEVE": "OPENING HOOK STYLE: Use a 'you won't believe' / hidden revelation opening style (e.g., 'You won't believe how underrated these three series actually are despite their incredible visuals.').",
-    "DIRECT_STATEMENT": "OPENING HOOK STYLE: Use a direct, high-energy statement (e.g., 'Here are three peak anime recommendations you need on your watchlist right now.').",
-    "SCENARIO": "OPENING HOOK STYLE: Paint a quick, relatable scenario or hypothetical situation (e.g., 'Picture this: it's Friday night and you need an anime that hooks you from the very first minute.')."
+    "SPECIFIC_QUESTION": "OPENING HOOK STYLE (Specific Question): Pose a specific, curiosity-driving question about the content itself (e.g., 'What happens when a disgraced knight gets a second chance at life in a world of high-stakes magic?'). DO NOT use generic 'did you know' or 'ever wondered'.",
+    "SURPRISING_FACT": "OPENING HOOK STYLE (Surprising Fact): State a surprising or specific concrete fact about one of the three picks (e.g., 'Mappa spent over two years animating a single tournament fight for a show almost nobody watched.').",
+    "IN_SCENE_MID_THOUGHT": "OPENING HOOK STYLE (In-Scene / Mid-Thought): Open mid-thought or in-scene rather than announcing the video premise (e.g., 'Right when you think this fantasy thriller is a standard revenge story, episode four completely flips the table.')."
 }
 
 CLOSING_STYLE_DIRECTIVES = {
-    "QUESTION_TO_VIEWER": "CLOSING OUTRO STYLE: Ask a direct question asking viewers for their opinion (e.g., 'Which of these three are you adding to your watchlist first? Let me know below and subscribe for daily recs!').",
-    "DIRECT_RECOMMENDATION": "CLOSING OUTRO STYLE: Provide a direct, confident action recommendation (e.g., 'Start with number one tonight — you won't regret it! Subscribe for more daily anime hidden gems.').",
-    "TEASER_TOMORROW": "CLOSING OUTRO STYLE: Use a teaser for upcoming recommendations / bookmark reminder (e.g., 'Save this Short for your next binge night and subscribe so you don't miss tomorrow's spotlight!').",
-    "SIMPLE_SIGNOFF": "CLOSING OUTRO STYLE: Use a crisp, passionate creator sign-off (e.g., 'Happy watching, drop your favorite in the comments, and subscribe for daily top-tier anime picks!')."
+    "SPECIFIC_CALLBACK_QUESTION": "CLOSING OUTRO STYLE: Include a concrete callback to one of the 3 featured shows then ask a specific question (e.g., 'If you love dark fantasy, start with [Title #1] tonight — which of these three are you watching first? Drop your pick below!').",
+    "SPECIFIC_CALLBACK_BINGE": "CLOSING OUTRO STYLE: Include a concrete callback to one of the 3 featured shows then suggest bookmarking (e.g., 'Whether you start with [Title #1] or save [Title #2] for the weekend, save this Short for your next binge night!').",
+    "SPECIFIC_CALLBACK_OPINION": "CLOSING OUTRO STYLE: Include a concrete callback to one of the story premises then ask for viewer thoughts (e.g., 'Which of these three plot twists caught your attention most? Let me know in the comments below!')."
 }
 
 TRANSITION_STYLE_DIRECTIVES = {
@@ -387,20 +394,18 @@ def generate_fallback_template_script(
         single shared cleaned name can safely serve all of them at once."""
         return re.sub(rf"\s+{re.escape(word)}$", "", concept_name, flags=re.IGNORECASE).strip()
 
-    op_style = target_opening_style or random.choice(["QUESTION", "BOLD_CLAIM", "YOU_WONT_BELIEVE", "DIRECT_STATEMENT", "SCENARIO"])
-    cl_style = target_closing_style or random.choice(["QUESTION_TO_VIEWER", "DIRECT_RECOMMENDATION", "TEASER_TOMORROW", "SIMPLE_SIGNOFF"])
+    op_style = target_opening_style or random.choice(["SPECIFIC_QUESTION", "SURPRISING_FACT", "IN_SCENE_MID_THOUGHT"])
+    cl_style = target_closing_style or random.choice(["SPECIFIC_CALLBACK_QUESTION", "SPECIFIC_CALLBACK_BINGE", "SPECIFIC_CALLBACK_OPINION"])
     
-    # Opening Hooks by Style
-    if op_style == "QUESTION":
-        hook = f"Looking for peak anime that will actually blow your mind? Here are {count} incredible shows in today's {_name_without_trailing('spotlight')} spotlight."
-    elif op_style == "BOLD_CLAIM":
-        hook = f"These {count} anime will ruin ordinary shows for you. Here are today's {_name_without_trailing('recommendations')} recommendations."
-    elif op_style == "YOU_WONT_BELIEVE":
-        hook = f"You won't believe how incredible these {count} anime actually are. Welcome to today's {_name_without_trailing('lineup')} lineup."
-    elif op_style == "SCENARIO":
-        hook = f"Picture this: it's Friday night and you need an anime that hooks you instantly. Here are {count} top picks."
-    else: # DIRECT_STATEMENT
-        hook = f"Here are {count} must-watch anime recommendations you need on your watchlist right now."
+    first_title = reversed_candidates[0].get("verified_facts", {}).get("title") or reversed_candidates[0].get("title", "our top pick")
+
+    # Opening Hooks by Style (Supporting both legacy and new style keys)
+    if op_style in ["QUESTION", "SPECIFIC_QUESTION"]:
+        hook = f"What happens when three standout anime slip right past most fans' watchlists? Today we examine {count} incredible series worth your attention."
+    elif op_style in ["BOLD_CLAIM", "SURPRISING_FACT"]:
+        hook = f"Did you know {reversed_candidates[0].get('verified_facts', {}).get('studio', 'top animation studios')} spent years perfecting the visuals for a series many fans overlooked? These shows will completely ruin ordinary series for you."
+    else: # YOU_WONT_BELIEVE, SCENARIO, IN_SCENE_MID_THOUGHT, DIRECT_STATEMENT
+        hook = f"Right when you think you've seen every top-tier anime story, these {count} distinct series completely change the game."
 
     lines = [hook]
     
@@ -437,9 +442,9 @@ def generate_fallback_template_script(
         elif idx == 2:
             # Structure B: Start with Title -> Character/Story Premise -> Rating/Hype -> Studio
             if score_is_valid:
-                lines.append(f"{t_prefix}, {title} follows an intense journey that hooks you instantly. Holding a {raw_score:.1f}/10 rating, {studio} crafted this into a peak {genres} series.")
+                lines.append(f"{t_prefix}, {title} follows an intense journey that hooks you instantly. Holding a {raw_score:.1f}/10 rating, {studio} crafted this into a standout {genres} series.")
             else:
-                lines.append(f"{t_prefix}, {title} follows an intense journey that hooks you instantly. Recognized as one to watch, {studio} crafted this into a peak {genres} series.")
+                lines.append(f"{t_prefix}, {title} follows an intense journey that hooks you instantly. Recognized as one to watch, {studio} crafted this into a standout {genres} series.")
         else:
             # Structure C: Start with Score/Hype -> Title -> Plot Hook
             if score_is_valid:
@@ -447,15 +452,13 @@ def generate_fallback_template_script(
             else:
                 lines.append(f"{t_prefix}, standing as an eagerly awaited upcoming pick, is {title}. It's a sensational {genres} show that stays with you long after the credits roll.")
 
-    # Closings by Style
-    if cl_style == "QUESTION_TO_VIEWER":
-        outro = "Which of these three are you adding to your watchlist first? Drop your thoughts below and hit subscribe!"
-    elif cl_style == "DIRECT_RECOMMENDATION":
-        outro = "Start with number one tonight — you won't regret it. Subscribe for daily peak anime recommendations!"
-    elif cl_style == "TEASER_TOMORROW":
-        outro = "Save this Short for binge night and subscribe so you don't miss tomorrow's daily anime spotlight!"
-    else: # SIMPLE_SIGNOFF
-        outro = "Happy watching! Subscribe for daily top-tier anime picks and leave your favorite show in the comments."
+    # Closings by Style (Supporting both legacy and new style keys)
+    if cl_style in ["QUESTION_TO_VIEWER", "SPECIFIC_CALLBACK_QUESTION"]:
+        outro = f"If you love great storytelling, start with {first_title} tonight — which of these three are you watching first? Drop your thoughts below!"
+    elif cl_style in ["DIRECT_RECOMMENDATION", "SPECIFIC_CALLBACK_BINGE"]:
+        outro = f"Start with {first_title} tonight — you won't regret it! Bookmark this Short for your next binge night and subscribe!"
+    else: # TEASER_TOMORROW, SIMPLE_SIGNOFF, SPECIFIC_CALLBACK_OPINION
+        outro = f"Which of these three premises caught your attention most? Let me know in the comments below!"
 
     lines.append(outro)
     return " ".join(lines)
@@ -542,6 +545,33 @@ def generate_recommendation_script(
     """
     if not concept_info:
         concept_info = {"name": "Top Recommendations", "tagline": "Must-Watch Anime"}
+
+    if recent_hooks is None or recent_outros is None:
+        try:
+            from src.history_manager import get_recent_hooks_and_outros
+            hist_data = get_recent_hooks_and_outros(days=30, limit=5)
+            if recent_hooks is None:
+                recent_hooks = hist_data.get("hooks", [])
+            if recent_outros is None:
+                recent_outros = hist_data.get("outros", [])
+        except Exception as e:
+            logger.warning(f"Could not auto-load recent history hooks/outros: {e}")
+
+    if target_opening_style is None or target_closing_style is None:
+        try:
+            from src.history_manager import extract_structural_fingerprint
+            recent_op_styles = [extract_structural_fingerprint(h).get("opening_style") for h in (recent_hooks or []) if h]
+            recent_cl_styles = [extract_structural_fingerprint(o).get("closing_style") for o in (recent_outros or []) if o]
+            
+            avail_op = [k for k in OPENING_STYLE_DIRECTIVES.keys() if k not in recent_op_styles] or list(OPENING_STYLE_DIRECTIVES.keys())
+            avail_cl = [k for k in CLOSING_STYLE_DIRECTIVES.keys() if k not in recent_cl_styles] or list(CLOSING_STYLE_DIRECTIVES.keys())
+            
+            if target_opening_style is None:
+                target_opening_style = random.choice(avail_op)
+            if target_closing_style is None:
+                target_closing_style = random.choice(avail_cl)
+        except Exception as e:
+            logger.warning(f"Could not rotate style keys from history: {e}")
 
     retries = 0
     script_text = ""
