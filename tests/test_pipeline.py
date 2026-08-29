@@ -501,8 +501,8 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
             {"title": "Anime Beta", "average_score": 8.4, "verified_facts": {"studio": "Studio B", "release_year": 2023, "genres": ["Fantasy"]}},
         ]
 
-        # Generate a script with explicit QUESTION opening and QUESTION_TO_VIEWER closing
-        script1 = generate_fallback_template_script(candidates1, {"name": "Top Recommendations"}, target_opening_style="QUESTION", target_closing_style="QUESTION_TO_VIEWER")
+        # Generate a script with explicit SPECIFIC_QUESTION opening and SPECIFIC_CALLBACK_QUESTION closing
+        script1 = generate_fallback_template_script(candidates1, {"name": "Top Recommendations"}, target_opening_style="SPECIFIC_QUESTION", target_closing_style="SPECIFIC_CALLBACK_QUESTION")
         record_short_history("top_recommendations", "Title Alpha Beta", "Hook Alpha", script1)
 
         # Generate second script with different anime titles BUT same structural pattern
@@ -510,15 +510,15 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
             {"title": "Anime Gamma", "average_score": 8.9, "verified_facts": {"studio": "Studio X", "release_year": 2024, "genres": ["Sci-Fi"]}},
             {"title": "Anime Delta", "average_score": 8.8, "verified_facts": {"studio": "Studio Y", "release_year": 2025, "genres": ["Drama"]}},
         ]
-        script2 = generate_fallback_template_script(candidates2, {"name": "Top Recommendations"}, target_opening_style="QUESTION", target_closing_style="QUESTION_TO_VIEWER")
+        script2 = generate_fallback_template_script(candidates2, {"name": "Top Recommendations"}, target_opening_style="SPECIFIC_QUESTION", target_closing_style="SPECIFIC_CALLBACK_QUESTION")
 
         # Evaluate script2 against history -> must fail structural check due to consecutive structural pattern sameness
         struct_res = check_structural_variety_against_history(script2)
         self.assertFalse(struct_res["pass"], "Script with identical opening style and closing style pattern must fail structural variety QA.")
         self.assertIn("Consecutive structural repetition", struct_res["reason"])
 
-        # Generate third script with rotated BOLD_CLAIM opening and DIRECT_RECOMMENDATION closing -> must pass!
-        script3 = generate_fallback_template_script(candidates2, {"name": "Top Recommendations"}, target_opening_style="BOLD_CLAIM", target_closing_style="DIRECT_RECOMMENDATION")
+        # Generate third script with rotated SURPRISING_FACT opening and SPECIFIC_CALLBACK_BINGE closing -> must pass!
+        script3 = generate_fallback_template_script(candidates2, {"name": "Top Recommendations"}, target_opening_style="SURPRISING_FACT", target_closing_style="SPECIFIC_CALLBACK_BINGE")
         struct_res3 = check_structural_variety_against_history(script3)
         self.assertTrue(struct_res3["pass"], "Script with rotated opening and closing styles MUST pass structural variety QA.")
 

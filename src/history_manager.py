@@ -80,9 +80,9 @@ def extract_structural_fingerprint(script_text: str) -> Dict[str, Any]:
     """
     if not script_text:
         return {
-            "opening_style": "DIRECT_STATEMENT",
+            "opening_style": "IN_SCENE_MID_THOUGHT",
             "opening_prefix": "",
-            "closing_style": "SIMPLE_SIGNOFF",
+            "closing_style": "SPECIFIC_CALLBACK_OPINION",
             "closing_prefix": "",
             "transition_markers": []
         }
@@ -93,27 +93,21 @@ def extract_structural_fingerprint(script_text: str) -> Dict[str, Any]:
     first_lower = first_sentence.lower()
     last_lower = last_sentence.lower()
 
-    # Determine opening style category
-    if "?" in first_sentence or any(w in first_lower for w in ["looking for", "ever wonder", "ready for", "which anime", "need anime"]):
-        opening_style = "QUESTION"
-    elif any(w in first_lower for w in ["ruin ordinary", "stop wasting", "absolute tier", "will completely"]):
-        opening_style = "BOLD_CLAIM"
-    elif any(w in first_lower for w in ["won't believe", "no idea", "hidden revelation"]):
-        opening_style = "YOU_WONT_BELIEVE"
-    elif any(w in first_lower for w in ["picture this", "imagine", "friday night"]):
-        opening_style = "SCENARIO"
+    # Determine canonical opening style category
+    if "?" in first_sentence or any(w in first_lower for w in ["looking for", "ever wonder", "ready for", "which anime", "need anime", "what happens"]):
+        opening_style = "SPECIFIC_QUESTION"
+    elif any(w in first_lower for w in ["did you know", "spent", "animated", "produced", "fact", "years", "ruin ordinary", "stop wasting", "absolute tier", "will completely"]):
+        opening_style = "SURPRISING_FACT"
     else:
-        opening_style = "DIRECT_STATEMENT"
+        opening_style = "IN_SCENE_MID_THOUGHT"
 
-    # Determine closing style category
-    if "?" in last_sentence or any(w in last_lower for w in ["which of these", "which one", "your thoughts", "let me know", "comment below"]):
-        closing_style = "QUESTION_TO_VIEWER"
-    elif any(w in last_lower for w in ["start with number", "stream these right now", "won't regret it"]):
-        closing_style = "DIRECT_RECOMMENDATION"
-    elif any(w in last_lower for w in ["save this short", "bookmark", "stay tuned", "tomorrow's"]):
-        closing_style = "TEASER_TOMORROW"
+    # Determine canonical closing style category
+    if "?" in last_sentence or any(w in last_lower for w in ["which of these", "which one", "your thoughts", "let me know", "comment below", "drop your"]):
+        closing_style = "SPECIFIC_CALLBACK_QUESTION"
+    elif any(w in last_lower for w in ["start with", "binge night", "bookmark", "save this short", "won't regret it"]):
+        closing_style = "SPECIFIC_CALLBACK_BINGE"
     else:
-        closing_style = "SIMPLE_SIGNOFF"
+        closing_style = "SPECIFIC_CALLBACK_OPINION"
 
     # Extract normalized prefixes (first 5 words & last 5 words)
     op_words = re.sub(r"[^\w\s]", "", first_lower).split()[:5]

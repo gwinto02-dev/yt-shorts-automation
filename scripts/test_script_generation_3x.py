@@ -102,7 +102,7 @@ MOCK_GROQ_RESPONSES = [
 
 def run_3x_test():
     print("=" * 80)
-    print("STARTING 3-RUN STANDALONE SCRIPT GENERATION & QA VERIFICATION TEST")
+    print("STARTING 3-RUN STANDALONE SCRIPT GENERATION & RETRY VERIFICATION TEST")
     print("=" * 80)
     
     # Use isolated test history file to prevent polluting main history or getting false matches
@@ -114,26 +114,36 @@ def run_3x_test():
     results = []
     has_real_key = bool(config.GROQ_API_KEY and config.GROQ_API_KEY != "gsk_test_key")
 
+    retry_style_tests = [
+        ("SPECIFIC_QUESTION", "SPECIFIC_CALLBACK_QUESTION"),
+        ("SURPRISING_FACT", "SPECIFIC_CALLBACK_BINGE"),
+        ("QUESTION", "QUESTION_TO_VIEWER")  # Test legacy key normalization in retry parameter
+    ]
+
     with patch.object(config, "SHORTS_HISTORY_FILE", test_shorts_history):
         if has_real_key:
             print("\n[REAL LIVE API MODE] Valid GROQ_API_KEY detected.")
             print(f"Targeting Groq Model: {config.GROQ_MODEL}")
-            print("Making 3 genuine live API calls to generate_recommendation_script()...\n")
+            print("Making 3 genuine live API calls to generate_recommendation_script() with explicit structural retry parameters...\n")
         else:
             print("\n[WARNING] MOCK MODE — no real API key detected in environment.")
             print("Falling back to curated mock responses for offline environment testing...\n")
 
         for i in range(1, 4):
+            target_op, target_cl = retry_style_tests[i - 1]
             print("\n" + "#" * 60)
             print(f" GENERATION RUN #{i} ({'LIVE GROQ API' if has_real_key else 'MOCK FALLBACK MODE'})")
+            print(f" Targeted Retry Parameters: opening='{target_op}', closing='{target_cl}'")
             print("#" * 60)
 
             if has_real_key:
-                # Genuine end-to-end call to the real pipeline function (no API mocking)
+                # Genuine end-to-end call to the real pipeline function with explicit retry style targets
                 gen_output = generate_recommendation_script(
                     candidates=sample_candidates,
                     concept_key=concept_key,
-                    concept_info=concept_info
+                    concept_info=concept_info,
+                    target_opening_style=target_op,
+                    target_closing_style=target_cl
                 )
             else:
                 # Mock path strictly for when no API key is present
@@ -160,7 +170,9 @@ def run_3x_test():
                     gen_output = generate_recommendation_script(
                         candidates=sample_candidates,
                         concept_key=concept_key,
-                        concept_info=concept_info
+                        concept_info=concept_info,
+                        target_opening_style=target_op,
+                        target_closing_style=target_cl
                     )
             
             script_text = gen_output["full_text"]
@@ -209,6 +221,8 @@ def run_3x_test():
                 "title": video_title,
                 "script": script_text,
                 "word_count": word_count,
+                "target_op": target_op,
+                "target_cl": target_cl,
                 "natural_qa": natural_qa,
                 "retention_qa": retention_qa,
                 "orig_qa": orig_qa,
@@ -220,7 +234,7 @@ def run_3x_test():
     temp_dir.cleanup()
 
     print("\n" + "=" * 80)
-    print("3-RUN SCRIPT GENERATION & QA SUMMARY")
+    print("3-RUN SCRIPT GENERATION & RETRY SUMMARY")
     print("=" * 80)
     passed_count = sum(1 for r in results if r["all_pass"])
     print(f"Mode: {'REAL LIVE GROQ API MODE' if has_real_key else 'MOCK FALLBACK MODE'}")
@@ -228,7 +242,7 @@ def run_3x_test():
 
     for r in results:
         status = "ALL QA PASSED 🟢" if r["all_pass"] else "QA FAILED 🔴"
-        print(f"Run #{r['run']}: {status}")
+        print(f"Run #{r['run']} (Target Style: {r['target_op']}/{r['target_cl']}): {status}")
         print(f"  Title      : '{r['title']}'")
         print(f"  Word Count : {r['word_count']} words")
         print(f"  Natural QA : {'PASS' if r['natural_qa']['pass'] else 'FAIL'} -> {r['natural_qa']['reason']}")
@@ -249,7 +263,7 @@ def run_3x_test():
 
     print("=" * 80)
     if passed_count == 3:
-        print("FINAL VERDICT: SUCCESS 🟢 3 out of 3 runs passed 100% of QA checks!")
+        print("FINAL VERDICT: SUCCESS 🟢 3 out of 3 retry runs passed 100% of QA checks!")
     else:
         print(f"FINAL VERDICT: FAILURE 🔴 Only {passed_count}/3 runs passed all QA checks.")
         sys.exit(1)

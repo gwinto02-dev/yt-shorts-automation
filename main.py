@@ -248,8 +248,8 @@ def run_full_pipeline():
     originality_res = check_originality_against_history(script_data["full_text"], first_sentence, video_title)
     structural_variety_res = check_structural_variety_against_history(script_data["full_text"])
 
-    ALL_OPENINGS = ["QUESTION", "BOLD_CLAIM", "YOU_WONT_BELIEVE", "DIRECT_STATEMENT", "SCENARIO"]
-    ALL_CLOSINGS = ["QUESTION_TO_VIEWER", "DIRECT_RECOMMENDATION", "TEASER_TOMORROW", "SIMPLE_SIGNOFF"]
+    ALL_OPENINGS = ["SPECIFIC_QUESTION", "SURPRISING_FACT", "IN_SCENE_MID_THOUGHT"]
+    ALL_CLOSINGS = ["SPECIFIC_CALLBACK_QUESTION", "SPECIFIC_CALLBACK_BINGE", "SPECIFIC_CALLBACK_OPINION"]
 
     while (not originality_res["pass"] or not structural_variety_res["pass"]) and orig_retries < config.MAX_STAGE_RETRIES:
         orig_retries += 1

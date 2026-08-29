@@ -2,7 +2,7 @@ import logging
 import json
 import random
 import re
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 
 import config
@@ -56,6 +56,48 @@ TRANSITION_STYLE_DIRECTIVES = {
     "CATEGORICAL_PIVOT": "TRANSITIONS: Pivot between titles based on what makes each unique (e.g., 'If you want pure action...', 'Next up for storyline lovers...', 'Finally, if you need something totally different...').",
     "VARIED_CONNECTORS": "TRANSITIONS: Use varied connective language (e.g., 'Starting with...', 'Then we have...', 'Stepping up next...')."
 }
+
+# Mapping table to handle legacy style names seamlessly across historical records and retries
+HOOK_STYLE_MAP = {
+    "QUESTION": "SPECIFIC_QUESTION",
+    "SPECIFIC_QUESTION": "SPECIFIC_QUESTION",
+    "BOLD_CLAIM": "SURPRISING_FACT",
+    "SURPRISING_FACT": "SURPRISING_FACT",
+    "YOU_WONT_BELIEVE": "IN_SCENE_MID_THOUGHT",
+    "SCENARIO": "IN_SCENE_MID_THOUGHT",
+    "DIRECT_STATEMENT": "IN_SCENE_MID_THOUGHT",
+    "IN_SCENE_MID_THOUGHT": "IN_SCENE_MID_THOUGHT"
+}
+
+OUTRO_STYLE_MAP = {
+    "QUESTION_TO_VIEWER": "SPECIFIC_CALLBACK_QUESTION",
+    "SPECIFIC_CALLBACK_QUESTION": "SPECIFIC_CALLBACK_QUESTION",
+    "DIRECT_RECOMMENDATION": "SPECIFIC_CALLBACK_BINGE",
+    "SPECIFIC_CALLBACK_BINGE": "SPECIFIC_CALLBACK_BINGE",
+    "TEASER_TOMORROW": "SPECIFIC_CALLBACK_OPINION",
+    "SIMPLE_SIGNOFF": "SPECIFIC_CALLBACK_OPINION",
+    "SPECIFIC_CALLBACK_OPINION": "SPECIFIC_CALLBACK_OPINION"
+}
+
+def normalize_opening_style(style: Optional[str] = None) -> str:
+    """Normalizes opening hook style names (supporting both legacy and canonical keys)."""
+    if not style:
+        return random.choice(list(OPENING_STYLE_DIRECTIVES.keys()))
+    style_upper = str(style).strip().upper()
+    if style_upper in HOOK_STYLE_MAP:
+        return HOOK_STYLE_MAP[style_upper]
+    logger.warning(f"Unknown opening style '{style}' — falling back to 'SPECIFIC_QUESTION' instead of crashing.")
+    return "SPECIFIC_QUESTION"
+
+def normalize_closing_style(style: Optional[str] = None) -> str:
+    """Normalizes closing outro style names (supporting both legacy and canonical keys)."""
+    if not style:
+        return random.choice(list(CLOSING_STYLE_DIRECTIVES.keys()))
+    style_upper = str(style).strip().upper()
+    if style_upper in OUTRO_STYLE_MAP:
+        return OUTRO_STYLE_MAP[style_upper]
+    logger.warning(f"Unknown closing style '{style}' — falling back to 'SPECIFIC_CALLBACK_QUESTION' instead of crashing.")
+    return "SPECIFIC_CALLBACK_QUESTION"
 
 CONCEPT_SIGNALS = {
     "hidden_gems": ["underrated", "hidden gem", "sleeping on", "obscure", "under the radar"],
@@ -136,9 +178,9 @@ def generate_script_with_groq(
         concept_name = concept_info.get('name', '')
 
         # Select structural style directives
-        op_key = target_opening_style or random.choice(list(OPENING_STYLE_DIRECTIVES.keys()))
-        cl_key = target_closing_style or random.choice(list(CLOSING_STYLE_DIRECTIVES.keys()))
-        tr_key = target_transition_style or random.choice(list(TRANSITION_STYLE_DIRECTIVES.keys()))
+        op_key = normalize_opening_style(target_opening_style)
+        cl_key = normalize_closing_style(target_closing_style)
+        tr_key = target_transition_style if target_transition_style in TRANSITION_STYLE_DIRECTIVES else random.choice(list(TRANSITION_STYLE_DIRECTIVES.keys()))
 
         op_dir = OPENING_STYLE_DIRECTIVES[op_key]
         cl_dir = CLOSING_STYLE_DIRECTIVES[cl_key]
@@ -255,9 +297,9 @@ def generate_script_and_title_with_groq(
         concept_name = concept_info.get('name', '')
 
         # Select structural style directives
-        op_key = target_opening_style or random.choice(list(OPENING_STYLE_DIRECTIVES.keys()))
-        cl_key = target_closing_style or random.choice(list(CLOSING_STYLE_DIRECTIVES.keys()))
-        tr_key = target_transition_style or random.choice(list(TRANSITION_STYLE_DIRECTIVES.keys()))
+        op_key = normalize_opening_style(target_opening_style)
+        cl_key = normalize_closing_style(target_closing_style)
+        tr_key = target_transition_style if target_transition_style in TRANSITION_STYLE_DIRECTIVES else random.choice(list(TRANSITION_STYLE_DIRECTIVES.keys()))
 
         op_dir = OPENING_STYLE_DIRECTIVES[op_key]
         cl_dir = CLOSING_STYLE_DIRECTIVES[cl_key]
@@ -394,8 +436,8 @@ def generate_fallback_template_script(
         single shared cleaned name can safely serve all of them at once."""
         return re.sub(rf"\s+{re.escape(word)}$", "", concept_name, flags=re.IGNORECASE).strip()
 
-    op_style = target_opening_style or random.choice(["SPECIFIC_QUESTION", "SURPRISING_FACT", "IN_SCENE_MID_THOUGHT"])
-    cl_style = target_closing_style or random.choice(["SPECIFIC_CALLBACK_QUESTION", "SPECIFIC_CALLBACK_BINGE", "SPECIFIC_CALLBACK_OPINION"])
+    op_style = normalize_opening_style(target_opening_style)
+    cl_style = normalize_closing_style(target_closing_style)
     
     first_title = reversed_candidates[0].get("verified_facts", {}).get("title") or reversed_candidates[0].get("title", "our top pick")
 
