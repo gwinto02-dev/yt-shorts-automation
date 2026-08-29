@@ -102,6 +102,8 @@ MOCK_GROQ_RESPONSES = [
     }
 ]
 
+from src.content_source import select_concept_angle
+
 def run_3x_test():
     print("=" * 80)
     print("STARTING 3-RUN STANDALONE SCRIPT GENERATION & RETRY VERIFICATION TEST")
@@ -133,8 +135,13 @@ def run_3x_test():
 
         for i in range(1, 4):
             target_op, target_cl = retry_style_tests[i - 1]
+            selected_angle = select_concept_angle("hidden_gems")
+            current_concept_info = dict(concept_info)
+            current_concept_info["selected_angle"] = selected_angle
+
             print("\n" + "#" * 60)
             print(f" GENERATION RUN #{i} ({'LIVE GROQ API' if has_real_key else 'MOCK FALLBACK MODE'})")
+            print(f" Framing Angle: '{selected_angle['label']}' ({selected_angle['key']})")
             print(f" Targeted Retry Parameters: opening='{target_op}', closing='{target_cl}'")
             print("#" * 60)
 
@@ -143,7 +150,7 @@ def run_3x_test():
                 gen_output = generate_recommendation_script(
                     candidates=sample_candidates,
                     concept_key=concept_key,
-                    concept_info=concept_info,
+                    concept_info=current_concept_info,
                     target_opening_style=target_op,
                     target_closing_style=target_cl
                 )
@@ -172,7 +179,7 @@ def run_3x_test():
                     gen_output = generate_recommendation_script(
                         candidates=sample_candidates,
                         concept_key=concept_key,
-                        concept_info=concept_info,
+                        concept_info=current_concept_info,
                         target_opening_style=target_op,
                         target_closing_style=target_cl
                     )
@@ -216,7 +223,7 @@ def run_3x_test():
             print(f"4. Structural Variety QA    : {'PASS ✅' if struct_qa['pass'] else 'FAIL ❌'} | Reason: {struct_qa['reason']}")
             
             # Record generated Short in history log so subsequent runs test anti-repetition against prior runs
-            record_short_history("hidden_gems", video_title, script_text.split('.')[0], script_text)
+            record_short_history("hidden_gems", video_title, script_text.split('.')[0], script_text, concept_angle=selected_angle)
 
             run_record = {
                 "run": i,

@@ -226,7 +226,22 @@ def generate_script_with_groq(
             f"Title 3: start with rating/hype then plot hook.{anti_repetition_directives}\n"
         )
 
+        angle_info = concept_info.get("selected_angle") or {}
+        angle_label = angle_info.get("label") or concept_info.get("angle_label", "")
+        angle_instruction = angle_info.get("instruction") or concept_info.get("angle_instruction", "")
+
+        angle_directive = ""
+        if angle_label and angle_instruction:
+            angle_directive = (
+                f"\nCRITICAL FRAMING ANGLE FOR THIS VIDEO:\n"
+                f"- ANGLE: '{angle_label}'\n"
+                f"- INSTRUCTION: {angle_instruction}\n"
+                f"Build the hook, the reasoning for each pick, and the overall narrative around this specific angle — NOT just a generic 'here are 3 picks' framing.\n"
+            )
+
         prompt_content = f"Concept: {concept_name} - {concept_info.get('tagline')}\n"
+        if angle_directive:
+            prompt_content += f"{angle_directive}\n"
         prompt_content += f"{structural_directives}\n"
         prompt_content += "VERIFIED FACTUAL METADATA FOR FEATURED ANIME:\n"
         
@@ -345,7 +360,22 @@ def generate_script_and_title_with_groq(
             f"Title 3: start with rating/hype then plot hook.{anti_repetition_directives}\n"
         )
 
+        angle_info = concept_info.get("selected_angle") or {}
+        angle_label = angle_info.get("label") or concept_info.get("angle_label", "")
+        angle_instruction = angle_info.get("instruction") or concept_info.get("angle_instruction", "")
+
+        angle_directive = ""
+        if angle_label and angle_instruction:
+            angle_directive = (
+                f"\nCRITICAL FRAMING ANGLE FOR THIS VIDEO:\n"
+                f"- ANGLE: '{angle_label}'\n"
+                f"- INSTRUCTION: {angle_instruction}\n"
+                f"Build the hook, the reasoning for each pick, and the overall narrative around this specific angle — NOT just a generic 'here are 3 picks' framing.\n"
+            )
+
         prompt_content = f"Concept: {concept_name} - {concept_info.get('tagline')}\n"
+        if angle_directive:
+            prompt_content += f"{angle_directive}\n"
         prompt_content += f"{structural_directives}\n"
         prompt_content += "VERIFIED FACTUAL METADATA FOR FEATURED ANIME:\n"
         

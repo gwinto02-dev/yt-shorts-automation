@@ -60,16 +60,37 @@ def is_concept_allowed_by_history(concept_type: str, days: int = config.CONCEPT_
         logger.info(f"[HistoryManager] Concept '{concept_type}' was used recently in the last {days} days. Cooling down.")
     return is_allowed
 
-def record_concept_usage(concept_type: str):
-    """Record usage of a concept type with current timestamp."""
+def get_recent_concept_angles(concept_type: str, days: int = 7) -> List[str]:
+    """Retrieve angle keys used for a specific concept type within the last `days` days."""
     history = _load_json_file(config.CONCEPT_HISTORY_FILE)
-    history.append({
+    cutoff_date = datetime.now() - timedelta(days=days)
+    
+    recent_angles = []
+    for entry in history:
+        if entry.get("concept_type") == concept_type and entry.get("angle_key"):
+            date_str = entry.get("date")
+            if date_str:
+                try:
+                    entry_date = datetime.fromisoformat(date_str)
+                    if entry_date >= cutoff_date:
+                        recent_angles.append(entry.get("angle_key"))
+                except ValueError:
+                    pass
+    return recent_angles
+
+def record_concept_usage(concept_type: str, angle_key: Optional[str] = None):
+    """Record usage of a concept type and optional angle key with current timestamp."""
+    history = _load_json_file(config.CONCEPT_HISTORY_FILE)
+    record = {
         "concept_type": concept_type,
         "date": datetime.now().isoformat(),
         "date_readable": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    })
+    }
+    if angle_key:
+        record["angle_key"] = angle_key
+    history.append(record)
     _save_json_file(config.CONCEPT_HISTORY_FILE, history)
-    logger.info(f"[HistoryManager] Recorded concept usage: '{concept_type}'")
+    logger.info(f"[HistoryManager] Recorded concept usage: '{concept_type}' (angle: '{angle_key or 'default'}')")
 
 # ==================== SHORTS ORIGINALITY & STRUCTURAL HISTORY ====================
 
@@ -132,11 +153,18 @@ def extract_structural_fingerprint(script_text: str) -> Dict[str, Any]:
     }
 
 
-def record_short_history(concept_type: str, title: str, hook: str, script: str, video_id: Optional[str] = None):
+def record_short_history(
+    concept_type: str,
+    title: str,
+    hook: str,
+    script: str,
+    video_id: Optional[str] = None,
+    concept_angle: Optional[Dict[str, Any]] = None
+):
     """Log details of a newly produced Short to history for future originality and structural checks."""
     history = _load_json_file(config.SHORTS_HISTORY_FILE)
     fp = extract_structural_fingerprint(script)
-    history.append({
+    entry = {
         "date": datetime.now().isoformat(),
         "date_readable": datetime.now().strftime("%Y-%m-%d"),
         "concept_type": concept_type,
@@ -145,9 +173,12 @@ def record_short_history(concept_type: str, title: str, hook: str, script: str, 
         "script": script,
         "structural_fingerprint": fp,
         "video_id": video_id or "N/A"
-    })
+    }
+    if concept_angle:
+        entry["concept_angle"] = concept_angle
+    history.append(entry)
     _save_json_file(config.SHORTS_HISTORY_FILE, history)
-    logger.info(f"[HistoryManager] Saved Short to history log: '{title}' ({concept_type}) with structural fingerprint.")
+    logger.info(f"[HistoryManager] Saved Short to history log: '{title}' ({concept_type}) with structural fingerprint and concept angle.")
 
 def _calculate_jaccard_similarity(text1: str, text2: str) -> float:
     """Compute Jaccard similarity between two text strings based on word sets."""
@@ -379,7 +410,8 @@ def check_originality_against_history(new_script: str, new_hook: str, new_title:
             recent_past = history[-10:]
             past_summaries = []
             for idx, p in enumerate(recent_past, 1):
-                past_summaries.append(f"Past Short #{idx} Title: '{p.get('title')}' | Hook: '{p.get('hook')}'")
+                ang = p.get("concept_angle", {}).get("label") or "General"
+                past_summaries.append(f"Past Short #{idx} Title: '{p.get('title')}' | Angle: '{ang}' | Hook: '{p.get('hook')}'")
 
             prompt = (
                 "You are a strict content originality evaluator for YouTube Shorts.\n"

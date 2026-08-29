@@ -344,7 +344,8 @@ def run_full_pipeline():
                 title=video_title,
                 hook=first_sentence,
                 script=script_data["full_text"],
-                video_id=upload_res.get("video_id")
+                video_id=upload_res.get("video_id"),
+                concept_angle=concept_info.get("selected_angle")
             )
             record_anime_titles_usage(candidates, concept_type=concept_key)
             record_video_title_usage(video_title, concept_type=concept_key)

@@ -7,7 +7,13 @@ from typing import List, Dict, Any, Tuple
 
 import requests
 import config
-from src.history_manager import is_concept_allowed_by_history, record_concept_usage, is_anime_title_allowed_by_history, record_anime_titles_usage
+from src.history_manager import (
+    is_concept_allowed_by_history,
+    get_recent_concept_angles,
+    record_concept_usage,
+    is_anime_title_allowed_by_history,
+    record_anime_titles_usage
+)
 from src.popularity_filter import can_qualify_as_hidden_gem, is_mainstream_anime
 
 logger = logging.getLogger(__name__)
@@ -45,6 +51,134 @@ CONCEPT_TYPES = {
         "description": "Direct comparison of powerhouse anime in similar genres."
     }
 }
+
+# Internal Angle Variants per Concept Type to Prevent Formulaic Repetition
+CONCEPT_ANGLES = {
+    "hidden_gems": {
+        "OVERLOOKED_REASON": {
+            "key": "OVERLOOKED_REASON",
+            "label": "Why These Got Overlooked",
+            "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+        },
+        "STANDOUT_ELEMENT": {
+            "key": "STANDOUT_ELEMENT",
+            "label": "What Makes Them Worth Watching Despite Low Visibility",
+            "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+        },
+        "MAINSTREAM_CONTRAST": {
+            "key": "MAINSTREAM_CONTRAST",
+            "label": "How These Compare to What's Popular Instead",
+            "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+        },
+        "INSIDER_FACT": {
+            "key": "INSIDER_FACT",
+            "label": "A Specific Detail Insider Fans Know",
+            "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
+        }
+    },
+    "top_recommendations": {
+        "UNMATCHED_PAYOFF": {
+            "key": "UNMATCHED_PAYOFF",
+            "label": "Unmatched Narrative Payoff",
+            "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
+        },
+        "ANIMATION_CRAFT": {
+            "key": "ANIMATION_CRAFT",
+            "label": "Visual & Audio Craft Benchmark",
+            "instruction": "Focus on the technical mastery of the animation studios, fight choreography, soundtrack design, and cinematic presentation."
+        },
+        "GENRE_GOLD_STANDARD": {
+            "key": "GENRE_GOLD_STANDARD",
+            "label": "Genre-Defining Gold Standard",
+            "instruction": "Frame these shows as absolute benchmarks of their respective genres that set the standard for every anime that followed."
+        },
+        "IRRESISTIBLE_BINGE": {
+            "key": "IRRESISTIBLE_BINGE",
+            "label": "Impossible to Stop Bingeing",
+            "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
+        }
+    },
+    "genre_spotlight": {
+        "PALATE_CLEANSER": {
+            "key": "PALATE_CLEANSER",
+            "label": "The Ultimate Genre Switch-Up",
+            "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
+        },
+        "BEST_IN_CLASS": {
+            "key": "BEST_IN_CLASS",
+            "label": "Peak Representatives of 3 Genres",
+            "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+        },
+        "MOOD_BASED": {
+            "key": "MOOD_BASED",
+            "label": "Match Your Viewing Mood",
+            "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
+        }
+    },
+    "upcoming_spotlight": {
+        "MANGA_ARC_HYPE": {
+            "key": "MANGA_ARC_HYPE",
+            "label": "Upcoming Manga Arc Milestones",
+            "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+        },
+        "STUDIO_STAFF_TALENT": {
+            "key": "STUDIO_STAFF_TALENT",
+            "label": "Studio & Staff Pedigree",
+            "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+        },
+        "PREMISE_INTRIGUE": {
+            "key": "PREMISE_INTRIGUE",
+            "label": "Hooking Unreleased Story Premises",
+            "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+        }
+    },
+    "character_spotlight": {
+        "PROTAGONIST_GROWTH": {
+            "key": "PROTAGONIST_GROWTH",
+            "label": "Unforgettable Protagonist Journeys",
+            "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+        },
+        "BADASS_MOMENTS": {
+            "key": "BADASS_MOMENTS",
+            "label": "Iconic Badass Character Arcs",
+            "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+        }
+    },
+    "anime_comparison": {
+        "THEMATIC_RIVALRY": {
+            "key": "THEMATIC_RIVALRY",
+            "label": "Thematic & Style Head-to-Head",
+            "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+        },
+        "DECISION_GUIDE": {
+            "key": "DECISION_GUIDE",
+            "label": "Which One Should You Watch First?",
+            "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+        }
+    }
+}
+
+def select_concept_angle(concept_key: str, days: int = 7) -> Dict[str, Any]:
+    """Selects an angle variant for the concept, avoiding angles used within the last `days` days."""
+    all_angles = CONCEPT_ANGLES.get(concept_key, {})
+    if not all_angles:
+        return {
+            "key": "DEFAULT",
+            "label": "General Overview",
+            "instruction": "Provide a balanced, engaging recommendation highlighting key story elements."
+        }
+    
+    recent_angle_keys = get_recent_concept_angles(concept_key, days=days)
+    avail_keys = [k for k in all_angles.keys() if k not in recent_angle_keys]
+    
+    if not avail_keys:
+        logger.info(f"[Concept Angle] All angles for '{concept_key}' used recently in last {days} days. Resetting angle pool.")
+        avail_keys = list(all_angles.keys())
+
+    chosen_key = random.choice(avail_keys)
+    angle_info = all_angles[chosen_key]
+    logger.info(f"[Concept Angle Selection] Concept '{concept_key}' -> Selected Angle: '{angle_info['label']}' ({chosen_key})")
+    return angle_info
 
 ANILIST_TRENDING_QUERY = """
 query ($page: Int, $perPage: Int) {
@@ -231,6 +365,7 @@ def fetch_jikan_top(count: int = 50) -> List[Dict[str, Any]]:
 def select_today_concept() -> Tuple[str, Dict[str, Any]]:
     """
     Enforces 5-day cooldown rule: picks a concept type not used in the last 5 days.
+    Also selects an angle variant that avoids recently used angles for that concept.
     Returns (concept_key, concept_details_dict).
     """
     available_keys = list(CONCEPT_TYPES.keys())
@@ -241,10 +376,17 @@ def select_today_concept() -> Tuple[str, Dict[str, Any]]:
         allowed_keys = available_keys
 
     selected_key = random.choice(allowed_keys)
-    concept_info = CONCEPT_TYPES[selected_key]
-    logger.info(f"[Concept Selection] Selected concept: '{selected_key}' ({concept_info['name']}) [Allowed by 5-day rule]")
+    concept_info = dict(CONCEPT_TYPES[selected_key])
     
-    record_concept_usage(selected_key)
+    selected_angle = select_concept_angle(selected_key)
+    concept_info["selected_angle"] = selected_angle
+    concept_info["angle_key"] = selected_angle["key"]
+    concept_info["angle_label"] = selected_angle["label"]
+    concept_info["angle_instruction"] = selected_angle["instruction"]
+
+    logger.info(f"[Concept Selection] Selected concept: '{selected_key}' ({concept_info['name']}) with Angle: '{selected_angle['label']}'")
+    
+    record_concept_usage(selected_key, angle_key=selected_angle["key"])
     return selected_key, concept_info
 
 def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) -> Tuple[List[Dict[str, Any]], str, Dict[str, Any]]:
@@ -255,7 +397,13 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
     if not concept_key:
         concept_key, concept_info = select_today_concept()
     else:
-        concept_info = CONCEPT_TYPES.get(concept_key, CONCEPT_TYPES["top_recommendations"])
+        base_info = CONCEPT_TYPES.get(concept_key, CONCEPT_TYPES["top_recommendations"])
+        concept_info = dict(base_info)
+        selected_angle = select_concept_angle(concept_key)
+        concept_info["selected_angle"] = selected_angle
+        concept_info["angle_key"] = selected_angle["key"]
+        concept_info["angle_label"] = selected_angle["label"]
+        concept_info["angle_instruction"] = selected_angle["instruction"]
 
     # Fetch expanded pool based on concept mode (50-100 titles)
     if concept_key == "upcoming_spotlight":
