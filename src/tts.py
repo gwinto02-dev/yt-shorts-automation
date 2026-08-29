@@ -238,6 +238,13 @@ def generate_narration_and_subtitles(
     and computes exact spoken segment timestamps per anime title.
     Returns (audio_path, ass_subtitles_path, segment_timestamps).
     """
+    if not script_text or not script_text.strip():
+        raise ValueError("Input script text is empty! TTS narration generation cannot proceed with empty text.")
+    
+    word_count = len(script_text.strip().split())
+    if word_count < 50:
+        raise ValueError(f"Input script text is too short ({word_count} words) for TTS narration generation! Minimum required is 50 words.")
+
     voice_name = voice or config.TTS_VOICE
     output_audio = config.OUTPUT_DIR / "narration.mp3"
     output_ass = config.OUTPUT_DIR / "subtitles.ass"

@@ -226,6 +226,57 @@ def run_full_pipeline():
     retry_counts["script_qa"] = script_data.get("retries", 0)
     video_title = script_data.get("video_title", "Top Anime Short")
 
+    script_text = script_data.get("full_text", "")
+    script_qa_res = script_data.get("script_qa_res", {"pass": True, "reason": "Not run"})
+    retention_qa_res = script_data.get("retention_qa_res", {"pass": True, "reason": "Not run"})
+    word_count = script_data.get("word_count", len(script_text.split()) if script_text else 0)
+
+    script_is_invalid = (
+        not script_text
+        or not script_text.strip()
+        or word_count < 110
+        or not script_qa_res.get("pass", True)
+        or not retention_qa_res.get("pass", True)
+    )
+
+    if script_is_invalid:
+        fail_reason = (
+            "Script text is empty or zero-length." if not script_text or not script_text.strip()
+            else f"Script word count ({word_count} words) is below minimum required 110 words." if word_count < 110
+            else script_qa_res.get("reason") if not script_qa_res.get("pass", True)
+            else retention_qa_res.get("reason", "Failed script quality check")
+        )
+        logger.error(
+            f"❌ PIPELINE ABORTED: Script generation failed QA after all retries — script is empty or invalid. "
+            f"Reason: {fail_reason}. Blocking before Phase 4 (TTS)."
+        )
+
+        final_qa_res = {
+            "pass": False,
+            "verdict": "FAIL - BLOCKED BY SCRIPT QA GATE",
+            "failing_evaluators": ["Natural Script Quality QA" if not script_qa_res.get("pass", True) else "Retention QA"],
+            "reasons": [fail_reason],
+            "details": {}
+        }
+
+        # Send daily summary email notification report before exiting
+        from src.notifier import send_daily_summary_email
+        send_daily_summary_email(
+            candidates=candidates,
+            script_data=script_data,
+            concept_info=concept_info,
+            fact_check_res=fact_check_res,
+            policy_res={"pass": False, "reason": "Pipeline aborted due to script QA failure"},
+            rights_res={"pass": False, "reason": "Not evaluated due to early abort"},
+            originality_res={"pass": False, "reason": "Not evaluated due to early abort"},
+            final_qa_res=final_qa_res,
+            upload_res={"success": False, "message": f"Pipeline aborted: {fail_reason}"},
+            retry_counts=retry_counts
+        )
+
+        logger.error("=== FULL PIPELINE FINISHED: BLOCKED BY SCRIPT QA GATE ===")
+        sys.exit(1)
+
     # Step 6: Policy QA
     from src.qa_checker import check_youtube_policy_compliance, check_asset_rights, run_supervisor_qa_gate
     policy_res = check_youtube_policy_compliance(script_data["full_text"], video_title, candidates)

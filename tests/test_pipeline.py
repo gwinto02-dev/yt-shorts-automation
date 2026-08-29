@@ -860,6 +860,39 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
 
             self.assertEqual(ctx.exception.code, 1, "Pipeline MUST exit with code 1 when Supervisor QA verdict is BLOCKED!")
 
+    def test_empty_script_raises_value_error_in_tts(self):
+        """Regression test: TTS generation must raise ValueError if script text is empty or too short."""
+        from src.tts import generate_narration_and_subtitles
+
+        with self.assertRaises(ValueError) as ctx:
+            generate_narration_and_subtitles("")
+        self.assertIn("empty", str(ctx.exception).lower())
+
+        with self.assertRaises(ValueError) as ctx_short:
+            generate_narration_and_subtitles("Short script text.")
+        self.assertIn("too short", str(ctx_short.exception).lower())
+
+    def test_invalid_script_qa_aborts_pipeline_early(self):
+        """Regression test: Pipeline MUST abort before TTS if script generation fails QA or produces empty text."""
+        from main import run_full_pipeline
+
+        with patch("src.groq_utils.check_groq_quota_preflight", return_value=(True, "OK")), \
+             patch("main.run_phase_1") as mock_p1, \
+             patch("src.fact_checker.verify_candidate_facts", return_value={"sources": []}), \
+             patch("main.run_phase_2", return_value={"full_text": "", "word_count": 0, "script_qa_res": {"pass": False, "reason": "Empty script"}, "retries": 2}), \
+             patch("src.notifier.send_daily_summary_email") as mock_email:
+
+            mock_p1.return_value = {
+                "candidates": [{"id": 601, "title": "Test Anime"}],
+                "concept_key": "top_recommendations",
+                "concept_info": {"name": "Top Recs"}
+            }
+
+            with self.assertRaises(SystemExit) as ctx:
+                run_full_pipeline()
+
+            self.assertEqual(ctx.exception.code, 1, "Pipeline MUST exit code 1 when script generation fails QA!")
+            mock_email.assert_called_once()
 
 if __name__ == "__main__":
     unittest.main()
