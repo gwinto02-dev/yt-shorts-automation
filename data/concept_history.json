@@ -131,5 +131,11 @@
     "date": "2026-08-29T05:26:16.917218",
     "date_readable": "2026-08-29 05:26:16",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.258153",
+    "date_readable": "2026-08-29 05:37:56",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]

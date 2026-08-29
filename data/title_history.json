@@ -286,5 +286,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-08-29T05:26:17.260857",
     "date_readable": "2026-08-29 05:26:17"
+  },
+  {
+    "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
+    "normalized_title": "hell mode the hardcore gamer dominates in another world with garbage balancing season 2",
+    "anime_id": 209983,
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.612642",
+    "date_readable": "2026-08-29 05:37:56"
+  },
+  {
+    "title": "Demon Slayer: Kimetsu no Yaiba",
+    "normalized_title": "demon slayer kimetsu no yaiba",
+    "anime_id": 101922,
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.612642",
+    "date_readable": "2026-08-29 05:37:56"
+  },
+  {
+    "title": "Naruto: Shippuden",
+    "normalized_title": "naruto shippuden",
+    "anime_id": 1735,
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.612642",
+    "date_readable": "2026-08-29 05:37:56"
   }
 ]
