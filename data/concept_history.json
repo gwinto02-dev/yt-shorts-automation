@@ -125,5 +125,11 @@
     "date": "2026-08-29T05:22:33.699176",
     "date_readable": "2026-08-29 05:22:33",
     "angle_key": "MOOD_BASED"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-29T05:26:16.917218",
+    "date_readable": "2026-08-29 05:26:16",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]
