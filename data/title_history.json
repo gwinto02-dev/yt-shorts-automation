@@ -454,5 +454,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-08-30T13:41:48.248595",
     "date_readable": "2026-08-30 13:41:48"
+  },
+  {
+    "title": "Gintama",
+    "normalized_title": "gintama",
+    "anime_id": 918,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T14:49:17.749281",
+    "date_readable": "2026-08-30 14:49:17"
+  },
+  {
+    "title": "Grow Up Show",
+    "normalized_title": "grow up show",
+    "anime_id": 196017,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T14:49:17.749281",
+    "date_readable": "2026-08-30 14:49:17"
+  },
+  {
+    "title": "Rich Girl Caretaker: I'm Secretly the Caregiver of the Most Popular Girl in This Rich Kid School",
+    "normalized_title": "rich girl caretaker im secretly the caregiver of the most popular girl in this rich kid school",
+    "anime_id": 201514,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T14:49:17.749281",
+    "date_readable": "2026-08-30 14:49:17"
   }
 ]

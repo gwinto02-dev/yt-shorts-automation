@@ -179,5 +179,17 @@
     "date": "2026-08-30T13:41:48.068770",
     "date_readable": "2026-08-30 13:41:48",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T14:49:15.799125",
+    "date_readable": "2026-08-30 14:49:15",
+    "angle_key": "PALATE_CLEANSER"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T14:56:01.603165",
+    "date_readable": "2026-08-30 14:56:01",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]
