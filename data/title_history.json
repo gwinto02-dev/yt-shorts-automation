@@ -334,5 +334,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-08-30T00:04:13.709167",
     "date_readable": "2026-08-30 00:04:13"
+  },
+  {
+    "title": "Daemons of the Shadow Realm",
+    "normalized_title": "daemons of the shadow realm",
+    "anime_id": 195600,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.378973",
+    "date_readable": "2026-08-30 07:50:21"
+  },
+  {
+    "title": "False Memory (2026)",
+    "normalized_title": "false memory 2026",
+    "anime_id": 141953,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.378973",
+    "date_readable": "2026-08-30 07:50:21"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World-",
+    "normalized_title": "rezero starting life in another world",
+    "anime_id": 21355,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.378973",
+    "date_readable": "2026-08-30 07:50:21"
   }
 ]

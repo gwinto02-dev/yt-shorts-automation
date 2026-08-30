@@ -143,5 +143,11 @@
     "date": "2026-08-30T00:04:13.579839",
     "date_readable": "2026-08-30 00:04:13",
     "angle_key": "INSIDER_FACT"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.115025",
+    "date_readable": "2026-08-30 07:50:21",
+    "angle_key": "IRRESISTIBLE_BINGE"
   }
 ]
