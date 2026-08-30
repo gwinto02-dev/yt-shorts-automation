@@ -358,5 +358,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-08-30T07:50:21.378973",
     "date_readable": "2026-08-30 07:50:21"
+  },
+  {
+    "title": "You and I Are Polar Opposites",
+    "normalized_title": "you and i are polar opposites",
+    "anime_id": 184951,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T11:36:36.886807",
+    "date_readable": "2026-08-30 11:36:36"
+  },
+  {
+    "title": "Naruto",
+    "normalized_title": "naruto",
+    "anime_id": 20,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T11:36:36.886807",
+    "date_readable": "2026-08-30 11:36:36"
+  },
+  {
+    "title": "Sparks of Tomorrow",
+    "normalized_title": "sparks of tomorrow",
+    "anime_id": 103303,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T11:36:36.886807",
+    "date_readable": "2026-08-30 11:36:36"
   }
 ]
