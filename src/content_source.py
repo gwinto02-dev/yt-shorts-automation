@@ -443,9 +443,24 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
         logger.info(f"  - EXCLUDED: '{ex['title']}' -> Reason: {ex['reason']}")
     logger.info("=" * 60)
 
-    # Search pool expansion if uncooldowned pool is too small
-    if len(uncooldowned_candidates) < num_candidates:
-        logger.warning(f"Uncooldowned pool low ({len(uncooldowned_candidates)} titles). Expanding AniList search pool (Page 2 & Jikan)...")
+    # Search pool expansion if uncooldowned pool is too small OR (for hidden_gems)
+    # too few titles actually clear the 7.5+/non-mainstream bar. A pool can look
+    # fine by raw count (e.g. 21 titles) while having almost none that qualify
+    # for this specific concept — checking raw count alone missed that case.
+    needs_expansion = len(uncooldowned_candidates) < num_candidates
+    if not needs_expansion and concept_key == "hidden_gems":
+        qualifying_count = sum(
+            1 for c in uncooldowned_candidates if can_qualify_as_hidden_gem(c)[0]
+        )
+        if qualifying_count < num_candidates:
+            needs_expansion = True
+            logger.warning(
+                f"Uncooldowned pool has {len(uncooldowned_candidates)} titles but only "
+                f"{qualifying_count} qualify for Hidden Gems (score 7.5+, non-mainstream). Expanding pool..."
+            )
+
+    if needs_expansion:
+        logger.warning(f"Uncooldowned/qualifying pool low. Expanding AniList search pool (Page 2 & Jikan)...")
         extra_candidates = []
         if concept_key == "upcoming_spotlight":
             extra_candidates = fetch_anilist_upcoming(50, page=2)
@@ -503,25 +518,57 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
     # ==================== MODE 2: UNDERRATED TRIO ====================
     elif concept_key == "hidden_gems":
         sorted_candidates = sorted(selection_pool, key=lambda x: x.get("average_score", 0), reverse=True)
-        
-        for c in sorted_candidates:
+
+        # Try the strict 7.5 threshold first, then step down gracefully rather
+        # than crashing the whole pipeline when the daily pool is thin (e.g.
+        # after the 30-day title cooldown removes most high scorers). Each
+        # step is logged explicitly so it's visible in the run log, not silent.
+        SCORE_FALLBACK_STEPS = [7.5, 7.2, 7.0, 6.8]
+
+        for step_idx, threshold in enumerate(SCORE_FALLBACK_STEPS):
+            selected = []
+            seen_ids = set()
+            step_excluded = []
+
+            for c in sorted_candidates:
+                if len(selected) >= num_candidates:
+                    break
+                if c["id"] in seen_ids:
+                    continue
+                qualifies, reasoning = can_qualify_as_hidden_gem(c, score_threshold=threshold)
+                if qualifies:
+                    c["selection_category"] = "Underrated Hidden Gem"
+                    c["selection_reasoning"] = reasoning
+                    if threshold < 7.5:
+                        c["selection_reasoning"] += f" [FALLBACK: threshold relaxed to {threshold}/10 due to thin daily pool]"
+                    c["excluded_in_run"] = excluded_candidates
+                    selected.append(c)
+                    seen_ids.add(c["id"])
+                else:
+                    step_excluded.append((c["title"], reasoning))
+
             if len(selected) >= num_candidates:
+                if threshold < 7.5:
+                    logger.warning(
+                        f"[Hidden Gems FALLBACK] Only found {num_candidates} qualifying titles after relaxing "
+                        f"score threshold from 7.5 to {threshold}/10. Consider widening the AniList search pool "
+                        f"or shortening the cooldown window if this keeps happening."
+                    )
                 break
-            if c["id"] in seen_ids:
-                continue
-            qualifies, reasoning = can_qualify_as_hidden_gem(c)
-            if qualifies:
-                c["selection_category"] = "Underrated Hidden Gem"
-                c["selection_reasoning"] = reasoning
-                c["excluded_in_run"] = excluded_candidates
-                selected.append(c)
-                seen_ids.add(c["id"])
             else:
-                logger.info(f"[ContentSource EXCLUDE] '{c['title']}' did not qualify for Underrated Trio: {reasoning}")
+                logger.info(
+                    f"[Hidden Gems] Threshold {threshold}/10 yielded only {len(selected)}/{num_candidates} qualifying titles. "
+                    f"{'Trying next fallback threshold...' if step_idx < len(SCORE_FALLBACK_STEPS) - 1 else ''}"
+                )
+                for t, r in step_excluded:
+                    logger.info(f"[ContentSource EXCLUDE] '{t}' did not qualify for Underrated Trio: {r}")
 
         if len(selected) < num_candidates:
             raise ValueError(
-                f"Underrated Trio criteria failed: Found only {len(selected)}/{num_candidates} qualifying underrated titles strictly below popularity floor!"
+                f"Underrated Trio criteria failed: Found only {len(selected)}/{num_candidates} qualifying underrated "
+                f"titles even after relaxing the score threshold down to {SCORE_FALLBACK_STEPS[-1]}/10. "
+                f"The candidate pool is genuinely too thin today (likely due to cooldown exclusions) — "
+                f"widen the AniList/Jikan pool size or shorten ANIME_TITLE_COOLDOWN_DAYS."
             )
 
     # ==================== MODE 3: UPCOMING TRIO ====================

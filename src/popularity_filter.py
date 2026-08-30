@@ -45,16 +45,18 @@ def is_mainstream_anime(item: Dict[str, Any]) -> Tuple[bool, str]:
     reason = f"Title '{title}' qualifies as relatively obscure/hidden (AniList Pop: {anilist_pop:,}, MAL Members: {mal_members:,})."
     return False, reason
 
-def can_qualify_as_hidden_gem(item: Dict[str, Any]) -> Tuple[bool, str]:
+def can_qualify_as_hidden_gem(item: Dict[str, Any], score_threshold: float = 7.5) -> Tuple[bool, str]:
     """
     Evaluates whether candidate item can qualify for 'hidden_gems' / 'underrated' concept.
-    Rule: Must have High Rating (average_score >= 7.5) AND Must NOT be Mainstream.
+    Rule: Must have High Rating (average_score >= score_threshold) AND Must NOT be Mainstream.
+    `score_threshold` defaults to 7.5 but can be lowered by a controlled fallback
+    when the daily candidate pool doesn't have enough 7.5+ titles clear of cooldown.
     """
     score = item.get("average_score", 0.0)
     title = item.get("title", "Unknown Title")
 
-    if score < 7.5:
-        return False, f"Title '{title}' score ({score}/10) is below hidden gem threshold (7.5/10)."
+    if score < score_threshold:
+        return False, f"Title '{title}' score ({score}/10) is below hidden gem threshold ({score_threshold}/10)."
 
     is_mainstream, reason = is_mainstream_anime(item)
     if is_mainstream:
