@@ -155,5 +155,23 @@
     "date": "2026-08-30T11:36:36.537908",
     "date_readable": "2026-08-30 11:36:36",
     "angle_key": "PALATE_CLEANSER"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T11:52:23.570361",
+    "date_readable": "2026-08-30 11:52:23",
+    "angle_key": "PALATE_CLEANSER"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-08-30T12:25:26.878988",
+    "date_readable": "2026-08-30 12:25:26",
+    "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T12:46:33.620831",
+    "date_readable": "2026-08-30 12:46:33",
+    "angle_key": "STANDOUT_ELEMENT"
   }
 ]

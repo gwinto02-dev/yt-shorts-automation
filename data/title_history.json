@@ -382,5 +382,53 @@
     "concept_type": "genre_spotlight",
     "date": "2026-08-30T11:36:36.886807",
     "date_readable": "2026-08-30 11:36:36"
+  },
+  {
+    "title": "That Time I Got Reincarnated as a Slime",
+    "normalized_title": "that time i got reincarnated as a slime",
+    "anime_id": 101280,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T11:52:23.696873",
+    "date_readable": "2026-08-30 11:52:23"
+  },
+  {
+    "title": "KAIJU GIRL CARAMELISE",
+    "normalized_title": "kaiju girl caramelise",
+    "anime_id": 204466,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T11:52:23.696873",
+    "date_readable": "2026-08-30 11:52:23"
+  },
+  {
+    "title": "Star Detective Precure!",
+    "normalized_title": "star detective precure",
+    "anime_id": 202957,
+    "concept_type": "genre_spotlight",
+    "date": "2026-08-30T11:52:23.696873",
+    "date_readable": "2026-08-30 11:52:23"
+  },
+  {
+    "title": "That Time I Got Reincarnated as a Slime",
+    "normalized_title": "that time i got reincarnated as a slime",
+    "anime_id": 101280,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-30T12:25:27.194407",
+    "date_readable": "2026-08-30 12:25:27"
+  },
+  {
+    "title": "Bleach",
+    "normalized_title": "bleach",
+    "anime_id": 269,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-30T12:25:27.194407",
+    "date_readable": "2026-08-30 12:25:27"
+  },
+  {
+    "title": "Black Clover",
+    "normalized_title": "black clover",
+    "anime_id": 97940,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-30T12:25:27.194407",
+    "date_readable": "2026-08-30 12:25:27"
   }
 ]
