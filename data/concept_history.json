@@ -173,5 +173,11 @@
     "date": "2026-08-30T12:46:33.620831",
     "date_readable": "2026-08-30 12:46:33",
     "angle_key": "STANDOUT_ELEMENT"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-08-30T13:41:48.068770",
+    "date_readable": "2026-08-30 13:41:48",
+    "angle_key": "THEMATIC_RIVALRY"
   }
 ]
