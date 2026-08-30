@@ -113,6 +113,14 @@ def extract_structural_fingerprint(script_text: str) -> Dict[str, Any]:
     last_sentence = sentences[-1] if sentences else script_text[-80:]
     first_lower = first_sentence.lower()
     last_lower = last_sentence.lower()
+    # Closing outros often span 2 sentences (e.g. "...you won't regret it.
+    # Subscribe for daily picks!") and the identifying phrase can land in the
+    # second-to-last sentence rather than the truly final one. Classify
+    # against the last two sentences combined so detection doesn't depend on
+    # phrase placement — this previously caused a real production bug where
+    # a repeated outro was misclassified as a "fresh" style every retry.
+    closing_window = " ".join(sentences[-2:]) if len(sentences) >= 2 else last_sentence
+    closing_window_lower = closing_window.lower()
 
     # Determine canonical opening style category
     if "?" in first_sentence or any(w in first_lower for w in ["looking for", "ever wonder", "ready for", "which anime", "need anime", "what happens"]):
@@ -122,10 +130,11 @@ def extract_structural_fingerprint(script_text: str) -> Dict[str, Any]:
     else:
         opening_style = "IN_SCENE_MID_THOUGHT"
 
-    # Determine canonical closing style category
-    if "?" in last_sentence or any(w in last_lower for w in ["which of these", "which one", "your thoughts", "let me know", "comment below", "drop your"]):
+    # Determine canonical closing style category (checked over the last 1-2
+    # sentences — see closing_window note above).
+    if "?" in closing_window or any(w in closing_window_lower for w in ["which of these", "which one", "your thoughts", "let me know", "comment below", "drop your"]):
         closing_style = "SPECIFIC_CALLBACK_QUESTION"
-    elif any(w in last_lower for w in ["start with", "binge night", "bookmark", "save this short", "won't regret it"]):
+    elif any(w in closing_window_lower for w in ["start with", "binge night", "bookmark", "save this short", "won't regret it"]):
         closing_style = "SPECIFIC_CALLBACK_BINGE"
     else:
         closing_style = "SPECIFIC_CALLBACK_OPINION"
@@ -665,4 +674,58 @@ def check_video_title_similarity(new_title: str, days: int = config.VIDEO_TITLE_
         "reason": f"Video title is unique (Highest phrasing overlap: {highest_sim:.0%}).",
         "matched_title": None
     }
+
+
+# ==================== IMAGE HASH DEDUPLICATION HISTORY ====================
+
+def load_image_history() -> List[Dict[str, Any]]:
+    """Load persistent image history log from image_history.json."""
+    return _load_json_file(config.IMAGE_HISTORY_FILE)
+
+def get_used_image_hashes() -> Set[str]:
+    """Retrieve set of all SHA-256 content hashes of images used in past videos."""
+    history = load_image_history()
+    hashes = set()
+    for entry in history:
+        h = entry.get("hash")
+        if h:
+            hashes.add(h.lower().strip())
+    return hashes
+
+def record_used_images(image_records: List[Dict[str, Any]]):
+    """
+    Record newly used cover image metadata (SHA-256 hash, title, source_url, timestamp)
+    to image_history.json.
+    """
+    if not image_records:
+        return
+    history = load_image_history()
+    existing_hashes = {e.get("hash", "").lower().strip() for e in history if e.get("hash")}
+    
+    now = datetime.now()
+    now_iso = now.isoformat()
+    now_str = now.strftime("%Y-%m-%d %H:%M:%S")
+
+    added_count = 0
+    for rec in image_records:
+        h = rec.get("hash", "").lower().strip()
+        if not h:
+            continue
+        if h in existing_hashes:
+            continue
+            
+        history.append({
+            "hash": h,
+            "title": rec.get("title", "Unknown"),
+            "source_url": rec.get("source_url", ""),
+            "date": now_iso,
+            "date_readable": now_str
+        })
+        existing_hashes.add(h)
+        added_count += 1
+
+    if added_count > 0:
+        _save_json_file(config.IMAGE_HISTORY_FILE, history)
+        logger.info(f"[HistoryManager] Recorded {added_count} image hash(es) to image_history.json")
+
 
