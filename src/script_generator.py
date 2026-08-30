@@ -51,12 +51,13 @@ CRITICAL RULES:
    - DO NOT use the same sentence formula for each title.
    - Vary what information comes first for each title (studio vs. rating vs. character vs. plot hook).
    - Use varied natural transition phrases between titles instead of repeating "Number two:" or "Number one on our list is".
-9. Output ONLY raw spoken narration text (or JSON when requested). Do NOT include scene cues, timestamps, or stage directions.
+9. NO CROSS-SEGMENT REPETITION (CRITICAL): If the opening hook mentions a specific fact, stat, score, or detail about one of the three picks, that exact fact/stat/detail must NOT be restated when that same title's own segment comes up later in the script. Cover a genuinely different detail there — the hook and the title's dedicated segment should never feel like they're saying the same thing twice.
+10. Output ONLY raw spoken narration text (or JSON when requested). Do NOT include scene cues, timestamps, or stage directions.
 """
 
 OPENING_STYLE_DIRECTIVES = {
     "SPECIFIC_QUESTION": "OPENING HOOK STYLE (Specific Question): Pose a specific, curiosity-driving question about the content itself (e.g., 'What happens when a disgraced knight gets a second chance at life in a world of high-stakes magic?'). DO NOT use generic 'did you know' or 'ever wondered'.",
-    "SURPRISING_FACT": "OPENING HOOK STYLE (Surprising Fact): State a surprising or specific concrete fact about one of the three picks (e.g., 'Mappa spent over two years animating a single tournament fight for a show almost nobody watched.').",
+    "SURPRISING_FACT": "OPENING HOOK STYLE (Surprising Fact): State a surprising or specific concrete fact about ONE of the three picks (e.g., 'Mappa spent over two years animating a single tournament fight for a show almost nobody watched.'). CRITICAL: When that same title's dedicated segment comes up later in the script, do NOT restate this same fact/stat/score again — cover a DIFFERENT detail about it there (a different plot point, character, or production detail) so the hook and the segment don't feel redundant.",
     "IN_SCENE_MID_THOUGHT": "OPENING HOOK STYLE (In-Scene / Mid-Thought): Open mid-thought or in-scene rather than announcing the video premise (e.g., 'Right when you think this fantasy thriller is a standard revenge story, episode four completely flips the table.')."
 }
 
