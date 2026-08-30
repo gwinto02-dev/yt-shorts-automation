@@ -734,6 +734,15 @@ def generate_recommendation_script(
         feedback_notes = "; ".join(feedback_parts)
         retries += 1
 
+    if not script_text or not script_text.strip():
+        logger.warning("[ScriptGenerator] Script text is empty after retries. Triggering natural template fallback generator...")
+        script_text = generate_fallback_template_script(
+            candidates,
+            concept_info,
+            target_opening_style=target_opening_style,
+            target_closing_style=target_closing_style
+        )
+
     # Use combined title if obtained and valid, else generate video title
     if combined_video_title:
         signal_ok, _ = verify_title_concept_signal(combined_video_title, concept_key)

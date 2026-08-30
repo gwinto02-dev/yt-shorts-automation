@@ -12,20 +12,47 @@ logger = logging.getLogger(__name__)
 _groq_lock = threading.Lock()
 _last_groq_call_time = 0.0
 
-def parse_retry_delay_from_error(error_str: str) -> float:
+def parse_retry_delay_from_error(error_input: Any) -> float:
     """
-    Parse retryDelay value (in seconds) from Groq API error message or response string.
+    Parse retryDelay / Retry-After value (in seconds) from Exception response headers or error message string.
     Examples:
-      - Please try again in 5.2s
-      - retry after 5.0s
-      - 'retryDelay': '5.0s'
-      - in 4.5s
-    Returns 0.0 if no retryDelay found.
+      - Response headers: 'retry-after': '5.0', 'x-ratelimit-reset-requests': '6.2s'
+      - Error string: 'Please try again in 5.2s', 'retry after 5.0s', ''retryDelay': '5.0s''
+    Returns 0.0 if no retry delay found.
     """
-    if not error_str:
+    if not error_input:
         return 0.0
 
-    # Match 'try again in 5.2s' or 'try again in 5.2'
+    # 1. Check HTTP response headers if error_input is an Exception with response headers attached
+    if isinstance(error_input, Exception):
+        response = getattr(error_input, "response", None)
+        if response is not None and hasattr(response, "headers") and response.headers:
+            headers = response.headers
+            retry_after = headers.get("retry-after") or headers.get("Retry-After")
+            if retry_after:
+                try:
+                    return float(retry_after)
+                except ValueError:
+                    pass
+
+            reset_req = headers.get("x-ratelimit-reset-requests") or headers.get("x-ratelimit-reset-tokens")
+            if reset_req:
+                m_sec = re.search(r"(\d+(?:\.\d+)?)s?", reset_req, re.IGNORECASE)
+                if m_sec:
+                    try:
+                        return float(m_sec.group(1))
+                    except ValueError:
+                        pass
+                m_ms = re.search(r"(\d+(?:\.\d+)?)ms", reset_req, re.IGNORECASE)
+                if m_ms:
+                    try:
+                        return float(m_ms.group(1)) / 1000.0
+                    except ValueError:
+                        pass
+
+    error_str = str(error_input)
+
+    # 2. Match 'try again in 5.2s' or 'try again in 5.2'
     match = re.search(r"try\s+again\s+in\s+(\d+(?:\.\d+)?)s?", error_str, re.IGNORECASE)
     if match:
         try:
@@ -130,9 +157,8 @@ def rate_limited_groq_call(call_func: Callable[..., Any], *args, **kwargs) -> An
                 )
                 raise e
 
-            err_str = str(e)
-            retry_delay = parse_retry_delay_from_error(err_str)
-            jitter = random.uniform(0.0, 3.0)
+            retry_delay = parse_retry_delay_from_error(e)
+            jitter = random.uniform(0.5, 2.5)
 
             if retry_delay > 0.0:
                 total_wait = retry_delay + jitter

@@ -873,13 +873,13 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
         self.assertIn("too short", str(ctx_short.exception).lower())
 
     def test_invalid_script_qa_aborts_pipeline_early(self):
-        """Regression test: Pipeline MUST abort before TTS if script generation fails QA or produces empty text."""
+        """Regression test: Pipeline MUST abort before TTS if script generation produces empty text or retention QA fails."""
         from main import run_full_pipeline
 
         with patch("src.groq_utils.check_groq_quota_preflight", return_value=(True, "OK")), \
              patch("main.run_phase_1") as mock_p1, \
              patch("src.fact_checker.verify_candidate_facts", return_value={"sources": []}), \
-             patch("main.run_phase_2", return_value={"full_text": "", "word_count": 0, "script_qa_res": {"pass": False, "reason": "Empty script"}, "retries": 2}), \
+             patch("main.run_phase_2", return_value={"full_text": "", "word_count": 0, "retention_qa_res": {"pass": False, "reason": "Empty script"}, "retries": 2}), \
              patch("src.notifier.send_daily_summary_email") as mock_email:
 
             mock_p1.return_value = {
@@ -891,8 +891,117 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
             with self.assertRaises(SystemExit) as ctx:
                 run_full_pipeline()
 
-            self.assertEqual(ctx.exception.code, 1, "Pipeline MUST exit code 1 when script generation fails QA!")
+            self.assertEqual(ctx.exception.code, 1, "Pipeline MUST exit code 1 when script generation produces empty text!")
             mock_email.assert_called_once()
+
+    def test_natural_script_qa_soft_pass_proceeds_to_supervisor_qa(self):
+        """Verify that when Natural Script QA fails but retention QA passes on a non-empty script, the pipeline does NOT hard-abort early."""
+        from main import run_full_pipeline
+        from unittest.mock import patch, MagicMock
+
+        script_sample = "What happens when three standout anime slip right past most fans watchlists? Studio Mappa animated Frieren in 2023 holding a stellar 9.3 score. Next up, Re Zero follows an intense journey holding a 8.9 rating. Finally, Hunter x Hunter is a sensational pick. Which of these three are you watching first? Drop your pick below!"
+
+        with patch("src.groq_utils.check_groq_quota_preflight", return_value=(True, "OK")), \
+             patch("main.run_phase_1") as mock_p1, \
+             patch("src.fact_checker.verify_candidate_facts", return_value={"sources": []}), \
+             patch("main.run_phase_2", return_value={
+                 "full_text": script_sample,
+                 "word_count": 130,
+                 "video_title": "Top Picks 🍿 #Shorts",
+                 "script_qa_res": {"pass": False, "reason": "Natural tone warning"},
+                 "retention_qa_res": {"pass": True, "reason": "Retention OK"},
+                 "retries": 2
+             }), \
+             patch("src.qa_checker.check_youtube_policy_compliance", return_value={"risk_level": "LOW"}), \
+             patch("main.run_phase_3", return_value=[Path("img1.jpg")]), \
+             patch("src.qa_checker.check_asset_rights", return_value={"pass": True}), \
+             patch("main.run_phase_4", return_value=(Path("audio.mp3"), Path("sub.ass"), [])), \
+             patch("main.run_phase_5", return_value=Path("video.mp4")), \
+             patch("src.history_manager.check_originality_against_history", return_value={"pass": True}), \
+             patch("src.history_manager.check_structural_variety_against_history", return_value={"pass": True}), \
+             patch("src.qa_checker.run_supervisor_qa_gate") as mock_supervisor_gate, \
+             patch("src.notifier.send_daily_summary_email"):
+
+            mock_p1.return_value = {
+                "candidates": [{"id": 701, "title": "Test Anime"}],
+                "concept_key": "top_recommendations",
+                "concept_info": {"name": "Top Recs"}
+            }
+            mock_supervisor_gate.return_value = {"pass": False, "verdict": "BLOCKED"}
+
+            with self.assertRaises(SystemExit) as ctx:
+                run_full_pipeline()
+
+            self.assertEqual(ctx.exception.code, 1)
+            mock_supervisor_gate.assert_called_once()
+            # Verify that script_qa_res was passed into supervisor gate
+            call_kwargs = mock_supervisor_gate.call_args.kwargs
+            self.assertFalse(call_kwargs["script_qa_res"]["pass"])
+
+    def test_image_deduplication_hashes(self):
+        """Verify SHA-256 content hashing deduplicates images across runs."""
+        from src.history_manager import get_used_image_hashes, record_used_images
+        from src.visuals import compute_image_sha256, fetch_and_save_visuals
+        import tempfile
+
+        test_img_path = Path(self.tmp_dir.name) / "test_image.jpg"
+        with open(test_img_path, "wb") as f:
+            f.write(b"sample_image_bytes_content_12345")
+
+        img_hash = compute_image_sha256(test_img_path)
+        self.assertEqual(len(img_hash), 64)
+
+        record_used_images([{"hash": img_hash, "title": "Test Title", "source_url": "http://example.com/img.jpg"}])
+        used = get_used_image_hashes()
+        self.assertIn(img_hash, used)
+
+    def test_video_quality_ffmpeg_arguments(self):
+        """Verify FFmpeg video rendering pipeline builds high-quality CRF 18, preset slow, and Lanczos filter flags."""
+        from src.video_editor import assemble_short_video
+        from unittest.mock import patch, MagicMock
+
+        dummy_img = Path(self.tmp_dir.name) / "dummy.jpg"
+        from PIL import Image
+        img = Image.new("RGB", (1080, 1920), color="blue")
+        img.save(dummy_img)
+
+        dummy_aud = Path(self.tmp_dir.name) / "dummy.mp3"
+        dummy_aud.touch()
+        dummy_sub = Path(self.tmp_dir.name) / "dummy.ass"
+        dummy_sub.touch()
+        dummy_out = Path(self.tmp_dir.name) / "output.mp4"
+
+        with patch("subprocess.run") as mock_run, \
+             patch("src.video_editor.get_audio_duration", return_value=30.0), \
+             patch("pathlib.Path.exists", return_value=True), \
+             patch("pathlib.Path.stat") as mock_stat:
+
+            mock_stat_obj = MagicMock()
+            mock_stat_obj.st_size = 1048576
+            mock_stat.return_value = mock_stat_obj
+            mock_run.return_value = MagicMock(returncode=0, stderr="")
+
+            assemble_short_video(
+                image_paths=[dummy_img],
+                audio_path=dummy_aud,
+                subtitles_path=dummy_sub,
+                output_path=dummy_out
+            )
+
+            mock_run.assert_called_once()
+            cmd_args = mock_run.call_args[0][0]
+
+            self.assertIn("-c:v", cmd_args)
+            self.assertIn("libx264", cmd_args)
+            self.assertIn("-preset", cmd_args)
+            self.assertIn("slow", cmd_args)
+            self.assertIn("-crf", cmd_args)
+            self.assertIn("18", cmd_args)
+            self.assertIn("-movflags", cmd_args)
+            self.assertIn("+faststart", cmd_args)
+
+            filter_str = cmd_args[cmd_args.index("-filter_complex") + 1]
+            self.assertIn("flags=lanczos", filter_str)
 
 if __name__ == "__main__":
     unittest.main()

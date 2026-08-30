@@ -108,7 +108,7 @@ def assemble_short_video(
             zoom_expr = "zoompan=z='1.12':x='min(iw-iw/zoom,iw/2-(iw/zoom/2)+(on*2))':y='ih/2-(ih/zoom/2)'"
 
         filter_chains.append(
-            f"[{idx}:v]scale=1080:1920:force_original_aspect_ratio=increase,"
+            f"[{idx}:v]scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,"
             f"crop=1080:1920,"
             f"{zoom_expr}:d={frames_per_img}:s=1080x1920:fps={fps},"
             f"setsar=1[v{idx}];"
@@ -154,9 +154,10 @@ def assemble_short_video(
         "-map", "[a_mixed]",
         "-t", f"{total_duration:.3f}",
         "-c:v", "libx264",
-        "-preset", "fast",
-        "-crf", "22",
+        "-preset", "slow",
+        "-crf", "18",
         "-pix_fmt", "yuv420p",
+        "-movflags", "+faststart",
         "-c:a", "aac",
         "-b:a", "192k",
         str(output_path)

@@ -120,6 +120,27 @@
     }
   },
   {
+    "date": "2026-08-29T05:40:26.979560",
+    "date_readable": "2026-08-29",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Heroic Struggles in Naruto, Demon Slayer & Hell Mode 🌟 #Shorts",
+    "hook": "What pushes a grieving teen to keep hunting demons while wrestling with the fear that his own kindness might be his weakness?\n\nStudio Pierrot’s animation keeps Shippuden’s villages looking weathered, and the story picks up with an older Naruto returning from training, still haunted by the promise to rescue Sasuke and prove he’s more than a prankster",
+    "script": "What pushes a grieving teen to keep hunting demons while wrestling with the fear that his own kindness might be his weakness?\n\nStudio Pierrot’s animation keeps Shippuden’s villages looking weathered, and the story picks up with an older Naruto returning from training, still haunted by the promise to rescue Sasuke and prove he’s more than a prankster.\n\nTanjiro’s quiet resolve to shield Nezuko defines Demon Slayer, and ufotable’s crisp fight choreography helped the series land an 8.3 /10 on MyAnimeList.\n\nAt 7.2 /10, Hell Mode’s second season drops Helmios into a fantasy realm where his hardcore gamer tactics clash with real magic, and Yokohama Animation Lab leans into chaotic, over‑the‑top action.\n\nFrom Naruto’s lingering promise to Helmios’ absurd power‑ups, which inner conflict will you follow first? Share your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "what pushes a grieving teen",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": []
+    },
+    "video_id": "TzyVBd74cOw",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
+  },
+  {
     "date": "2026-08-29T09:14:09.554431",
     "date_readable": "2026-08-29",
     "concept_type": "hidden_gems",

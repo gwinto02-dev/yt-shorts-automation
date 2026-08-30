@@ -45,7 +45,7 @@ FORBIDDEN_CLICHES = [
     "packs a punch"
 ]
 
-def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
+def check_natural_script_quality(script_text: str, concept_key: str = "top_recommendations") -> Dict[str, Any]:
     """
     Evaluates script for naturalness, clarity, conversational tone, generic AI tropes, and duplicate words.
     Returns: {"pass": bool, "reason": str}
@@ -90,8 +90,14 @@ def check_natural_script_quality(script_text: str) -> Dict[str, Any]:
             
             prompt = (
                 "You are an expert script editor for viral YouTube Shorts.\n"
-                "Evaluate the following script for naturalness, conversational tone, engagement, and clarity.\n"
-                "Reject any script that sounds robotic, repetitive, overly hyped, or uses generic AI clichés.\n\n"
+                "Evaluate the following script for naturalness, conversational flow, engagement, phrasing clarity, and lack of robotic clichés.\n\n"
+                "CRITICAL COMPILATION CONTEXT:\n"
+                "This script is a compilation/listicle video recommending 3 separate anime titles (e.g. 'Top Recommendations' or a list of picks). "
+                "The 3 featured shows may be completely distinct with no shared narrative thread between them. "
+                "DO NOT fail or penalize the script for lacking a single connected narrative or for jumping between 3 separate picks — compilation videos naturally cover distinct titles.\n\n"
+                "EVALUATION CRITERIA:\n"
+                "- REJECT scripts with genuinely awkward or robotic phrasing, severe structural repetition, confusing sentences, or vague hype filler clichés (e.g., 'crisp hand-drawn textures', 'stretch its action chops').\n"
+                "- ACCEPT scripts that speak naturally, clearly present each pick with concrete facts or hooks, and sound like a knowledgeable friend making recommendations.\n\n"
                 f"SCRIPT:\n{script_text}\n\n"
                 "Respond strictly with a JSON object:\n"
                 '{"pass": true/false, "reason": "Short explanation of score"}'
@@ -404,8 +410,9 @@ def compute_image_difference(img_path1: Path, img_path2: Path) -> float:
     """Compute mean pixel difference between two extracted frame images."""
     try:
         with Image.open(img_path1) as im1, Image.open(img_path2) as im2:
-            im1_resized = im1.resize((100, 100)).convert("L")
-            im2_resized = im2.resize((100, 100)).convert("L")
+            resample_filter = getattr(Image, 'Resampling', Image).LANCZOS
+            im1_resized = im1.resize((100, 100), resample_filter).convert("L")
+            im2_resized = im2.resize((100, 100), resample_filter).convert("L")
             
             p1 = list(im1_resized.getdata())
             p2 = list(im2_resized.getdata())

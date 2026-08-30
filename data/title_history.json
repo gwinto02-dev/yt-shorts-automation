@@ -286,5 +286,77 @@
     "concept_type": "genre_spotlight",
     "date": "2026-08-29T05:26:17.260857",
     "date_readable": "2026-08-29 05:26:17"
+  },
+  {
+    "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
+    "normalized_title": "hell mode the hardcore gamer dominates in another world with garbage balancing season 2",
+    "anime_id": 209983,
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.612642",
+    "date_readable": "2026-08-29 05:37:56"
+  },
+  {
+    "title": "Demon Slayer: Kimetsu no Yaiba",
+    "normalized_title": "demon slayer kimetsu no yaiba",
+    "anime_id": 101922,
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.612642",
+    "date_readable": "2026-08-29 05:37:56"
+  },
+  {
+    "title": "Naruto: Shippuden",
+    "normalized_title": "naruto shippuden",
+    "anime_id": 1735,
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.612642",
+    "date_readable": "2026-08-29 05:37:56"
+  },
+  {
+    "title": "Welcome to Demon School! Iruma-kun Season 4",
+    "normalized_title": "welcome to demon school irumakun season 4",
+    "anime_id": 184492,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.709167",
+    "date_readable": "2026-08-30 00:04:13"
+  },
+  {
+    "title": "The Cat and the Dragon",
+    "normalized_title": "the cat and the dragon",
+    "anime_id": 186863,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.709167",
+    "date_readable": "2026-08-30 00:04:13"
+  },
+  {
+    "title": "THE GHOST IN THE SHELL",
+    "normalized_title": "the ghost in the shell",
+    "anime_id": 177699,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.709167",
+    "date_readable": "2026-08-30 00:04:13"
+  },
+  {
+    "title": "Daemons of the Shadow Realm",
+    "normalized_title": "daemons of the shadow realm",
+    "anime_id": 195600,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.378973",
+    "date_readable": "2026-08-30 07:50:21"
+  },
+  {
+    "title": "False Memory (2026)",
+    "normalized_title": "false memory 2026",
+    "anime_id": 141953,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.378973",
+    "date_readable": "2026-08-30 07:50:21"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World-",
+    "normalized_title": "rezero starting life in another world",
+    "anime_id": 21355,
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.378973",
+    "date_readable": "2026-08-30 07:50:21"
   }
 ]

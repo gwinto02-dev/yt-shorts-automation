@@ -80,14 +80,28 @@ def fetch_fallback_kitsu_cover(title: str) -> str:
         logger.warning(f"Kitsu fallback lookup failed for '{search_q}': {e}")
     return ""
 
+def compute_image_sha256(image_path: Path) -> str:
+    """Compute SHA-256 content hash of image file."""
+    import hashlib
+    hasher = hashlib.sha256()
+    with open(image_path, "rb") as f:
+        while chunk := f.read(65536):
+            hasher.update(chunk)
+    return hasher.hexdigest().lower()
+
 def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
     """
     Downloads official cover artwork for each candidate anime.
-    Attaches structured asset_rights metadata — source/type only; does NOT
-    make legal fair-use determinations or assert commercial licence clearance.
+    Attaches structured asset_rights metadata and enforces SHA-256 content-hash image deduplication
+    against past video history and across candidates in the current run.
     Returns list of downloaded image file paths in order.
     """
+    from src.history_manager import get_used_image_hashes, record_used_images
+
     downloaded_paths = []
+    past_used_hashes = get_used_image_hashes()
+    run_used_hashes = set()
+    used_records_to_save = []
 
     # Clean previous images in assets/images/
     for old_file in config.IMAGES_DIR.glob("cover_*"):
@@ -111,36 +125,80 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
 
         logger.info(f"Downloading cover for #{idx}: {title}")
         success = False
+        accepted_hash = ""
+        accepted_url = ""
+        last_duplicate_path = None
+        last_duplicate_hash = ""
+        last_duplicate_url = ""
 
-        # 1. Try primary URL
+        # Collect candidate image URLs to try: (url, source_name)
+        sources_to_try = []
         if cover_url:
-            success = download_image(cover_url, target_path, timeout=8)
+            sources_to_try.append((cover_url, source))
+        
+        jikan_url = fetch_fallback_jikan_cover(title)
+        if jikan_url and jikan_url != cover_url:
+            sources_to_try.append((jikan_url, "Jikan API"))
 
-        # 2. Try Jikan fallback if primary failed
-        if not success:
-            logger.info(f"Primary image source failed for '{title}'. Trying Jikan API...")
-            fallback_url = fetch_fallback_jikan_cover(title)
-            if fallback_url:
-                success = download_image(fallback_url, target_path, timeout=10)
+        kitsu_url = fetch_fallback_kitsu_cover(title)
+        if kitsu_url and kitsu_url not in [cover_url, jikan_url]:
+            sources_to_try.append((kitsu_url, "Kitsu API"))
 
-        # 3. Try Kitsu fallback if still failed
-        if not success:
-            logger.info(f"Jikan fallback failed for '{title}'. Trying Kitsu API...")
-            fallback_url_2 = fetch_fallback_kitsu_cover(title)
-            if fallback_url_2:
-                success = download_image(fallback_url_2, target_path, timeout=10)
+        for url_attempt, src_attempt in sources_to_try:
+            if download_image(url_attempt, target_path, timeout=8):
+                img_hash = compute_image_sha256(target_path)
+                if img_hash in past_used_hashes or img_hash in run_used_hashes:
+                    logger.warning(
+                        f"[Image Deduplication WARNING] Cover image from {src_attempt} for '{title}' is a duplicate "
+                        f"of previously used artwork (SHA-256: {img_hash[:10]}...). Trying next fallback source..."
+                    )
+                    last_duplicate_hash = img_hash
+                    last_duplicate_url = url_attempt
+                    if target_path.exists():
+                        try:
+                            target_path.unlink()
+                        except Exception:
+                            pass
+                else:
+                    success = True
+                    accepted_hash = img_hash
+                    accepted_url = url_attempt
+                    source = src_attempt
+                    logger.info(
+                        f"[Image Deduplication UNIQUE] Accepted distinct image for '{title}' (SHA-256: {img_hash[:10]}...)"
+                    )
+                    break
 
-        # Attach structured rights metadata.
-        # Source/type describe what the asset IS.
-        # license_status and commercial_use_verified describe what we actually KNOW.
-        # We do NOT claim fair use or any commercial licence for promotional API artwork.
+        # Fallback: If all available sources are duplicates, use the primary/least-bad option
+        if not success and sources_to_try:
+            logger.warning(
+                f"[Image Deduplication FALLBACK] All available cover sources for '{title}' are duplicate artwork. "
+                f"Using primary source as least-bad fallback option rather than failing pipeline."
+            )
+            fallback_url, fallback_src = sources_to_try[0]
+            if download_image(fallback_url, target_path, timeout=8):
+                success = True
+                accepted_hash = compute_image_sha256(target_path)
+                accepted_url = fallback_url
+                source = fallback_src
+
+        # Attach structured rights metadata and record hash
         if success:
             downloaded_paths.append(target_path)
             candidate["local_image_path"] = str(target_path)
+            candidate["image_hash"] = accepted_hash
+            run_used_hashes.add(accepted_hash)
+            used_records_to_save.append({
+                "hash": accepted_hash,
+                "title": title,
+                "source_url": accepted_url
+            })
+
             candidate["asset_rights"] = {
                 "asset_id": filename,
                 "source": source,
-                "source_url": cover_url or "",
+                "source_url": accepted_url or cover_url or "",
+                "image_hash": accepted_hash,
                 "asset_type": "Official Promotional Artwork",
                 "license_status": "LICENSE_UNKNOWN",
                 "commercial_use_verified": False,
@@ -166,6 +224,12 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
     if not downloaded_paths:
         raise RuntimeError("Phase 3 Failed: No official cover images were successfully downloaded!")
 
+    # Record accepted image hashes to persistent history
+    try:
+        record_used_images(used_records_to_save)
+    except Exception as e:
+        logger.warning(f"Could not record image hashes to history: {e}")
+
     # Write human-readable manifest for review
     manifest_path = config.OUTPUT_DIR / "asset_rights_manifest.json"
     import json
@@ -177,7 +241,7 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
     except Exception as e:
         logger.warning(f"Could not write asset_rights_manifest.json: {e}")
 
-    logger.info(f"Visuals Sourcing Complete: Downloaded {len(downloaded_paths)}/{len(candidates)} images with rights metadata.")
+    logger.info(f"Visuals Sourcing Complete: Downloaded {len(downloaded_paths)}/{len(candidates)} unique images with rights metadata.")
     return downloaded_paths
 
 

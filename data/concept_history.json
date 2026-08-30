@@ -131,5 +131,23 @@
     "date": "2026-08-29T05:26:16.917218",
     "date_readable": "2026-08-29 05:26:16",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-08-29T05:37:56.258153",
+    "date_readable": "2026-08-29 05:37:56",
+    "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.579839",
+    "date_readable": "2026-08-30 00:04:13",
+    "angle_key": "INSIDER_FACT"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-08-30T07:50:21.115025",
+    "date_readable": "2026-08-30 07:50:21",
+    "angle_key": "IRRESISTIBLE_BINGE"
   }
 ]

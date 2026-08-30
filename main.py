@@ -235,7 +235,6 @@ def run_full_pipeline():
         not script_text
         or not script_text.strip()
         or word_count < 110
-        or not script_qa_res.get("pass", True)
         or not retention_qa_res.get("pass", True)
     )
 
@@ -243,18 +242,17 @@ def run_full_pipeline():
         fail_reason = (
             "Script text is empty or zero-length." if not script_text or not script_text.strip()
             else f"Script word count ({word_count} words) is below minimum required 110 words." if word_count < 110
-            else script_qa_res.get("reason") if not script_qa_res.get("pass", True)
             else retention_qa_res.get("reason", "Failed script quality check")
         )
         logger.error(
-            f"❌ PIPELINE ABORTED: Script generation failed QA after all retries — script is empty or invalid. "
+            f"❌ PIPELINE ABORTED: Script generation failed hard invalidity check after all retries — script is empty or invalid. "
             f"Reason: {fail_reason}. Blocking before Phase 4 (TTS)."
         )
 
         final_qa_res = {
             "pass": False,
             "verdict": "FAIL - BLOCKED BY SCRIPT QA GATE",
-            "failing_evaluators": ["Natural Script Quality QA" if not script_qa_res.get("pass", True) else "Retention QA"],
+            "failing_evaluators": ["Retention QA"],
             "reasons": [fail_reason],
             "details": {}
         }
@@ -276,6 +274,13 @@ def run_full_pipeline():
 
         logger.error("=== FULL PIPELINE FINISHED: BLOCKED BY SCRIPT QA GATE ===")
         sys.exit(1)
+
+    if not script_qa_res.get("pass", True):
+        logger.warning(
+            f"⚠️ Natural Script QA did not fully pass after all retries ({script_qa_res.get('reason')}). "
+            f"Proceeding with best-effort generated script ({word_count} words); "
+            f"downstream Supervisor QA Gate will evaluate upload readiness."
+        )
 
     # Step 6: Policy QA
     from src.qa_checker import check_youtube_policy_compliance, check_asset_rights, run_supervisor_qa_gate

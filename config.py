@@ -20,6 +20,7 @@ SHORTS_HISTORY_FILE = DATA_DIR / "shorts_history.json"
 CONCEPT_HISTORY_FILE = DATA_DIR / "concept_history.json"
 TITLE_HISTORY_FILE = DATA_DIR / "title_history.json"
 VIDEO_TITLE_HISTORY_FILE = DATA_DIR / "video_title_history.json"
+IMAGE_HISTORY_FILE = DATA_DIR / "image_history.json"
 
 # Create directories if they do not exist
 for path in [ASSETS_DIR, IMAGES_DIR, MUSIC_DIR, FONTS_DIR, OUTPUT_DIR, DATA_DIR]:
@@ -41,7 +42,7 @@ JIKAN_API_BASE_URL = "https://api.jikan.moe/v4"
 # LLM & API Keys
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
-GROQ_MIN_CALL_INTERVAL = float(os.getenv("GROQ_MIN_CALL_INTERVAL", "6.0"))  # Seconds delay between sequential Groq calls
+GROQ_MIN_CALL_INTERVAL = float(os.getenv("GROQ_MIN_CALL_INTERVAL", "8.0"))  # Seconds delay between sequential Groq calls
 GROQ_MAX_RETRIES = int(os.getenv("GROQ_MAX_RETRIES", "2"))
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
