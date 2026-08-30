@@ -137,5 +137,11 @@
     "date": "2026-08-29T05:37:56.258153",
     "date_readable": "2026-08-29 05:37:56",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.579839",
+    "date_readable": "2026-08-30 00:04:13",
+    "angle_key": "INSIDER_FACT"
   }
 ]

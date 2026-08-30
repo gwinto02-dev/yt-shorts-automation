@@ -310,5 +310,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-08-29T05:37:56.612642",
     "date_readable": "2026-08-29 05:37:56"
+  },
+  {
+    "title": "Welcome to Demon School! Iruma-kun Season 4",
+    "normalized_title": "welcome to demon school irumakun season 4",
+    "anime_id": 184492,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.709167",
+    "date_readable": "2026-08-30 00:04:13"
+  },
+  {
+    "title": "The Cat and the Dragon",
+    "normalized_title": "the cat and the dragon",
+    "anime_id": 186863,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.709167",
+    "date_readable": "2026-08-30 00:04:13"
+  },
+  {
+    "title": "THE GHOST IN THE SHELL",
+    "normalized_title": "the ghost in the shell",
+    "anime_id": 177699,
+    "concept_type": "hidden_gems",
+    "date": "2026-08-30T00:04:13.709167",
+    "date_readable": "2026-08-30 00:04:13"
   }
 ]
