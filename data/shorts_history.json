@@ -257,5 +257,26 @@
       ]
     },
     "video_id": "N/A"
+  },
+  {
+    "date": "2026-08-30T15:06:05.698898",
+    "date_readable": "2026-08-30",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Studios Showdown: ufotable, C2C & Kinema Citrus 🌟 #Shorts",
+    "hook": "What would it look like if three different studios each tackled high‑fantasy in 2026?\n\nFirst up, ufotable—renowned for the spell‑binding fight choreography in Demon Slayer—brings Witch on the Holy Night",
+    "script": "What would it look like if three different studios each tackled high‑fantasy in 2026?\n\nFirst up, ufotable—renowned for the spell‑binding fight choreography in Demon Slayer—brings Witch on the Holy Night. Set in a late‑1980s Showa town, Aoko Aozaki moves into a rumored witch’s mansion and begins learning sorcery alongside Tobimaru Tsukiji.\n\nIf you love a sword that talks back, meet Jean du Vix, the blade‑spirit protagonist of Reincarnated as a Sword Season 2. The C2C team keeps his sardonic banter fresh, and every episode drops a week early on Abema starting October 1, 2026, before the TV broadcast.\n\nKinema Citrus delivers another descent into darkness with Made in Abyss: Mezameru Shinpi. The studio’s meticulous line work earned acclaim in the original, and this sequel follows newcomer Tepasté and Cravali as they explore a newly revealed layer of the Abyss.\n\nWhether you’re drawn to ufotable’s witchy visuals or the abyss’s creeping mystery, bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "what would it look like",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": []
+    },
+    "video_id": "OHI0n1F3ggA",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]

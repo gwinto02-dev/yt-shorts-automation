@@ -478,5 +478,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-08-30T14:49:17.749281",
     "date_readable": "2026-08-30 14:49:17"
+  },
+  {
+    "title": "Made in Abyss: Mezameru Shinpi",
+    "normalized_title": "made in abyss mezameru shinpi",
+    "anime_id": 160275,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-30T15:01:30.210612",
+    "date_readable": "2026-08-30 15:01:30"
+  },
+  {
+    "title": "Reincarnated as a Sword Season 2",
+    "normalized_title": "reincarnated as a sword season 2",
+    "anime_id": 159042,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-30T15:01:30.210612",
+    "date_readable": "2026-08-30 15:01:30"
+  },
+  {
+    "title": "Witch on the Holy Night",
+    "normalized_title": "witch on the holy night",
+    "anime_id": 143103,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-30T15:01:30.210612",
+    "date_readable": "2026-08-30 15:01:30"
   }
 ]
