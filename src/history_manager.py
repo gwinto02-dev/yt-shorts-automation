@@ -423,7 +423,17 @@ def check_originality_against_history(new_script: str, new_hook: str, new_title:
                 past_summaries.append(f"Past Short #{idx} Title: '{p.get('title')}' | Angle: '{ang}' | Hook: '{p.get('hook')}'")
 
             prompt = (
-                "You are a strict content originality evaluator for YouTube Shorts.\n"
+                "You are a content originality evaluator for a YouTube Shorts channel that intentionally "
+                "publishes list-style videos (e.g. 3 anime recommendations with ratings and a closing "
+                "call-to-action). That shared skeleton — a list of titles, a hook, brief per-title details, "
+                "and a CTA — is the channel's deliberate format and is NOT a sign of duplicate content. "
+                "Every video on this channel will share that skeleton; do not fail a Short for following "
+                "it, for covering a similar THEME/angle (e.g. another 'genre variety' or 'underrated picks' "
+                "video), or for using a similarly-structured hook/CTA in isolation.\n"
+                "ONLY fail if the NEW Short is too similar in a way that would make it feel like a genuine "
+                "repeat to a viewer who saw a specific past Short — e.g. near-identical wording/phrasing "
+                "reused from one specific past script, the same specific anime titles/angle combination "
+                "featured again, or a hook/CTA copied almost verbatim from one specific past entry.\n\n"
                 "Compare the NEW Short proposal against recent past Shorts.\n\n"
                 f"NEW Short Title: '{new_title}'\n"
                 f"NEW Short Hook: '{new_hook}'\n"

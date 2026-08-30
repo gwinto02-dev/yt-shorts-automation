@@ -133,16 +133,34 @@ def check_retention_elements(script_text: str) -> Dict[str, Any]:
     logger.info(">>> RUNNING RETENTION QA")
     words = script_text.split()
     first_sentence = script_text.split(".")[0] if "." in script_text else script_text[:50]
-    
+
+    # The hook keyword list below only matches literal word forms (e.g.
+    # "animated" but not "animation"), which caused real natural-sounding
+    # hooks to fail this check purely on a word-form mismatch even though
+    # the LLM Natural Script QA judge separately rated them as strong. To
+    # reduce these false negatives:
+    #   - stem-match common word families with regex instead of exact
+    #     literal substrings (anima*, stud*, rat* covers animated/
+    #     animation, studio/studios, rated/rating)
+    #   - treat a leading concrete year (e.g. "2026") or an explicit X/10
+    #     rating as its own signal of a SURPRISING_FACT-style hook, since
+    #     that's the whole point of that hook style and it won't always
+    #     contain one of the hardcoded phrases below
+    first_lower = first_sentence.lower()
+    has_stemmed_signal = bool(re.search(r"\b(anima\w*|stud\w*|rat\w*)\b", first_lower))
+    has_year_or_score = bool(re.search(r"\b(19|20)\d{2}\b", first_lower) or re.search(r"\b\d(\.\d)?\s*/\s*10\b", first_lower))
+
     has_strong_hook = (
         "?" in first_sentence
-        or any(w in first_sentence.lower() for w in [
+        or has_stemmed_signal
+        or has_year_or_score
+        or any(w in first_lower for w in [
             # 1. SPECIFIC_QUESTION / Curiosity Triggers
             "stop", "looking", "ever wonder", "secret", "best", "unbelievable", "need", "binge", "ready",
             # 2. SURPRISING_FACT / Concrete Detail Triggers
-            "spent", "animated", "produced", "fact", "turns out", "nobody", "detail", "rated", "studio", "years",
+            "spent", "produced", "fact", "turns out", "nobody", "detail", "years", "only", "rarely", "holds", "scores", "earned",
             # 3. IN_SCENE_MID_THOUGHT / Story Triggers
-            "right when", "episode", "chapter", "the moment", "just when", "before you", "picture this", "imagine",
+            "right when", "episode", "chapter", "the moment", "just when", "before you", "picture this", "imagine", "what if",
             # Additional hook triggers
             "ruin ordinary", "stop wasting", "absolute tier", "will completely", "won't believe", "no idea", "hidden revelation", "friday night"
         ])
