@@ -131,5 +131,26 @@
     "source_url": "http://example.com/img.jpg",
     "date": "2026-08-30T16:16:25.771346",
     "date_readable": "2026-08-30 16:16:25"
+  },
+  {
+    "hash": "c84778969933682f7befcaaad85c2b40f5804dfb160544ae0e0fbd43dd831d92",
+    "title": "Goodbye, Lara",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx177637-8onaQWqKW1C3.jpg",
+    "date": "2026-08-31T00:05:59.209561",
+    "date_readable": "2026-08-31 00:05:59"
+  },
+  {
+    "hash": "c722b3414dfc1c9080cc92227bc6289bf9fb51369f577312a56bfc69c2333b6b",
+    "title": "I Want to Love You Till Your Dying Day",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187260-WW5RBa5NINRP.jpg",
+    "date": "2026-08-31T00:05:59.209561",
+    "date_readable": "2026-08-31 00:05:59"
+  },
+  {
+    "hash": "b28b347d579f278fe1d407a2ee3bc2997cfd1d86e0d50725e4c12c4c5dbcb61d",
+    "title": "BLACK TORCH",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187538-fXVXKYUA3VV6.jpg",
+    "date": "2026-08-31T00:05:59.209561",
+    "date_readable": "2026-08-31 00:05:59"
   }
 ]

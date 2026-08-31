@@ -197,5 +197,11 @@
     "date": "2026-08-30T15:01:28.805872",
     "date_readable": "2026-08-30 15:01:28",
     "angle_key": "STUDIO_STAFF_TALENT"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-08-31T00:05:33.230588",
+    "date_readable": "2026-08-31 00:05:33",
+    "angle_key": "DECISION_GUIDE"
   }
 ]

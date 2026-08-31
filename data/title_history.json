@@ -502,5 +502,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-08-30T15:01:30.210612",
     "date_readable": "2026-08-30 15:01:30"
+  },
+  {
+    "title": "Goodbye, Lara",
+    "normalized_title": "goodbye lara",
+    "anime_id": 177637,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-31T00:05:33.424790",
+    "date_readable": "2026-08-31 00:05:33"
+  },
+  {
+    "title": "I Want to Love You Till Your Dying Day",
+    "normalized_title": "i want to love you till your dying day",
+    "anime_id": 187260,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-31T00:05:33.424790",
+    "date_readable": "2026-08-31 00:05:33"
+  },
+  {
+    "title": "BLACK TORCH",
+    "normalized_title": "black torch",
+    "anime_id": 187538,
+    "concept_type": "anime_comparison",
+    "date": "2026-08-31T00:05:33.424790",
+    "date_readable": "2026-08-31 00:05:33"
   }
 ]

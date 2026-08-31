@@ -278,5 +278,26 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-08-31T00:06:39.430441",
+    "date_readable": "2026-08-31",
+    "concept_type": "anime_comparison",
+    "title": "Upcoming Anime Showdown: BLACK TORCH vs Love‑Struck Orphans vs Mermaid Tragedy 🌊 #Shorts",
+    "hook": "BLACK TORCH is the only 2026 series where the hero literally chats with wildlife as part of his ninja training",
+    "script": "BLACK TORCH is the only 2026 series where the hero literally chats with wildlife as part of his ninja training. 100studio paints the action with a crisp, kinetic palette, and the story follows Jirou Azuma, a high‑schooler descended from shinobi who can talk to animals and gets pulled into a secret war between hidden clans. In I Want to Love You Till Your Dying Day, Danshi H grows up in an orphanage that grooms its girls as weapons, and when he meets Sheena, the line between love and survival blurs—this drama holds a 7.4/10 on MyAnimeList. Goodbye, Lara earned a 7.6/10, and it tells the tragic romance of a mermaid princess who drinks a witch’s potion to walk on land, only to find true love comes with a deadly deadline. Remember the animal‑talk twist in BLACK TORCH or Lara’s cursed potion—pick the one that pulls you in first and share your choice in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "black torch is the only",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "your choice in the comments",
+      "transition_markers": []
+    },
+    "video_id": "8s7e5rdajQA",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
