@@ -526,5 +526,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-08-31T00:05:33.424790",
     "date_readable": "2026-08-31 00:05:33"
+  },
+  {
+    "title": "I Made Friends with the Second Prettiest Girl in My Class",
+    "normalized_title": "i made friends with the second prettiest girl in my class",
+    "anime_id": 169580,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-01T00:10:10.625838",
+    "date_readable": "2026-09-01 00:10:10"
+  },
+  {
+    "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+    "normalized_title": "ascendance of a bookworm adopted daughter of an archduke",
+    "anime_id": 171110,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-01T00:10:10.625838",
+    "date_readable": "2026-09-01 00:10:10"
+  },
+  {
+    "title": "Young Ladies Don't Play Fighting Games",
+    "normalized_title": "young ladies dont play fighting games",
+    "anime_id": 128757,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-01T00:10:10.625838",
+    "date_readable": "2026-09-01 00:10:10"
   }
 ]
