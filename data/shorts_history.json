@@ -299,5 +299,26 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-01T00:35:39.070534",
+    "date_readable": "2026-09-01",
+    "concept_type": "anime_comparison",
+    "title": "Matchup: World Dance vs Oh Boy vs Was I Wrong vs Bumpkin→Master Swordsman II 🎯 #Shorts",
+    "hook": "Which of these 2026 releases would you start watching first: a countryside swordsman’s sequel, a promise‑filled high‑school romance, or a medieval dance drama?\nHayabusa Film’s crisp animation returns for From Old Country Bumpkin to Master Swordsman II, tracking Prim and Surena as the former leaves his rustic roots to chase the title of kensei in a world of magic‑infused battles",
+    "script": "Which of these 2026 releases would you start watching first: a countryside swordsman’s sequel, a promise‑filled high‑school romance, or a medieval dance drama?\nHayabusa Film’s crisp animation returns for From Old Country Bumpkin to Master Swordsman II, tracking Prim and Surena as the former leaves his rustic roots to chase the title of kensei in a world of magic‑infused battles.\nIf comedy‑driven romance is your vibe, Hayato bumps into Haruki—now presenting as a girl—seven years after their childhood pact, and the series sits at a solid 7.0/10 on MyAnimeList.\nFor a more reflective turn, scoring 7.1/10, The World Is Dancing follows twelve‑year‑old Oniyasha, raised in a traveling 14th‑century troupe, as he questions the purpose behind every performance.\nDo you think Oniyasha’s search for meaning outweighs Prim’s sword‑quest, or does Haruki’s gender swap steal the spotlight? Drop your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "which of these 2026 releases",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": []
+    },
+    "video_id": "hg2kNuAx57o",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
