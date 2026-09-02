@@ -574,5 +574,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-01T00:33:03.198537",
     "date_readable": "2026-09-01 00:33:03"
+  },
+  {
+    "title": "Witch Hat Atelier Season 2",
+    "normalized_title": "witch hat atelier season 2",
+    "anime_id": 213702,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-02T00:09:00.731446",
+    "date_readable": "2026-09-02 00:09:00"
+  },
+  {
+    "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle Part 2",
+    "normalized_title": "demon slayer kimetsu no yaiba infinity castle part 2",
+    "anime_id": 195200,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-02T00:09:00.731446",
+    "date_readable": "2026-09-02 00:09:00"
+  },
+  {
+    "title": "Blue Box Season 2",
+    "normalized_title": "blue box season 2",
+    "anime_id": 189123,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-02T00:09:00.731446",
+    "date_readable": "2026-09-02 00:09:00"
   }
 ]

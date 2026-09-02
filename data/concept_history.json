@@ -215,5 +215,11 @@
     "date": "2026-09-01T00:33:02.833922",
     "date_readable": "2026-09-01 00:33:02",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-02T00:09:00.002668",
+    "date_readable": "2026-09-02 00:09:00",
+    "angle_key": "PREMISE_INTRIGUE"
   }
 ]
