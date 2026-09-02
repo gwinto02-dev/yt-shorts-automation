@@ -598,5 +598,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-02T00:09:00.731446",
     "date_readable": "2026-09-02 00:09:00"
+  },
+  {
+    "title": "Victoria of Many Faces",
+    "normalized_title": "victoria of many faces",
+    "anime_id": 198709,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-02T00:23:09.164802",
+    "date_readable": "2026-09-02 00:23:09"
+  },
+  {
+    "title": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+    "normalized_title": "a livid ladys guide to getting even how i crushed my homeland with my mighty grimoires",
+    "anime_id": 199408,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-02T00:23:09.164802",
+    "date_readable": "2026-09-02 00:23:09"
+  },
+  {
+    "title": "Chainsmoker Cat",
+    "normalized_title": "chainsmoker cat",
+    "anime_id": 207141,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-02T00:23:09.164802",
+    "date_readable": "2026-09-02 00:23:09"
   }
 ]

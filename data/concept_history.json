@@ -221,5 +221,11 @@
     "date": "2026-09-02T00:09:00.002668",
     "date_readable": "2026-09-02 00:09:00",
     "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-09-02T00:23:08.797925",
+    "date_readable": "2026-09-02 00:23:08",
+    "angle_key": "THEMATIC_RIVALRY"
   }
 ]

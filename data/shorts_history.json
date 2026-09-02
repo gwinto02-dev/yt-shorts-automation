@@ -320,5 +320,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-02T00:29:25.356765",
+    "date_readable": "2026-09-02",
+    "concept_type": "anime_comparison",
+    "title": "Anime Matchup: Victoria of Many Faces vs Livid Lady’s Revenge vs Chainsmoker Cat 🐾 #Shorts",
+    "hook": "Bibury Animation Studios spent a full year perfecting the ash‑filled background textures for Chainsmoker Cat",
+    "script": "Bibury Animation Studios spent a full year perfecting the ash‑filled background textures for Chainsmoker Cat.  \n\nBibury Animation Studios gives Chainsmoker Cat a gritty, smoke‑stained aesthetic, and the story follows Yani, a cat‑girl whose nicotine habit turns her tiny apartment into a perpetual ashtray, sparking chaotic attempts to quit.  \n\nSwitching gears, Elizabeth Leiston, the poised daughter of Haldoria’s prime minister, suddenly finds herself plotted against in A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires; the series holds a 6.7/10 rating on MyAnimeList, reflecting its solid fan reception.  \n\nNext up, Victoria of Many Faces earned a 7.1/10 score, and it follows Chloe, a betrayed spy who assumes the civilian alias Victoria in Ashberry, only to be drawn into political intrigue despite her wish for a quiet life.  \n\nWhether you light up Chainsmoker Cat for a smoky laugh or settle into Victoria’s covert drama, bookmark this Short for your next binge marathon.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "bibury animation studios spent a",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge marathon",
+      "transition_markers": [
+        "next up"
+      ]
+    },
+    "video_id": "3ldfFM6UDjE",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]
