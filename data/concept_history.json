@@ -227,5 +227,11 @@
     "date": "2026-09-02T00:23:08.797925",
     "date_readable": "2026-09-02 00:23:08",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-03T00:09:42.706832",
+    "date_readable": "2026-09-03 00:09:42",
+    "angle_key": "MANGA_ARC_HYPE"
   }
 ]
