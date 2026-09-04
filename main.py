@@ -212,7 +212,38 @@ def run_full_pipeline():
     from src.history_manager import record_anime_titles_usage, record_video_title_usage
 
     # Step 1: Concept & Candidate Selection (5-day concept cooldown & 30-day title cooldown)
-    p1_data = run_phase_1()
+    # Unlike every later phase, Phase 1 previously had NO error handling at all — any
+    # exception here (e.g. candidate pool too small/homogeneous for the day's concept)
+    # killed the entire process immediately: no video, no email report, no visibility
+    # into what went wrong until someone checked the Actions log. Wrap it so a Phase 1
+    # failure degrades the same way every other phase already does: a clear error log
+    # plus a daily summary email, then a clean exit instead of a bare crash.
+    try:
+        p1_data = run_phase_1()
+    except Exception as e:
+        logger.error(f"❌ PIPELINE ABORTED: Phase 1 (Content Source & Concept Selection) failed: {e}")
+        try:
+            from src.notifier import send_daily_summary_email
+            send_daily_summary_email(
+                candidates=[],
+                script_data={"full_text": "", "video_title": "N/A", "word_count": 0},
+                concept_info={"name": "N/A", "tagline": "N/A"},
+                fact_check_res={},
+                policy_res={"pass": False, "reason": "Not evaluated - pipeline aborted at Phase 1"},
+                rights_res={"pass": False, "reason": "Not evaluated - pipeline aborted at Phase 1"},
+                originality_res={"pass": False, "reason": "Not evaluated - pipeline aborted at Phase 1"},
+                final_qa_res={
+                    "pass": False,
+                    "verdict": "FAIL - BLOCKED AT PHASE 1 (CONTENT SELECTION)",
+                    "failing_evaluators": ["Content Source & Concept Selection"],
+                    "reasons": [str(e)],
+                    "details": {}
+                }
+            )
+        except Exception as email_err:
+            logger.error(f"Additionally failed to send failure notification email: {email_err}")
+        sys.exit(1)
+
     candidates = p1_data["candidates"]
     concept_key = p1_data["concept_key"]
     concept_info = p1_data["concept_info"]

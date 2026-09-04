@@ -459,6 +459,22 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
                 f"{qualifying_count} qualify for Hidden Gems (score 7.5+, non-mainstream). Expanding pool..."
             )
 
+    # Same class of bug as Hidden Gems above, but for Genre-Diverse Trio: a pool can look
+    # fine by raw count while covering too few DISTINCT primary genres to ever satisfy the
+    # "3 non-overlapping genres" requirement. Checking raw count alone missed that case and
+    # caused a hard, unrecoverable crash (ValueError) later in this function with zero video
+    # produced and zero email sent. Pre-check distinct genre coverage here so we expand the
+    # pool BEFORE selection instead of failing after the fact.
+    if not needs_expansion and concept_key == "genre_spotlight":
+        distinct_genres = {(c.get("genres") or ["General"])[0] for c in uncooldowned_candidates}
+        if len(distinct_genres) < num_candidates:
+            needs_expansion = True
+            logger.warning(
+                f"Uncooldowned pool has {len(uncooldowned_candidates)} titles but only "
+                f"{len(distinct_genres)} distinct primary genre(s) ({', '.join(distinct_genres)}). "
+                "Expanding pool for Genre-Diverse Trio..."
+            )
+
     if needs_expansion:
         logger.warning(f"Uncooldowned/qualifying pool low. Expanding AniList search pool (Page 2 & Jikan)...")
         extra_candidates = []
@@ -511,9 +527,37 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
                 used_genres.add(primary_genre)
 
         if len(selected) < num_candidates:
-            raise ValueError(
-                f"Genre-Diverse Trio criteria failed: Found only {len(selected)}/{num_candidates} titles with distinct primary genres in candidate pool!"
+            # Even after the pre-check + pool expansion above, the pool still doesn't cover
+            # enough distinct genres (can happen on a slow trending day). Previously this
+            # raised an unhandled ValueError that crashed the ENTIRE pipeline before Phase 1
+            # even finished — no video, no email report, nothing. That's strictly worse than
+            # a slightly-less-diverse Genre-Diverse Trio, so relax the constraint instead of
+            # aborting the whole day's run: fill remaining slots with the next best-scoring,
+            # not-yet-selected titles regardless of genre overlap.
+            logger.warning(
+                f"Genre-Diverse Trio: only found {len(selected)}/{num_candidates} titles with fully "
+                "distinct primary genres after pool expansion. Relaxing genre-overlap constraint to "
+                "fill the remaining slot(s) rather than aborting the entire pipeline run."
             )
+            for c in sorted_candidates:
+                if len(selected) >= num_candidates:
+                    break
+                if c["id"] in seen_ids:
+                    continue
+                genres = c.get("genres", [])
+                primary_genre = genres[0] if genres else "General"
+                c["selection_category"] = "Genre-Diverse Pick"
+                c["selection_reasoning"] = f"Primary Genre: '{primary_genre}' (genre pool exhausted; some overlap possible)."
+                c["excluded_in_run"] = excluded_candidates
+                selected.append(c)
+                seen_ids.add(c["id"])
+
+            if len(selected) < num_candidates:
+                raise ValueError(
+                    f"Genre-Diverse Trio criteria failed: Found only {len(selected)}/{num_candidates} "
+                    "titles in candidate pool even after relaxing genre-overlap constraint (pool itself "
+                    "is too small)."
+                )
 
     # ==================== MODE 2: UNDERRATED TRIO ====================
     elif concept_key == "hidden_gems":
