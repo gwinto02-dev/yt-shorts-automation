@@ -257,5 +257,11 @@
     "date": "2026-09-04T12:50:43.146878",
     "date_readable": "2026-09-04 12:50:43",
     "angle_key": "GENRE_GOLD_STANDARD"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-04T14:29:44.263412",
+    "date_readable": "2026-09-04 14:29:44",
+    "angle_key": "UNMATCHED_PAYOFF"
   }
 ]
