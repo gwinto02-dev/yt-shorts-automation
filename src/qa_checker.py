@@ -212,21 +212,29 @@ def check_script_factual_alignment(script_text: str, sources: List[Dict[str, Any
         mismatches.append(f"Script contains forbidden literal placeholder text '{na_match.group(1)}' in narration.")
 
     if sources:
+        # Split into sentences without breaking on decimal points (e.g. "8.6").
+        # A period only ends a sentence when NOT immediately surrounded by digits.
+        sentences = re.split(r"(?<!\d)[.!?](?!\d)\s*", script_text)
+
         for src in sources:
             title = src.get("anime_title", "")
             clean_title = re.sub(r'\s*\([^)]*\)', '', title).strip()
             score_num = src.get("score_numeric", 0.0)
+            clean_title_lower = clean_title.lower()
 
-            if clean_title.lower() in script_text.lower():
-                scores_in_script = re.findall(r"(\d+\.\d+)\s*(?:out of 10|/10|staggering|rated)?", script_text)
-                for s_str in scores_in_script:
+            # Only inspect sentences that actually mention this title. This
+            # prevents attributing a score mentioned in an adjacent sentence
+            # (about a *different* anime) to this title just because the two
+            # sentences happen to be close together in the raw text.
+            title_sentences = [s for s in sentences if clean_title_lower in s.lower()]
+
+            for sentence in title_sentences:
+                scores_in_sentence = re.findall(r"(\d+\.\d+)\s*(?:out of 10|/10|staggering|rated)?", sentence)
+                for s_str in scores_in_sentence:
                     try:
                         s_val = float(s_str)
                         if abs(s_val - score_num) > 0.8 and s_val > 5.0 and score_num > 5.0:
-                            pos_title = script_text.lower().find(clean_title.lower())
-                            pos_score = script_text.find(s_str)
-                            if abs(pos_title - pos_score) < 150:
-                                mismatches.append(f"Score contradiction for '{title}': Script mentions {s_val}/10 but API score is {score_num:.1f}/10")
+                            mismatches.append(f"Score contradiction for '{title}': Script mentions {s_val}/10 but API score is {score_num:.1f}/10")
                     except ValueError:
                         pass
 
