@@ -191,5 +191,65 @@
     "date": "2026-08-30T14:56:01.603165",
     "date_readable": "2026-08-30 14:56:01",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-08-30T15:01:28.805872",
+    "date_readable": "2026-08-30 15:01:28",
+    "angle_key": "STUDIO_STAFF_TALENT"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-08-31T00:05:33.230588",
+    "date_readable": "2026-08-31 00:05:33",
+    "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-01T00:10:09.591063",
+    "date_readable": "2026-09-01 00:10:09",
+    "angle_key": "OVERLOOKED_REASON"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-09-01T00:33:02.833922",
+    "date_readable": "2026-09-01 00:33:02",
+    "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-02T00:09:00.002668",
+    "date_readable": "2026-09-02 00:09:00",
+    "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-09-02T00:23:08.797925",
+    "date_readable": "2026-09-02 00:23:08",
+    "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-03T00:09:42.706832",
+    "date_readable": "2026-09-03 00:09:42",
+    "angle_key": "MANGA_ARC_HYPE"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-03T00:11:55.848389",
+    "date_readable": "2026-09-03 00:11:55",
+    "angle_key": "MAINSTREAM_CONTRAST"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-03T00:16:27.017785",
+    "date_readable": "2026-09-03 00:16:27",
+    "angle_key": "BADASS_MOMENTS"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-04T00:08:37.552135",
+    "date_readable": "2026-09-04 00:08:37",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]

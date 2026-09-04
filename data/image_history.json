@@ -105,10 +105,136 @@
     "date_readable": "2026-08-30 14:51:29"
   },
   {
+    "hash": "17a7fe61cf3b156f22bc379ac197553ceacf92fdc4715b6ffa568bdc7099d41a",
+    "title": "Made in Abyss: Mezameru Shinpi",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx160275-cBOWJpcCGeMq.jpg",
+    "date": "2026-08-30T15:03:16.599364",
+    "date_readable": "2026-08-30 15:03:16"
+  },
+  {
+    "hash": "d987315a3a7562830273396e96243e3a6bf1ea528ba5209370bfb8ca9d195c20",
+    "title": "Reincarnated as a Sword Season 2",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx159042-GGFwlDskc5vR.png",
+    "date": "2026-08-30T15:03:16.599364",
+    "date_readable": "2026-08-30 15:03:16"
+  },
+  {
+    "hash": "4aeefd19df06e4408d0e94c706837316e30f02fcc548e45c6b8f60164b7f9434",
+    "title": "Witch on the Holy Night",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143103-vvsaIpZPpIuE.png",
+    "date": "2026-08-30T15:03:16.599364",
+    "date_readable": "2026-08-30 15:03:16"
+  },
+  {
     "hash": "79229231690b6e5082d51c6a1d06c1ff942d27a62b4e063daf2c57c703cd69a9",
     "title": "Test Title",
     "source_url": "http://example.com/img.jpg",
     "date": "2026-08-30T16:16:25.771346",
     "date_readable": "2026-08-30 16:16:25"
+  },
+  {
+    "hash": "c84778969933682f7befcaaad85c2b40f5804dfb160544ae0e0fbd43dd831d92",
+    "title": "Goodbye, Lara",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx177637-8onaQWqKW1C3.jpg",
+    "date": "2026-08-31T00:05:59.209561",
+    "date_readable": "2026-08-31 00:05:59"
+  },
+  {
+    "hash": "c722b3414dfc1c9080cc92227bc6289bf9fb51369f577312a56bfc69c2333b6b",
+    "title": "I Want to Love You Till Your Dying Day",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187260-WW5RBa5NINRP.jpg",
+    "date": "2026-08-31T00:05:59.209561",
+    "date_readable": "2026-08-31 00:05:59"
+  },
+  {
+    "hash": "b28b347d579f278fe1d407a2ee3bc2997cfd1d86e0d50725e4c12c4c5dbcb61d",
+    "title": "BLACK TORCH",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187538-fXVXKYUA3VV6.jpg",
+    "date": "2026-08-31T00:05:59.209561",
+    "date_readable": "2026-08-31 00:05:59"
+  },
+  {
+    "hash": "9320e141aacfcd558637fc9b5d122be158eec17e857e60777df4ba54d1c84cff",
+    "title": "The World Is Dancing",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206521-ecJuDgjth84C.png",
+    "date": "2026-09-01T00:34:49.228871",
+    "date_readable": "2026-09-01 00:34:49"
+  },
+  {
+    "hash": "05fb7a6da33216dce287172a53ed02d7f6446a2b97f9b557afc2296ce6c3d3a8",
+    "title": "Oh Boy, Was I Wrong About Her",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169583-0ZTdBGrKNIbe.jpg",
+    "date": "2026-09-01T00:34:49.228871",
+    "date_readable": "2026-09-01 00:34:49"
+  },
+  {
+    "hash": "b29b2b588a221bd32225825b8fc8979ba71edd927c6b985f4f97b648df3e723c",
+    "title": "From Old Country Bumpkin to Master Swordsman II",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194829-bZKwhfo60EuF.jpg",
+    "date": "2026-09-01T00:34:49.228871",
+    "date_readable": "2026-09-01 00:34:49"
+  },
+  {
+    "hash": "d83dde7a4919d3b17faa7dae5bfa63f1313fa2bc346964ff732e68159d909fbc",
+    "title": "Witch Hat Atelier Season 2",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213702-vCWQFcAfDF8c.jpg",
+    "date": "2026-09-02T00:11:09.992891",
+    "date_readable": "2026-09-02 00:11:09"
+  },
+  {
+    "hash": "c5fe0f11edc8784c18d713be4a9ab9640f7818aa11aef6efff11fc2e20ade76f",
+    "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle Part 2",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx195200-wJaLJ4mDDKGc.png",
+    "date": "2026-09-02T00:11:09.992891",
+    "date_readable": "2026-09-02 00:11:09"
+  },
+  {
+    "hash": "cd95da1d76273c8f2241d15c487b17f63addc20a99fc13a9f61b0a6ce92b06ce",
+    "title": "Blue Box Season 2",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx189123-0secXELIhkIW.jpg",
+    "date": "2026-09-02T00:11:09.992891",
+    "date_readable": "2026-09-02 00:11:09"
+  },
+  {
+    "hash": "fd60759fdaaae580c8712a0c21725be93aed87d80c4133fe564c8a04a87ea081",
+    "title": "Victoria of Many Faces",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx198709-3PFLvU6eqPvf.jpg",
+    "date": "2026-09-02T00:24:29.857811",
+    "date_readable": "2026-09-02 00:24:29"
+  },
+  {
+    "hash": "de638d46298af5b82d1d63f717a280cb0fac5926b7ddcd70e02d1dc231376aef",
+    "title": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199408-ocRWG4pRWl8f.png",
+    "date": "2026-09-02T00:24:29.857811",
+    "date_readable": "2026-09-02 00:24:29"
+  },
+  {
+    "hash": "43fd126aa5162d1d0a3b29b4595abb64653238d3047f8afa89477acbcc0a124b",
+    "title": "Chainsmoker Cat",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207141-h5q5KJPd6vaX.jpg",
+    "date": "2026-09-02T00:24:29.857811",
+    "date_readable": "2026-09-02 00:24:29"
+  },
+  {
+    "hash": "05caf59a37087e085a02124ddbc1453009614b7ba081f1b42ec5e1c6bfd6d24e",
+    "title": "The Exiled Heavy Knight Knows How to Game the System",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180136-gtMTCRlOD4OE.jpg",
+    "date": "2026-09-04T00:10:47.632199",
+    "date_readable": "2026-09-04 00:10:47"
+  },
+  {
+    "hash": "89447c43a068933d910e418562ae7a22435c982c83863f84995a7d55f9e091cf",
+    "title": "JUJUTSU KAISEN Season 3: The Culling Game Part 1",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx172463-LnXqHzt74SJL.jpg",
+    "date": "2026-09-04T00:10:47.632199",
+    "date_readable": "2026-09-04 00:10:47"
+  },
+  {
+    "hash": "f833c155910075f3f697afe122c65358c6e5b5d73ed9bb0f7254f1886538d0e0",
+    "title": "BanG Dream! YUME∞MITA",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx198376-sc5qcFv0RSH9.jpg",
+    "date": "2026-09-04T00:10:47.632199",
+    "date_readable": "2026-09-04 00:10:47"
   }
 ]
