@@ -2,7 +2,14 @@ name: Daily Anime Recommendation Shorts
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+    # 4 runs/day, spaced 6 hours apart (all times UTC — GitHub Actions cron
+    # always runs in UTC regardless of your local timezone). Adjust these to
+    # your preferred local upload windows if 6-hour spacing isn't ideal —
+    # just convert your desired local times to UTC first.
+    - cron: '0 0 * * *'    # 00:00 UTC
+    - cron: '0 6 * * *'    # 06:00 UTC
+    - cron: '0 12 * * *'   # 12:00 UTC
+    - cron: '0 18 * * *'   # 18:00 UTC
   workflow_dispatch:     # Allows manual trigger via GitHub Actions UI
 
 jobs:
