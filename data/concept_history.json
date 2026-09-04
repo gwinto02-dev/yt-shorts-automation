@@ -269,5 +269,11 @@
     "date": "2026-09-04T18:11:05.458673",
     "date_readable": "2026-09-04 18:11:05",
     "angle_key": "PALATE_CLEANSER"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-04T19:04:50.786647",
+    "date_readable": "2026-09-04 19:04:50",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]

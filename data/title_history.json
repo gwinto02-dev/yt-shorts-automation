@@ -694,5 +694,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-04T14:29:44.595635",
     "date_readable": "2026-09-04 14:29:44"
+  },
+  {
+    "title": "Heroine? Saint? No, I’m an All-Works Maid (And Proud of It)!",
+    "normalized_title": "heroine saint no im an allworks maid and proud of it",
+    "anime_id": 192800,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-04T19:04:51.087252",
+    "date_readable": "2026-09-04 19:04:51"
+  },
+  {
+    "title": "Skeleton Knight in Another World Season 2",
+    "normalized_title": "skeleton knight in another world season 2",
+    "anime_id": 185542,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-04T19:04:51.087252",
+    "date_readable": "2026-09-04 19:04:51"
+  },
+  {
+    "title": "LIAR GAME",
+    "normalized_title": "liar game",
+    "anime_id": 197754,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-04T19:04:51.087252",
+    "date_readable": "2026-09-04 19:04:51"
   }
 ]
