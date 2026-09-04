@@ -622,5 +622,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-02T00:23:09.164802",
     "date_readable": "2026-09-02 00:23:09"
+  },
+  {
+    "title": "The Exiled Heavy Knight Knows How to Game the System",
+    "normalized_title": "the exiled heavy knight knows how to game the system",
+    "anime_id": 180136,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-04T00:08:37.910445",
+    "date_readable": "2026-09-04 00:08:37"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 3: The Culling Game Part 1",
+    "normalized_title": "jujutsu kaisen season 3 the culling game part 1",
+    "anime_id": 172463,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-04T00:08:37.910445",
+    "date_readable": "2026-09-04 00:08:37"
+  },
+  {
+    "title": "BanG Dream! YUME∞MITA",
+    "normalized_title": "bang dream yumemita",
+    "anime_id": 198376,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-04T00:08:37.910445",
+    "date_readable": "2026-09-04 00:08:37"
   }
 ]
