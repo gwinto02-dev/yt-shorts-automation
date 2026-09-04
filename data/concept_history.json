@@ -251,5 +251,11 @@
     "date": "2026-09-04T00:08:37.552135",
     "date_readable": "2026-09-04 00:08:37",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-04T12:50:43.146878",
+    "date_readable": "2026-09-04 12:50:43",
+    "angle_key": "GENRE_GOLD_STANDARD"
   }
 ]
