@@ -79,8 +79,12 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
             self.assertFalse(qualifies, f"Title {c['title']} must NOT qualify as a hidden gem!")
 
     def test_genre_diverse_trio_selection(self):
-        """Regression test: verify Genre-Diverse Trio picks 3 titles with distinct primary genres and fails when impossible."""
-        # 1. Valid pool with distinct primary genres
+        """Regression test: verify Genre-Diverse Trio picks 3 titles with distinct primary genres when
+        possible, gracefully degrades (fills remaining slots with genre overlap) rather than crashing
+        the whole pipeline when the pool is large enough but not genre-diverse enough, and still raises
+        ValueError only in the genuinely impossible case where the pool itself has fewer titles than
+        requested even after expansion."""
+        # 1. Valid pool with distinct primary genres -> all 3 picks distinct, no overlap needed
         valid_pool = [
             {"id": 1, "title": "Fantasy Show", "cover_image": "img1.jpg", "genres": ["Fantasy", "Action"], "average_score": 8.5},
             {"id": 2, "title": "SciFi Show", "cover_image": "img2.jpg", "genres": ["Sci-Fi", "Drama"], "average_score": 8.4},
@@ -94,7 +98,9 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
                 primary_genres = [c["genres"][0] for c in cands]
                 self.assertEqual(len(set(primary_genres)), 3, "Primary genres must be completely distinct!")
 
-        # 2. Invalid pool with overlapping primary genres (all Action) -> must raise ValueError
+        # 2. Pool large enough (3+ titles) but ALL share the same primary genre, and expansion turns up
+        # nothing new -> must NOT crash the pipeline. Should gracefully degrade: still return exactly
+        # num_candidates titles (with some genre overlap allowed) instead of raising.
         same_genre_pool = [
             {"id": 1, "title": "Action Show 1", "cover_image": "img1.jpg", "genres": ["Action"], "average_score": 8.5},
             {"id": 2, "title": "Action Show 2", "cover_image": "img2.jpg", "genres": ["Action"], "average_score": 8.4},
@@ -102,9 +108,23 @@ class TestPipelineGuardrailsAndFeatures(unittest.TestCase):
         ]
         with patch("src.content_source.fetch_anilist_trending", return_value=same_genre_pool):
             with patch("src.content_source.fetch_local_trend_data", return_value=[]):
-                with self.assertRaises(ValueError) as ctx:
-                    select_candidate_titles(num_candidates=3, concept_key="genre_spotlight")
-                self.assertIn("Genre-Diverse Trio criteria failed", str(ctx.exception))
+                with patch("src.content_source.fetch_jikan_top", return_value=[]):
+                    cands, key, info = select_candidate_titles(num_candidates=3, concept_key="genre_spotlight")
+                    self.assertEqual(len(cands), 3, "Should gracefully fill all 3 slots even with genre overlap, not crash.")
+
+        # 3. Genuinely impossible case: pool itself has fewer titles than requested even after expansion
+        # attempts turn up nothing new -> this must still raise ValueError, since there's no way to
+        # produce 3 distinct videos worth of content from only 2 titles.
+        tiny_pool = [
+            {"id": 1, "title": "Only Show 1", "cover_image": "img1.jpg", "genres": ["Action"], "average_score": 8.5},
+            {"id": 2, "title": "Only Show 2", "cover_image": "img2.jpg", "genres": ["Comedy"], "average_score": 8.4},
+        ]
+        with patch("src.content_source.fetch_anilist_trending", return_value=tiny_pool):
+            with patch("src.content_source.fetch_local_trend_data", return_value=[]):
+                with patch("src.content_source.fetch_jikan_top", return_value=[]):
+                    with self.assertRaises(ValueError) as ctx:
+                        select_candidate_titles(num_candidates=3, concept_key="genre_spotlight")
+                    self.assertIn("Genre-Diverse Trio criteria failed", str(ctx.exception))
 
     def test_underrated_trio_selection(self):
         """Regression test: verify Underrated Trio enforces popularity floor and fails cleanly if < 3 qualify."""
