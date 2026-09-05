@@ -694,5 +694,77 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-04T14:29:44.595635",
     "date_readable": "2026-09-04 14:29:44"
+  },
+  {
+    "title": "Heroine? Saint? No, I’m an All-Works Maid (And Proud of It)!",
+    "normalized_title": "heroine saint no im an allworks maid and proud of it",
+    "anime_id": 192800,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-04T19:04:51.087252",
+    "date_readable": "2026-09-04 19:04:51"
+  },
+  {
+    "title": "Skeleton Knight in Another World Season 2",
+    "normalized_title": "skeleton knight in another world season 2",
+    "anime_id": 185542,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-04T19:04:51.087252",
+    "date_readable": "2026-09-04 19:04:51"
+  },
+  {
+    "title": "LIAR GAME",
+    "normalized_title": "liar game",
+    "anime_id": 197754,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-04T19:04:51.087252",
+    "date_readable": "2026-09-04 19:04:51"
+  },
+  {
+    "title": "Shangri-La Frontier Season 3",
+    "normalized_title": "shangrila frontier season 3",
+    "anime_id": 189323,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-05T00:08:43.480445",
+    "date_readable": "2026-09-05 00:08:43"
+  },
+  {
+    "title": "MASHLE: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
+    "normalized_title": "mashle sanma taisou shinkakusha saishuu shikenhen",
+    "anime_id": 177704,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-05T00:08:43.480445",
+    "date_readable": "2026-09-05 00:08:43"
+  },
+  {
+    "title": "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+    "normalized_title": "tsuki ga michibiku isekai douchuu 3rd season",
+    "anime_id": 178467,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-05T00:08:43.480445",
+    "date_readable": "2026-09-05 00:08:43"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War",
+    "normalized_title": "bleach thousandyear blood war",
+    "anime_id": 116674,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T06:14:11.622202",
+    "date_readable": "2026-09-05 06:14:11"
+  },
+  {
+    "title": "The Fragrant Flower Blooms With Dignity",
+    "normalized_title": "the fragrant flower blooms with dignity",
+    "anime_id": 181444,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T06:14:11.622202",
+    "date_readable": "2026-09-05 06:14:11"
+  },
+  {
+    "title": "Classroom of the Elite 4th Season: Second Year, First Semester",
+    "normalized_title": "classroom of the elite 4th season second year first semester",
+    "anime_id": 180745,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T06:14:11.622202",
+    "date_readable": "2026-09-05 06:14:11"
   }
 ]
