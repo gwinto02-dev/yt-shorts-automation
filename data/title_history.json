@@ -766,5 +766,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-05T06:14:11.622202",
     "date_readable": "2026-09-05 06:14:11"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 2",
+    "normalized_title": "jujutsu kaisen season 2",
+    "anime_id": 145064,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-05T09:45:07.562802",
+    "date_readable": "2026-09-05 09:45:07"
+  },
+  {
+    "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing",
+    "normalized_title": "hell mode the hardcore gamer dominates in another world with garbage balancing",
+    "anime_id": 185262,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-05T09:45:07.562802",
+    "date_readable": "2026-09-05 09:45:07"
+  },
+  {
+    "title": "Please Excuse My Younger Brothers",
+    "normalized_title": "please excuse my younger brothers",
+    "anime_id": 203490,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-05T09:45:07.562802",
+    "date_readable": "2026-09-05 09:45:07"
   }
 ]
