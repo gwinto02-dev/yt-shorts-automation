@@ -742,5 +742,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-05T00:08:43.480445",
     "date_readable": "2026-09-05 00:08:43"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War",
+    "normalized_title": "bleach thousandyear blood war",
+    "anime_id": 116674,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T06:14:11.622202",
+    "date_readable": "2026-09-05 06:14:11"
+  },
+  {
+    "title": "The Fragrant Flower Blooms With Dignity",
+    "normalized_title": "the fragrant flower blooms with dignity",
+    "anime_id": 181444,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T06:14:11.622202",
+    "date_readable": "2026-09-05 06:14:11"
+  },
+  {
+    "title": "Classroom of the Elite 4th Season: Second Year, First Semester",
+    "normalized_title": "classroom of the elite 4th season second year first semester",
+    "anime_id": 180745,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T06:14:11.622202",
+    "date_readable": "2026-09-05 06:14:11"
   }
 ]
