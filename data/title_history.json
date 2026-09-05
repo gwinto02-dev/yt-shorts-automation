@@ -790,5 +790,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-05T09:45:07.562802",
     "date_readable": "2026-09-05 09:45:07"
+  },
+  {
+    "title": "Frieren: Beyond Journey’s End Season 2",
+    "normalized_title": "frieren beyond journeys end season 2",
+    "anime_id": 182255,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T12:06:34.084266",
+    "date_readable": "2026-09-05 12:06:34"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Separation",
+    "normalized_title": "bleach thousandyear blood war the separation",
+    "anime_id": 159322,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T12:06:34.084266",
+    "date_readable": "2026-09-05 12:06:34"
+  },
+  {
+    "title": "HAIKYU!! 2nd Season",
+    "normalized_title": "haikyu 2nd season",
+    "anime_id": 20992,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T12:06:34.084266",
+    "date_readable": "2026-09-05 12:06:34"
   }
 ]

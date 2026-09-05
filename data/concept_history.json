@@ -293,5 +293,11 @@
     "date": "2026-09-05T09:45:07.216863",
     "date_readable": "2026-09-05 09:45:07",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-05T12:06:32.840064",
+    "date_readable": "2026-09-05 12:06:32",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]
