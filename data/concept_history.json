@@ -299,5 +299,11 @@
     "date": "2026-09-05T12:06:32.840064",
     "date_readable": "2026-09-05 12:06:32",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-05T18:02:49.935218",
+    "date_readable": "2026-09-05 18:02:49",
+    "angle_key": "OVERLOOKED_REASON"
   }
 ]
