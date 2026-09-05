@@ -438,7 +438,14 @@ def generate_script_and_title_with_groq(
             messages=[{"role": "user", "content": full_prompt}]
         )
 
-        raw = response.choices[0].message.content.strip()
+        raw = (response.choices[0].message.content or "").strip()
+        if not raw:
+            # Reasoning-style Groq models (e.g. openai/gpt-oss-120b) can occasionally spend their
+            # whole token budget on internal reasoning and return an empty final content field,
+            # which previously hit json.loads("") -> "Expecting value: line 1 column 1 (char 0)".
+            # Fail fast with a clear message so the caller's fallback path triggers immediately
+            # instead of burning a retry attempt on an opaque JSON error.
+            raise ValueError("Groq returned empty content for the consolidated script+title JSON call (likely reasoning-token exhaustion).")
         if raw.startswith("```json"):
             raw = raw[7:]
         if raw.startswith("```"):
@@ -733,6 +740,22 @@ def generate_recommendation_script(
             feedback_parts.append(f"Retention QA: {retention_qa_res['reason']}")
 
         feedback_notes = "; ".join(feedback_parts)
+
+        # CRITICAL FIX: previously the specific phrases flagged by Natural Script QA were only
+        # ever mentioned inside the free-text feedback_notes blob, never added to avoid_phrases —
+        # so the hard "CRITICAL PHRASE EXCLUSION" directive (which demonstrably works elsewhere,
+        # e.g. the structural-variety retry loop in main.py) never kicked in for this loop, and
+        # the model kept regenerating the same category of vague-hype phrasing across all retries.
+        # Now we accumulate every flagged phrase across retries into avoid_phrases so each rewrite
+        # is explicitly forbidden from repeating what already failed.
+        newly_flagged = script_qa_res.get("flagged_phrases") or []
+        if newly_flagged:
+            avoid_phrases = list(avoid_phrases or [])
+            for p in newly_flagged:
+                if p and p.lower() not in [existing.lower() for existing in avoid_phrases]:
+                    avoid_phrases.append(p)
+            logger.info(f"[Script Rewrite] Adding flagged phrase(s) to hard exclusion list: {newly_flagged}")
+
         retries += 1
 
     if not script_text or not script_text.strip():
@@ -743,32 +766,6 @@ def generate_recommendation_script(
             target_opening_style=target_opening_style,
             target_closing_style=target_closing_style
         )
-        script_qa_res = check_natural_script_quality(script_text, concept_key, skip_llm=True)
-        retention_qa_res = check_retention_elements(script_text)
-
-    elif not (script_qa_res.get("pass") and retention_qa_res.get("pass")):
-        # AI-generated script exhausted all MAX_STAGE_RETRIES attempts without passing QA
-        # (most commonly the subjective Groq "Natural Script QA" judge, which can be flaky/harsh).
-        # Rather than proceeding with a script we already KNOW will fail the Supervisor QA Gate
-        # (guaranteed daily upload block), swap in the deterministic template generator, which is
-        # written to satisfy every rule-based constraint (no banned clichés, no duplicate words,
-        # correct word count) and validate it with the LLM judge skipped so it's guaranteed to pass.
-        logger.warning(
-            f"[ScriptGenerator] AI script failed QA after all {config.MAX_STAGE_RETRIES} retries "
-            f"(Script QA pass={script_qa_res.get('pass')}, Retention QA pass={retention_qa_res.get('pass')}). "
-            "Switching to guaranteed-safe template fallback script instead of proceeding with a script "
-            "that would be blocked by the Supervisor QA Gate."
-        )
-        script_text = generate_fallback_template_script(
-            candidates,
-            concept_info,
-            target_opening_style=target_opening_style,
-            target_closing_style=target_closing_style
-        )
-        script_qa_res = check_natural_script_quality(script_text, concept_key, skip_llm=True)
-        retention_qa_res = check_retention_elements(script_text)
-        if not retention_qa_res.get("pass"):
-            logger.warning(f"[ScriptGenerator] Template fallback also failed Retention QA: {retention_qa_res.get('reason')}")
 
     # Use combined title if obtained and valid, else generate video title
     if combined_video_title:

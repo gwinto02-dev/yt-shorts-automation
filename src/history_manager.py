@@ -108,7 +108,19 @@ def extract_structural_fingerprint(script_text: str) -> Dict[str, Any]:
             "transition_markers": []
         }
 
-    sentences = [s.strip() for s in re.split(r"[.!?]+", script_text) if s.strip()]
+    # NOTE: sentences are split while KEEPING their terminal punctuation attached
+    # (split on whitespace that follows a '.', '!', or '?', not on the punctuation
+    # itself). This matters: the style checks below test for "?" inside a sentence
+    # to detect question-style hooks/outros. A prior version used
+    # re.split(r"[.!?]+", script_text), which consumes the delimiter — so
+    # first_sentence/closing_window could NEVER contain "?", "!", or "." and the
+    # "?" in first_sentence check was permanently dead code. That silently forced
+    # almost every question-style hook (e.g. "What if...?") into the
+    # IN_SCENE_MID_THOUGHT bucket, since only 6 hardcoded literal phrases could
+    # otherwise trigger SPECIFIC_QUESTION. This is why structural-variety retries
+    # kept reproducing the same "opening_style" classification even when the
+    # script text (and requested target style) had clearly changed.
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", script_text) if s.strip()]
     first_sentence = sentences[0] if sentences else script_text[:80]
     last_sentence = sentences[-1] if sentences else script_text[-80:]
     first_lower = first_sentence.lower()

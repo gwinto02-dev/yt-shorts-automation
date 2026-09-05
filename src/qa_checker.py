@@ -45,16 +45,32 @@ FORBIDDEN_CLICHES = [
     "packs a punch"
 ]
 
-def check_natural_script_quality(script_text: str, concept_key: str = "top_recommendations", skip_llm: bool = False) -> Dict[str, Any]:
+def _extract_quoted_phrases(text: str) -> List[str]:
+    """Pulls out phrases the QA judge wrapped in quotes inside its free-text reason,
+    e.g. "...robotic clichés ('crisp animation', 'keeps ... sharp')..." -> ['crisp animation', 'keeps ... sharp'].
+    Used as a fallback when the LLM judge doesn't return structured flagged_phrases."""
+    if not text:
+        return []
+    found = re.findall(r"['\u2018\u2019]([^'\u2018\u2019]{3,60})['\u2018\u2019]", text)
+    found += re.findall(r'"([^"]{3,60})"', text)
+    # De-dupe while preserving order
+    seen = set()
+    out = []
+    for p in found:
+        p_clean = p.strip()
+        key = p_clean.lower()
+        if p_clean and key not in seen:
+            seen.add(key)
+            out.append(p_clean)
+    return out
+
+def check_natural_script_quality(script_text: str, concept_key: str = "top_recommendations") -> Dict[str, Any]:
     """
     Evaluates script for naturalness, clarity, conversational tone, generic AI tropes, and duplicate words.
-    Returns: {"pass": bool, "reason": str}
-
-    `skip_llm`: when True, only the deterministic rule-based checks (1-3) are run and the
-    subjective Groq LLM tone judge (step 4) is skipped entirely. Used for the guaranteed-safe
-    template fallback script, which is already written to satisfy every rule-based constraint,
-    so it should not be able to fail solely because of the LLM judge's subjective/inconsistent
-    grading (that flakiness was causing daily Supervisor QA blocks with zero videos uploaded).
+    Returns: {"pass": bool, "reason": str, "flagged_phrases": List[str]}
+    'flagged_phrases' lists the specific offending phrases (if any) so callers can feed them
+    straight into a hard phrase-exclusion directive on the next generation retry, instead of
+    just re-pasting the free-text reason and hoping the model self-corrects.
     """
     logger.info(">>> RUNNING NATURAL SCRIPT QA")
     lower_text = script_text.lower()
@@ -64,7 +80,7 @@ def check_natural_script_quality(script_text: str, concept_key: str = "top_recom
     if flagged_cliches:
         reason = f"Script contains robotic/overused AI tropes: {', '.join(flagged_cliches)}"
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason}
+        return {"pass": False, "reason": reason, "flagged_phrases": flagged_cliches}
 
     # 2. Check for consecutive repeated words (e.g. "spotlight spotlight", "the the")
     dup_match = re.search(r"\b(\w{3,})\s+\1\b", lower_text)
@@ -72,7 +88,7 @@ def check_natural_script_quality(script_text: str, concept_key: str = "top_recom
         repeated_word = dup_match.group(1)
         reason = f"Script contains consecutive duplicate words: '{repeated_word} {repeated_word}'"
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason}
+        return {"pass": False, "reason": reason, "flagged_phrases": [f"{repeated_word} {repeated_word}"]}
 
     # 3. Check length (between 110 and 210 words for 30-40 sec Short)
     words = script_text.split()
@@ -80,16 +96,13 @@ def check_natural_script_quality(script_text: str, concept_key: str = "top_recom
     if word_count < 110:
         reason = f"Script is too short ({word_count} words). Minimum required is 110 words for a 30-40s Short."
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason}
+        return {"pass": False, "reason": reason, "flagged_phrases": []}
     if word_count > 210:
         reason = f"Script is too long ({word_count} words). Maximum allowed is 210 words for a 30-40s Short."
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason}
+        return {"pass": False, "reason": reason, "flagged_phrases": []}
 
     # 4. Use Groq LLM if API key is present for nuanced tone evaluation
-    if skip_llm:
-        return {"pass": True, "reason": f"Guaranteed-safe fallback template script passed rule-based checks ({word_count} words); LLM subjective judge skipped by design."}
-
     api_key = config.GROQ_API_KEY or config.GEMINI_API_KEY
     if api_key:
         try:
@@ -108,29 +121,43 @@ def check_natural_script_quality(script_text: str, concept_key: str = "top_recom
                 "- REJECT scripts with genuinely awkward or robotic phrasing, severe structural repetition, confusing sentences, or vague hype filler clichés (e.g., 'crisp hand-drawn textures', 'stretch its action chops').\n"
                 "- ACCEPT scripts that speak naturally, clearly present each pick with concrete facts or hooks, and sound like a knowledgeable friend making recommendations.\n\n"
                 f"SCRIPT:\n{script_text}\n\n"
-                "Respond strictly with a JSON object:\n"
-                '{"pass": true/false, "reason": "Short explanation of score"}'
+                "Respond strictly with a JSON object. If pass is false, 'flagged_phrases' MUST list the exact "
+                "offending words/phrases verbatim from the script (not a paraphrase) so they can be banned on rewrite:\n"
+                '{"pass": true/false, "reason": "Short explanation of score", "flagged_phrases": ["exact phrase 1", "exact phrase 2"]}'
             )
             response = rate_limited_groq_call(
                 client.chat.completions.create,
                 model=config.GROQ_MODEL,
                 messages=[{"role": "user", "content": prompt}]
             )
-            raw = response.choices[0].message.content.strip()
+            raw = (response.choices[0].message.content or "").strip()
+            if not raw:
+                raise ValueError("Empty response content from Groq LLM QA judge call.")
             if raw.startswith("```json"):
                 raw = raw[7:]
+            if raw.startswith("```"):
+                raw = raw[3:]
             if raw.endswith("```"):
                 raw = raw[:-3]
             res_json = json.loads(raw.strip())
-            logger.info(f"[Natural Script QA LLM Result] Pass: {res_json.get('pass')} | Reason: {res_json.get('reason')}")
+            reason = res_json.get("reason", "Passed natural script quality checks.")
+            flagged_phrases = res_json.get("flagged_phrases") or []
+            if not isinstance(flagged_phrases, list):
+                flagged_phrases = []
+            # Fallback: older/less compliant model responses may omit flagged_phrases but still
+            # quote the offending text inside 'reason' — recover it rather than losing the signal.
+            if not flagged_phrases and not res_json.get("pass", True):
+                flagged_phrases = _extract_quoted_phrases(reason)
+            logger.info(f"[Natural Script QA LLM Result] Pass: {res_json.get('pass')} | Reason: {reason} | Flagged: {flagged_phrases}")
             return {
                 "pass": res_json.get("pass", True),
-                "reason": res_json.get("reason", "Passed natural script quality checks.")
+                "reason": reason,
+                "flagged_phrases": flagged_phrases
             }
         except Exception as e:
             logger.warning(f"Groq LLM Natural Script QA failed: {e}. Falling back to rule-based PASS.")
 
-    return {"pass": True, "reason": f"Script passed rule-based checks ({word_count} words, natural phrasing)."}
+    return {"pass": True, "reason": f"Script passed rule-based checks ({word_count} words, natural phrasing).", "flagged_phrases": []}
 
 # ==================== RETENTION QA ====================
 
