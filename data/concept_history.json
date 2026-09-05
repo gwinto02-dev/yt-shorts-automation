@@ -275,5 +275,11 @@
     "date": "2026-09-04T19:04:50.786647",
     "date_readable": "2026-09-04 19:04:50",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-05T00:08:43.151116",
+    "date_readable": "2026-09-05 00:08:43",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]

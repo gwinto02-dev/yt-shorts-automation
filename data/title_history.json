@@ -718,5 +718,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-04T19:04:51.087252",
     "date_readable": "2026-09-04 19:04:51"
+  },
+  {
+    "title": "Shangri-La Frontier Season 3",
+    "normalized_title": "shangrila frontier season 3",
+    "anime_id": 189323,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-05T00:08:43.480445",
+    "date_readable": "2026-09-05 00:08:43"
+  },
+  {
+    "title": "MASHLE: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
+    "normalized_title": "mashle sanma taisou shinkakusha saishuu shikenhen",
+    "anime_id": 177704,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-05T00:08:43.480445",
+    "date_readable": "2026-09-05 00:08:43"
+  },
+  {
+    "title": "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+    "normalized_title": "tsuki ga michibiku isekai douchuu 3rd season",
+    "anime_id": 178467,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-05T00:08:43.480445",
+    "date_readable": "2026-09-05 00:08:43"
   }
 ]
