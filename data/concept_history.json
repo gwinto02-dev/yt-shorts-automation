@@ -311,5 +311,11 @@
     "date": "2026-09-06T00:09:08.862741",
     "date_readable": "2026-09-06 00:09:08",
     "angle_key": "MOOD_BASED"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-06T06:14:09.602050",
+    "date_readable": "2026-09-06 06:14:09",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]

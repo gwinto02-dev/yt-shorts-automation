@@ -838,5 +838,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-06T00:09:09.009593",
     "date_readable": "2026-09-06 00:09:09"
+  },
+  {
+    "title": "I Became a Legend After My 10 Year-Long Last Stand",
+    "normalized_title": "i became a legend after my 10 yearlong last stand",
+    "anime_id": 199748,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-06T06:14:09.806631",
+    "date_readable": "2026-09-06 06:14:09"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 2",
+    "normalized_title": "rezero starting life in another world season 2",
+    "anime_id": 108632,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-06T06:14:09.806631",
+    "date_readable": "2026-09-06 06:14:09"
+  },
+  {
+    "title": "DIGIMON BEATBREAK",
+    "normalized_title": "digimon beatbreak",
+    "anime_id": 188388,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-06T06:14:09.806631",
+    "date_readable": "2026-09-06 06:14:09"
   }
 ]
