@@ -305,5 +305,11 @@
     "date": "2026-09-05T18:02:49.935218",
     "date_readable": "2026-09-05 18:02:49",
     "angle_key": "OVERLOOKED_REASON"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-06T00:09:08.862741",
+    "date_readable": "2026-09-06 00:09:08",
+    "angle_key": "MOOD_BASED"
   }
 ]
