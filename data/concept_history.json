@@ -365,5 +365,17 @@
     "date": "2026-09-07T22:44:43.584665",
     "date_readable": "2026-09-07 22:44:43",
     "angle_key": "STANDOUT_ELEMENT"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-09-07T22:48:59.768041",
+    "date_readable": "2026-09-07 22:48:59",
+    "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-07T22:53:34.583108",
+    "date_readable": "2026-09-07 22:53:34",
+    "angle_key": "MOOD_BASED"
   }
 ]

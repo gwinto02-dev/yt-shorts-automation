@@ -886,5 +886,53 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-06T12:06:41.356229",
     "date_readable": "2026-09-06 12:06:41"
+  },
+  {
+    "title": "Attack on Titan Season 3 Part 2",
+    "normalized_title": "attack on titan season 3 part 2",
+    "anime_id": "41982",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-07T22:49:06.551397",
+    "date_readable": "2026-09-07 22:49:06"
+  },
+  {
+    "title": "Attack on Titan Season 3",
+    "normalized_title": "attack on titan season 3",
+    "anime_id": "13569",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-07T22:49:06.551397",
+    "date_readable": "2026-09-07 22:49:06"
+  },
+  {
+    "title": "A Silent Voice",
+    "normalized_title": "a silent voice",
+    "anime_id": "10028",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-07T22:49:06.551397",
+    "date_readable": "2026-09-07 22:49:06"
+  },
+  {
+    "title": "Attack on Titan Season 3 Part 2",
+    "normalized_title": "attack on titan season 3 part 2",
+    "anime_id": "41982",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-07T22:53:54.735911",
+    "date_readable": "2026-09-07 22:53:54"
+  },
+  {
+    "title": "Attack on Titan Season 3",
+    "normalized_title": "attack on titan season 3",
+    "anime_id": "13569",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-07T22:53:54.735911",
+    "date_readable": "2026-09-07 22:53:54"
+  },
+  {
+    "title": "A Silent Voice",
+    "normalized_title": "a silent voice",
+    "anime_id": "10028",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-07T22:53:54.735911",
+    "date_readable": "2026-09-07 22:53:54"
   }
 ]

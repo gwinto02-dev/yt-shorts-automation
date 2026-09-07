@@ -21,5 +21,29 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-07T22:50:44.897588",
+    "date_readable": "2026-09-07",
+    "concept_type": "anime_comparison",
+    "title": "Anime Comparison: Attack on Titan S3 vs S3 Part 2 vs A Silent Voice 🎬 #Shorts",
+    "hook": "Attack on Titan Season 3 Part 2 is the only segment of the series that nudged its MyAnimeList rating up to 8",
+    "script": "Attack on Titan Season 3 Part 2 is the only segment of the series that nudged its MyAnimeList rating up to 8.5, just a point higher than the earlier season 3. First off, A Silent Voice leans on soft watercolor palettes, letting every glance convey Shoya’s lingering remorse. The story follows his attempt to atone after bullying Shoko, a deaf classmate, years later, and it sits at an 8.4 rating. Moving to Attack on Titan Season 3, Levi’s icy leadership surfaces when he trains a battered squad of recruits, and the arc earned the same 8.4 score. Hange’s experiments on Eren drive the mystery of the Titans deeper. Rounding out the match, Attack on Titan Season 3 Part 2 carries an 8.5 rating and launches Eren’s new hardening ability, turning the fight to retake Wall Maria into a high‑stakes gamble. So whether you begin with the quiet intensity of A Silent Voice or the wall‑crashing clash of Attack on Titan Part 2, save this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "attack on titan season 3",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "WkAEv24A6tA",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]
