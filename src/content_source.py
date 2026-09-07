@@ -430,6 +430,68 @@ def fetch_jikan_top(count: int = 50) -> List[Dict[str, Any]]:
         logger.error(f"Error fetching from Jikan API: {e}")
         return []
 
+# Kitsu status vocabulary differs from AniList's ("current"/"finished"/"upcoming"/"tba"
+# vs "RELEASING"/"FINISHED"/"NOT_YET_RELEASED") — normalize so downstream code (which
+# was written against AniList's enum) behaves consistently regardless of source.
+_KITSU_STATUS_MAP = {
+    "current": "RELEASING",
+    "finished": "FINISHED",
+    "upcoming": "NOT_YET_RELEASED",
+    "tba": "NOT_YET_RELEASED",
+}
+
+def fetch_kitsu_trending(count: int = 50) -> List[Dict[str, Any]]:
+    """
+    Second fallback (independent of both AniList and Jikan): Kitsu's own anime
+    listing, sorted by community size as a popularity proxy. Kitsu is not
+    behind the same Cloudflare front as AniList and, empirically, has never
+    failed in this pipeline's logs — it's already used successfully for
+    per-title cover image lookups in visuals.py.
+    NOTE: Kitsu doesn't return genres/categories on this endpoint without an
+    extra relationship fetch per title, so 'genres' comes back empty here.
+    That's an acceptable tradeoff for an emergency last-resort source — genre-
+    dependent concepts (e.g. Genre-Diverse Trio) simply won't get genre
+    guarantees on a run that had to fall all the way back to this source.
+    """
+    logger.info(f"Fetching top anime from Kitsu REST API (count={count})...")
+    url = f"{config.KITSU_API_BASE_URL}/anime"
+    try:
+        response = _request_with_retry(
+            "GET", url,
+            params={"sort": "-userCount", "page[limit]": min(count, 20)},
+        )
+        res_data = response.json()
+        data_list = res_data.get("data", [])
+
+        normalized = []
+        for item in data_list:
+            attrs = item.get("attributes", {}) or {}
+            titles = attrs.get("titles", {}) or {}
+            title_eng = titles.get("en") or titles.get("en_jp") or attrs.get("canonicalTitle")
+            poster = attrs.get("posterImage", {}) or {}
+            avg_rating = attrs.get("averageRating")
+            start_date = attrs.get("startDate") or ""
+            normalized.append({
+                "id": item.get("id"),
+                "title": title_eng,
+                "title_romaji": attrs.get("canonicalTitle"),
+                "cover_image": poster.get("large") or poster.get("original"),
+                "genres": [],
+                "average_score": (float(avg_rating) / 10.0) if avg_rating else 0.0,
+                "popularity": attrs.get("userCount", 0),
+                "trending_score": attrs.get("favoritesCount", 0),
+                "synopsis": attrs.get("synopsis", ""),
+                "status": _KITSU_STATUS_MAP.get(attrs.get("status"), "FINISHED"),
+                "seasonYear": int(start_date[:4]) if start_date[:4].isdigit() else None,
+                "source": "Kitsu"
+            })
+        if normalized:
+            _save_anime_pool_cache(normalized)
+        return normalized
+    except Exception as e:
+        logger.error(f"Error fetching from Kitsu API: {e}")
+        return []
+
 def select_today_concept() -> Tuple[str, Dict[str, Any]]:
     """
     Enforces 5-day cooldown rule: picks a concept type not used in the last 5 days.
@@ -486,6 +548,13 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
                 if item.get("id") not in existing_ids:
                     candidates.append(item)
                     existing_ids.add(item.get("id"))
+        if not candidates:
+            # Kitsu is tried before Jikan: it has never failed once in this
+            # pipeline's run history (it already powers per-title cover
+            # lookups reliably), whereas Jikan times out constantly. Jikan
+            # stays as a final fallback in case Kitsu is ever the one having
+            # a bad day instead.
+            candidates = fetch_kitsu_trending(50)
         if not candidates:
             candidates = fetch_jikan_top(50)
 

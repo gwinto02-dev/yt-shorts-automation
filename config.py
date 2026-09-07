@@ -38,6 +38,7 @@ YT_DAILY_QUOTA_ESTIMATE = 1600   # Estimated quota units per video upload (out o
 # API Endpoints
 ANILIST_GRAPHQL_URL = "https://graphql.anilist.co"
 JIKAN_API_BASE_URL = "https://api.jikan.moe/v4"
+KITSU_API_BASE_URL = "https://kitsu.io/api/edge"
 
 # LLM & API Keys
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
