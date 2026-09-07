@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 
 import config
+from src.content_source import _request_with_retry
 
 logger = logging.getLogger(__name__)
 
@@ -41,12 +42,11 @@ query ($id: Int) {
 def fetch_anilist_deep_facts(anime_id: int) -> Dict[str, Any]:
     """Fetch deep metadata facts directly from AniList GraphQL API."""
     try:
-        res = requests.post(
+        res = _request_with_retry(
+            "POST",
             config.ANILIST_GRAPHQL_URL,
             json={"query": ANILIST_DETAIL_QUERY, "variables": {"id": anime_id}},
-            timeout=10
         )
-        res.raise_for_status()
         media = res.json().get("data", {}).get("Media", {})
         if not media:
             return {}
@@ -76,8 +76,7 @@ def fetch_jikan_deep_facts(anime_id: int) -> Dict[str, Any]:
     """Fallback: Fetch detailed facts from Jikan REST API."""
     try:
         url = f"{config.JIKAN_API_BASE_URL}/anime/{anime_id}/full"
-        res = requests.get(url, timeout=10)
-        res.raise_for_status()
+        res = _request_with_retry("GET", url)
         data = res.json().get("data", {})
         if not data:
             return {}

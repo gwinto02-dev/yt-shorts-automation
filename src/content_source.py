@@ -2,6 +2,7 @@ import json
 import logging
 import random
 import re
+import time
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
 
@@ -17,6 +18,66 @@ from src.history_manager import (
 from src.popularity_filter import can_qualify_as_hidden_gem, is_mainstream_anime
 
 logger = logging.getLogger(__name__)
+
+# AniList sits behind Cloudflare, and Jikan proxies MyAnimeList — both are known to
+# reject requests carrying the default python-requests User-Agent as likely bot
+# traffic, especially from datacenter/CI IP ranges like GitHub Actions runners.
+# A realistic browser-style User-Agent avoids that class of block outright.
+API_REQUEST_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "application/json",
+}
+
+# Local cache written after any successful remote fetch, used as a last-resort
+# fallback when BOTH AniList and Jikan fail in the same run (previously there
+# was no such safety net unless a separate, unrelated project happened to have
+# recently populated data/processed/).
+_ANIME_POOL_CACHE_FILE = "normalized_anime_pool_cache.json"
+
+
+def _request_with_retry(method: str, url: str, max_retries: int = 3,
+                         backoff_base: float = 2.0, **kwargs) -> requests.Response:
+    """
+    Thin retry wrapper around requests, with exponential backoff, for the
+    transient failures (timeouts, connection resets, 5xx, and the occasional
+    Cloudflare hiccup) that these third-party anime APIs throw constantly.
+    Raises the last exception if every attempt fails.
+    """
+    kwargs.setdefault("headers", API_REQUEST_HEADERS)
+    kwargs.setdefault("timeout", 10)
+    last_exc = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = requests.request(method, url, **kwargs)
+            response.raise_for_status()
+            return response
+        except requests.exceptions.RequestException as e:
+            last_exc = e
+            if attempt < max_retries:
+                wait = backoff_base * attempt
+                logger.warning(
+                    f"[Request Retry] {method} {url} failed on attempt {attempt}/{max_retries} "
+                    f"({e}). Retrying in {wait:.0f}s..."
+                )
+                time.sleep(wait)
+    raise last_exc
+
+
+def _save_anime_pool_cache(candidates: List[Dict[str, Any]]) -> None:
+    """Persist a successful fetch so a future run has a genuine local fallback
+    even if data/processed/ (from the separate Buzz Tracker project) is stale
+    or missing entirely."""
+    if not candidates:
+        return
+    try:
+        cache_path = config.DATA_DIR / _ANIME_POOL_CACHE_FILE
+        config.DATA_DIR.mkdir(parents=True, exist_ok=True)
+        with open(cache_path, "w", encoding="utf-8") as f:
+            json.dump(candidates, f, indent=2)
+        logger.info(f"[Anime Pool Cache] Saved {len(candidates)} candidate(s) to {cache_path}")
+    except Exception as e:
+        logger.warning(f"[Anime Pool Cache] Failed to write local fallback cache: {e}")
 
 # Available Shorts Concept Types
 CONCEPT_TYPES = {
@@ -231,7 +292,9 @@ query ($page: Int, $perPage: Int) {
 """
 
 def fetch_local_trend_data() -> List[Dict[str, Any]]:
-    """Look for local trend JSON files produced by Daily Anime Buzz Tracker."""
+    """Look for local trend JSON files produced by Daily Anime Buzz Tracker, or
+    fall back to this pipeline's own cache of its last successful remote fetch
+    (written by _save_anime_pool_cache) if the Buzz Tracker hasn't run recently."""
     data_dir = config.DATA_DIR
     processed_dir = data_dir / "processed"
     search_paths = []
@@ -240,7 +303,11 @@ def fetch_local_trend_data() -> List[Dict[str, Any]]:
         search_paths.extend(list(processed_dir.glob("normalized_anime_*.json")))
     if data_dir.exists():
         search_paths.extend(list(data_dir.glob("daily_report_*.json")))
-        
+
+    cache_path = data_dir / _ANIME_POOL_CACHE_FILE
+    if not search_paths and cache_path.exists():
+        search_paths.append(cache_path)
+
     if not search_paths:
         return []
 
@@ -263,12 +330,11 @@ def fetch_anilist_trending(count: int = 50, page: int = 1) -> List[Dict[str, Any
     logger.info(f"Fetching trending anime from AniList GraphQL API (page={page}, count={count})...")
     variables = {"page": page, "perPage": count}
     try:
-        response = requests.post(
+        response = _request_with_retry(
+            "POST",
             config.ANILIST_GRAPHQL_URL,
             json={"query": ANILIST_TRENDING_QUERY, "variables": variables},
-            timeout=10
         )
-        response.raise_for_status()
         res_data = response.json()
         media_list = res_data.get("data", {}).get("Page", {}).get("media", [])
         
@@ -289,6 +355,8 @@ def fetch_anilist_trending(count: int = 50, page: int = 1) -> List[Dict[str, Any
                 "seasonYear": item.get("seasonYear"),
                 "source": "AniList"
             })
+        if normalized:
+            _save_anime_pool_cache(normalized)
         return normalized
     except Exception as e:
         logger.error(f"Error fetching from AniList API: {e}")
@@ -299,12 +367,11 @@ def fetch_anilist_upcoming(count: int = 50, page: int = 1) -> List[Dict[str, Any
     logger.info(f"Fetching upcoming anime from AniList GraphQL API (page={page}, count={count})...")
     variables = {"page": page, "perPage": count}
     try:
-        response = requests.post(
+        response = _request_with_retry(
+            "POST",
             config.ANILIST_GRAPHQL_URL,
             json={"query": ANILIST_UPCOMING_QUERY, "variables": variables},
-            timeout=10
         )
-        response.raise_for_status()
         res_data = response.json()
         media_list = res_data.get("data", {}).get("Page", {}).get("media", [])
         
@@ -336,8 +403,7 @@ def fetch_jikan_top(count: int = 50) -> List[Dict[str, Any]]:
     logger.info(f"Fetching top anime from Jikan REST API (count={count})...")
     url = f"{config.JIKAN_API_BASE_URL}/top/anime?limit={count}"
     try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
+        response = _request_with_retry("GET", url)
         res_data = response.json()
         data_list = res_data.get("data", [])
         
@@ -357,6 +423,8 @@ def fetch_jikan_top(count: int = 50) -> List[Dict[str, Any]]:
                 "seasonYear": item.get("year"),
                 "source": "Jikan"
             })
+        if normalized:
+            _save_anime_pool_cache(normalized)
         return normalized
     except Exception as e:
         logger.error(f"Error fetching from Jikan API: {e}")
