@@ -377,5 +377,11 @@
     "date": "2026-09-07T22:53:34.583108",
     "date_readable": "2026-09-07 22:53:34",
     "angle_key": "MOOD_BASED"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-07T22:57:52.004731",
+    "date_readable": "2026-09-07 22:57:52",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]

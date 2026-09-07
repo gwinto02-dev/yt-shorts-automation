@@ -45,5 +45,28 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-09-07T22:59:15.297298",
+    "date_readable": "2026-09-07",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Hero Journeys: My Hero Academia & Attack on Titan 🔥 #Shorts",
+    "hook": "When My Hero Academia’s third season dropped in 2018, it instantly earned an 8",
+    "script": "When My Hero Academia’s third season dropped in 2018, it instantly earned an 8.3 on MyAnimeList, a rare launch‑day rating surge. The series’ bright, summer‑tinted animation pushes Class 1‑A into a grueling training camp where seasoned pros push their Quirks to the edge. Shifting gears, Eren’s desperate metamorphosis—turning into the very Titan he despises—propels Attack on Titan Season 2, which holds an 8.4 on MyAnimeList. With his newfound power, he wrestles between monster instinct and a fragile humanity, reshaping humanity’s fight for freedom. And finally, the original My Hero Academia series also sits at 8.3, and it launches us into a world where eighty percent of kids awaken Quirks at four, forcing Izuku Midoriya to chase heroism without any power of his own. If the heat of that summer camp sounds like your next binge, give it a go—so which of these three journeys will you dive into first? Drop your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "when my hero academias third",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "TzeA6nO9rq0",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]
