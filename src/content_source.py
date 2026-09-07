@@ -456,9 +456,17 @@ def fetch_kitsu_trending(count: int = 50) -> List[Dict[str, Any]]:
     logger.info(f"Fetching top anime from Kitsu REST API (count={count})...")
     url = f"{config.KITSU_API_BASE_URL}/anime"
     try:
+        # Kitsu implements the JSON:API spec strictly and returns 406 Not
+        # Acceptable for a generic "Accept: application/json" header (the
+        # default used for AniList/Jikan) — it requires the JSON:API media
+        # type specifically. Override the shared default for this call only.
+        kitsu_headers = dict(API_REQUEST_HEADERS)
+        kitsu_headers["Accept"] = "application/vnd.api+json"
+        kitsu_headers["Content-Type"] = "application/vnd.api+json"
         response = _request_with_retry(
             "GET", url,
             params={"sort": "-userCount", "page[limit]": min(count, 20)},
+            headers=kitsu_headers,
         )
         res_data = response.json()
         data_list = res_data.get("data", [])
