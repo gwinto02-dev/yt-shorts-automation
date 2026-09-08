@@ -395,5 +395,11 @@
     "date": "2026-09-08T06:15:58.838751",
     "date_readable": "2026-09-08 06:15:58",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-08T12:08:05.058162",
+    "date_readable": "2026-09-08 12:08:05",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]

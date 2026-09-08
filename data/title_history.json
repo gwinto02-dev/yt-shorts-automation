@@ -982,5 +982,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-08T06:15:58.847751",
     "date_readable": "2026-09-08 06:15:58"
+  },
+  {
+    "title": "Haikyu!!",
+    "normalized_title": "haikyu",
+    "anime_id": "8133",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-08T12:08:05.069151",
+    "date_readable": "2026-09-08 12:08:05"
+  },
+  {
+    "title": "Assassination Classroom Second Season",
+    "normalized_title": "assassination classroom second season",
+    "anime_id": "10877",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-08T12:08:05.069151",
+    "date_readable": "2026-09-08 12:08:05"
+  },
+  {
+    "title": "Assassination Classroom",
+    "normalized_title": "assassination classroom",
+    "anime_id": "8640",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-08T12:08:05.069151",
+    "date_readable": "2026-09-08 12:08:05"
   }
 ]
