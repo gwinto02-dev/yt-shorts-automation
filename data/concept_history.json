@@ -383,5 +383,11 @@
     "date": "2026-09-07T22:57:52.004731",
     "date_readable": "2026-09-07 22:57:52",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-08T00:09:22.781283",
+    "date_readable": "2026-09-08 00:09:22",
+    "angle_key": "PREMISE_INTRIGUE"
   }
 ]
