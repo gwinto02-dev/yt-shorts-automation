@@ -28,6 +28,10 @@ for path in [ASSETS_DIR, IMAGES_DIR, MUSIC_DIR, FONTS_DIR, OUTPUT_DIR, DATA_DIR]
 
 # Guardrails & Free-Tier Limits
 MAX_STAGE_RETRIES = 2
+# Script generation gets its own (higher) retry budget: Groq calls are cheap/fast
+# compared to a full video render, so it's worth trying harder here before we
+# either accept a soft-fail script or fall back to the template generator.
+SCRIPT_QA_MAX_RETRIES = 4
 CONCEPT_COOLDOWN_DAYS = 5
 ANIME_TITLE_COOLDOWN_DAYS = 30
 VIDEO_TITLE_COOLDOWN_DAYS = 30
@@ -38,7 +42,6 @@ YT_DAILY_QUOTA_ESTIMATE = 1600   # Estimated quota units per video upload (out o
 # API Endpoints
 ANILIST_GRAPHQL_URL = "https://graphql.anilist.co"
 JIKAN_API_BASE_URL = "https://api.jikan.moe/v4"
-KITSU_API_BASE_URL = "https://kitsu.io/api/edge"
 
 # LLM & API Keys
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")

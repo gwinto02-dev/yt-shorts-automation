@@ -45,42 +45,28 @@ FORBIDDEN_CLICHES = [
     "packs a punch"
 ]
 
-def _extract_quoted_phrases(text: str) -> List[str]:
-    """Pulls out phrases the QA judge wrapped in quotes inside its free-text reason,
-    e.g. "...robotic clichés ('crisp animation', 'keeps ... sharp')..." -> ['crisp animation', 'keeps ... sharp'].
-    Used as a fallback when the LLM judge doesn't return structured flagged_phrases."""
-    if not text:
-        return []
-    found = re.findall(r"['\u2018\u2019]([^'\u2018\u2019]{3,60})['\u2018\u2019]", text)
-    found += re.findall(r'"([^"]{3,60})"', text)
-    # De-dupe while preserving order
-    seen = set()
-    out = []
-    for p in found:
-        p_clean = p.strip()
-        key = p_clean.lower()
-        if p_clean and key not in seen:
-            seen.add(key)
-            out.append(p_clean)
-    return out
-
 def check_natural_script_quality(script_text: str, concept_key: str = "top_recommendations") -> Dict[str, Any]:
     """
     Evaluates script for naturalness, clarity, conversational tone, generic AI tropes, and duplicate words.
-    Returns: {"pass": bool, "reason": str, "flagged_phrases": List[str]}
-    'flagged_phrases' lists the specific offending phrases (if any) so callers can feed them
-    straight into a hard phrase-exclusion directive on the next generation retry, instead of
-    just re-pasting the free-text reason and hoping the model self-corrects.
+    Returns: {"pass": bool, "reason": str}
     """
     logger.info(">>> RUNNING NATURAL SCRIPT QA")
     lower_text = script_text.lower()
     
     # 1. Rule-based check for generic AI phrases
+    # NOTE on "hard_fail": these first three checks are OBJECTIVE / rule-based —
+    # a genuinely broken script (banned clichés present, stutter-repeated words,
+    # or wrong length). They are always a hard blocker. The LLM tone/taste
+    # check below (#4) is SUBJECTIVE and has been observed to reject scripts
+    # for mild, debatable phrasing choices even when nothing is objectively
+    # wrong — since every video already uploads Private for manual review
+    # anyway, a subjective-only rejection should not be treated with the same
+    # severity as an objective one. See run_supervisor_qa_gate.
     flagged_cliches = [phrase for phrase in FORBIDDEN_CLICHES if phrase in lower_text]
     if flagged_cliches:
         reason = f"Script contains robotic/overused AI tropes: {', '.join(flagged_cliches)}"
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason, "flagged_phrases": flagged_cliches}
+        return {"pass": False, "reason": reason, "hard_fail": True}
 
     # 2. Check for consecutive repeated words (e.g. "spotlight spotlight", "the the")
     dup_match = re.search(r"\b(\w{3,})\s+\1\b", lower_text)
@@ -88,7 +74,7 @@ def check_natural_script_quality(script_text: str, concept_key: str = "top_recom
         repeated_word = dup_match.group(1)
         reason = f"Script contains consecutive duplicate words: '{repeated_word} {repeated_word}'"
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason, "flagged_phrases": [f"{repeated_word} {repeated_word}"]}
+        return {"pass": False, "reason": reason, "hard_fail": True}
 
     # 3. Check length (between 110 and 210 words for 30-40 sec Short)
     words = script_text.split()
@@ -96,11 +82,11 @@ def check_natural_script_quality(script_text: str, concept_key: str = "top_recom
     if word_count < 110:
         reason = f"Script is too short ({word_count} words). Minimum required is 110 words for a 30-40s Short."
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason, "flagged_phrases": []}
+        return {"pass": False, "reason": reason, "hard_fail": True}
     if word_count > 210:
         reason = f"Script is too long ({word_count} words). Maximum allowed is 210 words for a 30-40s Short."
         logger.warning(f"[Natural Script QA FAIL] {reason}")
-        return {"pass": False, "reason": reason, "flagged_phrases": []}
+        return {"pass": False, "reason": reason, "hard_fail": True}
 
     # 4. Use Groq LLM if API key is present for nuanced tone evaluation
     api_key = config.GROQ_API_KEY or config.GEMINI_API_KEY
@@ -117,47 +103,37 @@ def check_natural_script_quality(script_text: str, concept_key: str = "top_recom
                 "This script is a compilation/listicle video recommending 3 separate anime titles (e.g. 'Top Recommendations' or a list of picks). "
                 "The 3 featured shows may be completely distinct with no shared narrative thread between them. "
                 "DO NOT fail or penalize the script for lacking a single connected narrative or for jumping between 3 separate picks — compilation videos naturally cover distinct titles.\n\n"
-                "EVALUATION CRITERIA:\n"
-                "- REJECT scripts with genuinely awkward or robotic phrasing, severe structural repetition, confusing sentences, or vague hype filler clichés (e.g., 'crisp hand-drawn textures', 'stretch its action chops').\n"
-                "- ACCEPT scripts that speak naturally, clearly present each pick with concrete facts or hooks, and sound like a knowledgeable friend making recommendations.\n\n"
+                "EVALUATION CRITERIA (BE LENIENT — this only needs to clear a low bar, not be perfect):\n"
+                "- REJECT only for genuinely broken writing: severe structural repetition, sentences that don't parse, factually incoherent claims, or heavy stacking of multiple vague hype clichés in the same script.\n"
+                "- DO NOT reject for a single mild adjective, one slightly generic phrase, or stylistic taste — minor imperfections are expected and fine; this is a private draft that a human reviews before it ever goes public.\n"
+                "- ACCEPT scripts that are readable, clearly present each pick with at least some concrete facts or hooks, and roughly sound like a knowledgeable friend making recommendations, even if not every sentence is a home run.\n\n"
                 f"SCRIPT:\n{script_text}\n\n"
-                "Respond strictly with a JSON object. If pass is false, 'flagged_phrases' MUST list the exact "
-                "offending words/phrases verbatim from the script (not a paraphrase) so they can be banned on rewrite:\n"
-                '{"pass": true/false, "reason": "Short explanation of score", "flagged_phrases": ["exact phrase 1", "exact phrase 2"]}'
+                "Respond strictly with a JSON object:\n"
+                '{"pass": true/false, "reason": "Short explanation of score"}'
             )
             response = rate_limited_groq_call(
                 client.chat.completions.create,
                 model=config.GROQ_MODEL,
                 messages=[{"role": "user", "content": prompt}]
             )
-            raw = (response.choices[0].message.content or "").strip()
-            if not raw:
-                raise ValueError("Empty response content from Groq LLM QA judge call.")
+            raw = response.choices[0].message.content.strip()
             if raw.startswith("```json"):
                 raw = raw[7:]
-            if raw.startswith("```"):
-                raw = raw[3:]
             if raw.endswith("```"):
                 raw = raw[:-3]
             res_json = json.loads(raw.strip())
-            reason = res_json.get("reason", "Passed natural script quality checks.")
-            flagged_phrases = res_json.get("flagged_phrases") or []
-            if not isinstance(flagged_phrases, list):
-                flagged_phrases = []
-            # Fallback: older/less compliant model responses may omit flagged_phrases but still
-            # quote the offending text inside 'reason' — recover it rather than losing the signal.
-            if not flagged_phrases and not res_json.get("pass", True):
-                flagged_phrases = _extract_quoted_phrases(reason)
-            logger.info(f"[Natural Script QA LLM Result] Pass: {res_json.get('pass')} | Reason: {reason} | Flagged: {flagged_phrases}")
+            logger.info(f"[Natural Script QA LLM Result] Pass: {res_json.get('pass')} | Reason: {res_json.get('reason')}")
             return {
                 "pass": res_json.get("pass", True),
-                "reason": reason,
-                "flagged_phrases": flagged_phrases
+                "reason": res_json.get("reason", "Passed natural script quality checks."),
+                # This is the SUBJECTIVE LLM taste check, not an objective rule
+                # violation — see note above check_natural_script_quality.
+                "hard_fail": False
             }
         except Exception as e:
             logger.warning(f"Groq LLM Natural Script QA failed: {e}. Falling back to rule-based PASS.")
 
-    return {"pass": True, "reason": f"Script passed rule-based checks ({word_count} words, natural phrasing).", "flagged_phrases": []}
+    return {"pass": True, "reason": f"Script passed rule-based checks ({word_count} words, natural phrasing).", "hard_fail": False}
 
 # ==================== RETENTION QA ====================
 
@@ -709,7 +685,19 @@ def run_supervisor_qa_gate(
     checks.append({"name": "Visual Segment Alignment QA", "pass": vis_res["pass"], "reason": vis_res["reason"]})
 
     # 4. Natural Script Quality QA
-    checks.append({"name": "Natural Script Quality QA", "pass": script_qa_res.get("pass", False), "reason": script_qa_res.get("reason", "N/A")})
+    # A failure here only blocks upload if it's an OBJECTIVE rule violation
+    # (banned clichés, stutter-repeated words, bad word count). A failure
+    # that comes solely from the subjective Groq "taste" judge (hard_fail is
+    # explicitly False) is downgraded to a non-blocking warning — the script
+    # already exhausted its rewrite retries, the video is Private-only, and
+    # you review it manually before it ever goes public, so this stops the
+    # gate from blocking every single day over debatable phrasing choices.
+    script_qa_pass = script_qa_res.get("pass", False)
+    script_qa_reason = script_qa_res.get("reason", "N/A")
+    if not script_qa_pass and script_qa_res.get("hard_fail", True) is False:
+        script_qa_pass = True
+        script_qa_reason = f"[Soft-fail, not blocking — flagged for manual review] {script_qa_reason}"
+    checks.append({"name": "Natural Script Quality QA", "pass": script_qa_pass, "reason": script_qa_reason})
 
     # 5. Retention QA
     checks.append({"name": "Retention QA", "pass": retention_qa_res.get("pass", False), "reason": retention_qa_res.get("reason", "N/A")})

@@ -438,14 +438,7 @@ def generate_script_and_title_with_groq(
             messages=[{"role": "user", "content": full_prompt}]
         )
 
-        raw = (response.choices[0].message.content or "").strip()
-        if not raw:
-            # Reasoning-style Groq models (e.g. openai/gpt-oss-120b) can occasionally spend their
-            # whole token budget on internal reasoning and return an empty final content field,
-            # which previously hit json.loads("") -> "Expecting value: line 1 column 1 (char 0)".
-            # Fail fast with a clear message so the caller's fallback path triggers immediately
-            # instead of burning a retry attempt on an opaque JSON error.
-            raise ValueError("Groq returned empty content for the consolidated script+title JSON call (likely reasoning-token exhaustion).")
+        raw = response.choices[0].message.content.strip()
         if raw.startswith("```json"):
             raw = raw[7:]
         if raw.startswith("```"):
@@ -677,9 +670,12 @@ def generate_recommendation_script(
     combined_video_title = None
     has_api_key = bool(config.GROQ_API_KEY or config.GEMINI_API_KEY)
 
-    while retries <= config.MAX_STAGE_RETRIES:
+    script_max_retries = getattr(config, "SCRIPT_QA_MAX_RETRIES", config.MAX_STAGE_RETRIES)
+    avoid_phrases = list(avoid_phrases) if avoid_phrases else []
+
+    while retries <= script_max_retries:
         if retries > 0:
-            logger.info(f"[Script Rewrite Retry {retries}/{config.MAX_STAGE_RETRIES}] Rewriting script based on QA feedback...")
+            logger.info(f"[Script Rewrite Retry {retries}/{script_max_retries}] Rewriting script based on QA feedback...")
 
         # Generate draft
         if has_api_key:
@@ -741,20 +737,14 @@ def generate_recommendation_script(
 
         feedback_notes = "; ".join(feedback_parts)
 
-        # CRITICAL FIX: previously the specific phrases flagged by Natural Script QA were only
-        # ever mentioned inside the free-text feedback_notes blob, never added to avoid_phrases —
-        # so the hard "CRITICAL PHRASE EXCLUSION" directive (which demonstrably works elsewhere,
-        # e.g. the structural-variety retry loop in main.py) never kicked in for this loop, and
-        # the model kept regenerating the same category of vague-hype phrasing across all retries.
-        # Now we accumulate every flagged phrase across retries into avoid_phrases so each rewrite
-        # is explicitly forbidden from repeating what already failed.
-        newly_flagged = script_qa_res.get("flagged_phrases") or []
-        if newly_flagged:
-            avoid_phrases = list(avoid_phrases or [])
-            for p in newly_flagged:
-                if p and p.lower() not in [existing.lower() for existing in avoid_phrases]:
-                    avoid_phrases.append(p)
-            logger.info(f"[Script Rewrite] Adding flagged phrase(s) to hard exclusion list: {newly_flagged}")
+        # Auto-extract any single/double-quoted phrases the QA feedback called
+        # out by name (e.g. "contains: 'crisp animation', 'modest reception'")
+        # and explicitly ban them on the next attempt, instead of just hoping
+        # the model infers what to avoid from prose feedback alone.
+        newly_flagged = re.findall(r"['\u2018\u2019]([^'\u2018\u2019]{3,60})['\u2018\u2019]", feedback_notes)
+        for phrase in newly_flagged:
+            if phrase.lower() not in [p.lower() for p in avoid_phrases]:
+                avoid_phrases.append(phrase)
 
         retries += 1
 
@@ -792,7 +782,7 @@ def generate_recommendation_script(
         "candidates": candidates,
         "concept_key": concept_key,
         "concept_info": concept_info,
-        "retries": min(retries, config.MAX_STAGE_RETRIES),
+        "retries": min(retries, script_max_retries),
         "script_qa_res": script_qa_res,
         "retention_qa_res": retention_qa_res
     }

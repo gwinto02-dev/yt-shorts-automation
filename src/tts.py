@@ -157,6 +157,25 @@ def compute_title_segment_timestamps(
         if spoken_starts_sec[i] <= spoken_starts_sec[i - 1]:
             spoken_starts_sec[i] = spoken_starts_sec[i - 1] + dur_per_img
 
+    # Backward clamp pass: a bad/early keyword match earlier in the narration
+    # can cascade the forward-correction above past total_duration_sec,
+    # producing a start_sec that's *larger* than the video's own length (seen
+    # in production as "Segment #3: 65.72s -> 56.06s" on a 56.06s-long video).
+    # Downstream, that phantom timestamp gets used for both video assembly
+    # and the QA frame-extraction check, which then fails to seek/extract a
+    # frame past the end of the file and wrongly blocks an otherwise-fine
+    # video. Walk backward, guaranteeing every start leaves enough room for
+    # itself and every segment after it before total_duration_sec, and stays
+    # strictly increasing.
+    MIN_SEGMENT_SEC = 1.5
+    for i in range(num_candidates - 1, -1, -1):
+        max_start = total_duration_sec - (num_candidates - i) * MIN_SEGMENT_SEC
+        if spoken_starts_sec[i] > max_start:
+            spoken_starts_sec[i] = max(0.0, max_start)
+        if i > 0 and spoken_starts_sec[i] <= spoken_starts_sec[i - 1]:
+            spoken_starts_sec[i - 1] = max(0.0, spoken_starts_sec[i] - MIN_SEGMENT_SEC)
+    spoken_starts_sec[0] = 0.0
+
     segments = []
     for i in range(num_candidates):
         st = spoken_starts_sec[i]

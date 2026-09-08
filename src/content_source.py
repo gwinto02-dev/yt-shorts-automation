@@ -430,6 +430,42 @@ def fetch_jikan_top(count: int = 50) -> List[Dict[str, Any]]:
         logger.error(f"Error fetching from Jikan API: {e}")
         return []
 
+def fetch_jikan_upcoming(count: int = 50) -> List[Dict[str, Any]]:
+    """Fallback: fetch upcoming/not-yet-aired anime from Jikan's seasons/upcoming
+    endpoint. Used by the Upcoming Trio concept, which previously had no
+    fallback at all when AniList was blocked (its single biggest recurring
+    daily failure)."""
+    logger.info(f"Fetching upcoming anime from Jikan REST API fallback (count={count})...")
+    url = f"{config.JIKAN_API_BASE_URL}/seasons/upcoming"
+    try:
+        response = _request_with_retry("GET", url, params={"limit": min(count, 25)})
+        res_data = response.json()
+        data_list = res_data.get("data", [])
+
+        normalized = []
+        for item in data_list:
+            normalized.append({
+                "id": item.get("mal_id"),
+                "title": item.get("title_english") or item.get("title"),
+                "title_romaji": item.get("title"),
+                "cover_image": item.get("images", {}).get("jpg", {}).get("large_image_url"),
+                "genres": [g.get("name") for g in item.get("genres", [])],
+                "average_score": item.get("score") or 0.0,
+                "popularity": item.get("popularity", 0) or 0,
+                "trending_score": item.get("members", 0) or 0,
+                "synopsis": item.get("synopsis", "") or "",
+                "status": "NOT_YET_RELEASED",
+                "seasonYear": item.get("year") or 2026,
+                "is_upcoming": True,
+                "source": "Jikan"
+            })
+        if normalized:
+            _save_anime_pool_cache(normalized)
+        return normalized
+    except Exception as e:
+        logger.error(f"Error fetching upcoming anime from Jikan API: {e}")
+        return []
+
 # Kitsu status vocabulary differs from AniList's ("current"/"finished"/"upcoming"/"tba"
 # vs "RELEASING"/"FINISHED"/"NOT_YET_RELEASED") — normalize so downstream code (which
 # was written against AniList's enum) behaves consistently regardless of source.
@@ -440,20 +476,24 @@ _KITSU_STATUS_MAP = {
     "tba": "NOT_YET_RELEASED",
 }
 
-def fetch_kitsu_trending(count: int = 50) -> List[Dict[str, Any]]:
+def fetch_kitsu_trending(count: int = 50, status_filter: str = None) -> List[Dict[str, Any]]:
     """
     Second fallback (independent of both AniList and Jikan): Kitsu's own anime
     listing, sorted by community size as a popularity proxy. Kitsu is not
     behind the same Cloudflare front as AniList and, empirically, has never
     failed in this pipeline's logs — it's already used successfully for
     per-title cover image lookups in visuals.py.
+    status_filter, if given (e.g. "upcoming"), is passed through as Kitsu's
+    own filter[status] value so this same function can also serve the
+    Upcoming Trio concept, which previously had NO fallback at all if
+    AniList was blocked.
     NOTE: Kitsu doesn't return genres/categories on this endpoint without an
     extra relationship fetch per title, so 'genres' comes back empty here.
     That's an acceptable tradeoff for an emergency last-resort source — genre-
     dependent concepts (e.g. Genre-Diverse Trio) simply won't get genre
     guarantees on a run that had to fall all the way back to this source.
     """
-    logger.info(f"Fetching top anime from Kitsu REST API (count={count})...")
+    logger.info(f"Fetching {'upcoming' if status_filter else 'top'} anime from Kitsu REST API (count={count})...")
     url = f"{config.KITSU_API_BASE_URL}/anime"
     try:
         # Kitsu implements the JSON:API spec strictly and returns 406 Not
@@ -463,9 +503,12 @@ def fetch_kitsu_trending(count: int = 50) -> List[Dict[str, Any]]:
         kitsu_headers = dict(API_REQUEST_HEADERS)
         kitsu_headers["Accept"] = "application/vnd.api+json"
         kitsu_headers["Content-Type"] = "application/vnd.api+json"
+        params = {"sort": "-userCount", "page[limit]": min(count, 20)}
+        if status_filter:
+            params["filter[status]"] = status_filter
         response = _request_with_retry(
             "GET", url,
-            params={"sort": "-userCount", "page[limit]": min(count, 20)},
+            params=params,
             headers=kitsu_headers,
         )
         res_data = response.json()
@@ -491,6 +534,7 @@ def fetch_kitsu_trending(count: int = 50) -> List[Dict[str, Any]]:
                 "synopsis": attrs.get("synopsis", ""),
                 "status": _KITSU_STATUS_MAP.get(attrs.get("status"), "FINISHED"),
                 "seasonYear": int(start_date[:4]) if start_date[:4].isdigit() else None,
+                "is_upcoming": bool(status_filter),
                 "source": "Kitsu"
             })
         if normalized:
@@ -546,6 +590,15 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
     # Fetch expanded pool based on concept mode (50-100 titles)
     if concept_key == "upcoming_spotlight":
         candidates = fetch_anilist_upcoming(50)
+        # Previously this concept had ZERO fallback — a single AniList block
+        # (its most common daily failure) aborted the entire pipeline outright
+        # even though every other concept type falls back through Kitsu/Jikan.
+        if not candidates:
+            logger.warning("AniList upcoming fetch failed — falling back to Jikan seasons/upcoming.")
+            candidates = fetch_jikan_upcoming(50)
+        if not candidates:
+            logger.warning("Jikan upcoming fetch failed — falling back to Kitsu (filter[status]=upcoming).")
+            candidates = fetch_kitsu_trending(50, status_filter="upcoming")
     else:
         candidates = fetch_local_trend_data()
         if not candidates or len(candidates) < 15:
@@ -625,6 +678,10 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
         extra_candidates = []
         if concept_key == "upcoming_spotlight":
             extra_candidates = fetch_anilist_upcoming(50, page=2)
+            if not extra_candidates:
+                extra_candidates = fetch_jikan_upcoming(50)
+            if not extra_candidates:
+                extra_candidates = fetch_kitsu_trending(50, status_filter="upcoming")
         else:
             extra_candidates = fetch_anilist_trending(50, page=2) + fetch_jikan_top(50)
 
