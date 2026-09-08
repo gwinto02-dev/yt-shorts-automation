@@ -401,5 +401,11 @@
     "date": "2026-09-08T12:08:05.058162",
     "date_readable": "2026-09-08 12:08:05",
     "angle_key": "BADASS_MOMENTS"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-08T18:03:24.519403",
+    "date_readable": "2026-09-08 18:03:24",
+    "angle_key": "MANGA_ARC_HYPE"
   }
 ]
