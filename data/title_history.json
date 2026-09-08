@@ -958,5 +958,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-07T22:57:52.064313",
     "date_readable": "2026-09-07 22:57:52"
+  },
+  {
+    "title": "One Punch Man",
+    "normalized_title": "one punch man",
+    "anime_id": "10740",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-08T06:15:58.847751",
+    "date_readable": "2026-09-08 06:15:58"
+  },
+  {
+    "title": "Your Name.",
+    "normalized_title": "your name",
+    "anime_id": "11614",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-08T06:15:58.847751",
+    "date_readable": "2026-09-08 06:15:58"
+  },
+  {
+    "title": "My Hero Academia Season 2",
+    "normalized_title": "my hero academia season 2",
+    "anime_id": "12268",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-08T06:15:58.847751",
+    "date_readable": "2026-09-08 06:15:58"
   }
 ]

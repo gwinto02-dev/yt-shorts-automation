@@ -68,5 +68,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-08T06:17:26.126610",
+    "date_readable": "2026-09-08",
+    "concept_type": "anime_comparison",
+    "title": "Theme Clash: My Hero Academia S2 vs Your Name vs One Punch Man 🎥 #Shorts",
+    "hook": "Makoto Shinkai spent three years hand‑drawing every frame of the comet streak in Your Name, a detail that still pops on repeat",
+    "script": "Makoto Shinkai spent three years hand‑drawing every frame of the comet streak in Your Name, a detail that still pops on repeat.\n\nStarting with My Hero Academia S2, the series keeps its sharp, color‑rich animation while the U.A. campus reopens and the students gear up for the high‑stakes Sports Festival, a showdown that tests both quirks and teamwork.\n\nThen we have Taki and Mitsuha’s body‑swap chaos, the heart of Your Name; both earn an 8.3 on MyAnimeList, and the film weaves a time‑bending romance that hinges on a mysterious comet.\n\nStepping up next, One Punch Man carries an 8.3 rating too, but its premise flips the hero trope: Saitama trains three grueling years, loses all his hair, and can defeat any foe with a single punch, leaving the villain league bewildered.\n\nRemember that comet streak from Your Name? Pick the series that sparks your curiosity tonight and drop your selection in the chat!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "makoto shinkai spent three years",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your selection in the chat",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "ZEaRxX_hmqk",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]
