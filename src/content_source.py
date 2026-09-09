@@ -703,23 +703,18 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
             else:
                 excluded_candidates.append({"title": c["title"], "id": c.get("id"), "reason": reason})
 
-    # Previously, if the pool was still short after expansion, this silently
-    # repeated titles that are ALREADY KNOWN to violate the cooldown just to
-    # hit the candidate count. That guarantees nothing useful: the exact same
-    # cooldown check runs again as the very last Supervisor QA gate, after a
-    # full ~3 minute render (script, TTS, FFmpeg) — so every run that hit this
-    # path was rendering a complete video purely to have it blocked at the
-    # finish line. Fail fast here instead, the same way other Phase 1 pool-
-    # exhaustion cases already do, so the run costs seconds instead of minutes
-    # and the daily email says clearly why no video was made today.
-    if len(uncooldowned_candidates) < num_candidates:
-        raise RuntimeError(
-            f"Candidate pool exhausted for '{concept_key}': only {len(uncooldowned_candidates)}/{num_candidates} "
-            "titles clear the 30-day cooldown even after search pool expansion (AniList/Jikan/Kitsu). "
-            "The pool is genuinely too thin today — widen ANIME_TITLE_COOLDOWN_DAYS, increase the "
-            "fetched pool size, or wait for a day with fresher API data."
-        )
-    selection_pool = uncooldowned_candidates
+    # If still empty/insufficient, fall back to valid_candidates as absolute last resort — this keeps
+    # genre_spotlight/hidden_gems/upcoming_spotlight's own downstream degradation logic (below) working
+    # exactly as designed. The new guard further down (after mode selection) catches the specific case
+    # this masked in practice: top_recommendations/character_spotlight/anime_comparison have no such
+    # downstream logic of their own and would otherwise silently render a video using titles already
+    # known to violate cooldown.
+    used_last_resort_fallback = len(uncooldowned_candidates) < num_candidates
+    if used_last_resort_fallback:
+        logger.warning(f"LAST RESORT FALLBACK: Uncooldowned pool exhausted even after expansion. Repeating titles to satisfy selection count.")
+        selection_pool = valid_candidates
+    else:
+        selection_pool = uncooldowned_candidates
 
     selected: List[Dict[str, Any]] = []
     seen_ids = set()
@@ -891,6 +886,24 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
                 c["excluded_in_run"] = excluded_candidates
                 selected.append(c)
                 seen_ids.add(c["id"])
+
+    # top_recommendations, character_spotlight, and anime_comparison have no concept-specific
+    # validation of their own (unlike genre_spotlight/hidden_gems/upcoming_spotlight above, which
+    # already gracefully degrade or raise their own clear ValueError). If the pool was so thin that
+    # selection had to fall back to valid_candidates (including cooldown-violating titles), these
+    # modes would silently render a full video using already-featured titles — which the final
+    # Supervisor QA Anime Title Cooldown check is guaranteed to catch and block anyway, after burning
+    # a full ~3 minute render (script, TTS, FFmpeg) for nothing. Fail fast here instead.
+    if used_last_resort_fallback and concept_key not in ("genre_spotlight", "hidden_gems", "upcoming_spotlight"):
+        uncooldowned_ids = {u["id"] for u in uncooldowned_candidates}
+        cooldown_violators = [c["title"] for c in selected if c["id"] not in uncooldowned_ids]
+        if cooldown_violators:
+            raise RuntimeError(
+                f"Candidate pool exhausted for '{concept_key}': had to reuse cooldown-violating title(s) "
+                f"({', '.join(cooldown_violators)}) to fill {num_candidates} picks — this would only get "
+                "blocked at the final Supervisor QA gate after a full render. Widen ANIME_TITLE_COOLDOWN_DAYS, "
+                "increase the fetched pool size, or wait for a day with fresher API data."
+            )
 
     # Attach excluded candidates list to the first candidate for global reference
     if selected:
