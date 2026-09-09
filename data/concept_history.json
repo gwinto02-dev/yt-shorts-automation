@@ -437,5 +437,11 @@
     "date": "2026-09-09T11:11:43.492880",
     "date_readable": "2026-09-09 11:11:43",
     "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-09T11:35:13.578682",
+    "date_readable": "2026-09-09 11:35:13",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]

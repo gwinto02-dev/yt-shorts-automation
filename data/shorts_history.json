@@ -91,5 +91,28 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-09-09T11:36:59.414907",
+    "date_readable": "2026-09-09",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Trio: Alya Hides Feelings S2, Frieren Golden Land Arc & Demon Slayer 2 🎬 #Shorts",
+    "hook": "What if the champions who defeated demons now have to fight inside a castle that exists only in their memories?\n\nThe Infinity Castle movie, studio still unlisted, will retain the smooth combat animation of the first Demon Slayer film as Tanjiro’s team pursues the final Upper Moon through a shifting citadel",
+    "script": "What if the champions who defeated demons now have to fight inside a castle that exists only in their memories?\n\nThe Infinity Castle movie, studio still unlisted, will retain the smooth combat animation of the first Demon Slayer film as Tanjiro’s team pursues the final Upper Moon through a shifting citadel.\n\nIf you crave a reflective adventure, Frieren, the centuries‑old elf who outlived her party, steps onto the Golden Land to see how the world changed after their farewell, and the third season is already on fans’ radar.\n\nMeanwhile, for a light‑hearted romance shift, the second season of “Alya Sometimes Hides Her Feelings in Russian” appears on MyAnimeList as a 2026 title, bringing Alya back to a bakery job where her shy confessions keep getting tangled.\n\nWhen that shifting citadel finally collapses, the visual payoff will feel worth the wait. Which of these three releases are you queuing up first? Let me know below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if the champions who",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "YP_BoPa03e0",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]
