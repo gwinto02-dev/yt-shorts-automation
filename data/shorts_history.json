@@ -114,5 +114,29 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-09-09T12:09:00.945097",
+    "date_readable": "2026-09-09",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Manga Arc Adaptations: Assassin Squad, Walpurgisnacht & Aristocrat 🗡️ #Shorts",
+    "hook": "Right when the opening scene flashes a city drenched in crimson, Chainsaw Man: Assassins Arc drops the manga’s long‑unadapted Assassin squad onto the screen",
+    "script": "Right when the opening scene flashes a city drenched in crimson, Chainsaw Man: Assassins Arc drops the manga’s long‑unadapted Assassin squad onto the screen.\n\nFirst off, the upcoming 2026 adaptation continues the gritty aesthetic established in the Reze‑hen film, now tackling the Assassins arc—a fresh batch of foes that push Denji into a blood‑soaked power struggle.\n\nMoving to Madoka, the film Walpurgisnacht: Rising picks up the heroine’s desperate gamble to rewrite destiny, extending the original series' tragic loop and promising the same unsettling atmosphere that made the 2011 TV run unforgettable; fans have marked it as a highly discussed sequel.\n\nRounding out the trio, The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat Season 2 has drawn attention, taking Lugh’s reincarnated assassin life from battlefield tactics to court intrigue as he navigates aristocratic politics.\n\nWhich of the new Assassin squad showdown, Madoka’s destiny gamble, or Lugh’s court intrigue has you most excited to see in action? Drop your thoughts below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the opening scene",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your thoughts below",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "MtO3vyVz-fo",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
