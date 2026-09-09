@@ -684,6 +684,13 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
                 extra_candidates = fetch_kitsu_trending(50, status_filter="upcoming")
         else:
             extra_candidates = fetch_anilist_trending(50, page=2) + fetch_jikan_top(50)
+            if not extra_candidates:
+                # AniList page 2 and Jikan are exactly the two sources that
+                # were failing on the days this branch actually triggers
+                # (403 / 504) — Kitsu was only ever tried on the *initial*
+                # fetch, never here on expansion, so a bad AniList/Jikan day
+                # meant expansion silently did nothing.
+                extra_candidates = fetch_kitsu_trending(50)
 
         seen_in_uncooldowned = {c["id"] for c in uncooldowned_candidates}
         for c in extra_candidates:
@@ -696,12 +703,23 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
             else:
                 excluded_candidates.append({"title": c["title"], "id": c.get("id"), "reason": reason})
 
-    # If still empty/insufficient, fall back to valid_candidates with warning as absolute last resort
+    # Previously, if the pool was still short after expansion, this silently
+    # repeated titles that are ALREADY KNOWN to violate the cooldown just to
+    # hit the candidate count. That guarantees nothing useful: the exact same
+    # cooldown check runs again as the very last Supervisor QA gate, after a
+    # full ~3 minute render (script, TTS, FFmpeg) — so every run that hit this
+    # path was rendering a complete video purely to have it blocked at the
+    # finish line. Fail fast here instead, the same way other Phase 1 pool-
+    # exhaustion cases already do, so the run costs seconds instead of minutes
+    # and the daily email says clearly why no video was made today.
     if len(uncooldowned_candidates) < num_candidates:
-        logger.warning(f"LAST RESORT FALLBACK: Uncooldowned pool exhausted even after expansion. Repeating titles to satisfy selection count.")
-        selection_pool = valid_candidates
-    else:
-        selection_pool = uncooldowned_candidates
+        raise RuntimeError(
+            f"Candidate pool exhausted for '{concept_key}': only {len(uncooldowned_candidates)}/{num_candidates} "
+            "titles clear the 30-day cooldown even after search pool expansion (AniList/Jikan/Kitsu). "
+            "The pool is genuinely too thin today — widen ANIME_TITLE_COOLDOWN_DAYS, increase the "
+            "fetched pool size, or wait for a day with fresher API data."
+        )
+    selection_pool = uncooldowned_candidates
 
     selected: List[Dict[str, Any]] = []
     seen_ids = set()
