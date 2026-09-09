@@ -1,5 +1,417 @@
 [
   {
+    "id": 62516,
+    "title": "Dan Da Dan Season 3",
+    "title_romaji": "Dandadan 3rd Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1671/154516l.jpg",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Supernatural"
+    ],
+    "average_score": 0.0,
+    "popularity": 1997,
+    "trending_score": 131004,
+    "synopsis": "Third season of Dandadan.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 57584,
+    "title": "The Eminence in Shadow: Lost Echoes",
+    "title_romaji": "Kage no Jitsuryokusha ni Naritakute! Movie: Zankyou-hen",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1797/156362l.jpg",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 2171,
+    "trending_score": 117274,
+    "synopsis": "Sequel to Kage no Jitsuryokusha ni Naritakute! 2nd Season.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 59068,
+    "title": "Delicious in Dungeon Season 2",
+    "title_romaji": "Dungeon Meshi Season 2",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1830/158890l.jpg",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy",
+      "Gourmet"
+    ],
+    "average_score": 0.0,
+    "popularity": 2180,
+    "trending_score": 116323,
+    "synopsis": "Second season of Dungeon Meshi.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2027,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 61987,
+    "title": "The Apothecary Diaries Season 3",
+    "title_romaji": "Kusuriya no Hitorigoto 3rd Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1862/152811l.jpg",
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "average_score": 0.0,
+    "popularity": 2189,
+    "trending_score": 115678,
+    "synopsis": "In the aftermath of the Shi Clan's rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district. One day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature. Meanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the final message left by Loulan: a warning of an impending \"disaster that will strike the nation.\" To make matters worse, rumors of a mysterious shrine maiden who deceives the people begin to spread, casting a dark shadow over the country of Li once again. From the depths of the inner court to the city streets, and across foreign borders—the world grows wider, and the stakes even higher for Maomao and Jinshi.\n\n(Source: Crunchyroll)",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 61006,
+    "title": "Bocchi the Rock! Season 2",
+    "title_romaji": "Bocchi the Rock! 2nd Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1142/148003l.jpg",
+    "genres": [
+      "Comedy"
+    ],
+    "average_score": 0.0,
+    "popularity": 2205,
+    "trending_score": 114908,
+    "synopsis": "Second season of Bocchi the Rock!.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 60636,
+    "title": "Bleach: Thousand-Year Blood War - The Calamity",
+    "title_romaji": "Bleach: Sennen Kessen-hen - Kashin-tan",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1275/158595l.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Supernatural"
+    ],
+    "average_score": 0.0,
+    "popularity": 2250,
+    "trending_score": 111075,
+    "synopsis": "Final part of Bleach: Sennen Kessen-hen.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 59873,
+    "title": "Alya Sometimes Hides Her Feelings in Russian Season 2",
+    "title_romaji": "Tokidoki Bosotto Russia-go de Dereru Tonari no Alya-san Season 2",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1711/156333l.jpg",
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "average_score": 0.0,
+    "popularity": 2322,
+    "trending_score": 106447,
+    "synopsis": "Second season of Tokidoki Bosotto Russia-go de Dereru Tonari no Alya-san.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 61990,
+    "title": "Cyberpunk: Edgerunners 2",
+    "title_romaji": "Cyberpunk: Edgerunners 2",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1880/158764l.jpg",
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "average_score": 0.0,
+    "popularity": 2416,
+    "trending_score": 100066,
+    "synopsis": "Sequel to  Cyberpunk: Edgerunners.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 63816,
+    "title": "Frieren: Beyond Journey's End - Golden Land Arc",
+    "title_romaji": "Sousou no Frieren: Ougonkyou-hen",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1619/156313l.jpg",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 2470,
+    "trending_score": 96961,
+    "synopsis": "Third season of Sousou no Frieren.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2027,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 62546,
+    "title": "Demon Slayer: Kimetsu no Yaiba - The Movie 2: Infinity Castle",
+    "title_romaji": "Kimetsu no Yaiba Movie 2: Mugenjou-hen",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1000/152184l.jpg",
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
+    "average_score": 0.0,
+    "popularity": 2527,
+    "trending_score": 93819,
+    "synopsis": "Second anime movie of the trilogy adaptation of the Infinity Castle Arc.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 56732,
+    "title": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat Season 2",
+    "title_romaji": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru Season 2",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1626/156999l.jpg",
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Mystery",
+      "Romance"
+    ],
+    "average_score": 0.0,
+    "popularity": 2612,
+    "trending_score": 88728,
+    "synopsis": "Season two of Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 61967,
+    "title": "Black Clover Season 2",
+    "title_romaji": "Black Clover 2nd Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1602/158830l.jpg",
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 2622,
+    "trending_score": 88182,
+    "synopsis": "Second season of Black Clover.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 53913,
+    "title": "Reincarnated as a Sword Season 2",
+    "title_romaji": "Tensei shitara Ken deshita 2",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1955/150906l.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 2640,
+    "trending_score": 87372,
+    "synopsis": "Second season of Tensei shitara Ken deshita.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 48820,
+    "title": "Puella Magi Madoka Magica the Movie - Walpurgisnacht: Rising",
+    "title_romaji": "Mahou Shoujo Madoka★Magica Movie 4: Walpurgis no Kaiten",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1784/151057l.jpg",
+    "genres": [
+      "Drama",
+      "Suspense"
+    ],
+    "average_score": 0.0,
+    "popularity": 2698,
+    "trending_score": 84658,
+    "synopsis": "",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 63143,
+    "title": "Chainsaw Man: Assassins Arc",
+    "title_romaji": "Chainsaw Man: Shikaku-hen",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1432/154522l.jpg",
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 2817,
+    "trending_score": 78687,
+    "synopsis": "Sequel to Chainsaw Man Movie: Reze-hen.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 59139,
+    "title": "Tsukimichi -Moonlit Fantasy- Season 3",
+    "title_romaji": "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1055/143718l.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 2851,
+    "trending_score": 76852,
+    "synopsis": "Third season of Tsuki ga Michibiku Isekai Douchuu.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 63147,
+    "title": "Gachiakuta Season 2",
+    "title_romaji": "Gachiakuta 2nd Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1224/154534l.jpg",
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 3030,
+    "trending_score": 69404,
+    "synopsis": "Second season of Gachiakuta.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 61338,
+    "title": "Shangri-La Frontier Season 3",
+    "title_romaji": "Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su 3rd Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1450/156167l.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 3043,
+    "trending_score": 69187,
+    "synopsis": "Third season of Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2027,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 58934,
+    "title": "Mashle: Magic and Muscles - The Tri-Magicathlon Divine Visionary Final Exam Arc",
+    "title_romaji": "Mashle: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1085/154496l.jpg",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 3044,
+    "trending_score": 69017,
+    "synopsis": "Third season of Mashle.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2027,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 61203,
+    "title": "KonoSuba: God's Blessing on This Wonderful World! 4",
+    "title_romaji": "Kono Subarashii Sekai ni Shukufuku wo! 4",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1067/154983l.jpg",
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "average_score": 0.0,
+    "popularity": 3057,
+    "trending_score": 68609,
+    "synopsis": "Fourth season of Kono Subarashii Sekai ni Shukufuku wo!.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 63794,
+    "title": "[Oshi No Ko] Season 4",
+    "title_romaji": "[Oshi no Ko] 4th Season",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1702/156273l.jpg",
+    "genres": [
+      "Drama"
+    ],
+    "average_score": 0.0,
+    "popularity": 3154,
+    "trending_score": 64781,
+    "synopsis": "Final season of [Oshi no Ko].",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
+    "id": 54250,
+    "title": "Made in Abyss: Mezameru Shinpi",
+    "title_romaji": "Made in Abyss: Mezameru Shinpi",
+    "cover_image": "https://cdn.myanimelist.net/images/anime/1444/156382l.jpg",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "average_score": 0.0,
+    "popularity": 3187,
+    "trending_score": 63686,
+    "synopsis": "Sequel to Made in Abyss: Retsujitsu no Ougonkyou.",
+    "status": "NOT_YET_RELEASED",
+    "seasonYear": 2026,
+    "is_upcoming": true,
+    "source": "Jikan"
+  },
+  {
     "id": "7442",
     "title": "Attack on Titan",
     "title_romaji": "Attack on Titan",

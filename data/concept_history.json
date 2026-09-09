@@ -431,5 +431,11 @@
     "date": "2026-09-09T11:09:24.735135",
     "date_readable": "2026-09-09 11:09:24",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-09T11:11:43.492880",
+    "date_readable": "2026-09-09 11:11:43",
+    "angle_key": "PREMISE_INTRIGUE"
   }
 ]

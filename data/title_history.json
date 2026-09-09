@@ -1054,5 +1054,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-09T06:16:47.573492",
     "date_readable": "2026-09-09 06:16:47"
+  },
+  {
+    "title": "Dan Da Dan Season 3",
+    "normalized_title": "dan da dan season 3",
+    "anime_id": 62516,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-09T11:11:50.014569",
+    "date_readable": "2026-09-09 11:11:50"
+  },
+  {
+    "title": "The Eminence in Shadow: Lost Echoes",
+    "normalized_title": "the eminence in shadow lost echoes",
+    "anime_id": 57584,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-09T11:11:50.014569",
+    "date_readable": "2026-09-09 11:11:50"
+  },
+  {
+    "title": "Bocchi the Rock! Season 2",
+    "normalized_title": "bocchi the rock season 2",
+    "anime_id": 61006,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-09T11:11:50.014569",
+    "date_readable": "2026-09-09 11:11:50"
   }
 ]
