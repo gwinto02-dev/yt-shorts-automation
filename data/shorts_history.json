@@ -138,5 +138,26 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-09-09T18:04:48.698692",
+    "date_readable": "2026-09-09",
+    "concept_type": "character_spotlight",
+    "title": "Unforgettable Hero Paths: Sinful Knight, Spirited Girl & Upcoming Fantasy Lead 🌟 #Shorts",
+    "hook": "What pushes a boisterous knight, a timid girl, and a reluctant hero to confront the shadows inside themselves?\nThe Seven Deadly Sins opens with bold, hand‑drawn combat frames that highlight the clash between holy knights and demonic forces, then drops us into Britannia’s medieval politics where Meliodas wrestles with his immortal guilt and the weight of his past sins",
+    "script": "What pushes a boisterous knight, a timid girl, and a reluctant hero to confront the shadows inside themselves?\nThe Seven Deadly Sins opens with bold, hand‑drawn combat frames that highlight the clash between holy knights and demonic forces, then drops us into Britannia’s medieval politics where Meliodas wrestles with his immortal guilt and the weight of his past sins.\nChihiro’s forced labor in a spirit‑run bathhouse flips a simple coming‑of‑age story, and the film still holds an 8.3 on MyAnimeList, while her growing resolve shows how fear can become courage.\nAnticipation is already high for the third season, and it returns to follow Takuma, the ordinary boy cursed as a demon‑king’s servant, as he navigates a world that shuns him and learns to claim his own destiny.\nFrom Chihiro’s bathhouse trial to Takuma’s exile, these arcs prove growth isn’t linear. Pick your favorite journey, share your pick below, and bookmark this Short for your next anime marathon.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what pushes a boisterous knight",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next anime marathon",
+      "transition_markers": []
+    },
+    "video_id": "xXg2Y53HttY",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]
