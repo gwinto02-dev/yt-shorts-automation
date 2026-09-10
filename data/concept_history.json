@@ -485,5 +485,11 @@
     "date": "2026-09-10T18:03:47.681638",
     "date_readable": "2026-09-10 18:03:47",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-09-10T19:34:28.413265",
+    "date_readable": "2026-09-10 19:34:28",
+    "angle_key": "THEMATIC_RIVALRY"
   }
 ]
