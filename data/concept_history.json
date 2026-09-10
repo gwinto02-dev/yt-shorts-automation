@@ -473,5 +473,11 @@
     "date": "2026-09-10T12:08:02.917433",
     "date_readable": "2026-09-10 12:08:02",
     "angle_key": "ANIMATION_CRAFT"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-10T13:10:27.606103",
+    "date_readable": "2026-09-10 13:10:27",
+    "angle_key": "MOOD_BASED"
   }
 ]
