@@ -159,5 +159,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-10T00:10:12.613881",
+    "date_readable": "2026-09-10",
+    "concept_type": "character_spotlight",
+    "title": "Upcoming Heroic Depths: KonoSuba, Mashle & Gachiakuta 🌟 #Shorts",
+    "hook": "What drives a reluctant hero to keep battling when every victory feels like a hollow echo of his own doubts?\nEven without a studio name announced, the 2026 season of KonoSuba promises the same pastel‑bright, chibi‑style animation that let Kazuma’s misfit party finally confront a deity‑level trial",
+    "script": "What drives a reluctant hero to keep battling when every victory feels like a hollow echo of his own doubts?\nEven without a studio name announced, the 2026 season of KonoSuba promises the same pastel‑bright, chibi‑style animation that let Kazuma’s misfit party finally confront a deity‑level trial.\nMoving on, Mash Burnedead’s raw power meets a grueling exam in the Tri‑Magicathlon, and fans are already marking their calendars for the 2027 third season.\nAnd finally, Gachiakuta’s second season has generated a lot of chatter for its brutal swordplay, and the story pushes the cursed warriors into a hunt for an ancient relic that forces each to face their own trauma.\nWhether you’re drawn to the cursed blades of Gachiakuta or the divine comedy of KonoSuba, save this Short for your next binge night and let me know which journey you’ll start with.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what drives a reluctant hero",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "which journey youll start with",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "fzSgiWpqaGo",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]

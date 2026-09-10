@@ -1150,5 +1150,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-09T18:03:29.556376",
     "date_readable": "2026-09-09 18:03:29"
+  },
+  {
+    "title": "Gachiakuta Season 2",
+    "normalized_title": "gachiakuta season 2",
+    "anime_id": 63147,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-10T00:08:35.898024",
+    "date_readable": "2026-09-10 00:08:35"
+  },
+  {
+    "title": "Mashle: Magic and Muscles - The Tri-Magicathlon Divine Visionary Final Exam Arc",
+    "normalized_title": "mashle magic and muscles the trimagicathlon divine visionary final exam arc",
+    "anime_id": 58934,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-10T00:08:35.898024",
+    "date_readable": "2026-09-10 00:08:35"
+  },
+  {
+    "title": "KonoSuba: God's Blessing on This Wonderful World! 4",
+    "normalized_title": "konosuba gods blessing on this wonderful world 4",
+    "anime_id": 61203,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-10T00:08:35.898024",
+    "date_readable": "2026-09-10 00:08:35"
   }
 ]

@@ -455,5 +455,11 @@
     "date": "2026-09-09T18:03:29.533638",
     "date_readable": "2026-09-09 18:03:29",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-10T00:08:35.876736",
+    "date_readable": "2026-09-10 00:08:35",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]
