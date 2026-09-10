@@ -461,5 +461,11 @@
     "date": "2026-09-10T00:08:35.876736",
     "date_readable": "2026-09-10 00:08:35",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-10T06:16:25.671968",
+    "date_readable": "2026-09-10 06:16:25",
+    "angle_key": "IRRESISTIBLE_BINGE"
   }
 ]
