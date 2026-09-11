@@ -141,7 +141,7 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
     """
     from src.history_manager import get_used_image_hashes, record_used_images
 
-    downloaded_paths = []
+    downloaded_paths: List[Path] = [None] * len(candidates)
     past_used_hashes = get_used_image_hashes()
     run_used_hashes = set()
     used_records_to_save = []
@@ -231,7 +231,7 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
 
         # Attach structured rights metadata and record hash
         if success:
-            downloaded_paths.append(target_path)
+            downloaded_paths[idx - 1] = target_path
             candidate["local_image_path"] = str(target_path)
             candidate["image_hash"] = accepted_hash
             run_used_hashes.add(accepted_hash)
@@ -268,8 +268,21 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
             }
             logger.error(f"Could not download artwork for '{title}' after primary and fallback attempts.")
 
-    if not downloaded_paths:
+    if not any(downloaded_paths):
         raise RuntimeError("Phase 3 Failed: No official cover images were successfully downloaded!")
+
+    # Every downstream sync step (video_editor.py's segment-to-image alignment, via
+    # segment_timestamps' candidate_idx) assumes image_paths[i] is candidate[i]'s cover.
+    # A partial download failure used to silently shrink/shift this list, which desynced
+    # image switches from the narration/captions for the whole video. Fail loudly instead -
+    # a skipped run is better than a video with a title's cover mismatched or missing.
+    missing_titles = [c.get("title", f"anime_{i+1}") for i, c in enumerate(candidates) if downloaded_paths[i] is None]
+    if missing_titles:
+        raise RuntimeError(
+            f"Phase 3 Failed: Could not download cover art for {len(missing_titles)}/{len(candidates)} "
+            f"candidate(s): {missing_titles}. Refusing to continue with a shifted image list, since "
+            f"that would desync images from the narration/captions for every title after the gap."
+        )
 
     # Record accepted image hashes to persistent history
     try:
@@ -293,9 +306,16 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
 
 
 def get_cached_image_paths() -> List[Path]:
-    """Retrieve existing cover image paths sorted by index."""
-    images = sorted(list(config.IMAGES_DIR.glob("cover_*")))
-    return images
+    """Retrieve existing cover image paths sorted by numeric candidate index (not alphabetically -
+    alphabetical sort would put cover_10 before cover_2, silently misaligning image order for any
+    run with 10+ candidates)."""
+    images = list(config.IMAGES_DIR.glob("cover_*"))
+
+    def _index_key(p: Path) -> int:
+        m = re.match(r"cover_(\d+)_", p.name)
+        return int(m.group(1)) if m else 0
+
+    return sorted(images, key=_index_key)
 
 if __name__ == "__main__":
     import json
