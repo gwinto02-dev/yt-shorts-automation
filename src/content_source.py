@@ -558,54 +558,71 @@ def fetch_kitsu_trending(count: int = 50, status_filter: str = None) -> List[Dic
     # well-known, unchanging public URL is worse than just using the
     # fallback default when that happens.
     url = f"{getattr(config, 'KITSU_API_BASE_URL', 'https://kitsu.io/api/edge')}/anime"
-    try:
-        # Kitsu implements the JSON:API spec strictly and returns 406 Not
-        # Acceptable for a generic "Accept: application/json" header (the
-        # default used for AniList/Jikan) — it requires the JSON:API media
-        # type specifically. Override the shared default for this call only.
-        kitsu_headers = dict(API_REQUEST_HEADERS)
-        kitsu_headers["Accept"] = "application/vnd.api+json"
-        kitsu_headers["Content-Type"] = "application/vnd.api+json"
-        params = {"sort": "-userCount", "page[limit]": min(count, 20)}
-        if status_filter:
-            params["filter[status]"] = status_filter
-        response = _request_with_retry(
-            "GET", url,
-            params=params,
-            headers=kitsu_headers,
-        )
-        res_data = response.json()
-        data_list = res_data.get("data", [])
 
-        normalized = []
-        for item in data_list:
-            attrs = item.get("attributes", {}) or {}
-            titles = attrs.get("titles", {}) or {}
-            title_eng = titles.get("en") or titles.get("en_jp") or attrs.get("canonicalTitle")
-            poster = attrs.get("posterImage", {}) or {}
-            avg_rating = attrs.get("averageRating")
-            start_date = attrs.get("startDate") or ""
-            normalized.append({
-                "id": item.get("id"),
-                "title": title_eng,
-                "title_romaji": attrs.get("canonicalTitle"),
-                "cover_image": poster.get("large") or poster.get("original"),
-                "genres": [],
-                "average_score": (float(avg_rating) / 10.0) if avg_rating else 0.0,
-                "popularity": attrs.get("userCount", 0),
-                "trending_score": attrs.get("favoritesCount", 0),
-                "synopsis": attrs.get("synopsis", ""),
-                "status": _KITSU_STATUS_MAP.get(attrs.get("status"), "FINISHED"),
-                "seasonYear": int(start_date[:4]) if start_date[:4].isdigit() else None,
-                "is_upcoming": bool(status_filter),
-                "source": "Kitsu"
-            })
-        if normalized:
-            _save_anime_pool_cache(normalized)
-        return normalized
+    # Kitsu implements the JSON:API spec strictly and returns 406 Not
+    # Acceptable for a generic "Accept: application/json" header (the
+    # default used for AniList/Jikan) — it requires the JSON:API media
+    # type specifically. Override the shared default for this call only.
+    kitsu_headers = dict(API_REQUEST_HEADERS)
+    kitsu_headers["Accept"] = "application/vnd.api+json"
+    kitsu_headers["Content-Type"] = "application/vnd.api+json"
+
+    # Kitsu enforces a hard server-side max of 20 results per page — passing
+    # a larger page[limit] doesn't get you more, it just gets ignored/capped.
+    # Previously this function only ever fetched ONE page, so even a
+    # count=50 request silently topped out at 20 results — which is why the
+    # pool cache only grew by 20 entries per successful Kitsu run instead of
+    # the 50 that was actually being asked for. Paginate with page[offset]
+    # instead, up to `count` total or until Kitsu runs out of results.
+    PAGE_SIZE = 20
+    normalized: List[Dict[str, Any]] = []
+    offset = 0
+    try:
+        while len(normalized) < count:
+            params = {"sort": "-userCount", "page[limit]": PAGE_SIZE, "page[offset]": offset}
+            if status_filter:
+                params["filter[status]"] = status_filter
+            response = _request_with_retry("GET", url, params=params, headers=kitsu_headers)
+            res_data = response.json()
+            data_list = res_data.get("data", [])
+            if not data_list:
+                break
+
+            for item in data_list:
+                attrs = item.get("attributes", {}) or {}
+                titles = attrs.get("titles", {}) or {}
+                title_eng = titles.get("en") or titles.get("en_jp") or attrs.get("canonicalTitle")
+                poster = attrs.get("posterImage", {}) or {}
+                avg_rating = attrs.get("averageRating")
+                start_date = attrs.get("startDate") or ""
+                normalized.append({
+                    "id": item.get("id"),
+                    "title": title_eng,
+                    "title_romaji": attrs.get("canonicalTitle"),
+                    "cover_image": poster.get("large") or poster.get("original"),
+                    "genres": [],
+                    "average_score": (float(avg_rating) / 10.0) if avg_rating else 0.0,
+                    "popularity": attrs.get("userCount", 0),
+                    "trending_score": attrs.get("favoritesCount", 0),
+                    "synopsis": attrs.get("synopsis", ""),
+                    "status": _KITSU_STATUS_MAP.get(attrs.get("status"), "FINISHED"),
+                    "seasonYear": int(start_date[:4]) if start_date[:4].isdigit() else None,
+                    "is_upcoming": bool(status_filter),
+                    "source": "Kitsu"
+                })
+
+            if len(data_list) < PAGE_SIZE:
+                break  # Kitsu ran out of results before we hit `count`
+            offset += PAGE_SIZE
     except Exception as e:
-        logger.error(f"Error fetching from Kitsu API: {e}")
-        return []
+        # A page partway through failing shouldn't throw away whatever
+        # earlier pages already succeeded — return what we have.
+        logger.error(f"Error fetching from Kitsu API (after {len(normalized)} result(s) across {offset // PAGE_SIZE + 1} page(s)): {e}")
+
+    normalized = normalized[:count]
+    if normalized:
+        _save_anime_pool_cache(normalized)
+    return normalized
 
 def select_today_concept() -> Tuple[str, Dict[str, Any]]:
     """
@@ -699,7 +716,7 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
             excluded_candidates.append({"title": c["title"], "id": c.get("id"), "reason": reason})
 
     logger.info("=" * 60)
-    logger.info(f"[Title Cooldown Audit] {len(uncooldowned_candidates)} titles available, {len(excluded_candidates)} excluded by 30-day cooldown:")
+    logger.info(f"[Title Cooldown Audit] {len(uncooldowned_candidates)} titles available, {len(excluded_candidates)} excluded by {config.ANIME_TITLE_COOLDOWN_DAYS}-day cooldown:")
     for ex in excluded_candidates[:10]:  # Log first 10 excluded
         logger.info(f"  - EXCLUDED: '{ex['title']}' -> Reason: {ex['reason']}")
     logger.info("=" * 60)
