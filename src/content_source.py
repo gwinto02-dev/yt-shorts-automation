@@ -67,15 +67,60 @@ def _request_with_retry(method: str, url: str, max_retries: int = 3,
 def _save_anime_pool_cache(candidates: List[Dict[str, Any]]) -> None:
     """Persist a successful fetch so a future run has a genuine local fallback
     even if data/processed/ (from the separate Buzz Tracker project) is stale
-    or missing entirely."""
+    or missing entirely.
+
+    MERGES into the existing cache rather than overwriting it (deduped by
+    id+source). Previously this replaced the whole file every call, so on a
+    run where AniList/Jikan were down for days, the local pool never grew
+    past whatever the last lucky successful fetch happened to contain — and
+    with a 30-day cooldown across 6 concepts, that small fixed pool ran dry
+    fast (see: 41/42 titles cooldown-excluded in one run). Merging lets the
+    pool accumulate across every successful fetch from any source over time,
+    so cooldown exhaustion becomes much rarer without needing to constantly
+    hit the APIs for fresh data. Capped at MAX_POOL_CACHE_SIZE, keeping the
+    most recently-seen entries when trimming, so the file can't grow
+    unbounded.
+    """
     if not candidates:
         return
+    MAX_POOL_CACHE_SIZE = 400
     try:
         cache_path = config.DATA_DIR / _ANIME_POOL_CACHE_FILE
         config.DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+        existing: List[Dict[str, Any]] = []
+        if cache_path.exists():
+            try:
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    existing = json.load(f)
+                if not isinstance(existing, list):
+                    existing = []
+            except Exception:
+                existing = []
+
+        # Merge: new candidates take precedence over stale entries with the
+        # same key (fresher score/status/etc.), then whatever old entries
+        # aren't being replaced get appended after.
+        def _key(item: Dict[str, Any]) -> str:
+            return f"{item.get('source', '')}:{item.get('id', item.get('title', ''))}"
+
+        merged: Dict[str, Dict[str, Any]] = {}
+        for item in existing:
+            merged[_key(item)] = item
+        for item in candidates:
+            merged[_key(item)] = item
+
+        merged_list = list(merged.values())
+        if len(merged_list) > MAX_POOL_CACHE_SIZE:
+            # Keep the most recently written entries: new candidates first,
+            # then fill remaining slots with the most recent existing ones.
+            new_keys = {_key(item) for item in candidates}
+            kept_old = [item for item in existing if _key(item) not in new_keys]
+            merged_list = (candidates + kept_old)[:MAX_POOL_CACHE_SIZE]
+
         with open(cache_path, "w", encoding="utf-8") as f:
-            json.dump(candidates, f, indent=2)
-        logger.info(f"[Anime Pool Cache] Saved {len(candidates)} candidate(s) to {cache_path}")
+            json.dump(merged_list, f, indent=2)
+        logger.info(f"[Anime Pool Cache] Merged {len(candidates)} new candidate(s) — cache now holds {len(merged_list)} total at {cache_path}")
     except Exception as e:
         logger.warning(f"[Anime Pool Cache] Failed to write local fallback cache: {e}")
 

@@ -33,7 +33,14 @@ MAX_STAGE_RETRIES = 2
 # either accept a soft-fail script or fall back to the template generator.
 SCRIPT_QA_MAX_RETRIES = 4
 CONCEPT_COOLDOWN_DAYS = 5
-ANIME_TITLE_COOLDOWN_DAYS = 30
+# Lowered from 30: with a pool of only ~50 fresh titles per source and 6
+# rotating concepts, a 30-day memory was exhausting the usable pool almost
+# entirely (seen in production as 41/42 known titles cooldown-excluded in a
+# single run). 15 days still meaningfully avoids near-term repeats while
+# roughly doubling how many titles are usable at any given time. Paired with
+# the pool-cache merge fix in content_source.py, which grows the underlying
+# pool over time instead of resetting it on every fetch.
+ANIME_TITLE_COOLDOWN_DAYS = 15
 VIDEO_TITLE_COOLDOWN_DAYS = 30
 LLM_CALL_WARNING_THRESHOLD = 15  # Warning limit if run exceeds ~80% of daily free allowance
 YT_DAILY_QUOTA_ESTIMATE = 1600   # Estimated quota units per video upload (out of 10,000 daily free limit)
@@ -42,6 +49,7 @@ YT_DAILY_QUOTA_ESTIMATE = 1600   # Estimated quota units per video upload (out o
 # API Endpoints
 ANILIST_GRAPHQL_URL = "https://graphql.anilist.co"
 JIKAN_API_BASE_URL = "https://api.jikan.moe/v4"
+KITSU_API_BASE_URL = "https://kitsu.io/api/edge"
 
 # LLM & API Keys
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
