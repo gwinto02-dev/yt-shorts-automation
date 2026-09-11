@@ -1222,5 +1222,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-11T06:30:06.204279",
     "date_readable": "2026-09-11 06:30:06"
+  },
+  {
+    "title": "My Hero Academia Season 5",
+    "normalized_title": "my hero academia season 5",
+    "anime_id": "43108",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-11T06:51:55.075548",
+    "date_readable": "2026-09-11 06:51:55"
+  },
+  {
+    "title": "The Promised Neverland",
+    "normalized_title": "the promised neverland",
+    "anime_id": "41312",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-11T06:51:55.075548",
+    "date_readable": "2026-09-11 06:51:55"
+  },
+  {
+    "title": "Haikyu!! 3rd Season",
+    "normalized_title": "haikyu 3rd season",
+    "anime_id": "11935",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-11T06:51:55.075548",
+    "date_readable": "2026-09-11 06:51:55"
   }
 ]

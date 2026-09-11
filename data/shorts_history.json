@@ -182,5 +182,26 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-11T06:53:26.618289",
+    "date_readable": "2026-09-11",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight: Haikyu!!, The Promised Neverland & My Hero Academia 🏐 #Shorts",
+    "hook": "What if the caretakers of a spotless orphanage were actually preparing the children for a dinner they never signed up for?\n\nHaikyu!!'s third season keeps the sharp, fast‑paced court animation that made the series a visual treat back in 2016, and it dives into Karasuno’s push to qualify for Nationals while new opponents test every play",
+    "script": "What if the caretakers of a spotless orphanage were actually preparing the children for a dinner they never signed up for?\n\nHaikyu!!'s third season keeps the sharp, fast‑paced court animation that made the series a visual treat back in 2016, and it dives into Karasuno’s push to qualify for Nationals while new opponents test every play.\n\nEmma’s relentless curiosity drives The Promised Neverland forward, and the series holds an 8.3 on MyAnimeList, reflecting how its tense puzzles keep viewers guessing as the kids map out a daring escape.\n\nMy Hero Academia Season 5 also scores an 8.3, and it pits Class 1‑A against Class 1‑B in a joint training battle that forces heroes to strategize against their own teammates, with Shinso playing both sides.\n\nWhether you’re drawn to Haikyu’s court battles, Emma’s escape scheme, or the hero training clash, tell me which of the three you’ll start with first in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if the caretakers of",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "with first in the comments",
+      "transition_markers": []
+    },
+    "video_id": "JAHzI2IvSMI",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]
