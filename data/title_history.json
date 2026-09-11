@@ -1246,5 +1246,37 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-11T06:51:55.075548",
     "date_readable": "2026-09-11 06:51:55"
+  },
+  {
+    "title": "Violet Evergarden",
+    "normalized_title": "violet evergarden",
+    "anime_id": "12230",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-11T12:07:55.280162",
+    "date_readable": "2026-09-11 12:07:55"
+  },
+  {
+    "title": "Howl's Moving Castle",
+    "normalized_title": "howls moving castle",
+    "anime_id": "395",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-11T12:07:55.280162",
+    "date_readable": "2026-09-11 12:07:55"
+  },
+  {
+    "title": "Violet Evergarden",
+    "normalized_title": "violet evergarden",
+    "anime_id": "12230",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-11T12:20:26.939558",
+    "date_readable": "2026-09-11 12:20:26"
+  },
+  {
+    "title": "Howl's Moving Castle",
+    "normalized_title": "howls moving castle",
+    "anime_id": "395",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-11T12:20:26.939558",
+    "date_readable": "2026-09-11 12:20:26"
   }
 ]
