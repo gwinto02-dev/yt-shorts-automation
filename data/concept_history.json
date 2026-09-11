@@ -515,5 +515,11 @@
     "date": "2026-09-11T05:03:25.238847",
     "date_readable": "2026-09-11 05:03:25",
     "angle_key": "IRRESISTIBLE_BINGE"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-11T05:51:56.345830",
+    "date_readable": "2026-09-11 05:51:56",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]
