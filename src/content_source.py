@@ -599,7 +599,11 @@ def fetch_kitsu_trending(count: int = 50, status_filter: str = None) -> List[Dic
                     "id": item.get("id"),
                     "title": title_eng,
                     "title_romaji": attrs.get("canonicalTitle"),
-                    "cover_image": poster.get("large") or poster.get("original"),
+                    # "original" is Kitsu's un-resized source upload (typically noticeably
+                    # higher resolution than "large", which is a downscaled derivative) —
+                    # prefer it for image quality, falling back to "large" only if a title
+                    # has no "original" variant.
+                    "cover_image": poster.get("original") or poster.get("large"),
                     "genres": [],
                     "average_score": (float(avg_rating) / 10.0) if avg_rating else 0.0,
                     "popularity": attrs.get("userCount", 0),
@@ -1000,6 +1004,70 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
         record_anime_titles_usage(selected, concept_type=concept_key)
 
     return selected, concept_key, concept_info
+
+
+def select_todays_content(num_candidates: int = 3) -> Tuple[List[Dict[str, Any]], str, Dict[str, Any]]:
+    """
+    Top-level Phase 1 entry point for the pipeline (use this instead of calling
+    select_candidate_titles() directly for a live run).
+
+    Previously, if the day's randomly-chosen concept (e.g. 'hidden_gems')
+    couldn't find enough qualifying titles — a thin pool, an API outage, an
+    unlucky combination of cooldowns — select_candidate_titles() raised and
+    that aborted the ENTIRE pipeline for the day, even though other concept
+    types (which don't need the same strict mainstream/score/genre
+    combination) might have had plenty of valid candidates available.
+
+    This wrapper tries every concept type still allowed by the 5-day concept
+    cooldown, starting with the normal random pick, and falls through to the
+    others (in random order) if one fails. Only if EVERY concept type fails
+    does it give up and raise. Concept-usage cooldown is recorded only for
+    whichever concept actually succeeds, so a failed attempt doesn't waste
+    that concept's cooldown slot.
+    """
+    available_keys = list(CONCEPT_TYPES.keys())
+    allowed_keys = [k for k in available_keys if is_concept_allowed_by_history(k, days=config.CONCEPT_COOLDOWN_DAYS)]
+    if not allowed_keys:
+        logger.warning("All concept types used in last 5 days! Resetting pool to all concept types.")
+        allowed_keys = list(available_keys)
+
+    preferred_key = random.choice(allowed_keys)
+    remaining = [k for k in allowed_keys if k != preferred_key]
+    random.shuffle(remaining)
+    fallback_order = [preferred_key] + remaining
+
+    failures = []
+    for attempt_idx, concept_key in enumerate(fallback_order, 1):
+        logger.info(
+            f"[Concept Selection] Attempt {attempt_idx}/{len(fallback_order)}: trying concept "
+            f"'{concept_key}' ({CONCEPT_TYPES[concept_key]['name']})..."
+        )
+        try:
+            candidates, used_key, concept_info = select_candidate_titles(num_candidates, concept_key=concept_key)
+        except (ValueError, RuntimeError) as e:
+            logger.warning(
+                f"[Concept Selection FALLBACK] Concept '{concept_key}' could not find qualifying content "
+                f"today ({e}). {'Trying next fallback concept...' if attempt_idx < len(fallback_order) else 'No concepts left to try.'}"
+            )
+            failures.append((concept_key, str(e)))
+            continue
+
+        record_concept_usage(used_key, angle_key=concept_info.get("angle_key"))
+        if attempt_idx > 1:
+            logger.warning(
+                f"[Concept Selection FALLBACK] Recovered by falling back to concept '{used_key}' after "
+                f"{attempt_idx - 1} earlier concept(s) failed: {', '.join(k for k, _ in failures)}."
+            )
+        else:
+            logger.info(f"[Concept Selection] Selected concept: '{used_key}' ({concept_info['name']})")
+        return candidates, used_key, concept_info
+
+    detail = " | ".join(f"'{k}': {msg}" for k, msg in failures)
+    raise RuntimeError(
+        f"PIPELINE ABORTED: all {len(fallback_order)} concept type(s) failed to find qualifying content "
+        f"today, even after fallback. Details -> {detail}"
+    )
+
 
 if __name__ == "__main__":
     titles, c_key, c_info = select_candidate_titles(3)

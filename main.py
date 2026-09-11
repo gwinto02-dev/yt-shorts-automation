@@ -28,8 +28,8 @@ logger = logging.getLogger("anime_shorts")
 def run_phase_1():
     """Phase 1: Content Source & Concept Selection (5-day cooldown)"""
     logger.info(">>> STARTING PHASE 1: Content Source & Concept Selection")
-    from src.content_source import select_candidate_titles
-    candidates, concept_key, concept_info = select_candidate_titles(num_candidates=3)
+    from src.content_source import select_todays_content
+    candidates, concept_key, concept_info = select_todays_content(num_candidates=3)
     
     output_file = config.OUTPUT_DIR / "selected_titles.json"
     data_payload = {

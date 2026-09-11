@@ -28,8 +28,14 @@ def clean_search_title(name: str) -> str:
     cleaned = re.sub(r'\s*-?\s*Season\s*\d+\s*$', '', cleaned, flags=re.IGNORECASE)
     return cleaned.strip()
 
-def download_image(url: str, output_path: Path, timeout: int = 8) -> bool:
-    """Download image from URL and verify validity using PIL."""
+# Reject images narrower than this — thumbnails/mobile-sized crops look
+# noticeably blurry once stretched to fill a 1080-wide vertical Short.
+MIN_ACCEPTABLE_IMAGE_WIDTH = 400
+
+def download_image(url: str, output_path: Path, timeout: int = 8, min_width: int = MIN_ACCEPTABLE_IMAGE_WIDTH) -> bool:
+    """Download image from URL, verify validity using PIL, and enforce a minimum
+    resolution so low-quality thumbnails get rejected in favor of trying the
+    next fallback source rather than silently ending up in the final video."""
     try:
         response = requests.get(url, timeout=timeout, headers=HEADERS)
         response.raise_for_status()
@@ -39,8 +45,19 @@ def download_image(url: str, output_path: Path, timeout: int = 8) -> bool:
             
         with Image.open(output_path) as img:
             img.verify()
-            
-        logger.info(f"Successfully downloaded and verified cover image: {output_path.name}")
+        # Re-open after verify() (which can leave the file object unusable) to
+        # check actual pixel dimensions.
+        with Image.open(output_path) as img:
+            width, height = img.size
+        if width < min_width:
+            logger.warning(
+                f"Rejected low-resolution image from {url} ({width}x{height}px, "
+                f"below the {min_width}px minimum width) — trying next source."
+            )
+            output_path.unlink()
+            return False
+
+        logger.info(f"Successfully downloaded and verified cover image: {output_path.name} ({width}x{height}px)")
         return True
     except Exception as e:
         logger.warning(f"Download failed from {url}: {e}")
@@ -49,7 +66,13 @@ def download_image(url: str, output_path: Path, timeout: int = 8) -> bool:
         return False
 
 def fetch_fallback_jikan_cover(title: str) -> str:
-    """Search title on Jikan API to get official MyAnimeList cover image URL."""
+    """Search title on Jikan API to get the best-available MyAnimeList cover
+    image URL. The search endpoint's own images.jpg.large_image_url is
+    usually only ~225x318px — noticeably soft once used as full-bleed
+    artwork in a 1080px-wide Short. Jikan's dedicated /pictures endpoint for
+    that title returns MAL's full image gallery at much higher resolution
+    (frequently 1200px+), so try that first and only fall back to the
+    smaller search-result thumbnail if the gallery lookup comes up empty."""
     search_q = clean_search_title(title)
     logger.info(f"Attempting Jikan search fallback for cover image: '{search_q}'...")
     try:
@@ -57,9 +80,26 @@ def fetch_fallback_jikan_cover(title: str) -> str:
         res = requests.get(url, headers=HEADERS, timeout=8)
         res.raise_for_status()
         data = res.json().get("data", [])
-        if data:
-            image_url = data[0].get("images", {}).get("jpg", {}).get("large_image_url")
-            return image_url or ""
+        if not data:
+            return ""
+
+        mal_id = data[0].get("mal_id")
+        fallback_url = data[0].get("images", {}).get("jpg", {}).get("large_image_url") or ""
+
+        if mal_id:
+            try:
+                pics_url = f"{config.JIKAN_API_BASE_URL}/anime/{mal_id}/pictures"
+                pics_res = requests.get(pics_url, headers=HEADERS, timeout=8)
+                pics_res.raise_for_status()
+                pictures = pics_res.json().get("data", [])
+                if pictures:
+                    hi_res = pictures[0].get("jpg", {}).get("large_image_url") or pictures[0].get("jpg", {}).get("image_url")
+                    if hi_res:
+                        return hi_res
+            except Exception as e:
+                logger.warning(f"Jikan high-res pictures lookup failed for '{search_q}' (mal_id={mal_id}): {e}")
+
+        return fallback_url
     except Exception as e:
         logger.warning(f"Jikan fallback lookup failed for '{search_q}': {e}")
     return ""
@@ -74,7 +114,10 @@ def fetch_fallback_kitsu_cover(title: str) -> str:
         res.raise_for_status()
         data = res.json().get("data", [])
         if data:
-            image_url = data[0].get("attributes", {}).get("posterImage", {}).get("large")
+            poster = data[0].get("attributes", {}).get("posterImage", {}) or {}
+            # Prefer "original" (Kitsu's un-resized source upload) over the
+            # downscaled "large" derivative for better final image quality.
+            image_url = poster.get("original") or poster.get("large")
             return image_url or ""
     except Exception as e:
         logger.warning(f"Kitsu fallback lookup failed for '{search_q}': {e}")
@@ -176,7 +219,11 @@ def fetch_and_save_visuals(candidates: List[Dict[str, Any]]) -> List[Path]:
                 f"Using primary source as least-bad fallback option rather than failing pipeline."
             )
             fallback_url, fallback_src = sources_to_try[0]
-            if download_image(fallback_url, target_path, timeout=8):
+            # Bypass the minimum-resolution gate here: this is the last-resort
+            # "better than nothing" attempt after every source has already
+            # either duplicated or been rejected as too low-res, so a small
+            # but valid image beats having no image for the candidate at all.
+            if download_image(fallback_url, target_path, timeout=8, min_width=1):
                 success = True
                 accepted_hash = compute_image_sha256(target_path)
                 accepted_url = fallback_url
