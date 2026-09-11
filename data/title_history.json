@@ -1198,5 +1198,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-11T06:16:00.151580",
     "date_readable": "2026-09-11 06:16:00"
+  },
+  {
+    "title": "[Oshi No Ko] Season 4",
+    "normalized_title": "oshi no ko season 4",
+    "anime_id": 63794,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-11T06:30:06.204279",
+    "date_readable": "2026-09-11 06:30:06"
+  },
+  {
+    "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+    "normalized_title": "demon slayer kimetsu no yaiba the movie mugen train",
+    "anime_id": "42586",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-11T06:30:06.204279",
+    "date_readable": "2026-09-11 06:30:06"
+  },
+  {
+    "title": "Attack on Titan: The Final Season",
+    "normalized_title": "attack on titan the final season",
+    "anime_id": "42422",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-11T06:30:06.204279",
+    "date_readable": "2026-09-11 06:30:06"
   }
 ]
