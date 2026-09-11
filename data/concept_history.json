@@ -491,5 +491,17 @@
     "date": "2026-09-10T19:34:28.413265",
     "date_readable": "2026-09-10 19:34:28",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-09-11T00:08:25.680768",
+    "date_readable": "2026-09-11 00:08:25",
+    "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-11T04:45:20.355734",
+    "date_readable": "2026-09-11 04:45:20",
+    "angle_key": "IRRESISTIBLE_BINGE"
   }
 ]
