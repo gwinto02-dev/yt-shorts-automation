@@ -1278,5 +1278,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-11T12:20:26.939558",
     "date_readable": "2026-09-11 12:20:26"
+  },
+  {
+    "title": "Fullmetal Alchemist: Brotherhood",
+    "normalized_title": "fullmetal alchemist brotherhood",
+    "anime_id": "3936",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-11T18:03:22.150884",
+    "date_readable": "2026-09-11 18:03:22"
+  },
+  {
+    "title": "Hunter x Hunter (2011)",
+    "normalized_title": "hunter x hunter 2011",
+    "anime_id": "6448",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-11T18:03:22.150884",
+    "date_readable": "2026-09-11 18:03:22"
+  },
+  {
+    "title": "Mob Psycho 100",
+    "normalized_title": "mob psycho 100",
+    "anime_id": "11578",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-11T18:03:22.150884",
+    "date_readable": "2026-09-11 18:03:22"
   }
 ]

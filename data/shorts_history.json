@@ -227,5 +227,28 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-09-11T18:04:45.440727",
+    "date_readable": "2026-09-11",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Heroic Depths: Mob, Gon & Edward 🌌 #Shorts",
+    "hook": "Hunter x Hunter’s 2011 reboot stretched to 148 episodes, outlasting the original 1999 series by more than double",
+    "script": "Hunter x Hunter’s 2011 reboot stretched to 148 episodes, outlasting the original 1999 series by more than double. Starting with a visual punch, Mob Psycho 100’s 2016 animation leans into sharp line work and exaggerated psychic effects, following Shigeo “Mob” as he hides his immense esper power to live a quiet life. Then we have the boy‑hunter who never quits, Gon Freecss, whose relentless curiosity pushes him into dangerous exams and moral dilemmas, and the series holds an 8.4 /10 score on MyAnimeList. Stepping up next, Fullmetal Alchemist: Brotherhood earned an 8.3 /10 rating, and its core revolves around the Law of Equivalent Exchange, where Edward and Alphonse trade bodies and ideals while chasing the Philosopher’s Stone. If the cost of ambition grabs you, replay Edward’s sacrifice tonight—so which of these three journeys are you diving into first? Share your pick below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "hunter x hunters 2011 reboot",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your pick below",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "0qya_AtONhg",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]
