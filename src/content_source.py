@@ -951,15 +951,41 @@ def select_candidate_titles(num_candidates: int = 3, concept_key: str = None) ->
         # Default balanced mix: 1 top trending + 2 top rated
         sorted_by_trending = sorted(selection_pool, key=lambda x: x.get("trending_score", 0), reverse=True)
         sorted_by_score = sorted(selection_pool, key=lambda x: x.get("average_score", 0), reverse=True)
-        
+
+        # For the trending slot, prefer a candidate that actually has a real
+        # verified score (average_score > 0). Titles with average_score == 0.0
+        # are almost always unreleased/unrated entries the APIs have no real
+        # data for yet (e.g. an upcoming season) rather than genuinely
+        # "0-rated" — and picking one here gives the script writer nothing
+        # factual to work with, which in practice caused repeated Natural
+        # Script QA / Retention QA failures and burned a huge number of LLM
+        # retries on a single run (see: '[Oshi No Ko] Season 4' incident).
+        # Only fall back to a zero-score trending pick if literally nothing
+        # in the pool has real score data.
+        trending_pick = None
         for c in sorted_by_trending:
-            if c["id"] not in seen_ids:
-                c["selection_category"] = "Rising Trend"
-                c["selection_reasoning"] = f"Top trending title with high current buzz index (Score: {c.get('average_score', 'N/A')}/10)."
-                c["excluded_in_run"] = excluded_candidates
-                selected.append(c)
-                seen_ids.add(c["id"])
+            if c["id"] not in seen_ids and c.get("average_score", 0) > 0:
+                trending_pick = c
                 break
+        if trending_pick is None:
+            for c in sorted_by_trending:
+                if c["id"] not in seen_ids:
+                    trending_pick = c
+                    logger.warning(
+                        f"[Trending Pick FALLBACK] No trending candidate with verified score data was "
+                        f"available — falling back to unrated/unreleased title '{c.get('title')}' "
+                        f"(average_score=0.0). Script quality for this pick may suffer from thin factual data."
+                    )
+                    break
+
+        if trending_pick is not None:
+            trending_pick["selection_category"] = "Rising Trend"
+            trending_pick["selection_reasoning"] = (
+                f"Top trending title with high current buzz index (Score: {trending_pick.get('average_score', 'N/A')}/10)."
+            )
+            trending_pick["excluded_in_run"] = excluded_candidates
+            selected.append(trending_pick)
+            seen_ids.add(trending_pick["id"])
 
         for c in sorted_by_score:
             if len(selected) >= num_candidates:
