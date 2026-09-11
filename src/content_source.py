@@ -19,6 +19,18 @@ from src.popularity_filter import can_qualify_as_hidden_gem, is_mainstream_anime
 
 logger = logging.getLogger(__name__)
 
+if not hasattr(config, "KITSU_API_BASE_URL"):
+    # Diagnostic for the exact mystery that hit production repeatedly: log
+    # exactly which file 'config' resolved to and what it actually contains,
+    # so if this ever recurs the log itself proves whether it's a stale
+    # checkout, a wrong branch/ref, or something else entirely — instead of
+    # needing another multi-message investigation to find out.
+    logger.warning(
+        f"[Config Diagnostic] config.KITSU_API_BASE_URL missing at import time. "
+        f"config module loaded from: {getattr(config, '__file__', 'UNKNOWN')} | "
+        f"config attributes present: {[a for a in dir(config) if not a.startswith('_')]}"
+    )
+
 # AniList sits behind Cloudflare, and Jikan proxies MyAnimeList — both are known to
 # reject requests carrying the default python-requests User-Agent as likely bot
 # traffic, especially from datacenter/CI IP ranges like GitHub Actions runners.
@@ -539,7 +551,13 @@ def fetch_kitsu_trending(count: int = 50, status_filter: str = None) -> List[Dic
     guarantees on a run that had to fall all the way back to this source.
     """
     logger.info(f"Fetching {'upcoming' if status_filter else 'top'} anime from Kitsu REST API (count={count})...")
-    url = f"{config.KITSU_API_BASE_URL}/anime"
+    # getattr with a hardcoded fallback: this endpoint has, in production,
+    # intermittently been missing from the imported config module despite
+    # being present in the committed source (a stale-checkout/sync issue
+    # never fully root-caused) — crashing the whole pipeline over a single
+    # well-known, unchanging public URL is worse than just using the
+    # fallback default when that happens.
+    url = f"{getattr(config, 'KITSU_API_BASE_URL', 'https://kitsu.io/api/edge')}/anime"
     try:
         # Kitsu implements the JSON:API spec strictly and returns 406 Not
         # Acceptable for a generic "Accept: application/json" header (the
