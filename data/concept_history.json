@@ -527,5 +527,11 @@
     "date": "2026-09-11T06:02:22.482430",
     "date_readable": "2026-09-11 06:02:22",
     "angle_key": "INSIDER_FACT"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-11T06:15:46.829848",
+    "date_readable": "2026-09-11 06:15:46",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]

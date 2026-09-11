@@ -1174,5 +1174,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-10T00:08:35.898024",
     "date_readable": "2026-09-10 00:08:35"
+  },
+  {
+    "title": "Dan Da Dan Season 3",
+    "normalized_title": "dan da dan season 3",
+    "anime_id": 62516,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-11T06:16:00.151580",
+    "date_readable": "2026-09-11 06:16:00"
+  },
+  {
+    "title": "The Eminence in Shadow: Lost Echoes",
+    "normalized_title": "the eminence in shadow lost echoes",
+    "anime_id": 57584,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-11T06:16:00.151580",
+    "date_readable": "2026-09-11 06:16:00"
+  },
+  {
+    "title": "Delicious in Dungeon Season 2",
+    "normalized_title": "delicious in dungeon season 2",
+    "anime_id": 59068,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-11T06:16:00.151580",
+    "date_readable": "2026-09-11 06:16:00"
   }
 ]
