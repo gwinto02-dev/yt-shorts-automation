@@ -563,5 +563,11 @@
     "date": "2026-09-12T00:08:08.265802",
     "date_readable": "2026-09-12 00:08:08",
     "angle_key": "ANIMATION_CRAFT"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-12T06:15:05.364683",
+    "date_readable": "2026-09-12 06:15:05",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]

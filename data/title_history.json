@@ -1326,5 +1326,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-12T00:08:08.263479",
     "date_readable": "2026-09-12 00:08:08"
+  },
+  {
+    "title": "Cowboy Bebop",
+    "normalized_title": "cowboy bebop",
+    "anime_id": "1",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-12T06:15:05.363449",
+    "date_readable": "2026-09-12 06:15:05"
+  },
+  {
+    "title": "Your Lie in April",
+    "normalized_title": "your lie in april",
+    "anime_id": "8403",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-12T06:15:05.363449",
+    "date_readable": "2026-09-12 06:15:05"
+  },
+  {
+    "title": "Fullmetal Alchemist",
+    "normalized_title": "fullmetal alchemist",
+    "anime_id": "100",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-12T06:15:05.363449",
+    "date_readable": "2026-09-12 06:15:05"
   }
 ]

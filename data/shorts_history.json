@@ -273,5 +273,26 @@
       "label": "Visual & Audio Craft Benchmark",
       "instruction": "Focus on the technical mastery of the animation studios, fight choreography, soundtrack design, and cinematic presentation."
     }
+  },
+  {
+    "date": "2026-09-12T06:18:50.872990",
+    "date_readable": "2026-09-12",
+    "concept_type": "character_spotlight",
+    "title": "Iconic Badass Leads You Need to Watch 🔥 #Shorts",
+    "hook": "When Cowboy Bebop launched in 1998, Sunrise paired its space‑western plot with a full jazz band, something almost unheard of on TV back then",
+    "script": "When Cowboy Bebop launched in 1998, Sunrise paired its space‑western plot with a full jazz band, something almost unheard of on TV back then.  \n\nThe 2003 Fullmetal Alchemist series leans on gritty, hand‑drawn shading that makes the alchemy battles feel tactile, and it follows brothers Edward and Alphonse as they chase the Philosopher’s Stone after a disastrous human transmutation.  \n\nSwitching gears to a different kind of intensity,  \n\nKousei Arima, a piano prodigy frozen by his mother’s death, is jolted back into music when violinist Kaori sparks a reckless duet, and the series earned an 8.2/10 rating on MyAnimeList.  \n\nAnd for a final dose of cool composure,  \n\nClocking an 8.2/10, Cowboy Bebop tracks bounty hunter Spike Spiegel and his ragtag crew as they chase criminals across a 2071 galaxy where old sins never stay buried.  \n\nIf that jazzy chase scene still haunts you, give Cowboy Bebop a spin first. Which of these three badass leads will you start with? Tell me in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "when cowboy bebop launched in",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "tell me in the comments",
+      "transition_markers": []
+    },
+    "video_id": "kWXjZVUOY_8",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
