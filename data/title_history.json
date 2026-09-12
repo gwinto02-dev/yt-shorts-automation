@@ -1350,5 +1350,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-12T06:15:05.363449",
     "date_readable": "2026-09-12 06:15:05"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 4",
+    "normalized_title": "rezero starting life in another world season 4",
+    "anime_id": 189046,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-12T12:06:56.083782",
+    "date_readable": "2026-09-12 12:06:56"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+    "normalized_title": "bleach thousandyear blood war the calamity",
+    "anime_id": 185874,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-12T12:06:56.083782",
+    "date_readable": "2026-09-12 12:06:56"
+  },
+  {
+    "title": "The Apothecary Diaries",
+    "normalized_title": "the apothecary diaries",
+    "anime_id": 161645,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-12T12:06:56.083782",
+    "date_readable": "2026-09-12 12:06:56"
   }
 ]

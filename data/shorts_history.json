@@ -294,5 +294,29 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-12T12:08:48.581895",
+    "date_readable": "2026-09-12",
+    "concept_type": "anime_comparison",
+    "title": "Epic Head‑to‑Head: Re:ZERO S4 vs BLEACH Calamity vs The Apothecary Diaries ⚔️ #Shorts",
+    "hook": "What if the death of the Soul King caused the very fabric of three worlds to unravel?  \n\nStarting with OLM’s 2023 adaptation, *The Apothecary Diaries* delivers a period‑drama where Maomao, raised by her apothecary father, is sold into palace service and quickly turns court gossip into forensic clues",
+    "script": "What if the death of the Soul King caused the very fabric of three worlds to unravel?  \n\nStarting with OLM’s 2023 adaptation, *The Apothecary Diaries* delivers a period‑drama where Maomao, raised by her apothecary father, is sold into palace service and quickly turns court gossip into forensic clues.  \n\nThen we have *BLEACH: Thousand‑Year Blood War – The Calamity*, which follows Byakuya Kuchiki as he confronts the looming Quincies; the series currently holds a 9.0 on MyAnimeList, and Pierrot’s battle sequences finally match the manga’s epic scale.  \n\nFinally, White Fox returns with *Re:ZERO* Season 4, also rated 9.0, and the story picks up after the Priestella clash, sending Subaru into a desperate search for a way to rescue Rem while the mysterious “wise woman” Shaula hints at a new twist.  \n\nIf palace intrigue sounds more your speed than time‑loop trauma, start with *The Apothecary Diaries* tonight—so which of these three will you queue up first? Let me know in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if the death of",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know in the comments",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "A-K7e5uto2E",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
