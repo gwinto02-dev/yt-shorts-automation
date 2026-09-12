@@ -318,5 +318,29 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-12T18:04:56.050381",
+    "date_readable": "2026-09-12",
+    "concept_type": "genre_spotlight",
+    "title": "Genre‑switch binge: underrated Monster, Vinland Saga & Witch Hat Atelier 🎨 #Shorts",
+    "hook": "BUG FILMS painted over 8,000 hand‑drawn frames just to capture the moment Coco first lights a real spell in *Witch Hat Atelier*",
+    "script": "BUG FILMS painted over 8,000 hand‑drawn frames just to capture the moment Coco first lights a real spell in *Witch Hat Atelier*.\n\nFirst off, BUG FILMS gives the series a pastel‑washed aesthetic that makes every incantation feel like a living illustration, and it follows Coco—a village girl determined to become a witch despite a world that says magic is only born.\n\nMoving to *Vinland Saga*, Thorfinn’s single‑minded hunt for Askeladd drives the narrative, and the 8.7/10 rating reflects how the series balances brutal combat with quiet moments of introspection, all under WIT STUDIO’s gritty, historically grounded animation.\n\nRounding out the trio, *Monster* holds an 8.8/10 score, and Dr. Kenzo Tenma’s decision to save a wounded boy instead of a mayor spirals into a psychological cat‑and‑mouse chase across Germany, rendered in MADHOUSE’s meticulous detail.\n\nIf you’re craving a shift from fantasy to Viking grit to thriller suspense, bookmark this Short and let *Witch Hat Atelier* be your first magical dip.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "bug films painted over 8000",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "be your first magical dip",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "qNPTCut-390",
+    "concept_angle": {
+      "key": "PALATE_CLEANSER",
+      "label": "The Ultimate Genre Switch-Up",
+      "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
+    }
   }
 ]

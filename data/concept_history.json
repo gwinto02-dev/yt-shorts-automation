@@ -575,5 +575,11 @@
     "date": "2026-09-12T12:06:56.085403",
     "date_readable": "2026-09-12 12:06:56",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-12T18:02:58.795917",
+    "date_readable": "2026-09-12 18:02:58",
+    "angle_key": "PALATE_CLEANSER"
   }
 ]

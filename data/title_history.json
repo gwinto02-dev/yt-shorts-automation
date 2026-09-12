@@ -1374,5 +1374,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-12T12:06:56.083782",
     "date_readable": "2026-09-12 12:06:56"
+  },
+  {
+    "title": "Monster",
+    "normalized_title": "monster",
+    "anime_id": 19,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-12T18:02:58.794274",
+    "date_readable": "2026-09-12 18:02:58"
+  },
+  {
+    "title": "Vinland Saga",
+    "normalized_title": "vinland saga",
+    "anime_id": 101348,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-12T18:02:58.794274",
+    "date_readable": "2026-09-12 18:02:58"
+  },
+  {
+    "title": "Witch Hat Atelier",
+    "normalized_title": "witch hat atelier",
+    "anime_id": 147105,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-12T18:02:58.794274",
+    "date_readable": "2026-09-12 18:02:58"
   }
 ]
