@@ -250,5 +250,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-12T00:14:25.981018",
+    "date_readable": "2026-09-12",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Steins;Gate & Code Geass R2 Must‑Watch! 🚀 #Shorts",
+    "hook": "Sunrise spent over a year perfecting the blend of 2‑D art and 3‑D CGI for the Knightmare mechs in Code Geass, a technique that still influences anime combat design today",
+    "script": "Sunrise spent over a year perfecting the blend of 2‑D art and 3‑D CGI for the Knightmare mechs in Code Geass, a technique that still influences anime combat design today.\n\nFirst up, Sunrise’s crisp line work and saturated color palette give the 2006 series a theatrical feel, then Lelouch Lamperouge steps onto the scene, using his Geass to turn a conquered Japan into a chessboard of rebellion.\n\nSwitching gears, the sequel follows the same masked strategist, but this time the focus shifts to C.C.’s enigmatic past; the show holds an 8.2/10 on MyAnimeList, reflecting how its layered motives keep viewers guessing.\n\nFinally, White Fox’s Steins;Gate, also rated 8.2/10, anchors its visual storytelling in Akihabara’s neon glow while Rintarou Okabe’s frantic “mad scientist” monologues drive a tense race against diverging timelines.\n\nWhether you’re drawn to the Knightmare frames of Code Geass or the time‑bending twists of Steins;Gate, save this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "sunrise spent over a year",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "RZJ-WI9bZYw",
+    "concept_angle": {
+      "key": "ANIMATION_CRAFT",
+      "label": "Visual & Audio Craft Benchmark",
+      "instruction": "Focus on the technical mastery of the animation studios, fight choreography, soundtrack design, and cinematic presentation."
+    }
   }
 ]

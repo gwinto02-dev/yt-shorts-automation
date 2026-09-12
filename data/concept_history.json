@@ -557,5 +557,11 @@
     "date": "2026-09-11T18:03:22.151987",
     "date_readable": "2026-09-11 18:03:22",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-12T00:08:08.265802",
+    "date_readable": "2026-09-12 00:08:08",
+    "angle_key": "ANIMATION_CRAFT"
   }
 ]

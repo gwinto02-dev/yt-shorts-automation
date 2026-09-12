@@ -1302,5 +1302,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-11T18:03:22.150884",
     "date_readable": "2026-09-11 18:03:22"
+  },
+  {
+    "title": "Steins;Gate",
+    "normalized_title": "steinsgate",
+    "anime_id": "5646",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-12T00:08:08.263479",
+    "date_readable": "2026-09-12 00:08:08"
+  },
+  {
+    "title": "Code Geass: Lelouch of the Rebellion R2",
+    "normalized_title": "code geass lelouch of the rebellion r2",
+    "anime_id": "2634",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-12T00:08:08.263479",
+    "date_readable": "2026-09-12 00:08:08"
+  },
+  {
+    "title": "Code Geass: Lelouch of the Rebellion",
+    "normalized_title": "code geass lelouch of the rebellion",
+    "anime_id": "1415",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-12T00:08:08.263479",
+    "date_readable": "2026-09-12 00:08:08"
   }
 ]
