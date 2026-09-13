@@ -363,5 +363,28 @@
       "label": "Unmatched Narrative Payoff",
       "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
     }
+  },
+  {
+    "date": "2026-09-13T06:21:02.152371",
+    "date_readable": "2026-09-13",
+    "concept_type": "hidden_gems",
+    "title": "Hidden Gem Trio: Link Click S3, Ramparts of Ice & Polar Opposites S2 🌟 #Shorts",
+    "hook": "Studio KAI spent three months perfecting the snowfall effect in the first episode of *The Ramparts of Ice*, even though the budget was modest",
+    "script": "Studio KAI spent three months perfecting the snowfall effect in the first episode of *The Ramparts of Ice*, even though the budget was modest.  \n\nLapin Track keeps its signature hand‑drawn softness, especially in the late‑night cityscapes that frame Miyu and Yuusuke’s awkward dates. Six months into their relationship, the pair navigate tiny misunderstandings that feel larger than the school hallway itself.  \n\nKoyuki Higawa builds an emotional fortress, avoiding anyone until Minato Amamiya shows up with a persistent grin. The series earned an 8.3 on MyAnimeList, showing how viewers responded to its quiet tension.  \n\nLink Click’s third season also sits at 8.3, keeping the series’ mystery edge sharp. Jin and Wang finally confront a timeline that loops back on their own memories, turning each case into a personal reckoning.  \n\nRemember the meticulous snowfall from *The Ramparts of Ice*? Choose the one that fits your mood, let me know below, and save this Short for future low‑key anime nights.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "studio kai spent three months",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "for future lowkey anime nights",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "pwTek3oMkIU",
+    "concept_angle": {
+      "key": "STANDOUT_ELEMENT",
+      "label": "What Makes Them Worth Watching Despite Low Visibility",
+      "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+    }
   }
 ]
