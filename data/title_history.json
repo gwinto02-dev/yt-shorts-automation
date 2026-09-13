@@ -1398,5 +1398,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-12T18:02:58.794274",
     "date_readable": "2026-09-12 18:02:58"
+  },
+  {
+    "title": "Sword Art Online",
+    "normalized_title": "sword art online",
+    "anime_id": "6589",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-13T00:08:19.539768",
+    "date_readable": "2026-09-13 00:08:19"
+  },
+  {
+    "title": "The Apothecary Diaries Season 2",
+    "normalized_title": "the apothecary diaries season 2",
+    "anime_id": 176301,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-13T00:08:19.539768",
+    "date_readable": "2026-09-13 00:08:19"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Conflict",
+    "normalized_title": "bleach thousandyear blood war the conflict",
+    "anime_id": 169755,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-13T00:08:19.539768",
+    "date_readable": "2026-09-13 00:08:19"
   }
 ]
