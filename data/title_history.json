@@ -1470,5 +1470,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-13T12:06:34.459784",
     "date_readable": "2026-09-13 12:06:34"
+  },
+  {
+    "title": "Death Note",
+    "normalized_title": "death note",
+    "anime_id": "1376",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-13T18:03:00.272034",
+    "date_readable": "2026-09-13 18:03:00"
+  },
+  {
+    "title": "Cyberpunk: Edgerunners",
+    "normalized_title": "cyberpunk edgerunners",
+    "anime_id": 120377,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-13T18:03:00.272034",
+    "date_readable": "2026-09-13 18:03:00"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation Cour 2",
+    "normalized_title": "mushoku tensei jobless reincarnation cour 2",
+    "anime_id": 127720,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-13T18:03:00.272034",
+    "date_readable": "2026-09-13 18:03:00"
   }
 ]

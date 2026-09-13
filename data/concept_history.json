@@ -599,5 +599,11 @@
     "date": "2026-09-13T12:06:34.461265",
     "date_readable": "2026-09-13 12:06:34",
     "angle_key": "GENRE_GOLD_STANDARD"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-13T18:03:00.273503",
+    "date_readable": "2026-09-13 18:03:00",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]

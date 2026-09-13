@@ -410,5 +410,26 @@
       "label": "Genre-Defining Gold Standard",
       "instruction": "Frame these shows as absolute benchmarks of their respective genres that set the standard for every anime that followed."
     }
+  },
+  {
+    "date": "2026-09-13T18:04:21.413411",
+    "date_readable": "2026-09-13",
+    "concept_type": "character_spotlight",
+    "title": "Legendary Badass Leads – Death Note, Edgerunners & Mushoku Tensei ⚔️ #Shorts",
+    "hook": "What if a kid who can rewrite fate with a notebook ends up playing chess with a bored god of death?\nStudio Bind gives season two a grittier color scheme, and Rudeus alongside his fiery student Eris are thrust onto the Demon Continent after the mana calamity, hunting for the mysterious Ruijerd",
+    "script": "What if a kid who can rewrite fate with a notebook ends up playing chess with a bored god of death?\nStudio Bind gives season two a grittier color scheme, and Rudeus alongside his fiery student Eris are thrust onto the Demon Continent after the mana calamity, hunting for the mysterious Ruijerd.\nSwitching focus, we meet David Martinez—a street kid who swaps his future for a cybernetic arm—in Cyberpunk: Edgerunners, which holds an 8.5 MyAnimeList score and never lets the tension drop.\nThen there’s Death Note, boasting an 8.3 rating; its relentless cat‑and‑mouse duel between Light and L turns every episode into a tactical showdown.\nIf the cybernetic arm clash from Edgerunners or the Demon Continent trek in Mushoku Tensei sparks your interest, hit save so this list is ready for your next marathon.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if a kid who",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "ready for your next marathon",
+      "transition_markers": []
+    },
+    "video_id": "6ntcnzWemHw",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
