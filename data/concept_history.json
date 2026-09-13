@@ -593,5 +593,11 @@
     "date": "2026-09-13T06:19:27.151346",
     "date_readable": "2026-09-13 06:19:27",
     "angle_key": "STANDOUT_ELEMENT"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-13T12:06:34.461265",
+    "date_readable": "2026-09-13 12:06:34",
+    "angle_key": "GENRE_GOLD_STANDARD"
   }
 ]

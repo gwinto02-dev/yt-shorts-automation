@@ -1446,5 +1446,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-13T06:19:27.149996",
     "date_readable": "2026-09-13 06:19:27"
+  },
+  {
+    "title": "Attack on Titan",
+    "normalized_title": "attack on titan",
+    "anime_id": "7442",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-13T12:06:34.459784",
+    "date_readable": "2026-09-13 12:06:34"
+  },
+  {
+    "title": "Frieren: Beyond Journey’s End",
+    "normalized_title": "frieren beyond journeys end",
+    "anime_id": 154587,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-13T12:06:34.459784",
+    "date_readable": "2026-09-13 12:06:34"
+  },
+  {
+    "title": "Jujutsu Kaisen",
+    "normalized_title": "jujutsu kaisen",
+    "anime_id": "42765",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-13T12:06:34.459784",
+    "date_readable": "2026-09-13 12:06:34"
   }
 ]

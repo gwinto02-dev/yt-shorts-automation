@@ -810,5 +810,26 @@
     "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx210031-TppgcHZh46LY.jpg",
     "date": "2026-09-13T06:20:20.149140",
     "date_readable": "2026-09-13 06:20:20"
+  },
+  {
+    "hash": "d2669019d4261fd08ecece26ce777312a369435a5f45a1e6dfc83ae38de93501",
+    "title": "Attack on Titan",
+    "source_url": "https://media.kitsu.app/anime/poster_images/7442/large.jpg",
+    "date": "2026-09-13T12:08:54.169728",
+    "date_readable": "2026-09-13 12:08:54"
+  },
+  {
+    "hash": "0644f0e7a90cad85c15ae6e5e7206660b226031dca2249b21f4658adb6d19096",
+    "title": "Frieren: Beyond Journey’s End",
+    "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-qQTzQnEJJ3oB.jpg",
+    "date": "2026-09-13T12:08:54.169728",
+    "date_readable": "2026-09-13 12:08:54"
+  },
+  {
+    "hash": "6fba578b54dd7f24a006b4f2ae29c4f047a4837e4a84b50e2ab2de3be9ca5640",
+    "title": "Jujutsu Kaisen",
+    "source_url": "https://media.kitsu.app/anime/42765/poster_image/5f099d83883544fc6200be91706d70e0.jpg",
+    "date": "2026-09-13T12:08:54.169728",
+    "date_readable": "2026-09-13 12:08:54"
   }
 ]
