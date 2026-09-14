@@ -478,5 +478,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-14T12:11:49.619825",
+    "date_readable": "2026-09-14",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight: Witchy Mongolia, Chainsaw Chaos & Polar Opposites 🌈 #Shorts",
+    "hook": "What would your watchlist look like if you jumped from a high‑school romance, straight into a devil‑infused action showdown, and capped the night with a mystic adventure on the Mongolian steppe?  \n\nStarting with the 2026 slice‑of‑life comedy “You and I Are Polar Opposites,” Lapin Track gives the series a clean, pastel‑washed aesthetic that mirrors Suzuki’s bright optimism",
+    "script": "What would your watchlist look like if you jumped from a high‑school romance, straight into a devil‑infused action showdown, and capped the night with a mystic adventure on the Mongolian steppe?  \n\nStarting with the 2026 slice‑of‑life comedy “You and I Are Polar Opposites,” Lapin Track gives the series a clean, pastel‑washed aesthetic that mirrors Suzuki’s bright optimism. The story follows her crush on the stoic classmate Yusuke Tani, whose quiet demeanor makes every classroom moment feel like a silent chess game.  \n\nThen we have “Chainsaw Man,” where debt‑burdened teen Denji literally fuses with the Chainsaw Devil Pochita to become a blood‑splattering bounty hunter. MAPPA’s gritty animation earned it an 8.3 /10 on MyAnimeList, and the series doesn’t shy away from the horror‑tinged fallout of each contract.  \n\nStepping up next, “Jaadugar: A Witch in Mongolia” carries an 8.4 /10 rating and showcases Science SARU’s fluid brush‑stroke style as Sitara, grieving her mother, discovers witchcraft among a nomadic scholar family and turns sorrow into spellcraft.  \n\nIf you’re itching for Yusuke Tani’s dead‑pan charm, give “You and I Are Polar Opposites” a spin first – which of these three worlds will you dive into first? Let me know in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would your watchlist look",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know in the comments",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "CLZrSnyYoUE",
+    "concept_angle": {
+      "key": "PALATE_CLEANSER",
+      "label": "The Ultimate Genre Switch-Up",
+      "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
+    }
   }
 ]

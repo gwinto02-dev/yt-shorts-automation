@@ -1542,5 +1542,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-14T06:17:24.252214",
     "date_readable": "2026-09-14 06:17:24"
+  },
+  {
+    "title": "Jaadugar: A Witch in Mongolia",
+    "normalized_title": "jaadugar a witch in mongolia",
+    "anime_id": 190569,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-14T12:07:34.281093",
+    "date_readable": "2026-09-14 12:07:34"
+  },
+  {
+    "title": "Chainsaw Man",
+    "normalized_title": "chainsaw man",
+    "anime_id": 127230,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-14T12:07:34.281093",
+    "date_readable": "2026-09-14 12:07:34"
+  },
+  {
+    "title": "You and I Are Polar Opposites",
+    "normalized_title": "you and i are polar opposites",
+    "anime_id": 184951,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-14T12:07:34.281093",
+    "date_readable": "2026-09-14 12:07:34"
   }
 ]
