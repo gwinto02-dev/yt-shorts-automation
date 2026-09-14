@@ -1494,5 +1494,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-13T18:03:00.272034",
     "date_readable": "2026-09-13 18:03:00"
+  },
+  {
+    "title": "Naruto: Shippuden",
+    "normalized_title": "naruto shippuden",
+    "anime_id": "1555",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-14T00:08:57.775861",
+    "date_readable": "2026-09-14 00:08:57"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
+    "normalized_title": "mushoku tensei jobless reincarnation season 3",
+    "anime_id": 178789,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-14T00:08:57.775861",
+    "date_readable": "2026-09-14 00:08:57"
+  },
+  {
+    "title": "Solo Leveling Season 2 -Arise from the Shadow-",
+    "normalized_title": "solo leveling season 2 arise from the shadow",
+    "anime_id": 176496,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-14T00:08:57.775861",
+    "date_readable": "2026-09-14 00:08:57"
   }
 ]

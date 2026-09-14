@@ -431,5 +431,29 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-14T00:10:19.424649",
+    "date_readable": "2026-09-14",
+    "concept_type": "anime_comparison",
+    "title": "Head‑to‑Head Anime: Naruto Shippuden vs Mushoku Tensei S3 vs Solo Leveling S2 ⚡ #Shorts",
+    "hook": "Right when Jin‑U’s shadow erupts over the city skyline, the screen glitches into a darker tone",
+    "script": "Right when Jin‑U’s shadow erupts over the city skyline, the screen glitches into a darker tone. First off, A-1 Pictures brings that moment to life with crisp, high‑contrast animation, and the second season follows Jin‑U as he secretly hones his newfound powers while hunting the world’s deadliest monsters to protect his mother. Moving to the reincarnated wizard, Rudeus Greyrat returns in Season 3, and the story dives straight into his struggle to master ancient magic after a sudden mana collapse. Both critics and fans have landed it at 8.4 / 10 on MyAnimeList, and the emotional stakes feel heavier than ever. Rounding out the trio, Naruto: Shippuden also holds an 8.4 rating, and it picks up two and a half years after Naruto’s intense training, thrusting him into the Akatsuki’s escalating threat while the series ramps up its ninja battles. If you’re itching to see Jin‑U’s shadows in action, start with Solo Leveling, or keep Naruto’s training arc for the weekend—save this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when jinus shadow erupts",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "2WUOzu72mxc",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
