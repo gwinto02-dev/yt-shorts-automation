@@ -455,5 +455,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-14T06:21:46.968631",
+    "date_readable": "2026-09-14",
+    "concept_type": "anime_comparison",
+    "title": "Re:ZERO S3 vs S2 Part 2 vs Slime S4 – Epic Anime Matchup! 🔥 #Shorts",
+    "hook": "That time I Got Reincarnated as a Slime finally rolled out its fourth season in 2026, the freshest entry of the trio",
+    "script": "That time I Got Reincarnated as a Slime finally rolled out its fourth season in 2026, the freshest entry of the trio. 8‑bit paints the world with a crisp, vivid style, and Rimuru’s plan to forge a lasting human‑monster alliance hits a snag when Granville Rozzo and his granddaughter Maribel enter the political arena.\n\nSwitching gears, Subaru’s desperate hunt for the truth behind the Death Loop lands him in a deadly showdown with the Witch of Greed; WHITE FOX keeps the psychological edge sharp, and the arc earned an 8.4 rating from viewers.\n\nLater, the 2024 continuation pushes the score to another solid 8.4, but this time Subaru is enjoying a calm after his Sanctuary victory until a mysterious letter summons him to the royal selection, sparking fresh intrigue.\n\nIf Rimuru’s alliance dream sounds like your next binge, let me know which world you’ll jump into first in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "that time i got reincarnated",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "into first in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "a2SRABbaVSE",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]

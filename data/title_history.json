@@ -1518,5 +1518,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-14T00:08:57.775861",
     "date_readable": "2026-09-14 00:08:57"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 3",
+    "normalized_title": "rezero starting life in another world season 3",
+    "anime_id": 163134,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-14T06:17:24.252214",
+    "date_readable": "2026-09-14 06:17:24"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 2 Part 2",
+    "normalized_title": "rezero starting life in another world season 2 part 2",
+    "anime_id": 119661,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-14T06:17:24.252214",
+    "date_readable": "2026-09-14 06:17:24"
+  },
+  {
+    "title": "That Time I Got Reincarnated as a Slime Season 4",
+    "normalized_title": "that time i got reincarnated as a slime season 4",
+    "anime_id": 182205,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-14T06:17:24.252214",
+    "date_readable": "2026-09-14 06:17:24"
   }
 ]
