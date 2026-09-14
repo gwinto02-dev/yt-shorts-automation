@@ -501,5 +501,26 @@
       "label": "The Ultimate Genre Switch-Up",
       "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
     }
+  },
+  {
+    "date": "2026-09-14T18:12:21.032307",
+    "date_readable": "2026-09-14",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Studio Powerhouses: Black Clover S2, Edgerunners 2 & Apothecary Diaries S3 ✨ #Shorts",
+    "hook": "Pierrot assigned a dedicated squad of 150 animators just to overhaul Black Clover’s magic effects for the 2026 sequel",
+    "script": "Pierrot assigned a dedicated squad of 150 animators just to overhaul Black Clover’s magic effects for the 2026 sequel. That studio’s kinetic style rolls onto the screen again, and the story jumps straight into the Royal Knights selection arc, where Yami pushes his team toward a benchmark. Switching gears, Avida Yang reemerges as the mastermind behind a risky data heist, pulling Weak Kingsley out of retirement to chase a ghost in Night City’s underbelly. The Trigger‑helmed sequel is already being called a must‑watch continuation. Lastly, even without an official score, The Apothecary Diaries is buzzing among mystery fans for its clever intrigue. Set after the Shi Clan’s revolt, Maomao returns to her pharmacy in the pleasure district, only to discover a new client whose poison‑laden past could topple the court. So if you’re excited to see Pierrot’s upgraded magic battles in Black Clover, keep that momentum going and line up the other two when they drop. Save this Short for your next anime lineup.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "pierrot assigned a dedicated squad",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next anime lineup",
+      "transition_markers": []
+    },
+    "video_id": "3F-rQcOsgdM",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]

@@ -623,5 +623,11 @@
     "date": "2026-09-14T12:07:34.282862",
     "date_readable": "2026-09-14 12:07:34",
     "angle_key": "PALATE_CLEANSER"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-14T18:03:47.783583",
+    "date_readable": "2026-09-14 18:03:47",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]

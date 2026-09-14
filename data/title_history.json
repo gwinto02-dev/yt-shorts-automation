@@ -1566,5 +1566,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-14T12:07:34.281093",
     "date_readable": "2026-09-14 12:07:34"
+  },
+  {
+    "title": "The Apothecary Diaries Season 3",
+    "normalized_title": "the apothecary diaries season 3",
+    "anime_id": 195516,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-14T18:03:47.781715",
+    "date_readable": "2026-09-14 18:03:47"
+  },
+  {
+    "title": "Cyberpunk: Edgerunners 2",
+    "normalized_title": "cyberpunk edgerunners 2",
+    "anime_id": 195539,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-14T18:03:47.781715",
+    "date_readable": "2026-09-14 18:03:47"
+  },
+  {
+    "title": "Black Clover Season 2",
+    "normalized_title": "black clover season 2",
+    "anime_id": 195604,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-14T18:03:47.781715",
+    "date_readable": "2026-09-14 18:03:47"
   }
 ]
