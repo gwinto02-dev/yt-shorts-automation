@@ -1614,5 +1614,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-15T00:07:45.398085",
     "date_readable": "2026-09-15 00:07:45"
+  },
+  {
+    "title": "Neon Genesis Evangelion",
+    "normalized_title": "neon genesis evangelion",
+    "anime_id": 30,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T06:16:04.350668",
+    "date_readable": "2026-09-15 06:16:04"
+  },
+  {
+    "title": "Parasyte -the maxim-",
+    "normalized_title": "parasyte the maxim",
+    "anime_id": "8147",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T06:16:04.350668",
+    "date_readable": "2026-09-15 06:16:04"
+  },
+  {
+    "title": "Grand Blue Dreaming Season 3",
+    "normalized_title": "grand blue dreaming season 3",
+    "anime_id": 199111,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T06:16:04.350668",
+    "date_readable": "2026-09-15 06:16:04"
   }
 ]

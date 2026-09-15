@@ -635,5 +635,11 @@
     "date": "2026-09-15T00:07:45.400878",
     "date_readable": "2026-09-15 00:07:45",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T06:16:04.352593",
+    "date_readable": "2026-09-15 06:16:04",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]
