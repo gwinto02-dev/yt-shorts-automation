@@ -1638,5 +1638,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-15T06:16:04.350668",
     "date_readable": "2026-09-15 06:16:04"
+  },
+  {
+    "title": "Naruto",
+    "normalized_title": "naruto",
+    "anime_id": "11",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-15T12:07:15.000279",
+    "date_readable": "2026-09-15 12:07:15"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World-",
+    "normalized_title": "rezero starting life in another world",
+    "anime_id": "11209",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-15T12:07:15.000279",
+    "date_readable": "2026-09-15 12:07:15"
+  },
+  {
+    "title": "No Game, No Life",
+    "normalized_title": "no game no life",
+    "anime_id": "7880",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-15T12:07:15.000279",
+    "date_readable": "2026-09-15 12:07:15"
   }
 ]

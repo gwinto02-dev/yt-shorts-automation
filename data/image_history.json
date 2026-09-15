@@ -971,5 +971,26 @@
     "source_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199111-gBSuBG61ElcW.jpg",
     "date": "2026-09-15T06:16:23.374817",
     "date_readable": "2026-09-15 06:16:23"
+  },
+  {
+    "hash": "8782291cc776234426221125aee32daf675c65a556872b0cdaf0045f40886b6e",
+    "title": "Naruto",
+    "source_url": "https://media.kitsu.app/anime/11/poster_image/large-5e901605066f7f2727f49d01859bbfe4.jpeg",
+    "date": "2026-09-15T12:10:26.060136",
+    "date_readable": "2026-09-15 12:10:26"
+  },
+  {
+    "hash": "d3542697260e3107e56d787355abd7f90bf6eef5e5bf4c66d97c0ce7333f58bc",
+    "title": "Re:ZERO -Starting Life in Another World-",
+    "source_url": "https://media.kitsu.app/anime/poster_images/11209/large.jpg",
+    "date": "2026-09-15T12:10:26.060136",
+    "date_readable": "2026-09-15 12:10:26"
+  },
+  {
+    "hash": "faccdf43046161611af5b083ac37c8d707b42c1ceecadbfd66cdbf248971cf0a",
+    "title": "No Game, No Life",
+    "source_url": "https://media.kitsu.app/anime/poster_images/7880/large.jpg",
+    "date": "2026-09-15T12:10:26.060136",
+    "date_readable": "2026-09-15 12:10:26"
   }
 ]

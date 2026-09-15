@@ -546,5 +546,29 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-09-15T12:11:15.614472",
+    "date_readable": "2026-09-15",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Badass Leads: Naruto, Re:ZERO & No Game No Life ⚔️ #Shorts",
+    "hook": "Re:ZERO’s debut OVA slipped onto shelves tucked inside the manga’s eighth volume—a release strategy you’d only see in a few niche titles",
+    "script": "Re:ZERO’s debut OVA slipped onto shelves tucked inside the manga’s eighth volume—a release strategy you’d only see in a few niche titles.  \n\nFirst off, No Game No Life dazzles with neon‑bright palettes and crisp 2D‑CG blends, dropping us into a world where the shut‑in siblings Sora and Shiro settle every dispute by out‑gaming gods and monsters.  \n\nMoving to the time‑loop tragedy, Subaru Natsuki discovers he can rewind his death, and the series holds an 8.2 score on MyAnimeList, rewarding each brutal reset with deeper character revelations.  \n\nRounding out the trio, Naruto carries an 8.0 rating, opening with the Nine‑Tailed Fox’s assault on Konoha—a catastrophe that forces a young ninja to chase a dream of acknowledgment.  \n\nIf the game‑master battles, the death‑loop mind games, or the fox‑filled village intrigue you most, which of these three are you diving into first? Drop your pick below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "rezeros debut ova slipped onto",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your pick below",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "JgWfUY_fUJE",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
