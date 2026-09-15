@@ -1662,5 +1662,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-15T12:07:15.000279",
     "date_readable": "2026-09-15 12:07:15"
+  },
+  {
+    "title": "Saga of Tanya the Evil Season 2",
+    "normalized_title": "saga of tanya the evil season 2",
+    "anime_id": 135865,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-15T18:02:55.528367",
+    "date_readable": "2026-09-15 18:02:55"
+  },
+  {
+    "title": "Welcome to Demon School! Iruma-kun Season 4",
+    "normalized_title": "welcome to demon school irumakun season 4",
+    "anime_id": 184492,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-15T18:02:55.528367",
+    "date_readable": "2026-09-15 18:02:55"
+  },
+  {
+    "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
+    "normalized_title": "the 100 girlfriends who really really really really really love you season 3",
+    "anime_id": 200637,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-15T18:02:55.528367",
+    "date_readable": "2026-09-15 18:02:55"
   }
 ]

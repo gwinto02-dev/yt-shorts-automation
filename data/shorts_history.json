@@ -570,5 +570,28 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-15T18:09:32.341162",
+    "date_readable": "2026-09-15",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Anime Trio: Iruma, Tanya, & 100 Girlfriends 🎬 #Shorts",
+    "hook": "Bibury Animation Studios spent an entire year hand‑tweaking every frame of the opening for season 3",
+    "script": "Bibury Animation Studios spent an entire year hand‑tweaking every frame of the opening for season 3.\n\nFirst up, that same studio keeps the visual tone bright and pastel while Sauruko Terano finally confronts the chaos of juggling a hundred girlfriends in the third installment.\n\nNext, Iruma Kōsuke, the demon‑raised teen who still flunks basic magic, leads his Misfit Class into the school’s Music Festival, and the season currently sits at an 8.0 on MyAnimeList.\n\nFinally, Saga of Tanya the Evil returns with another 8.0, and the new arc throws Tanya into command of a reluctant regiment as the Imperial front erupts into magical artillery.\n\nSo whether you’re after Bibury’s painstaking opening, Iruma’s off‑beat concert, or Tanya’s battlefield tactics, tell me which season you’ll start first!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "bibury animation studios spent an",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "which season youll start first",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "rAfDJ82iVMU",
+    "concept_angle": {
+      "key": "INSIDER_FACT",
+      "label": "A Specific Detail Insider Fans Know",
+      "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
+    }
   }
 ]
