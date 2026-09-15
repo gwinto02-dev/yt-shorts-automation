@@ -522,5 +522,29 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-09-15T00:11:42.764518",
+    "date_readable": "2026-09-15",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Gold: Gintama, ERASED & Smoking Behind the Supermarket 🍜 #Shorts",
+    "hook": "Did you know the grocery aisles in Smoking Behind the Supermarket with You were sketched from a real Osaka market the director visits every weekend? First off, Asahi Production paints the series in muted pastels that feel like late‑night neon on a grocery shelf, and we follow overworked salaryman Sasaki, who leans on cigarettes and the cheerful clerk Yamada for a fleeting escape",
+    "script": "Did you know the grocery aisles in Smoking Behind the Supermarket with You were sketched from a real Osaka market the director visits every weekend? First off, Asahi Production paints the series in muted pastels that feel like late‑night neon on a grocery shelf, and we follow overworked salaryman Sasaki, who leans on cigarettes and the cheerful clerk Yamada for a fleeting escape. Moving to the 2016 thriller ERASED, Satoru Fujinuma, a 29‑year‑old mangaka, suddenly rewinds a few minutes whenever tragedy approaches, and the show holds an 8.2 rating for its tight time‑loop suspense. Rounding out today’s picks, Gintama carries an 8.5 score, dropping us into an alternate Edo where aliens have conquered Japan and swords are banned, so samurai‑turned‑odd‑jobs like Gintoki keep the absurdity alive. If that alien‑ruled Edo sounds like your kind of chaos, start with Gintama — which of these three are you diving into first? Tell me your choice in the replies.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know the grocery",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your choice in the replies",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "cukNzdJq4gY",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]

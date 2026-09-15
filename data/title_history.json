@@ -1590,5 +1590,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-14T18:03:47.781715",
     "date_readable": "2026-09-14 18:03:47"
+  },
+  {
+    "title": "Gintama",
+    "normalized_title": "gintama",
+    "anime_id": 918,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T00:07:45.398085",
+    "date_readable": "2026-09-15 00:07:45"
+  },
+  {
+    "title": "ERASED",
+    "normalized_title": "erased",
+    "anime_id": "11110",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T00:07:45.398085",
+    "date_readable": "2026-09-15 00:07:45"
+  },
+  {
+    "title": "Smoking Behind the Supermarket with You",
+    "normalized_title": "smoking behind the supermarket with you",
+    "anime_id": 196187,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T00:07:45.398085",
+    "date_readable": "2026-09-15 00:07:45"
   }
 ]

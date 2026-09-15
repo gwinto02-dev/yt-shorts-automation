@@ -629,5 +629,11 @@
     "date": "2026-09-14T18:03:47.783583",
     "date_readable": "2026-09-14 18:03:47",
     "angle_key": "STUDIO_STAFF_TALENT"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-15T00:07:45.400878",
+    "date_readable": "2026-09-15 00:07:45",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]
