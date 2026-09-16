@@ -593,5 +593,29 @@
       "label": "A Specific Detail Insider Fans Know",
       "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
     }
+  },
+  {
+    "date": "2026-09-16T00:10:03.871387",
+    "date_readable": "2026-09-16",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Anime Trio: Dragon, Villainess & Night Sky 🌟 #Shorts",
+    "hook": "OLM spent a full year hand‑painting each scale on Uncle Wing, the dragon in The Cat and the Dragon",
+    "script": "OLM spent a full year hand‑painting each scale on Uncle Wing, the dragon in The Cat and the Dragon. The 2026 series pairs that meticulous art with a premise about a fire‑breathing dragon raised by a mother cat who protects a curious clan of felines. Next up, Doga Kobo’s Though I Am an Inept Villainess drops us into Keigetsu’s panic when a jealous rival swaps her body with the crown princess, and the show holds a 7.8/10 rating. Finally, Makaria’s Love Unseen Beneath the Clear Night Sky scored 7.9/10, following introverted freshman Kakeru as he bonds with blind student Koharu, whose dream of seeing fireworks drives their quiet romance. If Uncle Wing’s gentle watch or Keigetsu’s body‑swap stuck with you, bookmark this Short for your next binge and share which title you’ll try first.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "olm spent a full year",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "which title youll try first",
+      "transition_markers": [
+        "next up",
+        "finally"
+      ]
+    },
+    "video_id": "63mfZopAD6w",
+    "concept_angle": {
+      "key": "STANDOUT_ELEMENT",
+      "label": "What Makes Them Worth Watching Despite Low Visibility",
+      "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+    }
   }
 ]

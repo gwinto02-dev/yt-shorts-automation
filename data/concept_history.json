@@ -653,5 +653,11 @@
     "date": "2026-09-15T18:02:55.530138",
     "date_readable": "2026-09-15 18:02:55",
     "angle_key": "INSIDER_FACT"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-16T00:07:49.810444",
+    "date_readable": "2026-09-16 00:07:49",
+    "angle_key": "STANDOUT_ELEMENT"
   }
 ]
