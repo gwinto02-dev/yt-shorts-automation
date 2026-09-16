@@ -617,5 +617,29 @@
       "label": "What Makes Them Worth Watching Despite Low Visibility",
       "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
     }
+  },
+  {
+    "date": "2026-09-16T06:17:32.896319",
+    "date_readable": "2026-09-16",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Taiga, Yato & Kiritsugu – Unforgettable Heroes 🌟 #Shorts",
+    "hook": "Right when Kiritsugu’s cold calculations seem to seal the Grail’s fate, a single stray bullet shatters his resolve",
+    "script": "Right when Kiritsugu’s cold calculations seem to seal the Grail’s fate, a single stray bullet shatters his resolve.  \n\nFirst off, Ufotable’s crisp, muted palette gives *Fate/Zero* its brutal, almost cinematic edge, and the 2011 series follows the Einzbern‑backed war where seven mages clash for a wish‑granting relic, exposing each master’s darkest ambition.  \n\nMoving to *Noragami Aragoto*, Yato—an ex‑god yearning for recognition—returns to the streets, and the 2015 season still holds an 8.2/10 rating, highlighting how his uneasy partnership with the half‑spirit Yukine deepens amid looming divine conspiracies.  \n\nRounding out the trio, *Toradora!* also sits at 8.2/10, yet it’s Ryuuji’s gentle heart hidden behind a delinquent’s stare that drives the high‑school love‑triangle, while Taiga’s tiny stature masks a fierce determination to rewrite her own story.  \n\nIf Kiritsugu’s doomed gamble in *Fate/Zero* stuck with you, or Yato’s restless ambition sparked curiosity, bookmark this Short for your next binge night.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when kiritsugus cold calculations",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "ELBsGEFl3TI",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]

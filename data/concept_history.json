@@ -659,5 +659,11 @@
     "date": "2026-09-16T00:07:49.810444",
     "date_readable": "2026-09-16 00:07:49",
     "angle_key": "STANDOUT_ELEMENT"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-16T06:15:53.007721",
+    "date_readable": "2026-09-16 06:15:53",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]

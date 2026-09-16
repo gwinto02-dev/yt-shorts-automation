@@ -1710,5 +1710,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-16T00:07:49.808426",
     "date_readable": "2026-09-16 00:07:49"
+  },
+  {
+    "title": "Toradora!",
+    "normalized_title": "toradora",
+    "anime_id": "3532",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-16T06:15:53.005856",
+    "date_readable": "2026-09-16 06:15:53"
+  },
+  {
+    "title": "Noragami Aragoto",
+    "normalized_title": "noragami aragoto",
+    "anime_id": "10800",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-16T06:15:53.005856",
+    "date_readable": "2026-09-16 06:15:53"
+  },
+  {
+    "title": "Fate/Zero",
+    "normalized_title": "fatezero",
+    "anime_id": "6028",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-16T06:15:53.005856",
+    "date_readable": "2026-09-16 06:15:53"
   }
 ]
