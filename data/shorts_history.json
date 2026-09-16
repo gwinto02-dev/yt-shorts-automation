@@ -641,5 +641,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-16T12:12:57.273988",
+    "date_readable": "2026-09-16",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Anime Trio: Dandadan 3rd, Shadow‑Skill Quest, Alya‑san Season 2 🌟 #Shorts",
+    "hook": "Science SARU spent two full seasons perfecting the watercolor‑wash backdrop that gave Dandadan its off‑beat vibe",
+    "script": "Science SARU spent two full seasons perfecting the watercolor‑wash backdrop that gave Dandadan its off‑beat vibe. Doga Kobo carries that same soft‑edge charm into Tokidoki Bosotto Rossiya‑go de Dereru Tonari no Alya‑san Season 2, where Mariya Kujō and Yuki Sōu stumble through a semester of exchange‑program mishaps and Russian‑inspired class projects. If you crave a punch of comedic action… Mordred, the shadow‑skill prodigy, reappears in Kage no Jitsuryokusha ni Naritakute! Zankyou‑hen, determined to outsmart the enigmatic Yuuka Asakura, and the whole theatrical follow‑up is already being called the most eagerly awaited continuation of the series. And for the genre‑benders… The third season arrives as a highly anticipated continuation, sending Turbo Babaa and Aira Shiratori deeper into the cursed artifact hunt that mixes sci‑fi horror with supernatural brawls. When Doga Kobo’s pastel world finally lights up your screen, you’ll see why the Alya‑san sequel feels fresh. So, which of these three arcs are you penciling into your schedule? Share your pick in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "science saru spent two full",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "Nd9rSpPeOp8",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
