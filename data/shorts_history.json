@@ -664,5 +664,26 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-09-16T18:04:00.331560",
+    "date_readable": "2026-09-16",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Switch‑Up Trio: DBZ, Bunny Girl Senpai & Food Wars! 🍜 #Shorts",
+    "hook": "What if you could flip from a galaxy‑spanning power clash to a high‑school romance mystery and then land in a heated kitchen duel, all in one binge? First up, Toei Animation’s Dragon Ball Z still delivers its iconic, hand‑drawn energy with Goku facing new threats as his son Gohan joins the fight, pushing the saga into the Frieza and Cell arcs",
+    "script": "What if you could flip from a galaxy‑spanning power clash to a high‑school romance mystery and then land in a heated kitchen duel, all in one binge? First up, Toei Animation’s Dragon Ball Z still delivers its iconic, hand‑drawn energy with Goku facing new threats as his son Gohan joins the fight, pushing the saga into the Frieza and Cell arcs. If you crave swaps from punches to feelings, keep listening. Sakuta Azusagawa, the lone student who suddenly sees a bunny‑costumed girl appear, becomes the reluctant fixer of the “puberty syndrome” that haunts his classmates, and the series holds an 8.1 /10 rating on MyAnimeList. When you’re ready to trade drama for culinary combat, here’s the next switch. Food Wars! Shokugeki no Soma, rated 8.2 /10, follows fifteen‑year‑old Souma Yukihira as he storms the elite Totsuki Culinary Academy, turning every dish into a battle of taste. After tasting Goku’s fights, Sakuta’s romance, and Souma’s kitchen duels, which world will you jump into first? Comment your choice!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if you could flip",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "comment your choice",
+      "transition_markers": []
+    },
+    "video_id": "Yfp_243GE6I",
+    "concept_angle": {
+      "key": "PALATE_CLEANSER",
+      "label": "The Ultimate Genre Switch-Up",
+      "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
+    }
   }
 ]

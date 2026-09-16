@@ -671,5 +671,11 @@
     "date": "2026-09-16T12:08:05.038909",
     "date_readable": "2026-09-16 12:08:05",
     "angle_key": "MANGA_ARC_HYPE"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-16T18:02:46.767556",
+    "date_readable": "2026-09-16 18:02:46",
+    "angle_key": "PALATE_CLEANSER"
   }
 ]

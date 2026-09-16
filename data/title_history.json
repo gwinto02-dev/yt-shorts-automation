@@ -1758,5 +1758,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-16T12:08:05.037652",
     "date_readable": "2026-09-16 12:08:05"
+  },
+  {
+    "title": "Food Wars! Shokugeki no Soma",
+    "normalized_title": "food wars shokugeki no soma",
+    "anime_id": "9967",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-16T18:02:46.765593",
+    "date_readable": "2026-09-16 18:02:46"
+  },
+  {
+    "title": "Rascal Does Not Dream of Bunny Girl Senpai",
+    "normalized_title": "rascal does not dream of bunny girl senpai",
+    "anime_id": 101291,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-16T18:02:46.765593",
+    "date_readable": "2026-09-16 18:02:46"
+  },
+  {
+    "title": "Dragon Ball Z",
+    "normalized_title": "dragon ball z",
+    "anime_id": 813,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-16T18:02:46.765593",
+    "date_readable": "2026-09-16 18:02:46"
   }
 ]
