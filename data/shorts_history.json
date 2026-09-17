@@ -708,5 +708,26 @@
       "label": "Hooking Unreleased Story Premises",
       "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
     }
+  },
+  {
+    "date": "2026-09-17T18:08:07.432003",
+    "date_readable": "2026-09-17",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Anime Trio: Bookworm, Sketchy Murder & Ghost Shell 🌙 #Shorts",
+    "hook": "What happens when a book‑loving heroine debuts the same quarter as a new iteration of a space opera?  \nWIT Studio delivers the crisp, pastel‑toned backgrounds of Ascendance of a Bookworm, where Myne, now calling herself Rozemyne, infiltrates aristocratic circles to rebuild a hidden library—yet the show slipped past most fans because it aired opposite a mecha reboot and landed on a niche streaming service",
+    "script": "What happens when a book‑loving heroine debuts the same quarter as a new iteration of a space opera?  \nWIT Studio delivers the crisp, pastel‑toned backgrounds of Ascendance of a Bookworm, where Myne, now calling herself Rozemyne, infiltrates aristocratic circles to rebuild a hidden library—yet the show slipped past most fans because it aired opposite a mecha reboot and landed on a niche streaming service.  \nIf you prefer a protagonist who trades panels for pencils, meet Ai Yasumi on Izu Oshima. Draw This, Then Die! launches with a 7.7 MyAnimeList rating, chronicling her leap from avid reader to fledgling mangaka, but Shin‑Ei Animation’s modest marketing budget meant the series barely reached Western audiences.  \nScoring another 7.7, Science SARU’s Ghost in the Shell 2026 drops us into a 2029 cyber‑net world where detectives hunt data phantoms, yet the title was confined to a regional platform, limiting its buzz.  \nWhether you’re after Rozemyne’s secret library or Ai’s first storyboard, bookmark this Short for your next discovery night.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when a bookloving",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next discovery night",
+      "transition_markers": []
+    },
+    "video_id": "piqDt8LaIUg",
+    "concept_angle": {
+      "key": "OVERLOOKED_REASON",
+      "label": "Why These Got Overlooked",
+      "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+    }
   }
 ]
