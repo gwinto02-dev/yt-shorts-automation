@@ -683,5 +683,11 @@
     "date": "2026-09-17T00:07:48.467151",
     "date_readable": "2026-09-17 00:07:48",
     "angle_key": "ANIMATION_CRAFT"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-09-17T06:15:57.661237",
+    "date_readable": "2026-09-17 06:15:57",
+    "angle_key": "THEMATIC_RIVALRY"
   }
 ]
