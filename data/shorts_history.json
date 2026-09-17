@@ -685,5 +685,28 @@
       "label": "The Ultimate Genre Switch-Up",
       "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
     }
+  },
+  {
+    "date": "2026-09-17T12:08:45.012076",
+    "date_readable": "2026-09-17",
+    "concept_type": "upcoming_spotlight",
+    "title": "Watch the Upcoming Anime Trio: Frieren S3, Bocchi Rock 2 & Abyss Mystery 🎸 #Shorts",
+    "hook": "Right when fans assumed the Abyss’s mysteries were exhausted, a fresh clue about Tepasté’s forgotten past surfaces",
+    "script": "Right when fans assumed the Abyss’s mysteries were exhausted, a fresh clue about Tepasté’s forgotten past surfaces.  \n\nKinema Citrus returns, pushing its layered watercolor backgrounds to capture the claustrophobic glow of the Abyss’s new tier, where Tepasté and Cravali chase a mythic “Awakening Mystery” that could rewrite the whole descent.  \n\nSwitching gears, Ikuyo Kita, still nursing her stage‑fright, now leads the band’s second tour, and fans are already calling the sophomore season the most eagerly awaited music comedy of the year.  \n\nAnd finally, the upcoming third season, billed as a must‑watch for fantasy lovers, finds Frieren wandering another century‑long quest, still haunted by Macht’s lingering shadow.  \n\nIf the Abyss’s new tier intrigues you, give it a spin first—so which of these three adventures are you queuing up next? Let me know below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when fans assumed the",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "Tnker4-ysZE",
+    "concept_angle": {
+      "key": "PREMISE_INTRIGUE",
+      "label": "Hooking Unreleased Story Premises",
+      "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+    }
   }
 ]
