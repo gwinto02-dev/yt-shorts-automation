@@ -1782,5 +1782,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-16T18:02:46.765593",
     "date_readable": "2026-09-16 18:02:46"
+  },
+  {
+    "title": "Tokyo Ghoul",
+    "normalized_title": "tokyo ghoul",
+    "anime_id": "8271",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-17T00:07:48.465589",
+    "date_readable": "2026-09-17 00:07:48"
+  },
+  {
+    "title": "The Seven Deadly Sins: Revival of the Commandments",
+    "normalized_title": "the seven deadly sins revival of the commandments",
+    "anime_id": "12633",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-17T00:07:48.465589",
+    "date_readable": "2026-09-17 00:07:48"
+  },
+  {
+    "title": "Noragami",
+    "normalized_title": "noragami",
+    "anime_id": "7881",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-17T00:07:48.465589",
+    "date_readable": "2026-09-17 00:07:48"
   }
 ]
