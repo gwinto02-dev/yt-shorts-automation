@@ -750,5 +750,28 @@
       "label": "Match Your Viewing Mood",
       "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
     }
+  },
+  {
+    "date": "2026-09-18T06:21:31.830046",
+    "date_readable": "2026-09-18",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Trio: Sparks of Tomorrow, Clevatess S2 & Elusive Samurai 🌟 #Shorts",
+    "hook": "Kyoto Animation spent three months hand‑painting every background for Sparks of Tomorrow, a rarity for a 2026 series",
+    "script": "Kyoto Animation spent three months hand‑painting every background for Sparks of Tomorrow, a rarity for a 2026 series. The studio’s signature soft palette lets the 1907 Kyoto streets feel almost tangible, and the story follows 15‑year‑old Inako Momokawa, the second daughter of a sake brewer, as she navigates love and rivalry during a summer festival. Switching gears to high‑stakes fantasy, Clevatess Season 2 drops us into the aftermath of a war where Tiger, a scar‑marked scout, arrives at Boelate’s divine academy to trace General Drel’s secret chamber; the series holds a solid 7.6 on MyAnimeList. Finally, for a blend of swordplay and wry humor, The Elusive Samurai Season 2 also scores 7.6, picking up Mima’s reluctant partnership with the stoic Kojirou Nezu as they chase a rogue ninja clan across Edo’s shadows. Thinking back to Tiger’s covert hunt for Drel’s hidden room, which mystery grabbed you the most? Drop your thoughts below!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "kyoto animation spent three months",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your thoughts below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "w4ke3OzVpmY",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]

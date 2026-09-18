@@ -1902,5 +1902,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-18T00:07:18.850897",
     "date_readable": "2026-09-18 00:07:18"
+  },
+  {
+    "title": "The Elusive Samurai Season 2",
+    "normalized_title": "the elusive samurai season 2",
+    "anime_id": 182616,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-18T06:15:26.904818",
+    "date_readable": "2026-09-18 06:15:26"
+  },
+  {
+    "title": "Clevatess Season 2",
+    "normalized_title": "clevatess season 2",
+    "anime_id": 198946,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-18T06:15:26.904818",
+    "date_readable": "2026-09-18 06:15:26"
+  },
+  {
+    "title": "Sparks of Tomorrow",
+    "normalized_title": "sparks of tomorrow",
+    "anime_id": 103303,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-18T06:15:26.904818",
+    "date_readable": "2026-09-18 06:15:26"
   }
 ]

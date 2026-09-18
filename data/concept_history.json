@@ -707,5 +707,11 @@
     "date": "2026-09-18T00:07:18.853856",
     "date_readable": "2026-09-18 00:07:18",
     "angle_key": "MOOD_BASED"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-18T06:15:26.906926",
+    "date_readable": "2026-09-18 06:15:26",
+    "angle_key": "MAINSTREAM_CONTRAST"
   }
 ]
