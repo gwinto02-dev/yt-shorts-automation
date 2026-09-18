@@ -1950,5 +1950,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-18T12:06:55.232431",
     "date_readable": "2026-09-18 12:06:55"
+  },
+  {
+    "title": "Vinland Saga Season 2",
+    "normalized_title": "vinland saga season 2",
+    "anime_id": 136430,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-18T18:02:57.324179",
+    "date_readable": "2026-09-18 18:02:57"
+  },
+  {
+    "title": "Mob Psycho 100 II",
+    "normalized_title": "mob psycho 100 ii",
+    "anime_id": 101338,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-18T18:02:57.324179",
+    "date_readable": "2026-09-18 18:02:57"
+  },
+  {
+    "title": "Delicious in Dungeon",
+    "normalized_title": "delicious in dungeon",
+    "anime_id": 153518,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-18T18:02:57.324179",
+    "date_readable": "2026-09-18 18:02:57"
   }
 ]

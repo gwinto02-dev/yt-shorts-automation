@@ -797,5 +797,26 @@
       "label": "How These Compare to What's Popular Instead",
       "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
     }
+  },
+  {
+    "date": "2026-09-18T18:05:34.588187",
+    "date_readable": "2026-09-18",
+    "concept_type": "anime_comparison",
+    "title": "Underrated Anime Showdown: Dungeon Feasts vs Psychic Teens vs Viking Dreams 🍜 #Shorts",
+    "hook": "Just when the dragon's roar drowns out the clink of coins, the party realizes the real battle is staying alive on an empty stomach",
+    "script": "Just when the dragon's roar drowns out the clink of coins, the party realizes the real battle is staying alive on an empty stomach.  \n\nTrigger’s signature over‑the‑top character designs splash across *Delicious in Dungeon*, where Laios and his crew learn to cook the very monsters that once threatened them, turning every encounter into a slapstick survival lesson.  \n\nMoving from kitchen chaos to psychic chaos, Mob’s stoic mentor Reigen suddenly juggles a covert psychic cartel, and with an 8.7 / 10 score, Bones gives *Mob Psycho 100 II* a crisp, hand‑drawn style that amplifies the series’ blend of absurd comedy and raw emotion.  \n\nIf you prefer history’s harsh winds, *Vinland Saga* season 2, rated 8.8 / 10, swaps sword‑clashing vengeance for Einar’s quiet quest to rebuild his farm, while MAPPA’s gritty textures keep the Norse landscape feeling as brutal as the characters’ pasts.  \n\nWhether you’re craving Trigger’s monster‑meals or MAPPA’s somber fields, bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "just when the dragons roar",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": []
+    },
+    "video_id": "FE8an87pxKM",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]
