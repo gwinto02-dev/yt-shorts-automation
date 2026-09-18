@@ -773,5 +773,29 @@
       "label": "How These Compare to What's Popular Instead",
       "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
     }
+  },
+  {
+    "date": "2026-09-18T12:09:22.560039",
+    "date_readable": "2026-09-18",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Trio: Kaiju Girl C., Star Detective Precure & I Want Love Till Death 🌟 #Shorts",
+    "hook": "What if an orphanage trained its girls to become weapons of war, yet the only rebellion they could muster was love?\n\nFirst off, ROLL2’s 2026 production layers muted pastel tones over the grim halls of that orphanage, following Sheena as she navigates a world where death is routine and romance feels like contraband",
+    "script": "What if an orphanage trained its girls to become weapons of war, yet the only rebellion they could muster was love?\n\nFirst off, ROLL2’s 2026 production layers muted pastel tones over the grim halls of that orphanage, following Sheena as she navigates a world where death is routine and romance feels like contraband.\n\nMoving to Toei Animation’s 2026 entry, we meet Komugi Inukai—a junior‑high student whose birthday encounter with a mischievous fairy drags her into the 23rd Precure mystery, and the series currently holds a 7.5 /10 score on MyAnimeList.\n\nRounding out the trio, KAIJU GIRL CARAMELISE earned a 7.5 /10 rating, and LIDENFILMS blends slap‑slap comedy with a supernatural twist: high‑schooler Kuroe transforms into a towering kaiju whenever her emotions surge, complicating a budding romance with A.\n\nSo, which of those unexpected twists—sheer orphanage rebellion, a birthday‑gifted fairy, or a love‑driven monster—sticks with you? Share your take in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if an orphanage trained",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your take in the comments",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "qrX22HyMJx0",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]
