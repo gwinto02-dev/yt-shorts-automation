@@ -701,5 +701,11 @@
     "date": "2026-09-17T18:03:07.663223",
     "date_readable": "2026-09-17 18:03:07",
     "angle_key": "OVERLOOKED_REASON"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-18T00:07:18.853856",
+    "date_readable": "2026-09-18 00:07:18",
+    "angle_key": "MOOD_BASED"
   }
 ]

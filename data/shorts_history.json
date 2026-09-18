@@ -729,5 +729,26 @@
       "label": "Why These Got Overlooked",
       "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
     }
+  },
+  {
+    "date": "2026-09-18T00:08:39.269304",
+    "date_readable": "2026-09-18",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight Trio: My Dress‑Up Darling, Bleach & Goodbye, Lara 🎭 #Shorts",
+    "hook": "Kinema Citrus rendered the ocean scenes in Goodbye, Lara with over 12,000 hand‑painted background cells, a rarity for a 2026 series",
+    "script": "Kinema Citrus rendered the ocean scenes in Goodbye, Lara with over 12,000 hand‑painted background cells, a rarity for a 2026 series. If you crave emotional depth, the studio’s watercolor‑like visuals set a melancholy tone as a mermaid princess trades her tail for a human life, only to pay a memory‑erasing price. Need a pulse‑pounding rush? Bleach thrusts you into Ichigo Kurosaki’s world—a high‑schooler who suddenly sees ghosts and inherits a Soul Reaper’s blade. The show sits at 7.9 on MyAnimeList, a testament to its enduring action. Want something breezy yet heartfelt, My Dress‑Up Darling scored an 8.0 and follows Wakana Gojou, a doll‑making hobbyist whose friendship with popular classmate Hina blossoms into quirky cosplay adventures. So whether Lara’s tragic potion, Ichigo’s spirit battles, or Wakana’s cosplay camaraderie speaks to your mood, which series will you start? Share your choice below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "kinema citrus rendered the ocean",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your choice below",
+      "transition_markers": []
+    },
+    "video_id": "vIGjyA_FJrs",
+    "concept_angle": {
+      "key": "MOOD_BASED",
+      "label": "Match Your Viewing Mood",
+      "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
+    }
   }
 ]

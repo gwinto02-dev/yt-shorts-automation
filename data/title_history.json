@@ -1878,5 +1878,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-17T18:03:07.661746",
     "date_readable": "2026-09-17 18:03:07"
+  },
+  {
+    "title": "My Dress-Up Darling",
+    "normalized_title": "my dressup darling",
+    "anime_id": 132405,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-18T00:07:18.850897",
+    "date_readable": "2026-09-18 00:07:18"
+  },
+  {
+    "title": "Bleach",
+    "normalized_title": "bleach",
+    "anime_id": 269,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-18T00:07:18.850897",
+    "date_readable": "2026-09-18 00:07:18"
+  },
+  {
+    "title": "Goodbye, Lara",
+    "normalized_title": "goodbye lara",
+    "anime_id": 177637,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-18T00:07:18.850897",
+    "date_readable": "2026-09-18 00:07:18"
   }
 ]
