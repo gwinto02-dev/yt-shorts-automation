@@ -886,5 +886,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-19T18:05:41.709926",
+    "date_readable": "2026-09-19",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Arc Trio: Swordcraft, Demon Castle & Tennis Romance 🌟 #Shorts",
+    "hook": "What most fans don’t realize is that Cypic, a studio that mostly handled short‑form web series, is animating Kagurabachi—its first full‑length fantasy sword drama",
+    "script": "What most fans don’t realize is that Cypic, a studio that mostly handled short‑form web series, is animating Kagurabachi—its first full‑length fantasy sword drama.\n\nIf you crave striking visuals, Cypic’s texture‑rich backgrounds give each forge scene a metallic glow, while the story follows Kunishige Rokuhira training under his famed swordsmith dad and the serious son who hopes to out‑craft the legend himself. The adaptation tackles the manga’s opening “Rokuhira” arc, a favorite for its blend of family drama and blade technique.\n\nSwitching gears, Tanjirou Kamado returns to the battlefield in Demon Slayer: Infinity Castle Part 2. The series drops him into the shattered halls of the Infinity Castle, where the demon‑filled corridors test his new Breath techniques. Ufotable’s fluid fight choreography, already earning early buzz, promises to push the arc’s supernatural stakes even higher.\n\nFinally, Blue Box Season 2 arrives with Electric Circus’s crisp color palette and tight volleyball animation. The sequel picks up Hina and Kyou’s budding romance as they juggle finals, team practice, and the lingering tension of unspoken feelings, extending the manga’s second‑season romance arc.\n\nWhen Cypic’s steel clangs echo through Kagurabachi, it feels just as intense as Tanjirou’s castle showdown—so which of these upcoming arcs are you adding to your watchlist first? Drop your choice below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "what most fans dont realize",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your choice below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "XqfBu0VIsCs",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
