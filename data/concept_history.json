@@ -731,5 +731,11 @@
     "date": "2026-09-19T00:07:59.711017",
     "date_readable": "2026-09-19 00:07:59",
     "angle_key": "MAINSTREAM_CONTRAST"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-19T06:14:59.584568",
+    "date_readable": "2026-09-19 06:14:59",
+    "angle_key": "MANGA_ARC_HYPE"
   }
 ]

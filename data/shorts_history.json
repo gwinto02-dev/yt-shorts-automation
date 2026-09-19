@@ -842,5 +842,28 @@
       "label": "How These Compare to What's Popular Instead",
       "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
     }
+  },
+  {
+    "date": "2026-09-19T06:16:15.951369",
+    "date_readable": "2026-09-19",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Manga Arc Trio: Witch Hat Atelier S2, Holy Night & Sword Reincarnated ⚔️ #Shorts",
+    "hook": "Right when the calendar flips to 2026, three long‑awaited manga arcs finally get their animation slots",
+    "script": "Right when the calendar flips to 2026, three long‑awaited manga arcs finally get their animation slots.\n\nFirst up, Bug Films brings its hand‑drawn textures back for Witch Hat Atelier Season 2, where apprentice Iguin continues chasing the forbidden glyph that could reshape the kingdom’s alchemy.\n\nSwitching gears, Aoko Aozaki’s everyday life in Witch on the Holy Night kicks off with her trying to keep her magical experiments hidden from housemate Alice, and ufotable’s crisp line work makes every spell feel tangible; the series is already marked as an eagerly awaited 2026 debut.\n\nFinally, C2C’s Reincarnated as a Sword Season 2 rolls out with the same high‑octane humor that made the first run a fan favorite, and the plot dives back into Jean du Vix’s quest to protect Urushi while navigating a new kingdom’s politics.\n\nIf the alchemical mysteries of Witch Hat Atelier’s second season sparked your interest, which of these three will you queue first? Let me know in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the calendar flips",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "NxJCZgPRT8I",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
