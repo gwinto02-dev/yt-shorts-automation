@@ -1974,5 +1974,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-18T18:02:57.324179",
     "date_readable": "2026-09-18 18:02:57"
+  },
+  {
+    "title": "Young Ladies Don't Play Fighting Games",
+    "normalized_title": "young ladies dont play fighting games",
+    "anime_id": 128757,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-19T00:07:59.708858",
+    "date_readable": "2026-09-19 00:07:59"
+  },
+  {
+    "title": "Bungo Stray Dogs WAN! 2",
+    "normalized_title": "bungo stray dogs wan 2",
+    "anime_id": 201667,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-19T00:07:59.708858",
+    "date_readable": "2026-09-19 00:07:59"
+  },
+  {
+    "title": "Farming Life in Another World 2",
+    "normalized_title": "farming life in another world 2",
+    "anime_id": 197824,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-19T00:07:59.708858",
+    "date_readable": "2026-09-19 00:07:59"
   }
 ]

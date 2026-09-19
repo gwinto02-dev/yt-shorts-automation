@@ -725,5 +725,11 @@
     "date": "2026-09-18T18:02:57.326252",
     "date_readable": "2026-09-18 18:02:57",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-19T00:07:59.711017",
+    "date_readable": "2026-09-19 00:07:59",
+    "angle_key": "MAINSTREAM_CONTRAST"
   }
 ]

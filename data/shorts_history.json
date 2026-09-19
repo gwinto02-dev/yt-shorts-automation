@@ -818,5 +818,29 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-09-19T00:09:04.296301",
+    "date_readable": "2026-09-19",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Anime Trio: Farming Magic, Literary Laughs & School Showdowns 🎮 #Shorts",
+    "hook": "What if the most tranquil farming series suddenly became the magnet for strangers wandering in from every corner of a magical world? Starting with Farming Life in Another World 2, Zero‑G paints each field in soft pastel tones while Hiraku’s Almighty Farming Tool turns every newcomer’s dream into a blooming homestead",
+    "script": "What if the most tranquil farming series suddenly became the magnet for strangers wandering in from every corner of a magical world? Starting with Farming Life in Another World 2, Zero‑G paints each field in soft pastel tones while Hiraku’s Almighty Farming Tool turns every newcomer’s dream into a blooming homestead. Next up, Bungo Stray Dogs WAN! 2 drops us back into the literary agency’s oddball office, where Louisa May Alcott wields a typewriter that literally writes its own punchlines, and the season holds a respectable 7.4 on MyAnimeList. Finally, Young Ladies Don't Play Fighting Games lands at a solid 7.4, trading the usual tea‑time etiquette for high‑score showdowns as Aya discovers the school’s secret fighting club behind the polished “White Lily” façade. If you’re curious to see the Almighty Farming Tool in action or watch Aya’s clash with the White Lily elite, bookmark this Short for your next binge night. Which of these three will you dive into first?",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if the most tranquil",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "will you dive into first",
+      "transition_markers": [
+        "next up",
+        "finally"
+      ]
+    },
+    "video_id": "6kUGs7TbUSw",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]
