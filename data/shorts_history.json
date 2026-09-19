@@ -865,5 +865,26 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-09-19T12:07:57.068337",
+    "date_readable": "2026-09-19",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Heroic Depths: Jujutsu, Chainsaw & Saint 🌟 #Shorts",
+    "hook": "What drives a teen who survived a city‑wide massacre to keep playing a death‑by‑rules game across Japan? MAPPA's gritty, high‑contrast animation paints the ten colonies of the Culling Game, and Takuma Ino battles lingering Shibuya guilt while being forced into a lethal contest that forces him to question his worth",
+    "script": "What drives a teen who survived a city‑wide massacre to keep playing a death‑by‑rules game across Japan? MAPPA's gritty, high‑contrast animation paints the ten colonies of the Culling Game, and Takuma Ino battles lingering Shibuya guilt while being forced into a lethal contest that forces him to question his worth. Denji’s desperation to feel anything beyond his endless hunger lands him in a rain‑soaked date with Makima, and the movie’s 9.0 score shows how his fragile hope clashes with Reze’s hidden motives, exposing his fear of ordinary life. At a modest 6.2, The Oblivious Saint Can’t Contain Her Power follows Lady Carolina, the duke’s overlooked daughter, as she wrestles with a volatile magic she barely understands, turning her perceived weakness into a dangerous edge. Now that you’ve heard about the colonies, the rainy encounter, and Carolina’s secret power, which protagonist’s inner battle are you tackling first? Share your pick in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what drives a teen who",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": []
+    },
+    "video_id": "uPfqvnPz4Ko",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]

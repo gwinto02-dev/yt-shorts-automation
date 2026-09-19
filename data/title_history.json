@@ -2022,5 +2022,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-19T06:14:59.582157",
     "date_readable": "2026-09-19 06:14:59"
+  },
+  {
+    "title": "The Oblivious Saint Can't Contain Her Power",
+    "normalized_title": "the oblivious saint cant contain her power",
+    "anime_id": 196219,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-19T12:06:28.020487",
+    "date_readable": "2026-09-19 12:06:28"
+  },
+  {
+    "title": "Chainsaw Man – The Movie: Reze Arc",
+    "normalized_title": "chainsaw man the movie reze arc",
+    "anime_id": 171627,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-19T12:06:28.020487",
+    "date_readable": "2026-09-19 12:06:28"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 3: The Culling Game Part 1",
+    "normalized_title": "jujutsu kaisen season 3 the culling game part 1",
+    "anime_id": 172463,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-19T12:06:28.020487",
+    "date_readable": "2026-09-19 12:06:28"
   }
 ]
