@@ -953,5 +953,28 @@
       "label": "How These Compare to What's Popular Instead",
       "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
     }
+  },
+  {
+    "date": "2026-09-20T12:09:22.056766",
+    "date_readable": "2026-09-20",
+    "concept_type": "character_spotlight",
+    "title": "Iconic Tactical Badass Heroes: Jujutsu, Bleach & Rearguard ⚔️ #Shorts",
+    "hook": "What happens when a sorcerer tasked with protecting a future master is ambushed by a non‑magic assassin?\n\nFirst off, MAPPA’s crisp line work and vivid color grading make the cursed‑energy battles pop, and this season pits Satoru Gojō against Suguru Getō in a clash that forces the strongest sorcerer to outthink a former ally rather than just outmuscle him",
+    "script": "What happens when a sorcerer tasked with protecting a future master is ambushed by a non‑magic assassin?\n\nFirst off, MAPPA’s crisp line work and vivid color grading make the cursed‑energy battles pop, and this season pits Satoru Gojō against Suguru Getō in a clash that forces the strongest sorcerer to outthink a former ally rather than just outmuscle him.\n\nIchigo Kurosaki, now a battle‑hardened Substitute Soul Reaper, is pulled into the final Quincy conflict; the series sits at 8.8 on MyAnimeList, and his ability to combine swordplay with strategic use of Reiatsu turns each fight into a chess match.\n\nMoving to the 2026 Maho Film entry, The World’s Strongest Rearguard earned a modest 5.5, yet it drops Arihito Atobe into the Labyrinth Country as a Rearguard—a versatile support class that flips between offense and defense in a single heartbeat, showcasing raw tactical flair.\n\nWhich of these tactical showdowns left the biggest impression on you, and why? Let me hear your take in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when a sorcerer",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your take in the comments",
+      "transition_markers": [
+        "first off"
+      ]
+    },
+    "video_id": "FhkiHXljBn0",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]

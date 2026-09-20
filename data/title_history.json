@@ -2142,5 +2142,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-20T06:14:43.699138",
     "date_readable": "2026-09-20 06:14:43"
+  },
+  {
+    "title": "The World's Strongest Rearguard",
+    "normalized_title": "the worlds strongest rearguard",
+    "anime_id": 198409,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T12:06:32.867868",
+    "date_readable": "2026-09-20 12:06:32"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War",
+    "normalized_title": "bleach thousandyear blood war",
+    "anime_id": 116674,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T12:06:32.867868",
+    "date_readable": "2026-09-20 12:06:32"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 2",
+    "normalized_title": "jujutsu kaisen season 2",
+    "anime_id": 145064,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T12:06:32.867868",
+    "date_readable": "2026-09-20 12:06:32"
   }
 ]

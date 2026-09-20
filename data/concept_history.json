@@ -761,5 +761,11 @@
     "date": "2026-09-20T06:14:43.701268",
     "date_readable": "2026-09-20 06:14:43",
     "angle_key": "MAINSTREAM_CONTRAST"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T12:06:32.870188",
+    "date_readable": "2026-09-20 12:06:32",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]
