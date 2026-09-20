@@ -930,5 +930,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-20T06:19:51.907010",
+    "date_readable": "2026-09-20",
+    "concept_type": "hidden_gems",
+    "title": "Hidden Gem Anime Trio: Detective Conan, BanG Dream! & Angel Next Door 🌟 #Shorts",
+    "hook": "It’s hard to believe Detective Conan began in 1996 and still releases fresh episodes",
+    "script": "It’s hard to believe Detective Conan began in 1996 and still releases fresh episodes.  \n\nIf you crave a slice‑of‑life romance with studio flair, Project No.9 delivers its gentle, pastel‑washed visuals in **The Angel Next Door Spoils Me Rotten 2**, where Chitose Shirakawa and Yuuta Kadowaki, now officially a couple, juggle exams and lingering pasts.  \n\nSwitching to music‑driven chaos, the vocalist dubbed Dareka no Koe B gets thrust into the virtual band Mugendai Mewtype; NICHICALINE’s 2026 series **BanG Dream! YUME∞MITA** earned a 7.5 rating as the girls scramble to turn raw talent into a real performance.  \n\nFinally, the long‑running mystery scores an 8.2, and Shinichi Kudo’s high‑school detective work still feels razor‑sharp, each case a battle of wits while he hides his true identity.  \n\nFrom Chitose’s school dilemmas to Shinichi’s endless puzzles, which twist caught your attention? Drop your thoughts below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "its hard to believe detective",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your thoughts below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "q9zziq9kC58",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]

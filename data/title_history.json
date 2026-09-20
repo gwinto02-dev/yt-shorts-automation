@@ -2118,5 +2118,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-20T00:19:04.516429",
     "date_readable": "2026-09-20 00:19:04"
+  },
+  {
+    "title": "Detective Conan",
+    "normalized_title": "detective conan",
+    "anime_id": 235,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-20T06:14:43.699138",
+    "date_readable": "2026-09-20 06:14:43"
+  },
+  {
+    "title": "BanG Dream! YUME∞MITA",
+    "normalized_title": "bang dream yumemita",
+    "anime_id": 198376,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-20T06:14:43.699138",
+    "date_readable": "2026-09-20 06:14:43"
+  },
+  {
+    "title": "The Angel Next Door Spoils Me Rotten2",
+    "normalized_title": "the angel next door spoils me rotten2",
+    "anime_id": 170019,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-20T06:14:43.699138",
+    "date_readable": "2026-09-20 06:14:43"
   }
 ]
