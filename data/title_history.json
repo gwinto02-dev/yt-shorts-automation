@@ -2166,5 +2166,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-20T12:06:32.867868",
     "date_readable": "2026-09-20 12:06:32"
+  },
+  {
+    "title": "Haikyu!! 2nd Season",
+    "normalized_title": "haikyu 2nd season",
+    "anime_id": "10076",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-20T18:03:05.283177",
+    "date_readable": "2026-09-20 18:03:05"
+  },
+  {
+    "title": "Frieren: Beyond Journey’s End Season 2",
+    "normalized_title": "frieren beyond journeys end season 2",
+    "anime_id": 182255,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-20T18:03:05.283177",
+    "date_readable": "2026-09-20 18:03:05"
+  },
+  {
+    "title": "Gurren Lagann",
+    "normalized_title": "gurren lagann",
+    "anime_id": 2001,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-20T18:03:05.283177",
+    "date_readable": "2026-09-20 18:03:05"
   }
 ]

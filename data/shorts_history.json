@@ -976,5 +976,28 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-20T18:04:23.694723",
+    "date_readable": "2026-09-20",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Haikyu!! S2, Frieren S2 & Gurren Lagann 🔥 #Shorts",
+    "hook": "Gainax kept a single storyboard artist on the final battle of Gurren Lagann, a rarity for a 2007 mecha series",
+    "script": "Gainax kept a single storyboard artist on the final battle of Gurren Lagann, a rarity for a 2007 mecha series. Starting with that bold production choice, Gainax's visuals explode with vivid color as Simon, a timid digger, discovers a hidden surface world and pilots a spiraling robot toward the stars. Then we have Frieren, the centuries‑old elf mage still haunted by the fleeting lives of her companions; the second season, now sitting at 8.8 on MyAnimeList, follows her and the party as they trek the perilous Northern Plateau toward Aureole. At 8.3, Haikyu!!'s second season feels like a rallying match, picking up right after Inter‑High and thrusting Karasuno into the Spring tournament grind, where every serve can flip the momentum. Whether you launch into Simon’s sky‑piercing quest or keep Frieren’s quiet odyssey for later, bookmark this Short for your next binge night! Tell me which series you’ll start with in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "gainax kept a single storyboard",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "start with in the comments",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "B-RWNCYQzug",
+    "concept_angle": {
+      "key": "IRRESISTIBLE_BINGE",
+      "label": "Impossible to Stop Bingeing",
+      "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
+    }
   }
 ]
