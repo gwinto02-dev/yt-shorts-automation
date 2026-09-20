@@ -909,5 +909,26 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-09-20T00:19:04.514249",
+    "date_readable": "2026-09-20",
+    "concept_type": "character_spotlight",
+    "title": "Upcoming Badass Leads: Lord of Mysteries, Attack on Titan, Daemons 🌟 #Shorts",
+    "hook": "Did you know Lord of Mysteries fuses Victorian steampunk with occult detective work? B",
+    "script": "Did you know Lord of Mysteries fuses Victorian steampunk with occult detective work? B.CMAY PICTURES paints the series in muted, fog‑filled tones, and the plot follows Zhou Mingrui reborn as Klein Moretti, constantly balancing light and darkness amid warring churches. If you crave a protagonist wrestling with his own morality, Eren Yeager’s relentless drive to break the cycle lands in the 8.7‑rated final season, where the Scout Regiment confronts the true cost of freedom and survival. For something a bit off the beaten path, Daemons of the Shadow Realm sits at 7.8, and its story unfolds in a remote mountain village guarded by ancient stone sentinels, where young Yuru must shoulder responsibility while protecting his twin sister Asa. From Klein’s tightrope walk between light and dark to Yuru’s mountain guardians, which inner struggle stays with you? Share your thoughts below!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know lord of",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your thoughts below",
+      "transition_markers": []
+    },
+    "video_id": "c_6TFITbnSU",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]

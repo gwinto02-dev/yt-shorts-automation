@@ -2070,5 +2070,53 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-19T18:02:48.064520",
     "date_readable": "2026-09-19 18:02:48"
+  },
+  {
+    "title": "Daemons of the Shadow Realm",
+    "normalized_title": "daemons of the shadow realm",
+    "anime_id": 195600,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T00:08:15.274631",
+    "date_readable": "2026-09-20 00:08:15"
+  },
+  {
+    "title": "Attack on Titan Final Season",
+    "normalized_title": "attack on titan final season",
+    "anime_id": 110277,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T00:08:15.274631",
+    "date_readable": "2026-09-20 00:08:15"
+  },
+  {
+    "title": "Lord of Mysteries",
+    "normalized_title": "lord of mysteries",
+    "anime_id": 137667,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T00:08:15.274631",
+    "date_readable": "2026-09-20 00:08:15"
+  },
+  {
+    "title": "Daemons of the Shadow Realm",
+    "normalized_title": "daemons of the shadow realm",
+    "anime_id": 195600,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T00:19:04.516429",
+    "date_readable": "2026-09-20 00:19:04"
+  },
+  {
+    "title": "Attack on Titan Final Season",
+    "normalized_title": "attack on titan final season",
+    "anime_id": 110277,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T00:19:04.516429",
+    "date_readable": "2026-09-20 00:19:04"
+  },
+  {
+    "title": "Lord of Mysteries",
+    "normalized_title": "lord of mysteries",
+    "anime_id": 137667,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-20T00:19:04.516429",
+    "date_readable": "2026-09-20 00:19:04"
   }
 ]
