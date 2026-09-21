@@ -999,5 +999,29 @@
       "label": "Impossible to Stop Bingeing",
       "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
     }
+  },
+  {
+    "date": "2026-09-21T02:42:35.163011",
+    "date_readable": "2026-09-21",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Skeleton Knight, Dignified Bloom, & Reincarnated Hero 🌟 #Shorts",
+    "hook": "Did you know Aura Studio, known mainly for short‑form web shorts, took on the full‑season animation of Skeleton Knight in Another World Season 2?\n\nStarting with Studio Bind, the visuals in Mushoku Tensei: Jobless Reincarnation S2 Part 2 shine especially during the University of Magic arc, where Rudeus Greyrat leverages his battle‑tested spellcraft to outmaneuver a rival sorcerer while reuniting with his childhood friend Syl",
+    "script": "Did you know Aura Studio, known mainly for short‑form web shorts, took on the full‑season animation of Skeleton Knight in Another World Season 2?\n\nStarting with Studio Bind, the visuals in Mushoku Tensei: Jobless Reincarnation S2 Part 2 shine especially during the University of Magic arc, where Rudeus Greyrat leverages his battle‑tested spellcraft to outmaneuver a rival sorcerer while reuniting with his childhood friend Syl.\n\nThen we have Makoto Tsukada from The Fragrant Flower Blooms With Dignity, a scrappy underdog who turns the school's social hierarchy on its head; the series holds an 8.4 / 10 rating and rewards his quick‑thinking schemes with moments that feel genuinely daring.\n\nFinally, at 6.5 / 10, Skeleton Knight’s second season forces Arc, now a literal skeleton, to coordinate with Ariane, Chiyome, and Ponta, pulling off a high‑stakes assault on the necromancer behind his curse.\n\nWhich of those daring arcs—Rudeus’s university duel, Makoto’s class‑room coup, or Arc’s skeletal showdown—sticks with you? Let me know your pick.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know aura studio",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know your pick",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "BLdjToykIw4",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
