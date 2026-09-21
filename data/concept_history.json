@@ -779,5 +779,11 @@
     "date": "2026-09-21T02:38:22.646531",
     "date_readable": "2026-09-21 02:38:22",
     "angle_key": "BADASS_MOMENTS"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-21T12:10:22.193521",
+    "date_readable": "2026-09-21 12:10:22",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]

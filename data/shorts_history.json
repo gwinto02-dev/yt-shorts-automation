@@ -1023,5 +1023,28 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-21T12:12:14.750461",
+    "date_readable": "2026-09-21",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight Trio: Re:ZERO S2, Mushoku Tensei & Blue Box 🌈 #Shorts",
+    "hook": "Telecom Animation Film gave Blue Box its own badminton‑specific color palette, a detail that earned the series an 8",
+    "script": "Telecom Animation Film gave Blue Box its own badminton‑specific color palette, a detail that earned the series an 8.1 on MyAnimeList. The studio’s clean line work paints Taiki Inomata’s frantic practice sessions and the quiet moments when he finally confesses to upperclassman Chinatsu Kano, making the romance feel as precise as a shuttlecock’s arc.  \n\nSwitching to pure adventure, Rudeus Greyrat wakes up as a newborn in a magic‑filled world after a fatal bus accident, and he immediately starts rewriting his life with the knowledge of his former self; the show currently sits at 8.2.  \n\nAt 8.3, Re:ZERO Season 2 still defines the psychological time‑loop thriller, pushing Subaru into a fresh reset where the White Whale’s legacy and a scheming Witch Cult demand new strategies.  \n\nIf you’re chasing the genre that hits you hardest—whether it’s the sporty romance of Blue Box, the boundless world‑building of Mushoku Tensei, or the tense loops of Re:ZERO—pick one and drop its name in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "telecom animation film gave blue",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "its name in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "zawhCU-AgYo",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]
