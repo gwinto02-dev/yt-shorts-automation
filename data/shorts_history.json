@@ -1046,5 +1046,29 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-09-21T17:35:08.709531",
+    "date_readable": "2026-09-21",
+    "concept_type": "genre_spotlight",
+    "title": "Genre‑Spotlight Mix: One‑Punch Man, MTR S2 & Elite S4 🎬 #Shorts",
+    "hook": "MADHOUSE poured over 2,000 hand‑drawn frames into the opening of One‑Punch Man, a rarity for a 2015 TV series",
+    "script": "MADHOUSE poured over 2,000 hand‑drawn frames into the opening of One‑Punch Man, a rarity for a 2015 TV series. First off, Lerche’s sharp line work keeps Classroom of the Elite’s psychological chess game vivid, as Ayanokouji and his peers navigate a fresh gauntlet of exams and an influx of ambitious first‑years. Moving to the fantasy side, Rudeus watches Eris stride away, and that heartbreak fuels Season 2’s arc, which currently sits at 8.1 on MyAnimeList and follows his quest to master magic while confronting lingering regrets. Finally, at 8.3, One‑Punch Man blends absurd humor with existential dread, following Saitama’s boredom‑induced hunt for a challenger who can actually test him. If the 2,000‑frame opening still has you impressed, which of these genre‑defining series will you start tonight? Comment which one you're queueing up first!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "madhouse poured over 2000 handdrawn",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "one youre queueing up first",
+      "transition_markers": [
+        "first off",
+        "finally"
+      ]
+    },
+    "video_id": "FmG0PlBHqeg",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]

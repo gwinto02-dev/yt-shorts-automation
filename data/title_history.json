@@ -2238,5 +2238,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-21T12:10:22.191102",
     "date_readable": "2026-09-21 12:10:22"
+  },
+  {
+    "title": "One-Punch Man",
+    "normalized_title": "onepunch man",
+    "anime_id": 21087,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-21T17:32:50.103409",
+    "date_readable": "2026-09-21 17:32:50"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation Season 2",
+    "normalized_title": "mushoku tensei jobless reincarnation season 2",
+    "anime_id": 146065,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-21T17:32:50.103409",
+    "date_readable": "2026-09-21 17:32:50"
+  },
+  {
+    "title": "Classroom of the Elite 4th Season: Second Year, First Semester",
+    "normalized_title": "classroom of the elite 4th season second year first semester",
+    "anime_id": 180745,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-21T17:32:50.103409",
+    "date_readable": "2026-09-21 17:32:50"
   }
 ]
