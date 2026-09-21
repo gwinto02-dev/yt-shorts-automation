@@ -2262,5 +2262,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-21T17:32:50.103409",
     "date_readable": "2026-09-21 17:32:50"
+  },
+  {
+    "title": "Dr. STONE SCIENCE FUTURE Cour 3",
+    "normalized_title": "dr stone science future cour 3",
+    "anime_id": 199221,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-21T21:19:59.366085",
+    "date_readable": "2026-09-21 21:19:59"
+  },
+  {
+    "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing",
+    "normalized_title": "hell mode the hardcore gamer dominates in another world with garbage balancing",
+    "anime_id": 185262,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-21T21:19:59.366085",
+    "date_readable": "2026-09-21 21:19:59"
+  },
+  {
+    "title": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing Season 2",
+    "normalized_title": "hell mode the hardcore gamer dominates in another world with garbage balancing season 2",
+    "anime_id": 209983,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-21T21:19:59.366085",
+    "date_readable": "2026-09-21 21:19:59"
   }
 ]
