@@ -1091,5 +1091,28 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-22T11:07:35.184434",
+    "date_readable": "2026-09-22",
+    "concept_type": "anime_comparison",
+    "title": "Upcoming showdown: My Hero Academia vs Wistoria vs Gachiakuta 🌟 #Shorts",
+    "hook": "Bones spent three months animating the Season 7 climax, packing over 5,000 hand‑drawn frames into a single explosion",
+    "script": "Bones spent three months animating the Season 7 climax, packing over 5,000 hand‑drawn frames into a single explosion.\n\nStarting with My Hero Academia Season 7, Bones keeps its sharp fight choreography while the plot follows Japan’s shaken trust in heroes after the Paranormal Liberation Front showdown.\n\nNext, Wistoria: Wand and Sword Season 2 centers on Will, a magic‑less academy dropout who vows to join the elite Magia Vander to honor his promise to childhood friend Elfaria. It holds an 8.2 score on MyAnimeList, and the series mixes political intrigue with classic wand battles.\n\nFinally, Gachiakuta earns an 8.2 rating and drops you into a floating town split between impoverished workers and wealthy elites who dump waste into the abyss. A false murder charge on a young resident sparks a full‑scale revolt.\n\nIf a sky‑high city built on garbage sounds compelling, start with Gachiakuta — which of these three will you watch first? Share your choice below.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "bones spent three months animating",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your choice below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "-Y4cAkLNARs",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]

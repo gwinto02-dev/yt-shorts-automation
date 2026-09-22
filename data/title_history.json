@@ -2310,5 +2310,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-22T02:40:11.414487",
     "date_readable": "2026-09-22 02:40:11"
+  },
+  {
+    "title": "Gachiakuta",
+    "normalized_title": "gachiakuta",
+    "anime_id": 178025,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-22T11:05:08.794932",
+    "date_readable": "2026-09-22 11:05:08"
+  },
+  {
+    "title": "Wistoria: Wand and Sword Season 2",
+    "normalized_title": "wistoria wand and sword season 2",
+    "anime_id": 182300,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-22T11:05:08.794932",
+    "date_readable": "2026-09-22 11:05:08"
+  },
+  {
+    "title": "My Hero Academia Season 7",
+    "normalized_title": "my hero academia season 7",
+    "anime_id": 163139,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-22T11:05:08.794932",
+    "date_readable": "2026-09-22 11:05:08"
   }
 ]
