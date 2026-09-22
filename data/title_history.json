@@ -2334,5 +2334,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-22T11:05:08.794932",
     "date_readable": "2026-09-22 11:05:08"
+  },
+  {
+    "title": "Hanaori-san Still Wants to Fight in the Next Life",
+    "normalized_title": "hanaorisan still wants to fight in the next life",
+    "anime_id": 199066,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-22T16:01:55.544328",
+    "date_readable": "2026-09-22 16:01:55"
+  },
+  {
+    "title": "My Hero Academia Season 6",
+    "normalized_title": "my hero academia season 6",
+    "anime_id": 139630,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-22T16:01:55.544328",
+    "date_readable": "2026-09-22 16:01:55"
+  },
+  {
+    "title": "The Eminence in Shadow",
+    "normalized_title": "the eminence in shadow",
+    "anime_id": 130298,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-22T16:01:55.544328",
+    "date_readable": "2026-09-22 16:01:55"
   }
 ]

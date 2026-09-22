@@ -1114,5 +1114,26 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-22T16:03:14.266331",
+    "date_readable": "2026-09-22",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Hanaori‑san, My Hero Academia S6 & Eminence in Shadow 🔥 #Shorts",
+    "hook": "Right when you think a shadow‑bound hero is just another parody, The Eminence in Shadow drops a whole covert organization that actually exists",
+    "script": "Right when you think a shadow‑bound hero is just another parody, The Eminence in Shadow drops a whole covert organization that actually exists. Nexus handles the animation, giving the series a crisp, slightly muted palette that suits No.665’s secret‑agent antics. He pretends to be a background player while quietly dismantling a demon cult from the shadows.\n\nSwitching gears, Mirai Sasaki returns in My Hero Academia Season 6, and the stakes feel personal as she hunts the newly formed Paranormal Liberation Front. The season holds an 8.2 /10 on MyAnimeList, and Bones keeps the fight choreography tight, especially during the downtown showdown.\n\nLastly, Hanaori‑san Still Wants to Fight in the Next Life earned a 6.9 /10, and it flips the usual revenge plot by having former Demon King Ryuusei forced to share a classroom with the hero who once sealed him.\n\nWhether you dive into the covert ops of The Eminence in Shadow or the classroom chaos of Hanaori‑san, save this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when you think a",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": []
+    },
+    "video_id": "sMvl59D_O0s",
+    "concept_angle": {
+      "key": "UNMATCHED_PAYOFF",
+      "label": "Unmatched Narrative Payoff",
+      "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
+    }
   }
 ]

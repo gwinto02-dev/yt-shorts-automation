@@ -809,5 +809,11 @@
     "date": "2026-09-22T11:05:08.797447",
     "date_readable": "2026-09-22 11:05:08",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-22T16:01:55.546753",
+    "date_readable": "2026-09-22 16:01:55",
+    "angle_key": "UNMATCHED_PAYOFF"
   }
 ]
