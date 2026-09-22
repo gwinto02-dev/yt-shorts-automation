@@ -1070,5 +1070,26 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-09-22T02:44:11.904770",
+    "date_readable": "2026-09-22",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Oh Boy, Was I Wrong About Her, AOT S4 Part 2 & SPY×FAMILY 🌟 #Shorts",
+    "hook": "Did you know CloverWorks painted the Spy x Family opening using actual watercolor brushes, a technique rare for a 2022 TV series?\n\nCloverWorks gives Spy x Family crisp character designs, letting the fake family juggle secret missions while the city’s neon lights pulse behind them",
+    "script": "Did you know CloverWorks painted the Spy x Family opening using actual watercolor brushes, a technique rare for a 2022 TV series?\n\nCloverWorks gives Spy x Family crisp character designs, letting the fake family juggle secret missions while the city’s neon lights pulse behind them.\n\nLevi’s quiet resolve in Attack on Titan Final Season Part 2 shows why he stays the series’ tactical ace, and MyAnimeList rates the arc at 8.6 / 10.\n\nProject No. 9’s Oh Boy, Was I Wrong About Her scores a modest 6.9, yet its story follows Hayato reuniting with Haruki—now a girl—after a childhood promise, turning high‑school romance into a subtle power play.\n\nIf you’re after tactical brilliance, the Final Season’s battlefield chess is hard to beat. Which of these three are you watching first? Share your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know cloverworks painted",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": []
+    },
+    "video_id": "XCcoPcWJFBc",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
