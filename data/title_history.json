@@ -2358,5 +2358,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-22T16:01:55.544328",
     "date_readable": "2026-09-22 16:01:55"
+  },
+  {
+    "title": "Grow Up Show",
+    "normalized_title": "grow up show",
+    "anime_id": 196017,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-22T20:35:32.234857",
+    "date_readable": "2026-09-22 20:35:32"
+  },
+  {
+    "title": "Solo Leveling",
+    "normalized_title": "solo leveling",
+    "anime_id": 151807,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-22T20:35:32.234857",
+    "date_readable": "2026-09-22 20:35:32"
+  },
+  {
+    "title": "Shangri-La Frontier",
+    "normalized_title": "shangrila frontier",
+    "anime_id": 151970,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-22T20:35:32.234857",
+    "date_readable": "2026-09-22 20:35:32"
   }
 ]

@@ -1135,5 +1135,29 @@
       "label": "Unmatched Narrative Payoff",
       "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
     }
+  },
+  {
+    "date": "2026-09-22T20:38:15.334449",
+    "date_readable": "2026-09-22",
+    "concept_type": "character_spotlight",
+    "title": "Epic character spotlight: Grow Up Show, Solo Leveling & Shangri‑La Frontier 🚀 #Shorts",
+    "hook": "Did you catch that the 2023 debut of Shangri‑La Frontier actually opens with a faux ‘game over’ screen, instantly throwing you into its retro‑gaming world? Starting with C2C’s crisp animation, the series follows Rakurou’s friend, a sarcastic narrator who can’t remember the last decent game he played",
+    "script": "Did you catch that the 2023 debut of Shangri‑La Frontier actually opens with a faux ‘game over’ screen, instantly throwing you into its retro‑gaming world? Starting with C2C’s crisp animation, the series follows Rakurou’s friend, a sarcastic narrator who can’t remember the last decent game he played. As he’s forced into a hyper‑real VR arena, his cynicism cracks, revealing a fear of stagnation that drives every risky decision.\n\nThen we have Solo Leveling, where the weakest hunter, Seong Jin‑U, survives a lethal dungeon only to awaken a terrifying power. The show’s 8.0/10 rating reflects how his relentless self‑doubt morphs into a cold, calculated ambition.\n\nFinally, Grow Up Show lands a solid 7.0/10 rating, painting post‑war Japan’s circus boom through the eyes of a shy teen performer who learns confidence by juggling more than just props.\n\nIf the ‘game over’ intro of Shangri‑La Frontier stuck with you, which of these character arcs are you queuing up first? Drop your pick!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you catch that the",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your pick",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "t3JcMfvlTbU",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]

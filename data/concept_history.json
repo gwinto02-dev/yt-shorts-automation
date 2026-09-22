@@ -815,5 +815,11 @@
     "date": "2026-09-22T16:01:55.546753",
     "date_readable": "2026-09-22 16:01:55",
     "angle_key": "UNMATCHED_PAYOFF"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-09-22T20:35:32.237356",
+    "date_readable": "2026-09-22 20:35:32",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]
