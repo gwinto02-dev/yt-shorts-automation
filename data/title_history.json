@@ -2454,5 +2454,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-23T15:51:32.910269",
     "date_readable": "2026-09-23 15:51:32"
+  },
+  {
+    "title": "Haikyu!!",
+    "normalized_title": "haikyu",
+    "anime_id": "8133",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-23T20:46:08.647257",
+    "date_readable": "2026-09-23 20:46:08"
+  },
+  {
+    "title": "Assassination Classroom",
+    "normalized_title": "assassination classroom",
+    "anime_id": "8640",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-23T20:46:08.647257",
+    "date_readable": "2026-09-23 20:46:08"
+  },
+  {
+    "title": "Black Clover",
+    "normalized_title": "black clover",
+    "anime_id": 97940,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-23T20:46:08.647257",
+    "date_readable": "2026-09-23 20:46:08"
   }
 ]

@@ -1222,5 +1222,26 @@
       "label": "Impossible to Stop Bingeing",
       "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
     }
+  },
+  {
+    "date": "2026-09-23T20:50:42.822741",
+    "date_readable": "2026-09-23",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Haikyu!!, Assassination Classroom & Black Clover Highlights 🏐 #Shorts",
+    "hook": "What most fans miss is that Studio Pierrot poured over 12,000 hand‑drawn frames into the Royal Knight Squad showdown during Black Clover’s 2020 arc",
+    "script": "What most fans miss is that Studio Pierrot poured over 12,000 hand‑drawn frames into the Royal Knight Squad showdown during Black Clover’s 2020 arc.  \n\nPierrot’s crisp line work carries the series’ magic battles, where Asta’s anti‑magic grunts clash with Yuno’s wind spells as they chase the Wizard King’s throne.  \n\nSwitching gears, Koro‑sensei’s grin masks a ticking clock—students must eliminate a being that cut the moon in half, and the show earned an 8.3 on MyAnimeList for its blend of comedy and suspense.  \n\nThen there’s Haikyu!!, also sitting at 8.3, which lifts a high‑school gym into a kinetic stage; Hinata’s leap from a tiny freshman to a spiker mirrors the series’ slick camera pans that make each spike feel like a cinematic slam.  \n\nThinking about Asta’s endless training, which of these technically sharp series you’ll dive into first? Share your thoughts!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "what most fans miss is",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your thoughts",
+      "transition_markers": []
+    },
+    "video_id": "8ve79Xe7WgQ",
+    "concept_angle": {
+      "key": "ANIMATION_CRAFT",
+      "label": "Visual & Audio Craft Benchmark",
+      "instruction": "Focus on the technical mastery of the animation studios, fight choreography, soundtrack design, and cinematic presentation."
+    }
   }
 ]
