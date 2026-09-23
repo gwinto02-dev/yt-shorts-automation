@@ -2382,5 +2382,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-22T20:35:32.234857",
     "date_readable": "2026-09-22 20:35:32"
+  },
+  {
+    "title": "My Hero Academia",
+    "normalized_title": "my hero academia",
+    "anime_id": "11469",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-23T02:40:54.837844",
+    "date_readable": "2026-09-23 02:40:54"
+  },
+  {
+    "title": "Attack on Titan Season 3",
+    "normalized_title": "attack on titan season 3",
+    "anime_id": 99147,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-23T02:40:54.837844",
+    "date_readable": "2026-09-23 02:40:54"
+  },
+  {
+    "title": "Attack on Titan Season 2",
+    "normalized_title": "attack on titan season 2",
+    "anime_id": 20958,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-23T02:40:54.837844",
+    "date_readable": "2026-09-23 02:40:54"
   }
 ]

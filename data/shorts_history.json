@@ -1159,5 +1159,26 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-23T02:42:19.465125",
+    "date_readable": "2026-09-23",
+    "concept_type": "top_recommendations",
+    "title": "Must‑Watch Top Recommendations: AOT S2/S3 + My Hero Academia ⚔️ #Shorts",
+    "hook": "Attack on Titan Season 2 launched on April 1 2017, exactly one year after the first season’s finale",
+    "script": "Attack on Titan Season 2 launched on April 1 2017, exactly one year after the first season’s finale. WIT Studio kept its gritty, high‑contrast line work, and the second season dives into the mystery of hidden Titans lurking inside the walls, forcing Eren to confront the very power he despises. If you crave deeper political intrigue, Levi’s squad is charged with shielding Historia, a reluctant heir, and the stakes climb as the 104th confronts the corrupt government, earning the arc an 8.6 score on MyAnimeList. Switching gears to a brighter world, with an 8.3 rating, My Hero Academia asks what society looks like when 80 % of kids manifest Quirks at four, and it follows Izuku Midoriya’s relentless drive to become the number‑one hero despite being born Quirkless. Whether you line up the wall‑cracking battles of Attack on Titan Season 2 or the Quirk‑fueled class fights of My Hero Academia, bookmark this Short and tell me which genre‑defining series you’ll dive into first.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "attack on titan season 2",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "series youll dive into first",
+      "transition_markers": []
+    },
+    "video_id": "24T0kieljjs",
+    "concept_angle": {
+      "key": "GENRE_GOLD_STANDARD",
+      "label": "Genre-Defining Gold Standard",
+      "instruction": "Frame these shows as absolute benchmarks of their respective genres that set the standard for every anime that followed."
+    }
   }
 ]

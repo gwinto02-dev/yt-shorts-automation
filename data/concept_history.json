@@ -821,5 +821,11 @@
     "date": "2026-09-22T20:35:32.237356",
     "date_readable": "2026-09-22 20:35:32",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-09-23T02:40:54.840461",
+    "date_readable": "2026-09-23 02:40:54",
+    "angle_key": "GENRE_GOLD_STANDARD"
   }
 ]
