@@ -2406,5 +2406,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-23T02:40:54.837844",
     "date_readable": "2026-09-23 02:40:54"
+  },
+  {
+    "title": "One Punch Man",
+    "normalized_title": "one punch man",
+    "anime_id": "10740",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-23T10:54:48.024635",
+    "date_readable": "2026-09-23 10:54:48"
+  },
+  {
+    "title": "A Silent Voice",
+    "normalized_title": "a silent voice",
+    "anime_id": "10028",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-23T10:54:48.024635",
+    "date_readable": "2026-09-23 10:54:48"
+  },
+  {
+    "title": "My Hero Academia Season 3",
+    "normalized_title": "my hero academia season 3",
+    "anime_id": "13881",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-23T10:54:48.024635",
+    "date_readable": "2026-09-23 10:54:48"
   }
 ]

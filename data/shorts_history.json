@@ -1180,5 +1180,26 @@
       "label": "Genre-Defining Gold Standard",
       "instruction": "Frame these shows as absolute benchmarks of their respective genres that set the standard for every anime that followed."
     }
+  },
+  {
+    "date": "2026-09-23T10:56:55.093725",
+    "date_readable": "2026-09-23",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Saitama, Shōya & Deku's Epic Moments ⚡ #Shorts",
+    "hook": "What drives a hero who can end every battle with a single punch to keep searching for meaning?\nThe summer‑bright palette of My Hero Academia Season 3 makes the training camp feel like a high‑stakes sports festival, while veteran pro heroes force Class 1‑A into quirk‑breaking drills that test personal limits",
+    "script": "What drives a hero who can end every battle with a single punch to keep searching for meaning?\nThe summer‑bright palette of My Hero Academia Season 3 makes the training camp feel like a high‑stakes sports festival, while veteran pro heroes force Class 1‑A into quirk‑breaking drills that test personal limits.\nIf you’re after raw emotional weight, the next lead pulls you into a quieter battlefield.\nShoya’s crushing remorse after years of bullying defines A Silent Voice, and its 8.4/10 rating shows how the film layers silence, sign language, and lingering regret into a quiet classroom drama.\nFor a different kind of power struggle, consider a hero whose biggest threat is his own boredom.\nAt 8.3/10, One Punch Man still feels fresh because Saitama’s bored training routine—three years, no breaks, hair loss included—sets up a world where his boredom is the real antagonist.\nAfter seeing Saitama’s relentless three‑year workout, which of these protagonists’ inner battles sticks with you? Comment below!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what drives a hero who",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "comment below",
+      "transition_markers": []
+    },
+    "video_id": "aHrYulwTfgk",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]
