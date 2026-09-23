@@ -1201,5 +1201,26 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-23T15:52:49.498215",
+    "date_readable": "2026-09-23",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations Your Name + My Hero Academia S2 + Assassination Classroom 2🌟 #Shorts",
+    "hook": "Just when the school bell rings for the new semester, Koro‑sensei drops the deadline that the class must meet before the year ends",
+    "script": "Just when the school bell rings for the new semester, Koro‑sensei drops the deadline that the class must meet before the year ends.\n\nThe second season keeps the series' sharp, comic‑book shading, and now the students are back in the classroom, sharpening their assassin skills after a wild island adventure.\n\nIf you crave a showdown of quirks, Midoriya’s promise to win the Sports Festival drives My Hero Academia Season 2, which holds an 8.3/10 rating on MyAnimeList and ramps up training arcs that never feel filler.\n\nAnd for a romance that bends time, Your Name. also scores 8.3/10; two strangers swap bodies, chase a falling comet, and race to meet before the final sunrise.\n\nRemember that impossible deadline Koro‑sensei set, then save this Short for your next binge marathon!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "just when the school bell",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge marathon",
+      "transition_markers": []
+    },
+    "video_id": "89U6txVh-gw",
+    "concept_angle": {
+      "key": "IRRESISTIBLE_BINGE",
+      "label": "Impossible to Stop Bingeing",
+      "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
+    }
   }
 ]
