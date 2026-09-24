@@ -857,5 +857,11 @@
     "date": "2026-09-24T11:14:45.490092",
     "date_readable": "2026-09-24 11:14:45",
     "angle_key": "OVERLOOKED_REASON"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-24T16:14:17.051338",
+    "date_readable": "2026-09-24 16:14:17",
+    "angle_key": "STANDOUT_ELEMENT"
   }
 ]

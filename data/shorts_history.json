@@ -1290,5 +1290,26 @@
       "label": "Why These Got Overlooked",
       "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
     }
+  },
+  {
+    "date": "2026-09-24T16:15:21.838756",
+    "date_readable": "2026-09-24",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Trio: Otome Survival, Cross‑Dressed Romance & Poison Politics 🌟 #Shorts",
+    "hook": "What would happen if a corporate worker woke up in an otome game where every heroine already knows his name? ENGI keeps the mecha‑laden battle scenes crisp, and the second season drops Leon into an otome game where the heroines run the kingdom and his only edge is his past‑life playthrough",
+    "script": "What would happen if a corporate worker woke up in an otome game where every heroine already knows his name? ENGI keeps the mecha‑laden battle scenes crisp, and the second season drops Leon into an otome game where the heroines run the kingdom and his only edge is his past‑life playthrough. If you prefer a comedy that leans into schoolyard romance, the next pick flips the script. Taiki Kayashima returns under a new disguise, and at 7.1 on MyAnimeList the second season proves the gender‑bending premise still lands fresh jokes. For something that mixes action with a poisonous twist, check this out. MARRIAGETOXIN sits at a solid 7.6, and it follows Shiori Ureshino as she navigates a world where the Five Great Poison Master families settle disputes with lethal alchemy. So whether you’re curious about Leon’s cheat‑sheet survival in an otome kingdom, Taiki’s cross‑dressed school drama, or Shiori’s deadly poison politics, tell me which one you’ll start first.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would happen if a",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "which one youll start first",
+      "transition_markers": []
+    },
+    "video_id": "qhTfWaQMa38",
+    "concept_angle": {
+      "key": "STANDOUT_ELEMENT",
+      "label": "What Makes Them Worth Watching Despite Low Visibility",
+      "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+    }
   }
 ]
