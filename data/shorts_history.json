@@ -1243,5 +1243,28 @@
       "label": "Visual & Audio Craft Benchmark",
       "instruction": "Focus on the technical mastery of the animation studios, fight choreography, soundtrack design, and cinematic presentation."
     }
+  },
+  {
+    "date": "2026-09-24T02:32:04.543559",
+    "date_readable": "2026-09-24",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Trio: Steel Ball Run, Clevatess & Iron Wok Jan! 🔥 #Shorts",
+    "hook": "Did you know Troyca’s first psychological‑action series launched in early 2026 with *Iron Wok Jan!*? Troyca gives the kitchen battles a stark, high‑contrast style, and the story follows cocky teen Jan Akiyama, who storms the Gobancho restaurant to settle his grandfather’s old rivalry, only to collide with the enigmatic granddaughter Kiri",
+    "script": "Did you know Troyca’s first psychological‑action series launched in early 2026 with *Iron Wok Jan!*? Troyca gives the kitchen battles a stark, high‑contrast style, and the story follows cocky teen Jan Akiyama, who storms the Gobancho restaurant to settle his grandfather’s old rivalry, only to collide with the enigmatic granddaughter Kiri.  \n\nSwitching gears, *Clevatess* introduces a lord of Dark Beasts who outsmarts the thirteen heroes sent to kill him. Haiden Ou watches the chaos unfold, and the series earned a solid 7.7 on MyAnimeList, thanks to its blend of intellect‑driven combat and gritty world‑building.  \n\nFinally, *Steel Ball Run*’s first stage, rated 8.8, launches us into the 1890 cross‑continental horse race where Johnny Joestar, a disgraced jockey, teams with mysterious racer Diego Brando to chase the ultimate spin.  \n\nWhether you’re craving Jan’s restaurant showdown or the high‑stakes run of *Steel Ball Run*, keep this Short handy for your next anime marathon. Bookmark it now.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know troycas first",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "bookmark it now",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "Z_d9WV7xSCQ",
+    "concept_angle": {
+      "key": "STANDOUT_ELEMENT",
+      "label": "What Makes Them Worth Watching Despite Low Visibility",
+      "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+    }
   }
 ]
