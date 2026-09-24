@@ -1311,5 +1311,28 @@
       "label": "What Makes Them Worth Watching Despite Low Visibility",
       "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
     }
+  },
+  {
+    "date": "2026-09-24T20:53:39.890309",
+    "date_readable": "2026-09-24",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Trio: Shangri-La Frontier S3, MASHLE: Sanma Taisou, Rascal Dream 🌟 #Shorts",
+    "hook": "Right when the livestream cuts to static, the chat erupts as the anonymous singer finally reveals “Touko Kirishima",
+    "script": "Right when the livestream cuts to static, the chat erupts as the anonymous singer finally reveals “Touko Kirishima.”\n\nThe clue comes from CloverWorks’ upcoming Rascal Does Not Dream of a Dear Friend (2026). Rio Futaba discovers Kaede Azusagawa’s secret past, and the confession “Actually, I’m Touko Kirishima” turns everyday drama into a supernatural mystery.\n\nIf you love gym‑battle comedy with over‑the‑top magic,\n\nLemon Irvine, the brute‑force student who solves everything with muscles, returns in A‑1 Pictures’ third season of MASHLE (2027). The Tri‑Magic‑Athalon Divine Visionary Final Exam Arc keeps the series’ wild spell contests, and fans have already listed it as essential.\n\nFor a sci‑fi meta‑gaming ride,\n\nC2C’s Shangri‑La Frontier Season 3 has gamers penciling it in. Rei Saiga and Towa Amane re‑enter the virtual world where quests merge with reality, and the new arc adds even stranger AI challenges.\n\nThe hidden‑singer twist in Rascal set the bar—so which surprise are you most excited for? Tell me in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the livestream cuts",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "tell me in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "Tmdgb6q_TGw",
+    "concept_angle": {
+      "key": "PREMISE_INTRIGUE",
+      "label": "Hooking Unreleased Story Premises",
+      "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+    }
   }
 ]
