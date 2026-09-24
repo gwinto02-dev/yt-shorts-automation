@@ -1266,5 +1266,29 @@
       "label": "What Makes Them Worth Watching Despite Low Visibility",
       "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
     }
+  },
+  {
+    "date": "2026-09-24T11:16:32.834179",
+    "date_readable": "2026-09-24",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Trio: Bumpkin to Swordsman II, Dancing World, & All‑Works Maid 🌟 #Shorts",
+    "hook": "EMT Squared spent three months perfecting the way Melody’s maid uniform sways in the wind, a detail most viewers missed",
+    "script": "EMT Squared spent three months perfecting the way Melody’s maid uniform sways in the wind, a detail most viewers missed.  \n\nFirst off, EMT Squared’s crisp line work gives the series a clean, stage‑like look, and it follows reincarnated Japanese girl Melody, who vows to become the world’s most wonderful maid. It slipped under the radar because the summer 2026 slate was packed with blockbuster shōnen releases and the show received almost no Western promo.  \n\nMoving to the next hidden story, 12‑year‑old Oniyasha drifts through a 14th‑century traveling troupe, questioning why every step of his dance matters. The drama earned a 7.1/10 on MyAnimeList, yet it landed on a niche streaming platform that few outside Japan even knew existed, limiting its exposure.  \n\nRounding out today’s picks, From Old Country Bumpkin to Master Swordsman II holds a steady 7.1/10, and it tracks countryside swordmaster Beryl Gardenant as he trains royal knights while protecting an orphanage. Airing alongside a high‑profile fantasy season, it never broke into mainstream buzz.  \n\nIf you’re still thinking about Melody’s wind‑tossed apron, which of these three overlooked tales are you adding to your watchlist first? Drop your choice below!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "emt squared spent three months",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your choice below",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "JF2LaTH7b3c",
+    "concept_angle": {
+      "key": "OVERLOOKED_REASON",
+      "label": "Why These Got Overlooked",
+      "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+    }
   }
 ]
