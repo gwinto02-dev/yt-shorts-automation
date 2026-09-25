@@ -2574,5 +2574,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-24T20:52:16.630925",
     "date_readable": "2026-09-24 20:52:16"
+  },
+  {
+    "title": "Attack on Titan Season 3 Part 2",
+    "normalized_title": "attack on titan season 3 part 2",
+    "anime_id": 104578,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-25T02:47:05.319958",
+    "date_readable": "2026-09-25 02:47:05"
+  },
+  {
+    "title": "BOCCHI THE ROCK!",
+    "normalized_title": "bocchi the rock",
+    "anime_id": 130003,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-25T02:47:05.319958",
+    "date_readable": "2026-09-25 02:47:05"
+  },
+  {
+    "title": "Demon Slayer: Kimetsu no Yaiba",
+    "normalized_title": "demon slayer kimetsu no yaiba",
+    "anime_id": "41370",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-25T02:47:05.319958",
+    "date_readable": "2026-09-25 02:47:05"
   }
 ]

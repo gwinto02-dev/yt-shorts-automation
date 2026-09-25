@@ -869,5 +869,11 @@
     "date": "2026-09-24T20:52:16.632782",
     "date_readable": "2026-09-24 20:52:16",
     "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-25T02:47:05.323295",
+    "date_readable": "2026-09-25 02:47:05",
+    "angle_key": "PALATE_CLEANSER"
   }
 ]

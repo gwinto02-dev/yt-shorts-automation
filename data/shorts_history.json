@@ -1334,5 +1334,30 @@
       "label": "Hooking Unreleased Story Premises",
       "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
     }
+  },
+  {
+    "date": "2026-09-25T02:49:23.557860",
+    "date_readable": "2026-09-25",
+    "concept_type": "genre_spotlight",
+    "title": "Underrated Genre Switch‑Up Trio: Demon Slayer, Bocchi, AoT 🎬 #Shorts",
+    "hook": "What would happen if you swapped a demon‑slayer’s blood‑soaked quest for a timid guitarist’s first stage, then leapt straight into a city‑wide wall siege?\n\nFirst off, even though the studio isn’t listed, the series’ vivid animation paints Taisho‑era Japan, where charcoal‑selling Tanjiro watches his family slaughtered and must protect his demon‑turned sister Nezuko",
+    "script": "What would happen if you swapped a demon‑slayer’s blood‑soaked quest for a timid guitarist’s first stage, then leapt straight into a city‑wide wall siege?\n\nFirst off, even though the studio isn’t listed, the series’ vivid animation paints Taisho‑era Japan, where charcoal‑selling Tanjiro watches his family slaughtered and must protect his demon‑turned sister Nezuko.\n\nMoving to a completely different vibe, Hikaru Gotou—who can barely say “Ah…”—finally finds a band in middle school, and Bocchi the Rock! earned an 8.7 on MyAnimeList under CloverWorks’ bright, music‑driven art.\n\nRounding out today’s picks, at 8.9 / 10 the second half of Attack on Titan’s third season thrusts the Survey Corps into the Shiganshina retake, with Eren’s new hardening turning the walls themselves into weapons.\n\nWhich of those genre jumps—Tanjiro’s demon hunt, Hikaru’s first gig, or the Shiganshina retake—excites you the most? Let me know in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would happen if you",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know in the comments",
+      "transition_markers": [
+        "first off",
+        "rounding out",
+        "finally"
+      ]
+    },
+    "video_id": "SXW7X-uTsww",
+    "concept_angle": {
+      "key": "PALATE_CLEANSER",
+      "label": "The Ultimate Genre Switch-Up",
+      "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
+    }
   }
 ]
