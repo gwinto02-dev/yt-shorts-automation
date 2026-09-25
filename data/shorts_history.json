@@ -1383,5 +1383,29 @@
       "label": "Match Your Viewing Mood",
       "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
     }
+  },
+  {
+    "date": "2026-09-25T16:16:49.743109",
+    "date_readable": "2026-09-25",
+    "concept_type": "character_spotlight",
+    "title": "Chihiro, Josuke & Johnny Joestar: Character Spotlight ⚡ #Shorts",
+    "hook": "What would you do if a former jockey, now unable to walk, had to win a 750‑mile horse race across a scorching desert?  \n\nFirst off, David Production’s sharp line work and muted palette paint the Steel Ball Run desert stage, where Johnny Joestar battles his own helplessness while chasing the mysterious prize alongside Gyro Zeppeli",
+    "script": "What would you do if a former jockey, now unable to walk, had to win a 750‑mile horse race across a scorching desert?  \n\nFirst off, David Production’s sharp line work and muted palette paint the Steel Ball Run desert stage, where Johnny Joestar battles his own helplessness while chasing the mysterious prize alongside Gyro Zeppeli.  \n\nMoving to a quieter town, Josuke Higashikata’s “mend” ability hides a deep fear of being ordinary; the 2016 series scored 8.4 on MyAnimeList and lets his self‑doubt clash with the lingering shadow of Dio’s influence.  \n\nRounding out the trio, Spirited Away’s 8.3 rating reflects how Chihiro’s stubbornness transforms into quiet courage as she navigates a bathhouse filled with ancient spirits to free her parents.  \n\nIf the desert trek, Josuke’s healing power, or Chihiro’s spirit‑world bargain caught your eye, bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would you do if",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "IdfI8Ac2F2s",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]

@@ -2614,5 +2614,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-25T11:19:24.635880",
     "date_readable": "2026-09-25 11:19:24"
+  },
+  {
+    "title": "Spirited Away",
+    "normalized_title": "spirited away",
+    "anime_id": "176",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-25T16:14:20.678571",
+    "date_readable": "2026-09-25 16:14:20"
+  },
+  {
+    "title": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "normalized_title": "jojos bizarre adventure diamond is unbreakable",
+    "anime_id": 21450,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-25T16:14:20.678571",
+    "date_readable": "2026-09-25 16:14:20"
+  },
+  {
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+    "normalized_title": "steel ball run jojos bizarre adventure 2nd 3rd stage",
+    "anime_id": 210482,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-25T16:14:20.678571",
+    "date_readable": "2026-09-25 16:14:20"
   }
 ]
