@@ -2598,5 +2598,21 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-25T02:47:05.319958",
     "date_readable": "2026-09-25 02:47:05"
+  },
+  {
+    "title": "ONE PIECE",
+    "normalized_title": "one piece",
+    "anime_id": 21,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-25T11:19:24.635880",
+    "date_readable": "2026-09-25 11:19:24"
+  },
+  {
+    "title": "Kaguya-sama: Love is War",
+    "normalized_title": "kaguyasama love is war",
+    "anime_id": 101921,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-25T11:19:24.635880",
+    "date_readable": "2026-09-25 11:19:24"
   }
 ]

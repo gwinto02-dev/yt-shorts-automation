@@ -1359,5 +1359,29 @@
       "label": "The Ultimate Genre Switch-Up",
       "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
     }
+  },
+  {
+    "date": "2026-09-25T11:22:31.851277",
+    "date_readable": "2026-09-25",
+    "concept_type": "genre_spotlight",
+    "title": "Genre‑Diverse Trio: One Piece, Kaguya‑sama, & a Wild Adventure 🌊 #Shorts",
+    "hook": "Right when the student council thinks a silent stare will win the battle of wits, Kaguya drops a love confession that flips the entire game",
+    "script": "Right when the student council thinks a silent stare will win the battle of wits, Kaguya drops a love confession that flips the entire game.  \n\nFirst off, A‑1 Pictures gives *Kaguya‑sama* its sharp character designs and crisp timing, then the series follows Miyuki Shirogane and Kaguya Shinomiya as they turn everyday school life into a high‑stakes mind game of who’ll ask first.  \n\nMoving to the open seas, Monkey D. Luffy’s rubber body stretches toward the Grand Line, and the show still holds an 8.4 on MyAnimeList despite airing since 1999.  \n\nRounding out the mood list, Toei Animation’s 8.7‑rated entry throws in the bizarre Salome and Gama Pyonnosuke duo, turning a pirate backdrop into a surreal comedy adventure that’s oddly philosophical.  \n\nIf you’re still debating whether to start with Kaguya’s council showdown or Luffy’s endless horizon, which of these three fits your vibe right now? Let me know below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the student council",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know below",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "EQhJT3RDkQk",
+    "concept_angle": {
+      "key": "MOOD_BASED",
+      "label": "Match Your Viewing Mood",
+      "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
+    }
   }
 ]
