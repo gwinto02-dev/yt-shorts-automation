@@ -1407,5 +1407,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-09-25T20:50:53.885621",
+    "date_readable": "2026-09-25",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Studio Power Trio: Chainsaw Man, Oshi no Ko, Tsuki ga Michibiku 🌟 #Shorts",
+    "hook": "MAPPA spent 14 months refining the blood‑splatter choreography for the upcoming Chainsaw Man: Shikaku‑hen",
+    "script": "MAPPA spent 14 months refining the blood‑splatter choreography for the upcoming Chainsaw Man: Shikaku‑hen.\n\nDoga Kobo’s crisp character designs return for Oshi no Ko’s final season, where Ai Hoshino’s idol façade finally cracks open under MEM‑cho’s relentless investigation.\n\nIf you’re after a world where the protagonist’s wishes shape the entire realm, Makoto Misumi, the demi‑god exiled to Earth, now faces Tomoe’s challenge to rewrite the moon’s contract, and fans already label the third season a must‑watch.\n\nAnd for those who can’t get enough of gritty supernatural showdowns, the eagerly awaited Shikaku‑hen, produced by MAPPA, pushes Power and Aki deeper into the Public Safety Bureau’s darkest missions, promising the same visceral action that defined the first arc.\n\nRemember the secret behind Ai Hoshino’s rise, and keep this Short handy for when the episodes drop. Which one are you queuing first?",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "mappa spent 14 months refining",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "one are you queuing first",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "nJEWxeS8qS4",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]

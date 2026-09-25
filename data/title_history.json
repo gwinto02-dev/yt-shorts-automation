@@ -2638,5 +2638,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-25T16:14:20.678571",
     "date_readable": "2026-09-25 16:14:20"
+  },
+  {
+    "title": "Chainsaw Man: Shikaku-hen",
+    "normalized_title": "chainsaw man shikakuhen",
+    "anime_id": 204429,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-25T20:49:32.909389",
+    "date_readable": "2026-09-25 20:49:32"
+  },
+  {
+    "title": "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+    "normalized_title": "tsuki ga michibiku isekai douchuu 3rd season",
+    "anime_id": 178467,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-25T20:49:32.909389",
+    "date_readable": "2026-09-25 20:49:32"
+  },
+  {
+    "title": "[Oshi no Ko] Final Season",
+    "normalized_title": "oshi no ko final season",
+    "anime_id": 209827,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-25T20:49:32.909389",
+    "date_readable": "2026-09-25 20:49:32"
   }
 ]

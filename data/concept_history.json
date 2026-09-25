@@ -887,5 +887,11 @@
     "date": "2026-09-25T16:14:20.681437",
     "date_readable": "2026-09-25 16:14:20",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-25T20:49:32.911566",
+    "date_readable": "2026-09-25 20:49:32",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]
