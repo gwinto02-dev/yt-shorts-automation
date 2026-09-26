@@ -1451,5 +1451,26 @@
       "label": "Why These Got Overlooked",
       "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
     }
+  },
+  {
+    "date": "2026-09-26T10:57:32.796310",
+    "date_readable": "2026-09-26",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Trio Alert: Pokémon Horizons, Chainsmoker Cat & Digimon BeatBreak 🌟 #Shorts",
+    "hook": "Right when you think the season's all about shonen battles, a quiet sci‑fi showdown sneaks by unnoticed",
+    "script": "Right when you think the season's all about shonen battles, a quiet sci‑fi showdown sneaks by unnoticed.  \n\nToei Animation gave Digimon BeatBreak a sleek cyber‑punk palette, painting Tokyo’s neon streets where Tomoro Tenma’s emotions power rogue Digimon. It dropped in 2025 right beside a heavyweight shonen, so many viewers missed it despite its solid 6.9 score.  \n\nYani, a cat‑girl chained to a perpetual smoking habit, drags us through her ash‑laden apartment while Bibury Animation Studios leans into absurd comedy. Chainsmoker Cat earned a 6.9 on MyAnimeList, yet the series vanished from conversation because it shared its slot with a high‑profile sports title.  \n\nWith a respectable 7.3 rating, Pokémon Horizons rolls out a fresh adventure starring Liko and Roy, but OLM released it on a regional service that limited overseas exposure, leaving it buried under the franchise’s long‑running saga.  \n\nAfter the neon glow of BeatBreak, which of these three hidden titles are you diving into first? Drop your pick!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when you think the",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your pick",
+      "transition_markers": []
+    },
+    "video_id": "FvHE3HR7yXk",
+    "concept_angle": {
+      "key": "OVERLOOKED_REASON",
+      "label": "Why These Got Overlooked",
+      "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+    }
   }
 ]
