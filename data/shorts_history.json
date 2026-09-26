@@ -1496,5 +1496,26 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-26T20:21:10.735775",
+    "date_readable": "2026-09-26",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight: Alchemy, Titans & Mystery 🌟 #Shorts",
+    "hook": "CloverWorks packed the manga’s first twenty chapters into just twelve episodes of The Promised Neverland, cutting a lot of early tension",
+    "script": "CloverWorks packed the manga’s first twenty chapters into just twelve episodes of The Promised Neverland, cutting a lot of early tension.  \nCloverWorks’ clean line work and muted palette give Grace Field House a sunny look, until Emma, Norman and Ray uncover the horrific secret behind “Mom.”  \nIf you love psychological twists, that’s a perfect start.  \n\nFalco Grice watches the sky split as Marley’s new Titan candidates, including Gabi Braun, scramble for power; the season holds an 8.5 on MyAnimeList, reflecting its complex politics.  \nNow for an epic war saga.  \n\nBrotherhood scores a 9.0, and Bones renders every alchemical duel with crisp action while Edward and Alphonse chase the Philosopher’s Stone, paying the price of Equivalent Exchange.  \n\nWhether you start with the orphanage’s dark secret or save the alchemical quest for a weekend binge, bookmark this Short for quick reference on your next genre marathon.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "cloverworks packed the mangas first",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "on your next genre marathon",
+      "transition_markers": []
+    },
+    "video_id": "NNPSaqbA9mw",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]

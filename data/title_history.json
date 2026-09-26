@@ -2734,5 +2734,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-26T15:27:34.653720",
     "date_readable": "2026-09-26 15:27:34"
+  },
+  {
+    "title": "Fullmetal Alchemist: Brotherhood",
+    "normalized_title": "fullmetal alchemist brotherhood",
+    "anime_id": 5114,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-26T20:18:11.094496",
+    "date_readable": "2026-09-26 20:18:11"
+  },
+  {
+    "title": "Attack on Titan: The Final Season",
+    "normalized_title": "attack on titan the final season",
+    "anime_id": "42422",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-26T20:18:11.094496",
+    "date_readable": "2026-09-26 20:18:11"
+  },
+  {
+    "title": "The Promised Neverland",
+    "normalized_title": "the promised neverland",
+    "anime_id": 101759,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-26T20:18:11.094496",
+    "date_readable": "2026-09-26 20:18:11"
   }
 ]
