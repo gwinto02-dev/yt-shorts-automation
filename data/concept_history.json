@@ -893,5 +893,11 @@
     "date": "2026-09-25T20:49:32.911566",
     "date_readable": "2026-09-25 20:49:32",
     "angle_key": "STUDIO_STAFF_TALENT"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-26T02:50:25.420717",
+    "date_readable": "2026-09-26 02:50:25",
+    "angle_key": "OVERLOOKED_REASON"
   }
 ]

@@ -1430,5 +1430,26 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-09-26T02:52:11.902630",
+    "date_readable": "2026-09-26",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Anime Trio You Missed 🎥 #Shorts",
+    "hook": "Did you know the team at 100studio built a custom motion‑capture rig for BLACK TORCH, spending three months perfecting it even though the series premiered beside a massive shonen hit? Brain's Base painted 'Rich Girl Caretaker' with a clean pastel palette, then dives into Kagen Konohana’s double life as the hidden caretaker for the flawless Hinako—its low‑key streaming deal kept it off most Western radars",
+    "script": "Did you know the team at 100studio built a custom motion‑capture rig for BLACK TORCH, spending three months perfecting it even though the series premiered beside a massive shonen hit? Brain's Base painted 'Rich Girl Caretaker' with a clean pastel palette, then dives into Kagen Konohana’s double life as the hidden caretaker for the flawless Hinako—its low‑key streaming deal kept it off most Western radars. Jirou Azuma, a ninja‑blooded teen who can chat with animals, leads BLACK TORCH; the show earned a 6.9/10 on MyAnimeList, yet the same season’s blockbuster titles drowned its buzz. Scoring 7.0/10, 'Dara‑san of the Reiwa Era' mixes comedy with a serpent‑god horror twist, but its exclusive regional platform and genre blend left many potential viewers unaware. That pastel aesthetic still gives 'Rich Girl Caretaker' its unique charm. Which under‑the‑radar title sparks your curiosity? Share your choice in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know the team",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your choice in the comments",
+      "transition_markers": []
+    },
+    "video_id": "HN1NQ_WpNiE",
+    "concept_angle": {
+      "key": "OVERLOOKED_REASON",
+      "label": "Why These Got Overlooked",
+      "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+    }
   }
 ]
