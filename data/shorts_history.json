@@ -1472,5 +1472,29 @@
       "label": "Why These Got Overlooked",
       "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
     }
+  },
+  {
+    "date": "2026-09-26T15:31:08.029638",
+    "date_readable": "2026-09-26",
+    "concept_type": "character_spotlight",
+    "title": "Violet Evergarden, Tanjiro & Ichigo – character spotlight 🌟 #Shorts",
+    "hook": "What would happen if a Soul Reaper had to regroup after Quincy King Yhwach’s sudden onslaught and still master a new zanpakuto?  \n\nFirst off, Studio Pierrot’s clean, high‑contrast animation in Bleach: Thousand‑Year Blood War – The Separation gives the Soul Society’s devastated streets a gritty, almost cinematic feel, and the episode follows Rukia Kuchiki and Orihime Inoue as the remaining captains begin intensive training to reclaim their lost ground",
+    "script": "What would happen if a Soul Reaper had to regroup after Quincy King Yhwach’s sudden onslaught and still master a new zanpakuto?  \n\nFirst off, Studio Pierrot’s clean, high‑contrast animation in Bleach: Thousand‑Year Blood War – The Separation gives the Soul Society’s devastated streets a gritty, almost cinematic feel, and the episode follows Rukia Kuchiki and Orihime Inoue as the remaining captains begin intensive training to reclaim their lost ground.  \n\nMoving to Demon Slayer’s Mugen Train, Tanjiro’s desperate fight inside an endless dreamscape pushes his resolve to the limit, and the film earned an 8.7 rating on MyAnimeList for its blend of breath‑taking swordwork and emotional stakes.  \n\nRounding out the trio, Violet Evergarden carries an 8.2 score while tracing the haunting words a soldier whispered on the battlefield, a mystery that drives her quest to understand love and loss through delicate, watercolor‑like visuals.  \n\nWhich of these unforgettable confrontations—Yhwach’s attack, the train’s perpetual nightmare, or Violet’s battlefield echo—sticks with you the most? Share your thoughts in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would happen if a",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your thoughts in the comments",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "qrqsALYKXqM",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
