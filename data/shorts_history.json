@@ -1563,5 +1563,26 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-09-27T16:10:51.091373",
+    "date_readable": "2026-09-27",
+    "concept_type": "anime_comparison",
+    "title": "Head-to-Head Anime Matchup: Re:ZERO S4 vs BLEACH Blood War vs Apothecary Diaries ⚔️ #Shorts",
+    "hook": "What would you do if a palace servant with a talent for poisons suddenly became the emperor’s secret adviser?\n\nOLM’s meticulous line work gives *The Apothecary Diaries* a warm, scroll‑like texture, then follows Maomao as she’s sold into the imperial household and uses her herbal knowledge to navigate deadly court politics",
+    "script": "What would you do if a palace servant with a talent for poisons suddenly became the emperor’s secret adviser?\n\nOLM’s meticulous line work gives *The Apothecary Diaries* a warm, scroll‑like texture, then follows Maomao as she’s sold into the imperial household and uses her herbal knowledge to navigate deadly court politics.\n\nRukia Kuchiki steps onto the shattered battlefield of the final Thousand‑Year Blood War, where the Soul King’s collapse threatens all three worlds; the series currently holds an 8.9 score on MyAnimeList, reflecting its tight pacing and high‑stakes combat.\n\nWith a 9.0 average on MyAnimeList, White Fox’s *Re:Zero* returns to its loop‑reset drama, pushing Subaru to bargain with a new “wise woman” while the remnants of the Priestella war linger.\n\nWhether you start with Maomao’s intrigue or Rukia’s clash, save this Short for your next binge night.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would you do if",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": []
+    },
+    "video_id": "Fj-AygkElu8",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
