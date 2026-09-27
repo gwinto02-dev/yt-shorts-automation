@@ -1517,5 +1517,28 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-09-27T02:57:57.964380",
+    "date_readable": "2026-09-27",
+    "concept_type": "hidden_gems",
+    "title": "Hidden Gem Trio: A Wild Last Boss Appeared! + The Ogre's Bride + Livid Lady 📚 #Shorts",
+    "hook": "What happens when a fresh anime drops the same week as a season‑defining shonen and slips under most watch‑lists?\n\nStarting with Studio Comet’s clean line work, *A Livid Lady’s Guide to Getting Even* follows Elizabeth Leiston, a prime‑minister’s daughter who suddenly inherits cursed grimoires that let her rewrite her kingdom’s fate",
+    "script": "What happens when a fresh anime drops the same week as a season‑defining shonen and slips under most watch‑lists?\n\nStarting with Studio Comet’s clean line work, *A Livid Lady’s Guide to Getting Even* follows Elizabeth Leiston, a prime‑minister’s daughter who suddenly inherits cursed grimoires that let her rewrite her kingdom’s fate. It aired alongside the 2026 mega‑battle hype, so it never gained wide attention.\n\nNext, Youta Kogetsu stars in *The Ogre’s Bride*, a modern ayakashi Cinderella where he must protect Touko from jealous spirits. Scoring 6.9, the series was limited to a regional platform without subtitles, keeping overseas fans out.\n\nFinally, WAO World’s *A Wild Last Boss Appeared!* earned a 7.4 rating; it thrusts a gamer‑turned‑Black‑Winged Tyrant into a world where her past defeat awakens real monsters. Minimal promotion on its niche cable slot left it unnoticed.\n\nWhich of these hidden stories sticks with you, especially the gamer‑turned‑tyrant? Share your take in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when a fresh",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your take in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "tuSGmyfRBDk",
+    "concept_angle": {
+      "key": "OVERLOOKED_REASON",
+      "label": "Why These Got Overlooked",
+      "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+    }
   }
 ]
