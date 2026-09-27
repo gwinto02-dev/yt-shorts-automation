@@ -2830,5 +2830,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-27T16:07:02.281867",
     "date_readable": "2026-09-27 16:07:02"
+  },
+  {
+    "title": "Delicious in Dungeon Season 2",
+    "normalized_title": "delicious in dungeon season 2",
+    "anime_id": 178031,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-27T20:32:24.277388",
+    "date_readable": "2026-09-27 20:32:24"
+  },
+  {
+    "title": "Omniscient Reader",
+    "normalized_title": "omniscient reader",
+    "anime_id": 179068,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-27T20:32:24.277388",
+    "date_readable": "2026-09-27 20:32:24"
+  },
+  {
+    "title": "Gachiakuta Season 2",
+    "normalized_title": "gachiakuta season 2",
+    "anime_id": 204436,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-27T20:32:24.277388",
+    "date_readable": "2026-09-27 20:32:24"
   }
 ]

@@ -1584,5 +1584,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-09-27T20:40:37.591096",
+    "date_readable": "2026-09-27",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Manga Arc Trio: Gachiakuta, Omniscient Reader & Dungeon Meshi 🍜 #Shorts",
+    "hook": "Bones spent three years perfecting the metallic armor designs that define Gachiakuta’s aesthetic, a detail many fans spotted in the teaser",
+    "script": "Bones spent three years perfecting the metallic armor designs that define Gachiakuta’s aesthetic, a detail many fans spotted in the teaser.  \n\nStarting with Bones’ crisp line work, the second season follows Amo Empool and Jabber Wonger as they navigate a kingdom fractured by relentless magic wars, expanding the arc that ended the first season.  \n\nThen we have Dok‑Ja Kim, an office drone who suddenly becomes the only reader able to rewrite a world that has leapt out of his favorite web novel, “Three Ways to Survive the Apocalypse.” The adaptation is one of the most eagerly awaited releases this spring.  \n\nStepping up next, Delicious in Dungeon Season 2 has become a must‑watch continuation, and it dives back into the labyrinth where Thistle and Laios Thorden turn monstrous beasts into banquet plates, covering the manga’s infamous feast‑chapter.  \n\nThinking about Amo’s battlefield tactics or Dok‑Ja’s reality‑bending dilemma, which story are you lining up first? Let me know below.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "bones spent three years perfecting",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know below",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "s45SDUYzCac",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
