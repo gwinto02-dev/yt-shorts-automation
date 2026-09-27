@@ -1540,5 +1540,28 @@
       "label": "Why These Got Overlooked",
       "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
     }
+  },
+  {
+    "date": "2026-09-27T11:39:31.998545",
+    "date_readable": "2026-09-27",
+    "concept_type": "anime_comparison",
+    "title": "Anime Matchup: Tactics, Time‑Travel & Hunter’s Hunt 🔥 #Shorts",
+    "hook": "Sunrise spent over a year perfecting the 3‑D rendering for the Knightmare Frames in *Code Geass: Lelouch of the Rebellion R2*, a detail most fans miss",
+    "script": "Sunrise spent over a year perfecting the 3‑D rendering for the Knightmare Frames in *Code Geass: Lelouch of the Rebellion R2*, a detail most fans miss.  \n\nFirst off, Sunrise’s clean line work gives the Britannian war machines a metallic sheen, and a year after the Black Rebellion the series follows Zero’s execution, Cornelia’s ruthless rise, and Nunnally’s hidden agenda.  \n\nMoving to the cramped Akihabara lab, self‑styled mad scientist Okabe Rintarou drags his friends into a web of time loops, and WHITE FOX’s adaptation earned an 8.9/10 rating on MyAnimeList for its tight pacing.  \n\nRounding it out, MADHOUSE’s fluid action earned the same 8.9/10, while the story tracks Gon’s relentless trek to find the father who vanished into the Hunter world’s darkest corners.  \n\nAfter seeing Zero’s execution, Okabe’s phone‑powered paradox, and Gon’s father chase, which thematic clash sticks with you? Let me know in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "sunrise spent over a year",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know in the comments",
+      "transition_markers": [
+        "first off"
+      ]
+    },
+    "video_id": "7SmoWKoToCU",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]

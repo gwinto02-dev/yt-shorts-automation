@@ -2782,5 +2782,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-27T02:51:48.392349",
     "date_readable": "2026-09-27 02:51:48"
+  },
+  {
+    "title": "Hunter x Hunter (2011)",
+    "normalized_title": "hunter x hunter 2011",
+    "anime_id": 11061,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-27T11:32:12.706751",
+    "date_readable": "2026-09-27 11:32:12"
+  },
+  {
+    "title": "Steins;Gate",
+    "normalized_title": "steinsgate",
+    "anime_id": 9253,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-27T11:32:12.706751",
+    "date_readable": "2026-09-27 11:32:12"
+  },
+  {
+    "title": "Code Geass: Lelouch of the Rebellion R2",
+    "normalized_title": "code geass lelouch of the rebellion r2",
+    "anime_id": 2904,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-27T11:32:12.706751",
+    "date_readable": "2026-09-27 11:32:12"
   }
 ]
