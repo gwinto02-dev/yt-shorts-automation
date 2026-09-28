@@ -1607,5 +1607,28 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-09-28T13:10:03.522527",
+    "date_readable": "2026-09-28",
+    "concept_type": "character_spotlight",
+    "title": "Essential Badass Anime Leads: Vinland Saga, Frieren & Attack on Titan 🌟 #Shorts",
+    "hook": "WIT Studio reconstructed a full‑scale Viking longship to study how its hull reacts to waves for Vinland Saga’s sea battles",
+    "script": "WIT Studio reconstructed a full‑scale Viking longship to study how its hull reacts to waves for Vinland Saga’s sea battles. First off, the studio’s gritty, hand‑drawn texture brings the icy North Atlantic to life, and the story follows Thorfinn, son of a famed warrior, as he joins Askeladd’s crew to plot revenge for his father’s death. Moving on, elf mage Frieren returns from slaying the Demon King only to discover she’s outlived every friend, prompting a quiet journey to understand human life; the series currently holds a 9.1 rating on MyAnimeList, reflecting its thoughtful pacing. Then, Attack on Titan, rated 8.4/10, drops viewers into a world where humanity hides behind three massive walls, fighting nightly raids from towering titans that devour anyone they touch. Whether you dive into Vinland Saga’s blood‑soaked quests or save Frieren’s reflective trek for a weekend binge, bookmark this Short for your next anime marathon.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "wit studio reconstructed a fullscale",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next anime marathon",
+      "transition_markers": [
+        "first off"
+      ]
+    },
+    "video_id": "G4ia_7ZLqDM",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
