@@ -1630,5 +1630,28 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-28T19:03:23.633368",
+    "date_readable": "2026-09-28",
+    "concept_type": "anime_comparison",
+    "title": "Anime Comparison: BLEACH vs Cowboy Bebop vs Jujutsu Kaisen – Who Wins? ⚔️ #Shorts",
+    "hook": "What would you choose if you only have one night to binge a cursed high‑schooler, a jazz‑driven bounty crew, or a soul‑reaper's final war? Starting with Sunrise’s smooth, watercolor‑tinted backgrounds, Cowboy Bebop drops you into a 2071 solar system where Spike Spiegel and Jet Black chase bounties while a melancholic saxophone scores every chase",
+    "script": "What would you choose if you only have one night to binge a cursed high‑schooler, a jazz‑driven bounty crew, or a soul‑reaper's final war? Starting with Sunrise’s smooth, watercolor‑tinted backgrounds, Cowboy Bebop drops you into a 2071 solar system where Spike Spiegel and Jet Black chase bounties while a melancholic saxophone scores every chase. Then there's Jujutsu Kaisen, where the lanky teen Yuji Itadori swallows a cursed finger and instantly becomes the host for a raging spirit; the series currently holds an 8.6 on MyAnimeList, reflecting its blend of frantic combat and dark humor. Finally, Pierrot Films pushes the 2024 BLEACH: Thousand‑Year Blood War to a grim climax, rated 8.6 as Yhwach’s plan to erase the Soul King threatens every soul in existence. If you’re itching to start with the jazzy hunts of Cowboy Bebop or save the BLEACH showdown for a marathon, pin this Short for later! Which one are you picking first? Drop your choice below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would you choose if",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your choice below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "xj_-gpBT8o4",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]

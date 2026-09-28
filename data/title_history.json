@@ -2902,5 +2902,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-28T13:06:23.899430",
     "date_readable": "2026-09-28 13:06:23"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Conflict",
+    "normalized_title": "bleach thousandyear blood war the conflict",
+    "anime_id": 169755,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-28T19:02:02.510887",
+    "date_readable": "2026-09-28 19:02:02"
+  },
+  {
+    "title": "Cowboy Bebop",
+    "normalized_title": "cowboy bebop",
+    "anime_id": 1,
+    "concept_type": "anime_comparison",
+    "date": "2026-09-28T19:02:02.510887",
+    "date_readable": "2026-09-28 19:02:02"
+  },
+  {
+    "title": "Jujutsu Kaisen",
+    "normalized_title": "jujutsu kaisen",
+    "anime_id": "42765",
+    "concept_type": "anime_comparison",
+    "date": "2026-09-28T19:02:02.510887",
+    "date_readable": "2026-09-28 19:02:02"
   }
 ]
