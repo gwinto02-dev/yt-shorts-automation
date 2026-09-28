@@ -2926,5 +2926,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-09-28T19:02:02.510887",
     "date_readable": "2026-09-28 19:02:02"
+  },
+  {
+    "title": "Death Note",
+    "normalized_title": "death note",
+    "anime_id": "1376",
+    "concept_type": "top_recommendations",
+    "date": "2026-09-28T22:42:21.204918",
+    "date_readable": "2026-09-28 22:42:21"
+  },
+  {
+    "title": "Witch Hat Atelier",
+    "normalized_title": "witch hat atelier",
+    "anime_id": 147105,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-28T22:42:21.204918",
+    "date_readable": "2026-09-28 22:42:21"
+  },
+  {
+    "title": "Cyberpunk: Edgerunners",
+    "normalized_title": "cyberpunk edgerunners",
+    "anime_id": 120377,
+    "concept_type": "top_recommendations",
+    "date": "2026-09-28T22:42:21.204918",
+    "date_readable": "2026-09-28 22:42:21"
   }
 ]
