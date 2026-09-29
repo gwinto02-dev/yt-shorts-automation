@@ -977,5 +977,11 @@
     "date": "2026-09-29T12:15:58.030427",
     "date_readable": "2026-09-29 12:15:58",
     "angle_key": "MAINSTREAM_CONTRAST"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-29T17:22:48.708719",
+    "date_readable": "2026-09-29 17:22:48",
+    "angle_key": "PALATE_CLEANSER"
   }
 ]

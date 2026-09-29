@@ -2998,5 +2998,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-29T12:15:58.026962",
     "date_readable": "2026-09-29 12:15:58"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation Season 3",
+    "normalized_title": "mushoku tensei jobless reincarnation season 3",
+    "anime_id": 178789,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-29T17:22:48.705368",
+    "date_readable": "2026-09-29 17:22:48"
+  },
+  {
+    "title": "JoJo's Bizarre Adventure: Golden Wind",
+    "normalized_title": "jojos bizarre adventure golden wind",
+    "anime_id": 102883,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-29T17:22:48.705368",
+    "date_readable": "2026-09-29 17:22:48"
+  },
+  {
+    "title": "Naruto: Shippuden",
+    "normalized_title": "naruto shippuden",
+    "anime_id": "1555",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-29T17:22:48.705368",
+    "date_readable": "2026-09-29 17:22:48"
   }
 ]
