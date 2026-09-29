@@ -2950,5 +2950,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-09-28T22:42:21.204918",
     "date_readable": "2026-09-28 22:42:21"
+  },
+  {
+    "title": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru 2nd Season",
+    "normalized_title": "sekai saikou no ansatsusha isekai kizoku ni tensei suru 2nd season",
+    "anime_id": 169579,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-29T03:33:08.124298",
+    "date_readable": "2026-09-29 03:33:08"
+  },
+  {
+    "title": "THE ONE PIECE",
+    "normalized_title": "the one piece",
+    "anime_id": 171630,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-29T03:33:08.124298",
+    "date_readable": "2026-09-29 03:33:08"
+  },
+  {
+    "title": "Kusuriya no Hitorigoto: Bouhi no Hihou",
+    "normalized_title": "kusuriya no hitorigoto bouhi no hihou",
+    "anime_id": 200929,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-29T03:33:08.124298",
+    "date_readable": "2026-09-29 03:33:08"
   }
 ]

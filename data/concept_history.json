@@ -965,5 +965,11 @@
     "date": "2026-09-28T22:42:21.207980",
     "date_readable": "2026-09-28 22:42:21",
     "angle_key": "UNMATCHED_PAYOFF"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-09-29T03:33:08.126855",
+    "date_readable": "2026-09-29 03:33:08",
+    "angle_key": "PREMISE_INTRIGUE"
   }
 ]

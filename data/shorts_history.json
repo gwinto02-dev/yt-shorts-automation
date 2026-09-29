@@ -1674,5 +1674,29 @@
       "label": "Unmatched Narrative Payoff",
       "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
     }
+  },
+  {
+    "date": "2026-09-29T03:34:47.424374",
+    "date_readable": "2026-09-29",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Anime Trio: Apothecary Mystery, One Piece Reboot & Reincarnated Prince 🌟 #Shorts",
+    "hook": "TOHO animation Studio constructed a full‑size 19th‑century apothecary set just for the upcoming Kusuriya movie, a detail most fans missed",
+    "script": "TOHO animation Studio constructed a full‑size 19th‑century apothecary set just for the upcoming Kusuriya movie, a detail most fans missed. Starting with that film, TOHO animation Studio delivers crisp period detailing as wandering pharmacist Mu Qing arrives in a bustling market town, using his herbal expertise to untangle a series of mysterious deaths. Next up, WIT Studio revives the chaotic charm of Buggy when they re‑animate the East Blue saga, an eagerly awaited tribute for the series’ 25th anniversary. Finally, fans have already marked the second season of Sekai Saikou no Ansatsusha as a must‑watch, and Silver Link’s vibrant fantasy visuals will follow Maha, a reincarnated noble, as he navigates court conspiracies and a forbidden romance. If the apothecary mysteries of Kusuriya caught your attention, give it a try first. Which of these three will you add to your watchlist? Let me know your pick in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "toho animation studio constructed a",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": [
+        "next up",
+        "finally"
+      ]
+    },
+    "video_id": "f5_kqoiefWs",
+    "concept_angle": {
+      "key": "PREMISE_INTRIGUE",
+      "label": "Hooking Unreleased Story Premises",
+      "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+    }
   }
 ]
