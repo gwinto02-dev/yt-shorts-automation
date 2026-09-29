@@ -1698,5 +1698,28 @@
       "label": "Hooking Unreleased Story Premises",
       "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
     }
+  },
+  {
+    "date": "2026-09-29T12:18:13.798753",
+    "date_readable": "2026-09-29",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Anime Trio That Flip the Script 🎬 #Shorts",
+    "hook": "Right when you think a 2026 romance will tread familiar ground, The Ramparts of Ice opened with an 8",
+    "script": "Right when you think a 2026 romance will tread familiar ground, The Ramparts of Ice opened with an 8.3 rating on MyAnimeList.  \n\nFirst up, Studio KAI gives the series a crisp, hand‑drawn look that makes every classroom window feel like a pane of glass. It follows socially withdrawn Koyuki Higawa, whose self‑imposed wall finally cracks when Minato Amamiya persistently reaches out.  \n\nMoving on, Li Xiao’s frantic time‑hopping in Link Click Season 3 feels like a puzzle you can’t stop solving, and the season holds an 8.4 score that reflects its tight mystery pacing.  \n\nLastly, Science SARU’s adventure‑drama Jaadugar lands a solid 8.4, centering on Sitara, an orphan whose grief fuels a quest for knowledge under the guidance of a wandering scholar family.  \n\nIf the icy hallway of The Ramparts of Ice lingered with you, bookmark this Short for your next binge night. Comment which title you’ll start with first.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when you think a",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "title youll start with first",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "zMgqTLTjv60",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]

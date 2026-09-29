@@ -2974,5 +2974,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-29T03:33:08.124298",
     "date_readable": "2026-09-29 03:33:08"
+  },
+  {
+    "title": "Jaadugar: A Witch in Mongolia",
+    "normalized_title": "jaadugar a witch in mongolia",
+    "anime_id": 190569,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-29T12:15:58.026962",
+    "date_readable": "2026-09-29 12:15:58"
+  },
+  {
+    "title": "Link Click Season 3",
+    "normalized_title": "link click season 3",
+    "anime_id": 191832,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-29T12:15:58.026962",
+    "date_readable": "2026-09-29 12:15:58"
+  },
+  {
+    "title": "The Ramparts of Ice",
+    "normalized_title": "the ramparts of ice",
+    "anime_id": 186497,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-29T12:15:58.026962",
+    "date_readable": "2026-09-29 12:15:58"
   }
 ]

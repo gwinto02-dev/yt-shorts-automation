@@ -971,5 +971,11 @@
     "date": "2026-09-29T03:33:08.126855",
     "date_readable": "2026-09-29 03:33:08",
     "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-09-29T12:15:58.030427",
+    "date_readable": "2026-09-29 12:15:58",
+    "angle_key": "MAINSTREAM_CONTRAST"
   }
 ]
