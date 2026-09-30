@@ -3118,5 +3118,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-09-30T17:20:46.797188",
     "date_readable": "2026-09-30 17:20:46"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 2 Part 2",
+    "normalized_title": "rezero starting life in another world season 2 part 2",
+    "anime_id": 119661,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-30T21:36:36.968377",
+    "date_readable": "2026-09-30 21:36:36"
+  },
+  {
+    "title": "My Hero Academia Season 5",
+    "normalized_title": "my hero academia season 5",
+    "anime_id": "43108",
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-30T21:36:36.968377",
+    "date_readable": "2026-09-30 21:36:36"
+  },
+  {
+    "title": "You and I Are Polar Opposites",
+    "normalized_title": "you and i are polar opposites",
+    "anime_id": 184951,
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-30T21:36:36.968377",
+    "date_readable": "2026-09-30 21:36:36"
   }
 ]

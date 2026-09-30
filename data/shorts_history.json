@@ -1816,5 +1816,30 @@
       "label": "A Specific Detail Insider Fans Know",
       "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
     }
+  },
+  {
+    "date": "2026-09-30T21:37:46.987663",
+    "date_readable": "2026-09-30",
+    "concept_type": "genre_spotlight",
+    "title": "Genre‑Defining Picks: Romance, Heroes & Time‑Loop Anime 🎯 #Shorts",
+    "hook": "What if the only way to escape a deadly time loop is by confronting the witch who created it? First off, Lapin Track’s crisp character designs give You and I Are Polar Opposites a bright, slice‑of‑life feel, following Koyuki’s relentless optimism as she tries to win over the aloof Yusuke",
+    "script": "What if the only way to escape a deadly time loop is by confronting the witch who created it? First off, Lapin Track’s crisp character designs give You and I Are Polar Opposites a bright, slice‑of‑life feel, following Koyuki’s relentless optimism as she tries to win over the aloof Yusuke. Moving to My Hero Academia Season 5, the story zeroes in on Shinso, the telepathic transfer student forced to juggle both Class 1‑A and 1‑B, and the series still holds an 8.3‑point rating on MyAnimeList. Rounding out today’s picks, Re:ZERO’s Season 2 Part 2 earned an 8.4 on MyAnimeList, and this arc pushes Subaru into the Sin archipelago where Ricardo Welkin’s secret past could finally tip the scales. Whether you jump into the off‑beat romance of You and I Are Polar Opposites or line up Re:ZERO for a weekend marathon, keep this Short handy for your next anime session!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if the only way",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "for your next anime session",
+      "transition_markers": [
+        "first off",
+        "rounding out",
+        "finally"
+      ]
+    },
+    "video_id": "iWWO-mizjhg",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]

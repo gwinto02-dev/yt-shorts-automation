@@ -1007,5 +1007,11 @@
     "date": "2026-09-30T17:20:46.800219",
     "date_readable": "2026-09-30 17:20:46",
     "angle_key": "INSIDER_FACT"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-09-30T21:36:36.971640",
+    "date_readable": "2026-09-30 21:36:36",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]
