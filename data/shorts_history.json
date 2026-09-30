@@ -1744,5 +1744,29 @@
       "label": "The Ultimate Genre Switch-Up",
       "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
     }
+  },
+  {
+    "date": "2026-09-30T03:21:04.759072",
+    "date_readable": "2026-09-30",
+    "concept_type": "upcoming_spotlight",
+    "title": "3 Most Anticipated Upcoming Anime Coming Soon 🚀 #Shorts",
+    "hook": "Right when the Spade Kingdom's walls crumble, Asta's shout echoes across the battlefield",
+    "script": "Right when the Spade Kingdom's walls crumble, Asta's shout echoes across the battlefield.  \n\nFirst off, Studio Pierrot returns for Black Clover Season 2, preserving its hand‑drawn vigor while the Magic Knights launch a daring raid on the Spade Kingdom to rescue their captains—a chance to see new spell combos and a glimpse into Yami’s past.  \n\nMoving to the cyber‑lit streets, Avida Yang's desperate gamble drags a rusted legend named Weak into Night City’s underbelly; TRIGGER’s over‑the‑top action choreography makes this sequel one to watch even without a published score.  \n\nRounding out the trio, OLM’s upcoming Apothecary Diaries Season 3 has already become the go‑to period mystery for fans, following pharmacist Maomao as she untangles the Shi Clan’s lingering conspiracies in the pleasure district.  \n\nIf Pierrot’s battlefield energy gets you pumped, bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the spade kingdoms",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "9TCHyoxLfMk",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]
