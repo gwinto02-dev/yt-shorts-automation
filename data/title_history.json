@@ -3070,5 +3070,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-09-30T03:18:06.029594",
     "date_readable": "2026-09-30 03:18:06"
+  },
+  {
+    "title": "Your Lie in April",
+    "normalized_title": "your lie in april",
+    "anime_id": "8403",
+    "concept_type": "character_spotlight",
+    "date": "2026-09-30T12:02:23.019849",
+    "date_readable": "2026-09-30 12:02:23"
+  },
+  {
+    "title": "Gintama",
+    "normalized_title": "gintama",
+    "anime_id": 918,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-30T12:02:23.019849",
+    "date_readable": "2026-09-30 12:02:23"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 3",
+    "normalized_title": "rezero starting life in another world season 3",
+    "anime_id": 163134,
+    "concept_type": "character_spotlight",
+    "date": "2026-09-30T12:02:23.019849",
+    "date_readable": "2026-09-30 12:02:23"
   }
 ]

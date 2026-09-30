@@ -1768,5 +1768,29 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-09-30T12:03:29.882043",
+    "date_readable": "2026-09-30",
+    "concept_type": "character_spotlight",
+    "title": "Iconic Badass Anime Leads You Can't Miss 🎬 #Shorts",
+    "hook": "How does a samurai keep his edge when the government bans blades outright?\n\nFirst off, White Fox’s polished animation returns in Re:ZERO Season 3, where Subaru navigates a fragile peace after his Sanctuary victory, only to receive a cryptic letter that threatens the royal selection",
+    "script": "How does a samurai keep his edge when the government bans blades outright?\n\nFirst off, White Fox’s polished animation returns in Re:ZERO Season 3, where Subaru navigates a fragile peace after his Sanctuary victory, only to receive a cryptic letter that threatens the royal selection.\n\nMoving to Gintama, Katsura’s deadpan scheming against alien overlords showcases Sunrise’s knack for mixing slapstick with sharp tactics, and the series still holds an 8.5 rating on MyAnimeList.\n\nRounding out the trio, at 8.2 /10, Your Lie in April follows prodigy pianist Kousei as he confronts a silent grief that stalls his fingertips, until a free‑spirited violinist forces him back onto the stage.\n\nIf you’re chasing Subaru’s resilience, Gintama’s irreverent battles, or Kousei’s musical comeback, bookmark this Short for your next watchlist dive!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "how does a samurai keep",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next watchlist dive",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "NX5qRyvRVYw",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
