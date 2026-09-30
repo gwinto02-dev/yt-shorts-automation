@@ -1792,5 +1792,29 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-09-30T17:24:56.839811",
+    "date_readable": "2026-09-30",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Anime Trio You’ve Missed – Dive, Romance & VR 🎮 #Shorts",
+    "hook": "What if a down‑on‑his‑luck gamer suddenly unlocks a legendary class that flips his VR world on its head?\n\nStarting with Overgeared, J",
+    "script": "What if a down‑on‑his‑luck gamer suddenly unlocks a legendary class that flips his VR world on its head?\n\nStarting with Overgeared, J.C. STAFF’s clean line work gives the virtual arena a crisp, almost game‑engine feel, and the story follows Sin Yeong‑U, nicknamed Grid, as he teams up with the fiery blacksmith Regas to chase the top ranks of the game Satisfy.\n\nThen we have Grand Blue Dreaming Season 3, where Iori finally lands at his uncle’s dive shop and the series dives deeper into oceanic mishaps; the show holds an 8.2 on MyAnimeList, reflecting its blend of college chaos and underwater comedy.\n\nStepping up next, You and I Are Polar Opposites Season 2 carries the same 8.2 rating, and six months after Miyu and Yuusuke’s unlikely romance begins, the duo navigates everyday school life while their friends stir up fresh misunderstandings.\n\nAfter watching Grid wrestle with that legendary class, which of these three seasons is topping your queue? Share your pick below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if a downonhisluck gamer",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your pick below",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "XuKMdl_Zzmk",
+    "concept_angle": {
+      "key": "INSIDER_FACT",
+      "label": "A Specific Detail Insider Fans Know",
+      "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
+    }
   }
 ]

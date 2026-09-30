@@ -3094,5 +3094,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-09-30T12:02:23.019849",
     "date_readable": "2026-09-30 12:02:23"
+  },
+  {
+    "title": "You and I Are Polar Opposites Season 2",
+    "normalized_title": "you and i are polar opposites season 2",
+    "anime_id": 210031,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-30T17:20:46.797188",
+    "date_readable": "2026-09-30 17:20:46"
+  },
+  {
+    "title": "Grand Blue Dreaming Season 3",
+    "normalized_title": "grand blue dreaming season 3",
+    "anime_id": 199111,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-30T17:20:46.797188",
+    "date_readable": "2026-09-30 17:20:46"
+  },
+  {
+    "title": "Overgeared",
+    "normalized_title": "overgeared",
+    "anime_id": 212888,
+    "concept_type": "hidden_gems",
+    "date": "2026-09-30T17:20:46.797188",
+    "date_readable": "2026-09-30 17:20:46"
   }
 ]
