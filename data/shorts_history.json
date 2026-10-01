@@ -1841,5 +1841,29 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-10-01T03:25:50.130294",
+    "date_readable": "2026-10-01",
+    "concept_type": "anime_comparison",
+    "title": "Underrated Showdown: Romance vs Fantasy vs Psyche 🌟 #Shorts",
+    "hook": "Makaria spent a full year perfecting the firework sequence for the final episode of Love Unseen Beneath the Clear Night Sky",
+    "script": "Makaria spent a full year perfecting the firework sequence for the final episode of Love Unseen Beneath the Clear Night Sky. First off, the series showcases Makaria’s soft watercolor palette, following Kakeru Sorano, a withdrawn university freshman, as he befriends Koharu Fuyutsuki, a blind girl who dreams of seeing fireworks. Moving on, Rimuru’s push to forge a lasting human‑monster alliance finally hits a turning point, and the season currently holds an 8.3 /10 on MyAnimeList. Finally, with an 8.4 /10 rating, Mob Psycho 100 tracks a seemingly ordinary teen named Shigeo Kageyama—nicknamed “Mob”—who risks a psychic overload whenever his feelings edge toward a hundred percent. If that firework scene stuck with you, or Rimuru’s diplomatic gamble caught your attention, decide which vibe you want tonight. Drop your choice below and save this Short for your next binge.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "makaria spent a full year",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "short for your next binge",
+      "transition_markers": [
+        "first off",
+        "finally"
+      ]
+    },
+    "video_id": "-6HcU1TD3HQ",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]

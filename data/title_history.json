@@ -3142,5 +3142,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-09-30T21:36:36.968377",
     "date_readable": "2026-09-30 21:36:36"
+  },
+  {
+    "title": "Mob Psycho 100",
+    "normalized_title": "mob psycho 100",
+    "anime_id": 21507,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-01T03:24:42.508364",
+    "date_readable": "2026-10-01 03:24:42"
+  },
+  {
+    "title": "That Time I Got Reincarnated as a Slime Season 4",
+    "normalized_title": "that time i got reincarnated as a slime season 4",
+    "anime_id": 182205,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-01T03:24:42.508364",
+    "date_readable": "2026-10-01 03:24:42"
+  },
+  {
+    "title": "Love Unseen Beneath the Clear Night Sky",
+    "normalized_title": "love unseen beneath the clear night sky",
+    "anime_id": 202269,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-01T03:24:42.508364",
+    "date_readable": "2026-10-01 03:24:42"
   }
 ]
