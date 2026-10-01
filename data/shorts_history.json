@@ -1865,5 +1865,28 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-01T12:36:31.764089",
+    "date_readable": "2026-10-01",
+    "concept_type": "genre_spotlight",
+    "title": "Genre‑Diverse Trio Spotlight: Chainsaw Man, Saiki K., Haikyu!! 🏐 #Shorts",
+    "hook": "Haikyu!!'s third season premiered in 2016, the same year two wildly different series burst onto the anime scene",
+    "script": "Haikyu!!'s third season premiered in 2016, the same year two wildly different series burst onto the anime scene.  \n\nIf you crave the rush of a high‑stakes match, the third season’s crisp, high‑energy animation captures every spike and dive as Karasuno fights its way toward the national tournament.  \n\nSwitching to supernatural comedy, Kusuo Saiki spends each episode trying to keep his psychic powers under wraps while his eccentric classmates—Zet‑Bar and Mana—drag him into absurd situations; the show earned an 8.3 rating on MyAnimeList, reflecting its tight gag timing.  \n\nFinally, Chainsaw Man tops the list with an 8.3 score, and MAPPA wastes no time: a debt‑bound teen named Denji merges with his Chainsaw Devil, Pochita, to hunt devils in a city that bleeds horror and dark humor.  \n\nFrom Karasuno’s court to Denji’s blood‑stained streets, which genre’s peak are you diving into first? Let me know your choice below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "haikyus third season premiered in",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know your choice below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "AMzi9uslRBw",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]

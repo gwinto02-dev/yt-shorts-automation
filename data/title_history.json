@@ -3166,5 +3166,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-01T03:24:42.508364",
     "date_readable": "2026-10-01 03:24:42"
+  },
+  {
+    "title": "Chainsaw Man",
+    "normalized_title": "chainsaw man",
+    "anime_id": 127230,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-01T12:34:45.224283",
+    "date_readable": "2026-10-01 12:34:45"
+  },
+  {
+    "title": "The Disastrous Life of Saiki K.",
+    "normalized_title": "the disastrous life of saiki k",
+    "anime_id": 21804,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-01T12:34:45.224283",
+    "date_readable": "2026-10-01 12:34:45"
+  },
+  {
+    "title": "Haikyu!! 3rd Season",
+    "normalized_title": "haikyu 3rd season",
+    "anime_id": "11935",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-01T12:34:45.224283",
+    "date_readable": "2026-10-01 12:34:45"
   }
 ]
