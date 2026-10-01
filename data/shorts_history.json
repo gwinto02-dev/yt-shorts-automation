@@ -1888,5 +1888,28 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-10-01T17:54:54.695521",
+    "date_readable": "2026-10-01",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Naruto, Eva & DAN DA DAN – Legendary Heroes 🔥 #Shorts",
+    "hook": "What would happen if a teenage medium tried to keep her supernatural family secret while navigating high school drama? Science SARU’s sleek, kinetic art style in the 2024 series paints Momo’s world in pastel glitches, then drops us into her life as a spirit‑medium heir who saves classmate Okarun from bullies and reluctantly opens a door to occult conversation",
+    "script": "What would happen if a teenage medium tried to keep her supernatural family secret while navigating high school drama? Science SARU’s sleek, kinetic art style in the 2024 series paints Momo’s world in pastel glitches, then drops us into her life as a spirit‑medium heir who saves classmate Okarun from bullies and reluctantly opens a door to occult conversation. Switching gears, Shinji Ikari’s crippling anxiety fuels every launch of the Evangelion, and that tension helped the 1995 Gainax classic earn an 8.3 on MyAnimeList, turning a battle against alien Angels into a study of self‑worth. And finally, an 8.0 rating tags the long‑running shinobi saga where Naruto Uzumaki, a boy marked by the Nine‑Tailed Fox, fights for acknowledgment while learning the cost of unchecked ambition. If you’re curious about Momo’s hidden powers, start with that 2024 series tonight—so which of these three journeys will you dive into first? Drop your choice below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would happen if a",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your choice below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "zUhIjMGX3Kg",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]
