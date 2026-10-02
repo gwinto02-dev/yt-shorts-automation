@@ -1049,5 +1049,11 @@
     "date": "2026-10-02T11:59:56.911116",
     "date_readable": "2026-10-02 11:59:56",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-10-02T17:08:32.285686",
+    "date_readable": "2026-10-02 17:08:32",
+    "angle_key": "DECISION_GUIDE"
   }
 ]

@@ -1953,5 +1953,29 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-10-02T17:11:40.777827",
+    "date_readable": "2026-10-02",
+    "concept_type": "anime_comparison",
+    "title": "Epic Anime Face‑Off: Noragami Aragoto vs Fate/Zero vs Food Wars! 🍜 #Shorts",
+    "hook": "What if a fifteen‑year‑old kitchen prodigy had to prove himself in a high‑stakes culinary showdown that could decide his future?\n\nFirst off, Food Wars! skips studio credit but its crisp, hyper‑realistic food animation makes each dish feel tangible, and it follows Souma Yukihira as he battles Totsuki’s Shokugeki exams to earn a seat at the top‑chef table",
+    "script": "What if a fifteen‑year‑old kitchen prodigy had to prove himself in a high‑stakes culinary showdown that could decide his future?\n\nFirst off, Food Wars! skips studio credit but its crisp, hyper‑realistic food animation makes each dish feel tangible, and it follows Souma Yukihira as he battles Totsuki’s Shokugeki exams to earn a seat at the top‑chef table.\n\nMoving to Fate/Zero, the story opens with mercenary Kiritsugu Emiya hunting a relic that could end wars, and it holds an 8.2/10 rating on MyAnimeList, reflecting its moral ambiguity and intense Grail battles.\n\nRounding out the trio, Noragami Aragoto also scores 8.2/10; after Yato and Regalia Yukine reconcile, the minor god is pulled into a city‑wide clash where stray spirits face a vengeful former deity.\n\nSo, whether you crave Totsuki’s pressure‑cooker battles, the Grail war’s grim politics, or Yato’s chaotic odd‑jobs, which one tops your watch list? Let me know your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if a fifteenyearold kitchen",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "uysXATu3-UI",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
