@@ -3310,5 +3310,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-02T17:08:32.282261",
     "date_readable": "2026-10-02 17:08:32"
+  },
+  {
+    "title": "Toradora!",
+    "normalized_title": "toradora",
+    "anime_id": "3532",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T21:31:29.425260",
+    "date_readable": "2026-10-02 21:31:29"
+  },
+  {
+    "title": "Fruits Basket (2019)",
+    "normalized_title": "fruits basket 2019",
+    "anime_id": 105334,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T21:31:29.425260",
+    "date_readable": "2026-10-02 21:31:29"
+  },
+  {
+    "title": "That Time I Got Reincarnated as a Slime Season 2",
+    "normalized_title": "that time i got reincarnated as a slime season 2",
+    "anime_id": 108511,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T21:31:29.425260",
+    "date_readable": "2026-10-02 21:31:29"
   }
 ]

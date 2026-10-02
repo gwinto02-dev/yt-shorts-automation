@@ -1977,5 +1977,29 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-10-02T21:33:16.268392",
+    "date_readable": "2026-10-02",
+    "concept_type": "character_spotlight",
+    "title": "Heroic Character Spotlight: Toradora, Fruits Basket & Slime Season 2 🌟 #Shorts",
+    "hook": "Season 2 of *That Time I Got Reincarnated as a Slime* devotes an entire episode to the Jura Tempest Alliance’s first diplomatic summit with the animal kingdom of Eurazania",
+    "script": "Season 2 of *That Time I Got Reincarnated as a Slime* devotes an entire episode to the Jura Tempest Alliance’s first diplomatic summit with the animal kingdom of Eurazania. First off, 8‑bit’s bright, fluid animation gives those summit scenes a slick, almost game‑like feel, and the story follows Rimuru as the coalition reunites with King Gazel while tensions flare between monsters and humans.  \n\nMoving to *Fruits Basket* (2019), Tohru Honda walks into the Soma household only to learn every family member turns into a zodiac animal when hugged. The series, which holds an 8.2 score on MyAnimeList, uses that odd curse to peel back layers of trauma and family love.  \n\nFinally, an 8.2 rating caps *Toradora!*—a 2008 teen rom‑com where Ryuuji’s scary face hides a love for housework, and his uneasy alliance with the fierce Taiga turns everyday school life into a heartfelt tug‑of‑war.  \n\nIf the Jura Tempest summit sparked your curiosity, save this Short for your next binge night.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "season 2 of that time",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "first off",
+        "finally"
+      ]
+    },
+    "video_id": "FPplKa0HWY0",
+    "concept_angle": {
+      "key": "PROTAGONIST_GROWTH",
+      "label": "Unforgettable Protagonist Journeys",
+      "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
+    }
   }
 ]

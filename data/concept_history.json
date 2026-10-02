@@ -1055,5 +1055,11 @@
     "date": "2026-10-02T17:08:32.285686",
     "date_readable": "2026-10-02 17:08:32",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T21:31:29.429303",
+    "date_readable": "2026-10-02 21:31:29",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]
