@@ -3262,5 +3262,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-02T03:25:28.618665",
     "date_readable": "2026-10-02 03:25:28"
+  },
+  {
+    "title": "The Seven Deadly Sins",
+    "normalized_title": "the seven deadly sins",
+    "anime_id": "8699",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-02T11:59:56.908002",
+    "date_readable": "2026-10-02 11:59:56"
+  },
+  {
+    "title": "Parasyte -the maxim-",
+    "normalized_title": "parasyte the maxim",
+    "anime_id": "8147",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-02T11:59:56.908002",
+    "date_readable": "2026-10-02 11:59:56"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World-",
+    "normalized_title": "rezero starting life in another world",
+    "anime_id": "11209",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-02T11:59:56.908002",
+    "date_readable": "2026-10-02 11:59:56"
   }
 ]

@@ -1932,5 +1932,26 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-10-02T12:01:14.509304",
+    "date_readable": "2026-10-02",
+    "concept_type": "anime_comparison",
+    "title": "Head‑to‑Head Anime Matchup: Seven Deadly Sins vs Parasyte vs Re:ZERO ⚔️ #Shorts",
+    "hook": "Re:ZERO’s OVA episodes never aired on TV—they were tacked onto the 8th and 11th manga volumes as extra DVDs",
+    "script": "Re:ZERO’s OVA episodes never aired on TV—they were tacked onto the 8th and 11th manga volumes as extra DVDs. Xebec’s crisp, hand‑drawn character work gives the OVA a slightly darker tone than the main series, and it revisits Subaru’s first death loop in a two‑part side story. Then Parasyte drops you into a modern city where Shinichi Izumi wakes up to find a parasite named Migi sharing his brain, turning everyday life into a battle of wills; the show earned an 8.2/10 rating on MyAnimeList. Meanwhile, also scoring 8.2/10, The Seven Deadly Sins throws you into a medieval Britannia where the disgraced Holy Knight Meliodas leads the Sin Corps, each member wielding a power tied to one of the deadly sins. If the Sin Corps intrigue you as much as Subaru’s extra loop, bookmark this Short for your next binge session.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "rezeros ova episodes never aired",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge session",
+      "transition_markers": []
+    },
+    "video_id": "vccxKahjjvg",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
