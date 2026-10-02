@@ -1037,5 +1037,11 @@
     "date": "2026-10-01T22:05:14.788524",
     "date_readable": "2026-10-01 22:05:14",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T03:25:28.621683",
+    "date_readable": "2026-10-02 03:25:28",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]

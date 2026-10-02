@@ -3238,5 +3238,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-01T22:05:14.785167",
     "date_readable": "2026-10-01 22:05:14"
+  },
+  {
+    "title": "No Game, No Life",
+    "normalized_title": "no game no life",
+    "anime_id": "7880",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T03:25:28.618665",
+    "date_readable": "2026-10-02 03:25:28"
+  },
+  {
+    "title": "Fullmetal Alchemist",
+    "normalized_title": "fullmetal alchemist",
+    "anime_id": "100",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T03:25:28.618665",
+    "date_readable": "2026-10-02 03:25:28"
+  },
+  {
+    "title": "ERASED",
+    "normalized_title": "erased",
+    "anime_id": "11110",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-02T03:25:28.618665",
+    "date_readable": "2026-10-02 03:25:28"
   }
 ]

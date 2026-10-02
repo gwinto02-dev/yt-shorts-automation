@@ -1911,5 +1911,26 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-10-02T03:27:50.307038",
+    "date_readable": "2026-10-02",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Sora, Edward & Satoru – Genius Moves 🎲 #Shorts",
+    "hook": "The 2003 Fullmetal Alchemist finished its broadcast before the manga ended, so the staff invented its own conclusion",
+    "script": "The 2003 Fullmetal Alchemist finished its broadcast before the manga ended, so the staff invented its own conclusion. Even without a big studio name, ERASED uses a stark, muted palette while Satoru Fujinuma rewinds minutes before a tragedy to stop a childhood kidnapping. If you crave raw determination mixed with alchemy, Edward Elric, scar‑etched and stubborn, will trade anything for his brother’s soul, and the series holds an 8.2/10 rating on MyAnimeList. His clever transmutations turn battles into puzzles, driving each twist forward. Now for a world where every conflict is a game, At 8.2/10, No Game No Life makes each showdown a high‑stakes board match as siblings Sora and Shiro challenge a realm ruled by games. Their flawless tactics and vibrant art turn even rock‑paper‑scissors into a spectacle. Remember Sora’s gamble against the god‑like ruler in No Game No Life? Save this Short and let us know which badass lead you’ll watch first.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "the 2003 fullmetal alchemist finished",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "badass lead youll watch first",
+      "transition_markers": []
+    },
+    "video_id": "Y2CrzH5FTUs",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
