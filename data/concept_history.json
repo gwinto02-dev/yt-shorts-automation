@@ -1073,5 +1073,11 @@
     "date": "2026-10-03T11:13:23.684414",
     "date_readable": "2026-10-03 11:13:23",
     "angle_key": "STUDIO_STAFF_TALENT"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-03T15:30:48.587626",
+    "date_readable": "2026-10-03 15:30:48",
+    "angle_key": "MOOD_BASED"
   }
 ]

@@ -2024,5 +2024,26 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-10-03T15:33:58.549575",
+    "date_readable": "2026-10-03",
+    "concept_type": "genre_spotlight",
+    "title": "Genre‑Diverse Trio: Ice Ramparts S2, Noragami & Tanya S2 🎭 #Shorts",
+    "hook": "Right when you think the battlefield's over, Tanya's next command flips the war on its head",
+    "script": "Right when you think the battlefield's over, Tanya's next command flips the war on its head.\n\nNUT's crisp, gritty animation brings the 2026 sequel of *Saga of Tanya the Evil* back to the front lines, where the child‑like officer still manipulates time‑bending strategies against an unforgiving empire.\n\nSwitching gears, Yato—an off‑beat delivery god with a red‑inked phone number—stumbles through Tokyo's alleys, and his reckless charm earned the series an 8.2 on MyAnimeList, keeping fans guessing which spirit contract will bite next.\n\nScoring another 8.2, *The Ramparts of Ice* Season 2 lands in 2026, and Studio KAI paints the clumsy high‑school crew’s everyday drama with soft pastels, from Tsubasa’s basketball blunders to Tsukiko’s reluctant confessions.\n\nIf you’re craving that slice‑of‑life lift from the basketball scenes, bookmark this Short and tell me which mood you’re chasing in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when you think the",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "youre chasing in the comments",
+      "transition_markers": []
+    },
+    "video_id": "aP023OtyH4c",
+    "concept_angle": {
+      "key": "MOOD_BASED",
+      "label": "Match Your Viewing Mood",
+      "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
+    }
   }
 ]

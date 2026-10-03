@@ -3382,5 +3382,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-03T11:13:23.680280",
     "date_readable": "2026-10-03 11:13:23"
+  },
+  {
+    "title": "The Ramparts of Ice Season 2",
+    "normalized_title": "the ramparts of ice season 2",
+    "anime_id": 213805,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-03T15:30:48.584745",
+    "date_readable": "2026-10-03 15:30:48"
+  },
+  {
+    "title": "Noragami",
+    "normalized_title": "noragami",
+    "anime_id": "7881",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-03T15:30:48.584745",
+    "date_readable": "2026-10-03 15:30:48"
+  },
+  {
+    "title": "Saga of Tanya the Evil Season 2",
+    "normalized_title": "saga of tanya the evil season 2",
+    "anime_id": 135865,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-03T15:30:48.584745",
+    "date_readable": "2026-10-03 15:30:48"
   }
 ]
