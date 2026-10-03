@@ -3334,5 +3334,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-02T21:31:29.425260",
     "date_readable": "2026-10-02 21:31:29"
+  },
+  {
+    "title": "Tokyo Ghoul",
+    "normalized_title": "tokyo ghoul",
+    "anime_id": "8271",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-03T03:09:30.680032",
+    "date_readable": "2026-10-03 03:09:30"
+  },
+  {
+    "title": "My Dress-Up Darling Season 2",
+    "normalized_title": "my dressup darling season 2",
+    "anime_id": 154768,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-03T03:09:30.680032",
+    "date_readable": "2026-10-03 03:09:30"
+  },
+  {
+    "title": "The Seven Deadly Sins: Revival of the Commandments",
+    "normalized_title": "the seven deadly sins revival of the commandments",
+    "anime_id": "12633",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-03T03:09:30.680032",
+    "date_readable": "2026-10-03 03:09:30"
   }
 ]
