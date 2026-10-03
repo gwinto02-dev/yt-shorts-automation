@@ -2001,5 +2001,28 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-10-03T11:14:35.912835",
+    "date_readable": "2026-10-03",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Anime Trio: Kage, Alya‑san & Dandadan Season 3 🎬 #Shorts",
+    "hook": "Did you know the upcoming Kage no Jitsuryokusha ni Naritakute! Zankyou‑hen is a theatrical sequel that continues right after season two’s final battle? Nexus is handling the animation, and they’ve promised the same over‑the‑top fight choreography while Mordred and Yuuka Asakura chase a new “shadow power” that could tip the kingdom’s balance",
+    "script": "Did you know the upcoming Kage no Jitsuryokusha ni Naritakute! Zankyou‑hen is a theatrical sequel that continues right after season two’s final battle? Nexus is handling the animation, and they’ve promised the same over‑the‑top fight choreography while Mordred and Yuuka Asakura chase a new “shadow power” that could tip the kingdom’s balance.\n\nIf you’re in the mood for slice‑of‑life romance with a dash of language jokes, Tokidoki Bosotto Rossiya‑go de Dereru Tonari no Alya‑san returns for season two, an eagerly awaited sequel. The story centers on Yuki Suou’s attempt to finally confess to Mariya Kujou, and Doga Kobo’s pastel‑soft palette makes every classroom scene feel breezy.\n\nHighly anticipated, Science SARU’s Dandadan is back for a third season, and the studio’s reputation for blending hand‑drawn chaos with sharp CG shines as Turbo Babaa and Aira Shiratori dive into a new interdimensional threat.\n\nSince Dandadan’s supernatural brawls keep getting wilder, which of these three are you adding to your queue first? Drop your pick below!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "did you know the upcoming",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your pick below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "3S_3FfBNQV0",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]

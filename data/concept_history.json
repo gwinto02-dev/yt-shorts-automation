@@ -1067,5 +1067,11 @@
     "date": "2026-10-03T03:09:30.684069",
     "date_readable": "2026-10-03 03:09:30",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-03T11:13:23.684414",
+    "date_readable": "2026-10-03 11:13:23",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]
