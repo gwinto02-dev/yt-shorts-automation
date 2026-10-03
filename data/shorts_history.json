@@ -2045,5 +2045,29 @@
       "label": "Match Your Viewing Mood",
       "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
     }
+  },
+  {
+    "date": "2026-10-03T20:20:13.871383",
+    "date_readable": "2026-10-03",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Wild Last Boss S2, Vinland Saga S2 & Mob Psycho 100 II ⚡ #Shorts",
+    "hook": "What would you do if the strongest psychic in the city spent his weekends dodging cafeteria lines and school gossip?\n\nStarting with Bones, the studio’s clean line work and exaggerated motion give Mob Psycho 100 II its signature visual punch, yet the story centers on Ritsu Kageyama, an eighth‑grader desperate for a normal life despite his overwhelming power",
+    "script": "What would you do if the strongest psychic in the city spent his weekends dodging cafeteria lines and school gossip?\n\nStarting with Bones, the studio’s clean line work and exaggerated motion give Mob Psycho 100 II its signature visual punch, yet the story centers on Ritsu Kageyama, an eighth‑grader desperate for a normal life despite his overwhelming power.\n\nThen we have Einar from Vinland Saga Season 2, a widowed farmer thrust back into conflict when English raiders destroy his rebuilt village; the series currently sits at 8.8 on MyAnimeList, and its brutal realism drives his tactical growth.\n\nNext up, the 7.1‑rated A Wild Last Boss Appeared! Season 2 leans into Aries’ reluctant transformation from game NPC to real‑world commander, forcing her to negotiate alliances in a fantasy realm that suddenly treats her like a true boss.\n\nWhether you’re gearing up for the psychic showdown in Mob Psycho 100 II or the battlefield grit of Vinland Saga, save this Short for your next watch list and tell me which arc you’ll dive into first.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would you do if",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "arc youll dive into first",
+      "transition_markers": [
+        "next up",
+        "then we have"
+      ]
+    },
+    "video_id": "uetf_4iMmyg",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]

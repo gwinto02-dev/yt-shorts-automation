@@ -3406,5 +3406,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-03T15:30:48.584745",
     "date_readable": "2026-10-03 15:30:48"
+  },
+  {
+    "title": "A Wild Last Boss Appeared! Season 2",
+    "normalized_title": "a wild last boss appeared season 2",
+    "anime_id": 204389,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-03T20:18:21.447609",
+    "date_readable": "2026-10-03 20:18:21"
+  },
+  {
+    "title": "Vinland Saga Season 2",
+    "normalized_title": "vinland saga season 2",
+    "anime_id": 136430,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-03T20:18:21.447609",
+    "date_readable": "2026-10-03 20:18:21"
+  },
+  {
+    "title": "Mob Psycho 100 II",
+    "normalized_title": "mob psycho 100 ii",
+    "anime_id": 101338,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-03T20:18:21.447609",
+    "date_readable": "2026-10-03 20:18:21"
   }
 ]
