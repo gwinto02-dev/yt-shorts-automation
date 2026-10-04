@@ -2114,5 +2114,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-10-04T20:48:19.084410",
+    "date_readable": "2026-10-04",
+    "concept_type": "anime_comparison",
+    "title": "Anime Matchup Madness: 100 Girlfriends, Slime & Prettiest Girl 🌈 #Shorts",
+    "hook": "Bibury Animation Studios pushed the limits of a harem comedy by already delivering a third season of their 100‑girlfriend saga",
+    "script": "Bibury Animation Studios pushed the limits of a harem comedy by already delivering a third season of their 100‑girlfriend saga.  \n\nCONNECT’s pastel‑toned visuals set the tone for I Made Friends with the Second Prettiest Girl in My Class, where outcast Maki Maehara finally befriends Umi Asanagi, the class’s second‑prettiest girl, learning that “out of league” is just a mindset.  \n\nIf you want a dead‑ended office worker reborn as a slime monarch, That Time I Got Reincarnated as a Slime follows Satoru Mikami’s new life, and 8‑bit’s smooth animation helped it land an 8.0 on MyAnimeList.  \n\nScoring 8.0, The 100 Girlfriends… Season 3 ramps the ecchi romance, letting the narrator juggle an ever‑growing list of girls and turning each confession into a chaotic battle.  \n\nDo you prefer the quiet class‑room turn‑around, the slime‑king’s kingdom‑building, or the endless confession marathon? Drop your favorite matchup in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "bibury animation studios pushed the",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "favorite matchup in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "dfq-ChmcwB0",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]
