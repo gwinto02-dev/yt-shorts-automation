@@ -2090,5 +2090,29 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-10-04T16:19:29.102570",
+    "date_readable": "2026-10-04",
+    "concept_type": "anime_comparison",
+    "title": "Anime Head-to-Head: Reze Arc vs Culling Game vs Horimiya 🔥 #Shorts",
+    "hook": "Did you know MAPPA assigned a 150‑artist team just to perfect the devil‑blood effects in the Chainsaw Man movie? First off, CloverWorks paints Horimiya in soft pastel tones, tracking Hori—the perfect student who hides a love for video games—and Miyamura, the quiet boy with hidden tattoos, as they navigate secret lives beyond school",
+    "script": "Did you know MAPPA assigned a 150‑artist team just to perfect the devil‑blood effects in the Chainsaw Man movie? First off, CloverWorks paints Horimiya in soft pastel tones, tracking Hori—the perfect student who hides a love for video games—and Miyamura, the quiet boy with hidden tattoos, as they navigate secret lives beyond school. Moving to the next showdown, Nobara Kugisaki steps back into the fray, determined to survive the Culling Game’s lethal puzzles, and the season currently sits at an 8.6/10 rating on MyAnimeList. Finally, with a 9.0/10 score, Chainsaw Man – The Reze Arc drops Denji into a rain‑soaked date that erupts into a chase after the mysterious devil Reze. If that rainy encounter stuck with you, let me know which of the three you’ll start watching first in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know mappa assigned",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "watching first in the comments",
+      "transition_markers": [
+        "first off",
+        "finally"
+      ]
+    },
+    "video_id": "mHwH9Fk9OmY",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]

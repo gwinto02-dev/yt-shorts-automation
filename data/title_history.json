@@ -3478,5 +3478,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-04T11:54:43.351190",
     "date_readable": "2026-10-04 11:54:43"
+  },
+  {
+    "title": "Chainsaw Man – The Movie: Reze Arc",
+    "normalized_title": "chainsaw man the movie reze arc",
+    "anime_id": 171627,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-04T16:14:35.195096",
+    "date_readable": "2026-10-04 16:14:35"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 3: The Culling Game Part 1",
+    "normalized_title": "jujutsu kaisen season 3 the culling game part 1",
+    "anime_id": 172463,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-04T16:14:35.195096",
+    "date_readable": "2026-10-04 16:14:35"
+  },
+  {
+    "title": "Horimiya",
+    "normalized_title": "horimiya",
+    "anime_id": 124080,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-04T16:14:35.195096",
+    "date_readable": "2026-10-04 16:14:35"
   }
 ]
