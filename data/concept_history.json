@@ -1091,5 +1091,11 @@
     "date": "2026-10-04T03:38:35.428440",
     "date_readable": "2026-10-04 03:38:35",
     "angle_key": "MOOD_BASED"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T11:54:43.356082",
+    "date_readable": "2026-10-04 11:54:43",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]

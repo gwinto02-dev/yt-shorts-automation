@@ -3454,5 +3454,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-04T03:38:35.425507",
     "date_readable": "2026-10-04 03:38:35"
+  },
+  {
+    "title": "Welcome to Demon School! Iruma-kun Season 4",
+    "normalized_title": "welcome to demon school irumakun season 4",
+    "anime_id": 184492,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T11:54:43.351190",
+    "date_readable": "2026-10-04 11:54:43"
+  },
+  {
+    "title": "Dragon Ball Z",
+    "normalized_title": "dragon ball z",
+    "anime_id": 813,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T11:54:43.351190",
+    "date_readable": "2026-10-04 11:54:43"
+  },
+  {
+    "title": "KONOSUBA -God's blessing on this wonderful world!",
+    "normalized_title": "konosuba gods blessing on this wonderful world",
+    "anime_id": 21202,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T11:54:43.351190",
+    "date_readable": "2026-10-04 11:54:43"
   }
 ]

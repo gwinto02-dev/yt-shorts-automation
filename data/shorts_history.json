@@ -2069,5 +2069,26 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-10-04T11:56:20.268742",
+    "date_readable": "2026-10-04",
+    "concept_type": "genre_spotlight",
+    "title": "Essential genre trio: Comedy, Shonen & Supernatural picks 🎯 #Shorts",
+    "hook": "Right when the afterlife gate slams shut on Kazuma, Aqua’s dead‑pan sigh hints that his ‘new life’ will be anything but ordinary",
+    "script": "Right when the afterlife gate slams shut on Kazuma, Aqua’s dead‑pan sigh hints that his ‘new life’ will be anything but ordinary. Starting with the comedy‑fantasy that nailed the genre, Studio DEEN gives Konosuba its bright, chibi‑styled art while following Kazuma, a reluctant hero forced to team up with a crusading goddess, a magic‑obsessed magician, and a battle‑axe‑wielding crusader. Then we jump to the shonen action benchmark—Dragon Ball Z. Goku returns as a dad, but the series still scores an 8.0 on MyAnimeList, and every showdown feels like a power‑level exam for the ages. Stepping up next, the latest season of Welcome to Demon School! Iruma‑kun lands with an 8.1 rating, and Iruma and his misfit classmates must survive a chaotic music festival that decides their rank. So whether you’re still hearing Aqua’s sigh in Konosuba or the roar of a ki blast from DBZ, bookmark this Short and let me know which genre you’re tackling first!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the afterlife gate",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "which genre youre tackling first",
+      "transition_markers": []
+    },
+    "video_id": "VdDmk5Jve3M",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]
