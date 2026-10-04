@@ -3430,5 +3430,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-03T20:18:21.447609",
     "date_readable": "2026-10-03 20:18:21"
+  },
+  {
+    "title": "Delicious in Dungeon",
+    "normalized_title": "delicious in dungeon",
+    "anime_id": 153518,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T03:38:35.425507",
+    "date_readable": "2026-10-04 03:38:35"
+  },
+  {
+    "title": "Rascal Does Not Dream of Bunny Girl Senpai",
+    "normalized_title": "rascal does not dream of bunny girl senpai",
+    "anime_id": 101291,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T03:38:35.425507",
+    "date_readable": "2026-10-04 03:38:35"
+  },
+  {
+    "title": "Though I Am an Inept Villainess",
+    "normalized_title": "though i am an inept villainess",
+    "anime_id": 188139,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T03:38:35.425507",
+    "date_readable": "2026-10-04 03:38:35"
   }
 ]

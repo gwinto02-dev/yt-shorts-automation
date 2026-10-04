@@ -1085,5 +1085,11 @@
     "date": "2026-10-03T20:18:21.450849",
     "date_readable": "2026-10-03 20:18:21",
     "angle_key": "BADASS_MOMENTS"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-04T03:38:35.428440",
+    "date_readable": "2026-10-04 03:38:35",
+    "angle_key": "MOOD_BASED"
   }
 ]
