@@ -3550,5 +3550,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-04T20:48:19.087757",
     "date_readable": "2026-10-04 20:48:19"
+  },
+  {
+    "title": "Sparks of Tomorrow",
+    "normalized_title": "sparks of tomorrow",
+    "anime_id": 103303,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-05T03:21:53.716083",
+    "date_readable": "2026-10-05 03:21:53"
+  },
+  {
+    "title": "Attack on Titan Final Season",
+    "normalized_title": "attack on titan final season",
+    "anime_id": 110277,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-05T03:21:53.716083",
+    "date_readable": "2026-10-05 03:21:53"
+  },
+  {
+    "title": "Lord of Mysteries",
+    "normalized_title": "lord of mysteries",
+    "anime_id": 137667,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-05T03:21:53.716083",
+    "date_readable": "2026-10-05 03:21:53"
   }
 ]

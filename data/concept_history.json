@@ -1109,5 +1109,11 @@
     "date": "2026-10-04T20:36:07.520391",
     "date_readable": "2026-10-04 20:36:07",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-10-05T03:21:53.719816",
+    "date_readable": "2026-10-05 03:21:53",
+    "angle_key": "ANIMATION_CRAFT"
   }
 ]
