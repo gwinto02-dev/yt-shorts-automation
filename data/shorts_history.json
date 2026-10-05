@@ -2137,5 +2137,28 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-05T13:52:43.945771",
+    "date_readable": "2026-10-05",
+    "concept_type": "genre_spotlight",
+    "title": "Underrated genre‑switch anime: Cosplay romance, child detective & Quincy clash 🎨 #Shorts",
+    "hook": "Studio Pierrot waited 13 years before finally animating the manga’s final arc, launching BLEACH: Thousand-Year Blood War in 2022",
+    "script": "Studio Pierrot waited 13 years before finally animating the manga’s final arc, launching BLEACH: Thousand-Year Blood War in 2022. CloverWorks gives My Dress-Up Darling a crisp, pastel‑toned look that lets the sewing scenes feel almost tactile, and the story follows high‑schooler Wakana Gojou, a shy doll‑maker who teams up with popular classmate Marin Kitagawa to explore cosplay together. If you’re craving a light‑hearted romance after that intense production story… Shinichi Kudo, the teenage detective who’s been shrunk to a child’s body, still solves murders while hunting for the poison that cursed him, and the series holds an 8.2/10 rating on MyAnimeList. Switching gears to pure action… With an 8.8/10 score, BLEACH: Thousand-Year Blood War throws Ichigo back into the Soul Society as the Quincy war erupts, forcing old allies and new enemies into a clash that reshapes the balance of spirits. Which of these genre flips—cosplay collaborations, a child‑detective’s endless cases, or the Quincy invasion—sounds most refreshing to you? Drop your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "studio pierrot waited 13 years",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "P09nQCJT3Ac",
+    "concept_angle": {
+      "key": "PALATE_CLEANSER",
+      "label": "The Ultimate Genre Switch-Up",
+      "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
+    }
   }
 ]

@@ -3574,5 +3574,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-05T03:21:53.716083",
     "date_readable": "2026-10-05 03:21:53"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War",
+    "normalized_title": "bleach thousandyear blood war",
+    "anime_id": 116674,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-05T13:49:04.553129",
+    "date_readable": "2026-10-05 13:49:04"
+  },
+  {
+    "title": "Detective Conan",
+    "normalized_title": "detective conan",
+    "anime_id": 235,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-05T13:49:04.553129",
+    "date_readable": "2026-10-05 13:49:04"
+  },
+  {
+    "title": "My Dress-Up Darling",
+    "normalized_title": "my dressup darling",
+    "anime_id": 132405,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-05T13:49:04.553129",
+    "date_readable": "2026-10-05 13:49:04"
   }
 ]
