@@ -1121,5 +1121,11 @@
     "date": "2026-10-05T13:49:04.556802",
     "date_readable": "2026-10-05 13:49:04",
     "angle_key": "PALATE_CLEANSER"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-10-05T20:01:10.910276",
+    "date_readable": "2026-10-05 20:01:10",
+    "angle_key": "OVERLOOKED_REASON"
   }
 ]

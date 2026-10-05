@@ -3598,5 +3598,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-05T13:49:04.553129",
     "date_readable": "2026-10-05 13:49:04"
+  },
+  {
+    "title": "Blue Box Season 2",
+    "normalized_title": "blue box season 2",
+    "anime_id": 189123,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-05T20:01:10.907282",
+    "date_readable": "2026-10-05 20:01:10"
+  },
+  {
+    "title": "Clevatess Season 2",
+    "normalized_title": "clevatess season 2",
+    "anime_id": 198946,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-05T20:01:10.907282",
+    "date_readable": "2026-10-05 20:01:10"
+  },
+  {
+    "title": "The Cat and the Dragon",
+    "normalized_title": "the cat and the dragon",
+    "anime_id": 186863,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-05T20:01:10.907282",
+    "date_readable": "2026-10-05 20:01:10"
   }
 ]

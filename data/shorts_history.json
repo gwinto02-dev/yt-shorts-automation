@@ -2160,5 +2160,29 @@
       "label": "The Ultimate Genre Switch-Up",
       "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
     }
+  },
+  {
+    "date": "2026-10-05T20:03:46.091050",
+    "date_readable": "2026-10-05",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Trio: Blue Box S2, Clevatess S2 & The Cat and the Dragon 🐉 #Shorts",
+    "hook": "What would happen if a fire‑breathing dragon grew up under the care of a stray cat? Starting with OLM’s pastel‑rich animation, The Cat and the Dragon shows Mama‑nyan guiding Uncle Wing through forest politics, but it slipped past many viewers because it shared a slot with several high‑profile shonen releases and only landed on a niche streaming platform outside Japan",
+    "script": "What would happen if a fire‑breathing dragon grew up under the care of a stray cat? Starting with OLM’s pastel‑rich animation, The Cat and the Dragon shows Mama‑nyan guiding Uncle Wing through forest politics, but it slipped past many viewers because it shared a slot with several high‑profile shonen releases and only landed on a niche streaming platform outside Japan. Then we have Luna, the determined archivist hunting General Drel’s secret chamber in Clevatess Season 2; the series earned a solid 7.8 on MyAnimeList, yet its limited advertising and a release on a regional service kept it off most Western radars. Finally, Blue Box Season 2 carries an 8.0 rating and continues Kyou Kasahara’s awkward juggling of basketball practice and his growing feelings for Hina Chouno, but the second season debuted on a streaming site that lacked a strong English‑language push, so many fans missed the sequel. If Uncle Wing’s reluctant heroism caught your ear, which of these three will you queue up next? Share your choice!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would happen if a",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your choice",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "tJGx-S0-or4",
+    "concept_angle": {
+      "key": "OVERLOOKED_REASON",
+      "label": "Why These Got Overlooked",
+      "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+    }
   }
 ]
