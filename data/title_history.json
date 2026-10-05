@@ -3622,5 +3622,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-05T20:01:10.907282",
     "date_readable": "2026-10-05 20:01:10"
+  },
+  {
+    "title": "Frieren: Beyond Journey’s End Season 2",
+    "normalized_title": "frieren beyond journeys end season 2",
+    "anime_id": 182255,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-05T23:26:16.449207",
+    "date_readable": "2026-10-05 23:26:16"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 2",
+    "normalized_title": "jujutsu kaisen season 2",
+    "anime_id": 145064,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-05T23:26:16.449207",
+    "date_readable": "2026-10-05 23:26:16"
+  },
+  {
+    "title": "Gurren Lagann",
+    "normalized_title": "gurren lagann",
+    "anime_id": 2001,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-05T23:26:16.449207",
+    "date_readable": "2026-10-05 23:26:16"
   }
 ]
