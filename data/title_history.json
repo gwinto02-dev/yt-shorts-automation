@@ -3694,5 +3694,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-06T12:53:54.916507",
     "date_readable": "2026-10-06 12:53:54"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 2",
+    "normalized_title": "rezero starting life in another world season 2",
+    "anime_id": 108632,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-06T17:40:52.829464",
+    "date_readable": "2026-10-06 17:40:52"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation",
+    "normalized_title": "mushoku tensei jobless reincarnation",
+    "anime_id": 108465,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-06T17:40:52.829464",
+    "date_readable": "2026-10-06 17:40:52"
+  },
+  {
+    "title": "Blue Box",
+    "normalized_title": "blue box",
+    "anime_id": 170942,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-06T17:40:52.829464",
+    "date_readable": "2026-10-06 17:40:52"
   }
 ]
