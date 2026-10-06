@@ -2205,5 +2205,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-10-06T04:10:34.437667",
+    "date_readable": "2026-10-06",
+    "concept_type": "anime_comparison",
+    "title": "Underrated Showdown: Haikyu!! vs Mushoku Tensei S2 vs The Fragrant Flower 🌸 #Shorts",
+    "hook": "Right when the volleyball court’s net snaps under a thunderous serve, the second season pivots to a different kind of pressure",
+    "script": "Right when the volleyball court’s net snaps under a thunderous serve, the second season pivots to a different kind of pressure. Even without a listed studio, the 2015 run keeps the same crisp, high‑energy animation that captures every spike, and the Karasuno crew now sets their sights on the Spring tournament after the Inter‑High. Moving over to fantasy, Rudeus Greyrat steps back into the University of Magic, still reeling from the god‑gifted advice, and the sequel holds an 8.3 on MyAnimeList. Studio Bind’s watercolor‑rich visuals let his growth feel both intimate and epic. Lastly, on the comedy side, at 8.4, CloverWorks' 2025 series drops us into Chidori High, a school for society’s underperformers, where they constantly bump heads with the privileged Kikyo Girls next door. The rivalry fuels both laughs and heartfelt moments. If the clash at Chidori High grabbed you, start with The Fragrant Flower Blooms With Dignity tonight—so which of these three will you dive into first? Let me know below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the volleyball courts",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know below",
+      "transition_markers": [
+        "moving over"
+      ]
+    },
+    "video_id": "T2G-sVLhrO0",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]

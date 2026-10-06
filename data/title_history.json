@@ -3646,5 +3646,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-05T23:26:16.449207",
     "date_readable": "2026-10-05 23:26:16"
+  },
+  {
+    "title": "The Fragrant Flower Blooms With Dignity",
+    "normalized_title": "the fragrant flower blooms with dignity",
+    "anime_id": 181444,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-06T04:08:29.983371",
+    "date_readable": "2026-10-06 04:08:29"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+    "normalized_title": "mushoku tensei jobless reincarnation season 2 part 2",
+    "anime_id": 166873,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-06T04:08:29.983371",
+    "date_readable": "2026-10-06 04:08:29"
+  },
+  {
+    "title": "Haikyu!! 2nd Season",
+    "normalized_title": "haikyu 2nd season",
+    "anime_id": "10076",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-06T04:08:29.983371",
+    "date_readable": "2026-10-06 04:08:29"
   }
 ]
