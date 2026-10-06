@@ -1151,5 +1151,11 @@
     "date": "2026-10-06T17:40:52.833070",
     "date_readable": "2026-10-06 17:40:52",
     "angle_key": "PALATE_CLEANSER"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-06T21:58:17.156426",
+    "date_readable": "2026-10-06 21:58:17",
+    "angle_key": "PREMISE_INTRIGUE"
   }
 ]

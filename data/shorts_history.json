@@ -2276,5 +2276,28 @@
       "label": "The Ultimate Genre Switch-Up",
       "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
     }
+  },
+  {
+    "date": "2026-10-06T22:05:21.049256",
+    "date_readable": "2026-10-06",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Trio: Bocchi Rock S2, Abyss Sequel & Frieren S3 🎸 #Shorts",
+    "hook": "Did you know the sequel Made in Abyss: Mezameru Shinpi is slated for 2026, exactly seven years after the original series premiered? CloverWorks brings its crisp character designs back for Bocchi the Rock! 2nd Season, where Hitori and Nijika finally reunite to chase a nationwide band‑competition dream",
+    "script": "Did you know the sequel Made in Abyss: Mezameru Shinpi is slated for 2026, exactly seven years after the original series premiered? CloverWorks brings its crisp character designs back for Bocchi the Rock! 2nd Season, where Hitori and Nijika finally reunite to chase a nationwide band‑competition dream. If you’re craving a deeper adventure, Prushka returns to the Abyss’s upper layers, and the mystery of a new, glowing cavern beckons, making this Kinema Citrus project one to watch. And for those who love lingering fantasy, MadHouse’s upcoming third season of Sousou no Frieren, eagerly awaited by fans, picks up the elf mage’s centuries‑long pilgrimage after the last battle’s quiet aftermath. When Frieren’s quiet resolve reappears, bookmark this Short and tell us which premiere you’ll line up first in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know the sequel",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "up first in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "aFIL4CMtSQQ",
+    "concept_angle": {
+      "key": "PREMISE_INTRIGUE",
+      "label": "Hooking Unreleased Story Premises",
+      "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+    }
   }
 ]

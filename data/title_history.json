@@ -3718,5 +3718,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-06T17:40:52.829464",
     "date_readable": "2026-10-06 17:40:52"
+  },
+  {
+    "title": "Sousou no Frieren 3rd Season",
+    "normalized_title": "sousou no frieren 3rd season",
+    "anime_id": 209939,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-06T21:58:17.152820",
+    "date_readable": "2026-10-06 21:58:17"
+  },
+  {
+    "title": "Made in Abyss: Mezameru Shinpi",
+    "normalized_title": "made in abyss mezameru shinpi",
+    "anime_id": 160275,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-06T21:58:17.152820",
+    "date_readable": "2026-10-06 21:58:17"
+  },
+  {
+    "title": "Bocchi the Rock! 2nd Season",
+    "normalized_title": "bocchi the rock 2nd season",
+    "anime_id": 186712,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-06T21:58:17.152820",
+    "date_readable": "2026-10-06 21:58:17"
   }
 ]
