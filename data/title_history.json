@@ -3670,5 +3670,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-06T04:08:29.983371",
     "date_readable": "2026-10-06 04:08:29"
+  },
+  {
+    "title": "Draw This, Then Die!",
+    "normalized_title": "draw this then die",
+    "anime_id": 188525,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-06T12:53:54.916507",
+    "date_readable": "2026-10-06 12:53:54"
+  },
+  {
+    "title": "Aoashi Season 2",
+    "normalized_title": "aoashi season 2",
+    "anime_id": 191788,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-06T12:53:54.916507",
+    "date_readable": "2026-10-06 12:53:54"
+  },
+  {
+    "title": "THE GHOST IN THE SHELL",
+    "normalized_title": "the ghost in the shell",
+    "anime_id": 177699,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-06T12:53:54.916507",
+    "date_readable": "2026-10-06 12:53:54"
   }
 ]

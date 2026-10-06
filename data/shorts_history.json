@@ -2228,5 +2228,28 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-06T12:55:25.380242",
+    "date_readable": "2026-10-06",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Trio: Cyber Detective, Soccer Rookie & Island Manga Dreamer 🎯 #Shorts",
+    "hook": "What happens when a cyber‑enhanced detective, a rookie forward thrust into elite soccer, and an island girl chasing her own manga collide with the usual genre playbook? Science SARU’s sleek, neon‑saturated visuals paint 2029 Japan as a glowing data web, then we follow AnnaPuma and UniPuma navigating a corporate‑run society where every thought can be traced",
+    "script": "What happens when a cyber‑enhanced detective, a rookie forward thrust into elite soccer, and an island girl chasing her own manga collide with the usual genre playbook? Science SARU’s sleek, neon‑saturated visuals paint 2029 Japan as a glowing data web, then we follow AnnaPuma and UniPuma navigating a corporate‑run society where every thought can be traced. Switching fields, Daigo Benzen finally earns a spot on Aoashi’s A‑team, only to discover that every practice feels like a survival match against veterans like Kuribayashi; the series holds a solid 7.8 /10 on MyAnimeList. On a completely different note, at 7.8 /10 Draw This, Then Die! turns the quiet life on Izu Oshima into a comic‑maker’s boot‑camp, as Ai Yasumi trades manga panels for real‑world inspiration and chaotic class projects. If the image of Ai sketching on Izu Oshima sparked your curiosity, shoot me a comment with the series that flips the script for you.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when a cyberenhanced",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "flips the script for you",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "FoGMv77V1Vs",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]
