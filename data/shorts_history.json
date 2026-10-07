@@ -2347,5 +2347,28 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-10-07T18:18:53.338699",
+    "date_readable": "2026-10-07",
+    "concept_type": "hidden_gems",
+    "title": "Underrated gems: Aoashi, Bookworm's Archduke, Samurai S2 🌟 #Shorts",
+    "hook": "What happens when a 2026 sequel finally lets the deadpan samurai Yorishige Suwa confront his past without losing his trademark humor? First up, CloverWorks delivers its clean, high‑contrast linework for The Elusive Samurai Season 2, where Yorishige and the enigmatic Shizuku are thrust into a court conspiracy that forces the reluctant swordsman to protect a hidden heir",
+    "script": "What happens when a 2026 sequel finally lets the deadpan samurai Yorishige Suwa confront his past without losing his trademark humor? First up, CloverWorks delivers its clean, high‑contrast linework for The Elusive Samurai Season 2, where Yorishige and the enigmatic Shizuku are thrust into a court conspiracy that forces the reluctant swordsman to protect a hidden heir. Then we move to Ascendance of a Bookworm: Adopted Daughter of an Archduke: Effa, now renamed Rozemyne after a noble scandal, steers the story, and the series holds a solid 7.6 on MyAnimeList thanks to WIT STUDIO’s faithful adaptation of the light‑novel’s intricate world. Finally, Aoashi caps the list with an 8.1 rating; Production I.G captures the grit of teenage soccer as Ashito Aoi battles a single mistake that derails his dream, prompting a relentless climb back onto the field. If you’re curious about how Yorishige’s quiet resolve shapes the season’s climax, start with The Elusive Samurai. Which of these three are you watching first? Drop your pick below!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when a 2026",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your pick below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "zJz69n5VoMo",
+    "concept_angle": {
+      "key": "INSIDER_FACT",
+      "label": "A Specific Detail Insider Fans Know",
+      "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
+    }
   }
 ]
