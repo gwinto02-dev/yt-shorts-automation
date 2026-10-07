@@ -3766,5 +3766,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-07T03:36:07.546346",
     "date_readable": "2026-10-07 03:36:07"
+  },
+  {
+    "title": "Witch on the Holy Night",
+    "normalized_title": "witch on the holy night",
+    "anime_id": 143103,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-07T12:47:44.200308",
+    "date_readable": "2026-10-07 12:47:44"
+  },
+  {
+    "title": "Witch Hat Atelier Season 2",
+    "normalized_title": "witch hat atelier season 2",
+    "anime_id": 213702,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-07T12:47:44.200308",
+    "date_readable": "2026-10-07 12:47:44"
+  },
+  {
+    "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle Part 2",
+    "normalized_title": "demon slayer kimetsu no yaiba infinity castle part 2",
+    "anime_id": 195200,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-07T12:47:44.200308",
+    "date_readable": "2026-10-07 12:47:44"
   }
 ]

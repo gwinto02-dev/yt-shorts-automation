@@ -2323,5 +2323,29 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-07T12:49:06.038101",
+    "date_readable": "2026-10-07",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Manga Arc Trio: Infinity Castle, Atelier 2 & Witch Night ✨ #Shorts",
+    "hook": "Right when the demon slayer’s blade finally shatters the Infinity Castle’s glass wall, the next scene pulls us deeper into the moonlit corridors",
+    "script": "Right when the demon slayer’s blade finally shatters the Infinity Castle’s glass wall, the next scene pulls us deeper into the moonlit corridors. ufotable’s fluid, high‑contrast animation returns, diving straight into the second half of the Infinity Castle arc, where Tanjirou and the Corps face the Upper Moon’s final gambit. Next up, the alchemy world expands. When Richeh lifts the ancient glyph that could revive the vanished Atelier, the buzz already marks the second season as a highly anticipated continuation. And finally, a modern witch tale. The 2026 ufotable project is already being flagged as a standout upcoming fantasy, and it follows Housuke Kinomi, an apprentice magician balancing school life with a secret battle against a rogue spirit. So whether you’re counting down to the glass wall clash in Demon Slayer or the glyph mystery in Witch Hat Atelier, save this Short for your next binge night! Drop your pick in the comments and bookmark the list.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the demon slayers",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "comments and bookmark the list",
+      "transition_markers": [
+        "next up",
+        "finally"
+      ]
+    },
+    "video_id": "JtafQbi0DdY",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
