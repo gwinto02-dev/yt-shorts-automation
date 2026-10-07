@@ -2370,5 +2370,28 @@
       "label": "A Specific Detail Insider Fans Know",
       "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
     }
+  },
+  {
+    "date": "2026-10-07T22:24:56.177050",
+    "date_readable": "2026-10-07",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Trio: Detective Girl, Virtual Band, Mermaid Love 🎬 #Shorts",
+    "hook": "Right when the town’s lanterns flicker out, a pink pendant flashes and the mystery kicks in",
+    "script": "Right when the town’s lanterns flicker out, a pink pendant flashes and the mystery kicks in.\n\nStarting with Toei Animation’s crisp pastel palette, Star Detective Precure! follows 14‑year‑old Anna Akechi after a chance meeting with the fairy Pochitan, thrusting her into detective‑styled magical‑girl cases around Makoto Mirai Town.\n\nThen we have BanG Dream! YUME∞MITA, where the nervous guitarist Dareka no Koe B leads the newly formed virtual band Mugendai Mewtype, and the series sits at a 7.5 score, reflecting its blend of awkward rehearsals and genuine musical breakthroughs.\n\nStepping up next, Goodbye, Lara carries a 7.6 rating and tells the heartbreaking tale of a mermaid princess who drinks a witch’s potion to become human, only to lose a memory each sunrise as she pursues love with a human prince.\n\nIf Anna’s glowing pendant or Lara’s fading memories sound like your next watch, save this Short for a binge later!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the towns lanterns",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "short for a binge later",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "mX2h8PknI1A",
+    "concept_angle": {
+      "key": "STANDOUT_ELEMENT",
+      "label": "What Makes Them Worth Watching Despite Low Visibility",
+      "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+    }
   }
 ]
