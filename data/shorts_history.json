@@ -2299,5 +2299,29 @@
       "label": "Hooking Unreleased Story Premises",
       "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
     }
+  },
+  {
+    "date": "2026-10-07T03:41:17.096985",
+    "date_readable": "2026-10-07",
+    "concept_type": "anime_comparison",
+    "title": "Underrated Showdown: Dr. Stone vs Spy × Family vs Attack on Titan 🔬 #Shorts",
+    "hook": "TMS Entertainment spent an entire production year just to animate the moon rocket’s ignition sequence in Dr",
+    "script": "TMS Entertainment spent an entire production year just to animate the moon rocket’s ignition sequence in Dr. Stone Science Future. Starting with that scientific showdown, TMS’s detailed backgrounds show a post‑apocalyptic world where Senkuu Ishigami finally launches his lunar mission, mixing chemistry jokes with real engineering. Next up, Spy × Family follows stoic spy Loid pretending to be a dad while hunting a global conspiracy; it holds an 8.3 on MyAnimeList, and its dead‑pan humor blends with genuine family moments. Finally, Attack on Titan Final Season Part 2, rated 8.6, pushes the Paradis‑Marley war into a morally gray spiral as Eren’s surprise strike forces both sides to reconsider survival. If the moon launch in Dr. Stone caught your eye or Spy × Family’s covert family intrigues you, save this Short and choose your next watch. Let me know which you’ll start with.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "tms entertainment spent an entire",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "know which youll start with",
+      "transition_markers": [
+        "next up",
+        "finally"
+      ]
+    },
+    "video_id": "Wgs-JRpZoho",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]

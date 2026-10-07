@@ -3742,5 +3742,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-06T21:58:17.152820",
     "date_readable": "2026-10-06 21:58:17"
+  },
+  {
+    "title": "Attack on Titan Final Season Part 2",
+    "normalized_title": "attack on titan final season part 2",
+    "anime_id": 131681,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-07T03:36:07.546346",
+    "date_readable": "2026-10-07 03:36:07"
+  },
+  {
+    "title": "SPY x FAMILY",
+    "normalized_title": "spy x family",
+    "anime_id": 140960,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-07T03:36:07.546346",
+    "date_readable": "2026-10-07 03:36:07"
+  },
+  {
+    "title": "Dr. STONE SCIENCE FUTURE Cour 3",
+    "normalized_title": "dr stone science future cour 3",
+    "anime_id": 199221,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-07T03:36:07.546346",
+    "date_readable": "2026-10-07 03:36:07"
   }
 ]
