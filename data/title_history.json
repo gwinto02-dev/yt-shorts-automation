@@ -3838,5 +3838,21 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-07T22:22:42.308981",
     "date_readable": "2026-10-07 22:22:42"
+  },
+  {
+    "title": "Attack on Titan Season 3",
+    "normalized_title": "attack on titan season 3",
+    "anime_id": 99147,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-08T03:53:57.941873",
+    "date_readable": "2026-10-08 03:53:57"
+  },
+  {
+    "title": "Attack on Titan Season 2",
+    "normalized_title": "attack on titan season 2",
+    "anime_id": 20958,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-08T03:53:57.941873",
+    "date_readable": "2026-10-08 03:53:57"
   }
 ]
