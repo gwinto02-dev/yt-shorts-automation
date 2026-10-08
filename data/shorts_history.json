@@ -2416,5 +2416,28 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-10-08T18:35:56.987974",
+    "date_readable": "2026-10-08",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Manga Arc Trio: Solo Leveling, Jujutsu Kaisen & Unexpected Romance 🎧 #Shorts",
+    "hook": "What manga arc finally leaps from page to screen this summer, and why fans are already marking their calendars? CloverWorks brings a glossy, pastel‑toned palette to The Guy She Was Interested In Wasn't a Guy At All, following high‑school music lover Aya Oosawa as she chases a stylish CD‑shop clerk whose taste in records hides a secret identity",
+    "script": "What manga arc finally leaps from page to screen this summer, and why fans are already marking their calendars? CloverWorks brings a glossy, pastel‑toned palette to The Guy She Was Interested In Wasn't a Guy At All, following high‑school music lover Aya Oosawa as she chases a stylish CD‑shop clerk whose taste in records hides a secret identity. If you crave a power‑fantasy upgrade, Jin‑U Seong returns as the reluctant hunter in Solo Leveling: Beyond the System, and the A‑1 Pictures crew is teasing a full‑color battle sequence that’s already being called a must‑watch sequel. And for those who can’t get enough of cursed energy, the buzz around Jujutsu Kaisen: Shimetsu Kaiyuu – Kouhen is intense, with MAPPA delivering the same gritty shading that defined the Shibuya clash, now pushing Sukuna and Maki Zenin into a fresh showdown after the arc’s fallout. Since we’re talking about the Jujutsu Kaisen continuation, which of these three adaptations are you queuing up first? Drop your choice in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what manga arc finally leaps",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your choice in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "jmQJMyzP7iA",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
