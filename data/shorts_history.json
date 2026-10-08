@@ -2439,5 +2439,26 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-10-08T22:42:05.392521",
+    "date_readable": "2026-10-08",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Redemption Heroes: A Silent Voice & My Hero Academia 🌟 #Shorts",
+    "hook": "Levi’s three‑second kill‑count in episode 6 of *Attack on Titan* was storyboarded frame‑by‑frame, forcing MAPPA to draw over 500 extra sheets just for that single cut",
+    "script": "Levi’s three‑second kill‑count in episode 6 of *Attack on Titan* was storyboarded frame‑by‑frame, forcing MAPPA to draw over 500 extra sheets just for that single cut.  \n\nSpeaking of razor‑sharp visuals, MAPPA’s gritty linework in *Attack on Titan* captures the desperate fight for humanity’s last walls, where Levi’s squad slices through Titans with surgical precision.  \n\nSwitching gears, Bakugo Kōsuke storms the halls of UA in *My Hero Academia*—a kid who trades charm for raw explosion power. The series holds an 8.3 on MyAnimeList and constantly pushes his volatile tactics against villains and rivals alike.  \n\nIf you prefer a quieter, yet equally intense redemption, *A Silent Voice* (Kyoto Animation, 2016) earned an 8.8 rating. Shoya Ishida confronts the fallout of his bullying past, navigating a world where silence carries its own weight.  \n\nWhich of those high‑stakes arcs sticks with you the most? Share your pick in the comments below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "levis threesecond killcount in episode",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "pick in the comments below",
+      "transition_markers": []
+    },
+    "video_id": "Di8L3JUnOhU",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]

@@ -1199,5 +1199,11 @@
     "date": "2026-10-08T18:34:35.009988",
     "date_readable": "2026-10-08 18:34:35",
     "angle_key": "MANGA_ARC_HYPE"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-10-08T22:35:20.416198",
+    "date_readable": "2026-10-08 22:35:20",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]

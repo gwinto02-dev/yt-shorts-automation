@@ -3902,5 +3902,21 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-08T18:34:35.007546",
     "date_readable": "2026-10-08 18:34:35"
+  },
+  {
+    "title": "My Hero Academia",
+    "normalized_title": "my hero academia",
+    "anime_id": "11469",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-08T22:35:20.412788",
+    "date_readable": "2026-10-08 22:35:20"
+  },
+  {
+    "title": "A Silent Voice",
+    "normalized_title": "a silent voice",
+    "anime_id": 20954,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-08T22:35:20.412788",
+    "date_readable": "2026-10-08 22:35:20"
   }
 ]
