@@ -2393,5 +2393,28 @@
       "label": "What Makes Them Worth Watching Despite Low Visibility",
       "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
     }
+  },
+  {
+    "date": "2026-10-08T12:58:30.747803",
+    "date_readable": "2026-10-08",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Studio Showdown: TMS, Bind & Cypic Bring New Seasons 🔥 #Shorts",
+    "hook": "What happens when the studio that animated One Piece’s iconic ship battles decides to swing the baton for a high‑school comedy sequel? First up, TMS Entertainment—renowned for the fluid combat in One Piece and the crisp timing in Detective Conan—returns for SAKAMOTO DAYS Season 2, where the dry‑witted narrator watches Shaotang Lu tumble through a whirlwind of schoolyard rivalry and unexpected romance",
+    "script": "What happens when the studio that animated One Piece’s iconic ship battles decides to swing the baton for a high‑school comedy sequel? First up, TMS Entertainment—renowned for the fluid combat in One Piece and the crisp timing in Detective Conan—returns for SAKAMOTO DAYS Season 2, where the dry‑witted narrator watches Shaotang Lu tumble through a whirlwind of schoolyard rivalry and unexpected romance. Moving on, Orsted, the towering, scar‑covered warrior, reappears in Mushoku Tensei III: Isekai Ittara Honki Dasu Part 2, and Studio Bind’s reputation for detailed world‑building has fans labeling this segment as the most eagerly awaited continuation of Rudeus’s journey. Rounding out the trio, buzz around Kagurabachi is already climbing; Cypic’s sharp line work will frame Togo Shiba’s daily grind under his famed swordsmith father as he strives to craft his own masterpiece. Whether you’re eyeing TMS’s school chaos or Kagurabachi’s forge drama, save this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when the studio",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "rounding out"
+      ]
+    },
+    "video_id": "BvfiADlIolw",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]

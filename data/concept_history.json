@@ -1187,5 +1187,11 @@
     "date": "2026-10-08T03:53:57.946491",
     "date_readable": "2026-10-08 03:53:57",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-08T12:56:58.180820",
+    "date_readable": "2026-10-08 12:56:58",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]

@@ -3854,5 +3854,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-08T03:53:57.941873",
     "date_readable": "2026-10-08 03:53:57"
+  },
+  {
+    "title": "Kagurabachi",
+    "normalized_title": "kagurabachi",
+    "anime_id": 211496,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-08T12:56:58.177047",
+    "date_readable": "2026-10-08 12:56:58"
+  },
+  {
+    "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu Part 2",
+    "normalized_title": "mushoku tensei iii isekai ittara honki dasu part 2",
+    "anime_id": 217434,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-08T12:56:58.177047",
+    "date_readable": "2026-10-08 12:56:58"
+  },
+  {
+    "title": "SAKAMOTO DAYS Season 2",
+    "normalized_title": "sakamoto days season 2",
+    "anime_id": 204363,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-08T12:56:58.177047",
+    "date_readable": "2026-10-08 12:56:58"
   }
 ]
