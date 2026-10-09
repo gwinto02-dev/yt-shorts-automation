@@ -2502,5 +2502,28 @@
       "label": "Why These Got Overlooked",
       "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
     }
+  },
+  {
+    "date": "2026-10-09T21:58:56.319052",
+    "date_readable": "2026-10-09",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Anime Trio: Ranma 1/2, Sword Reincarnation, & Girls' Fight Drama 🎮 #Shorts",
+    "hook": "C2C managed to finish the first season of 'Reincarnated as a Sword' with just twelve key animators, a production quirk most viewers overlook",
+    "script": "C2C managed to finish the first season of 'Reincarnated as a Sword' with just twelve key animators, a production quirk most viewers overlook. MAPPA’s crisp line work gives the new Ranma 1/2 season a fresh visual punch, and the plot finally drags the cursed martial arts pair into a high‑stakes school exchange program. Moving on, Urushi awakens as a sentient sword still bound to protect her former master, and the second season holds a solid 7.5 on MyAnimeList, showing consistent fan appreciation. Then there’s Young Ladies Don't Play Fighting Games, which also scores 7.5; the series swaps typical fighting‑game hype for a quiet academy drama, tracking Mitsuki Aya’s attempt to mirror the flawless “White Lily” Yorue Mio until her idol’s perfect veneer shatters. Which of those twists—Ranma’s exchange, Urushi’s blade consciousness, or Aya’s broken image—sticks with you? Drop your thoughts below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "c2c managed to finish the",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your thoughts below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "hBLpz86a4_w",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]
