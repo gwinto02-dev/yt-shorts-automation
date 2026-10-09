@@ -2460,5 +2460,26 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-10-09T12:44:59.760127",
+    "date_readable": "2026-10-09",
+    "concept_type": "top_recommendations",
+    "title": "Genre‑Defining Anime Benchmarks You Must Watch 🚀 #Shorts",
+    "hook": "Did you know the 2026 JoJo installment *Steel Ball Run* was the series’ first horse‑race saga? My Hero Academia’s bold, color‑popped animation makes Quirk battles vivid, and season 3 throws Class 1‑A into a summer training camp where pros push their limits",
+    "script": "Did you know the 2026 JoJo installment *Steel Ball Run* was the series’ first horse‑race saga? My Hero Academia’s bold, color‑popped animation makes Quirk battles vivid, and season 3 throws Class 1‑A into a summer training camp where pros push their limits. If you prefer a high‑stakes road trip with supernatural twists, Johnny Joestar, a disgraced jockey turned gun‑user, partners with Gyro Zeppeli to conquer the 1890 cross‑continent race, earning the show an 8.8 on MyAnimeList. Now for a comedy that subverts the hero trope, One Punch Man, rated 8.3, follows Saitama—a bald hero who ends every battle with a single punch, turning his dream of excitement into mundane routine. Which benchmark—training camp, transcontinental race, or punch‑powered hero—sticks with you? Let me know in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know the 2026",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know in the comments",
+      "transition_markers": []
+    },
+    "video_id": "LkeEY9fbiAg",
+    "concept_angle": {
+      "key": "GENRE_GOLD_STANDARD",
+      "label": "Genre-Defining Gold Standard",
+      "instruction": "Frame these shows as absolute benchmarks of their respective genres that set the standard for every anime that followed."
+    }
   }
 ]

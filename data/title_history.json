@@ -3942,5 +3942,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-09T03:55:33.802326",
     "date_readable": "2026-10-09 03:55:33"
+  },
+  {
+    "title": "One Punch Man",
+    "normalized_title": "one punch man",
+    "anime_id": "10740",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-09T12:42:21.811527",
+    "date_readable": "2026-10-09 12:42:21"
+  },
+  {
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 1st STAGE",
+    "normalized_title": "steel ball run jojos bizarre adventure 1st stage",
+    "anime_id": 190327,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-09T12:42:21.811527",
+    "date_readable": "2026-10-09 12:42:21"
+  },
+  {
+    "title": "My Hero Academia Season 3",
+    "normalized_title": "my hero academia season 3",
+    "anime_id": "13881",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-09T12:42:21.811527",
+    "date_readable": "2026-10-09 12:42:21"
   }
 ]

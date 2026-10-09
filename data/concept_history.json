@@ -1211,5 +1211,11 @@
     "date": "2026-10-09T03:55:33.805346",
     "date_readable": "2026-10-09 03:55:33",
     "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-10-09T12:42:21.815543",
+    "date_readable": "2026-10-09 12:42:21",
+    "angle_key": "GENRE_GOLD_STANDARD"
   }
 ]
