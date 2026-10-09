@@ -1205,5 +1205,11 @@
     "date": "2026-10-08T22:35:20.416198",
     "date_readable": "2026-10-08 22:35:20",
     "angle_key": "BADASS_MOMENTS"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-09T03:55:33.805346",
+    "date_readable": "2026-10-09 03:55:33",
+    "angle_key": "PREMISE_INTRIGUE"
   }
 ]
