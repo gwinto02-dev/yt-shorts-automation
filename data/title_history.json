@@ -3966,5 +3966,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-09T12:42:21.811527",
     "date_readable": "2026-10-09 12:42:21"
+  },
+  {
+    "title": "Clevatess",
+    "normalized_title": "clevatess",
+    "anime_id": 178869,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-09T17:48:13.123198",
+    "date_readable": "2026-10-09 17:48:13"
+  },
+  {
+    "title": "MARRIAGETOXIN",
+    "normalized_title": "marriagetoxin",
+    "anime_id": 199547,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-09T17:48:13.123198",
+    "date_readable": "2026-10-09 17:48:13"
+  },
+  {
+    "title": "Tokyo Revengers: War of the Three Titans Arc",
+    "normalized_title": "tokyo revengers war of the three titans arc",
+    "anime_id": 178083,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-09T17:48:13.123198",
+    "date_readable": "2026-10-09 17:48:13"
   }
 ]

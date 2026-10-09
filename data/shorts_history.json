@@ -2481,5 +2481,26 @@
       "label": "Genre-Defining Gold Standard",
       "instruction": "Frame these shows as absolute benchmarks of their respective genres that set the standard for every anime that followed."
     }
+  },
+  {
+    "date": "2026-10-09T17:54:14.639295",
+    "date_readable": "2026-10-09",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Anime Trio: Clevatess, MARRIAGETOXIN & Tokyo Revengers 🌟 #Shorts",
+    "hook": "Bones, the studio behind 'Fullmetal Alchemist: Brotherhood', animated every poison swirl in MARRIAGETOXIN frame‑by‑frame, a level of detail that slipped under most viewers’ radar",
+    "script": "Bones, the studio behind 'Fullmetal Alchemist: Brotherhood', animated every poison swirl in MARRIAGETOXIN frame‑by‑frame, a level of detail that slipped under most viewers’ radar. Lay‑duce gives Clevatess a muted, gothic palette that makes the Dark Beast lord feel almost mythic, then drops us into a world where Haiden Ou watches thirteen heroes fail to topple his intellect and destruction. It aired on a lesser‑known platform, so even fans of fantasy missed it. Switching gears, Manjirou Sano leaps back into the Tokyo Revengers timeline, only to confront the War of the Three Titans arc where gang alliances clash and Hinata’s fate hangs in the balance; the series holds a 7.6/10 on MyAnimeList. The season was packed with blockbuster titles, burying its drama in the shuffle. MARRIAGETOXIN earned a 7.6 rating, yet its story of centuries‑old Poison Masters fighting for dominance aired with minimal Western promotion, leaving it buried. Remember Lay‑duce’s gothic vibe in Clevatess? Which of these three will you start first? Let me know below!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "bones the studio behind fullmetal",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know below",
+      "transition_markers": []
+    },
+    "video_id": "imX3Co85sGg",
+    "concept_angle": {
+      "key": "OVERLOOKED_REASON",
+      "label": "Why These Got Overlooked",
+      "instruction": "Focus on the real-world reasons these series flew under the radar when they aired (such as stacked seasonal competition, minimal Western marketing, or obscure licensing/streaming platforms)."
+    }
   }
 ]

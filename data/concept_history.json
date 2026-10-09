@@ -1217,5 +1217,11 @@
     "date": "2026-10-09T12:42:21.815543",
     "date_readable": "2026-10-09 12:42:21",
     "angle_key": "GENRE_GOLD_STANDARD"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-10-09T17:48:13.126556",
+    "date_readable": "2026-10-09 17:48:13",
+    "angle_key": "OVERLOOKED_REASON"
   }
 ]
