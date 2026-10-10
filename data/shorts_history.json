@@ -2548,5 +2548,26 @@
       "label": "Unmatched Narrative Payoff",
       "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
     }
+  },
+  {
+    "date": "2026-10-10T12:10:25.332321",
+    "date_readable": "2026-10-10",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Trio: Kaiju Girl, War‑Orphan Romance & Supernatural Comedy 🌟 #Shorts",
+    "hook": "All three series debuted in 2026 and landed the identical MyAnimeList score of 7",
+    "script": "All three series debuted in 2026 and landed the identical MyAnimeList score of 7.4, a coincidence you don’t see often. Bones gives Bungo Stray Dogs WAN! 2 a clean, kinetic visual style, then leans into everyday absurdity as Yukichi Fukuzawa and Ryuunosuke Akutagawa juggle odd jobs and supernatural mishaps, turning a genre that usually leans on epic battles into pure comic slice‑of‑life. Sonohokasei, the quiet girl raised in an orphanage that trains its residents as living weapons, anchors I Want to Love You Till Your Dying Day; the series keeps its 7.4 rating while weaving romance through a bleak fantasy where death is routine, flipping the typical feel‑good love story on its head. LIDENFILMS earned its 7.4 score with KAIJU GIRL CARAMELISE, where high‑schooler Kuroe Akaishi literally blows up into a kaiju whenever her emotions flare, forcing her to balance monster‑size crises with a budding crush on Alex. Which of these twists—comic supernatural jobs, war‑orphan romance, or a love‑struck kaiju—caught your eye? Share your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "all three series debuted in",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": []
+    },
+    "video_id": "2VP8euOrWpo",
+    "concept_angle": {
+      "key": "MAINSTREAM_CONTRAST",
+      "label": "How These Compare to What's Popular Instead",
+      "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
+    }
   }
 ]

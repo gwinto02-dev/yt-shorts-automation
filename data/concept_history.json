@@ -1235,5 +1235,11 @@
     "date": "2026-10-10T03:39:50.872191",
     "date_readable": "2026-10-10 03:39:50",
     "angle_key": "UNMATCHED_PAYOFF"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-10-10T12:02:09.133084",
+    "date_readable": "2026-10-10 12:02:09",
+    "angle_key": "MAINSTREAM_CONTRAST"
   }
 ]
