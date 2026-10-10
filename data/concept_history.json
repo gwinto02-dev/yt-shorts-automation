@@ -1247,5 +1247,11 @@
     "date": "2026-10-10T16:41:57.525121",
     "date_readable": "2026-10-10 16:41:57",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-10T20:48:59.564685",
+    "date_readable": "2026-10-10 20:48:59",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]

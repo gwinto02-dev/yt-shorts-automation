@@ -4078,5 +4078,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-10T16:41:57.520137",
     "date_readable": "2026-10-10 16:41:57"
+  },
+  {
+    "title": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "normalized_title": "jojos bizarre adventure diamond is unbreakable",
+    "anime_id": 21450,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-10T20:48:59.560648",
+    "date_readable": "2026-10-10 20:48:59"
+  },
+  {
+    "title": "Your Name.",
+    "normalized_title": "your name",
+    "anime_id": "11614",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-10T20:48:59.560648",
+    "date_readable": "2026-10-10 20:48:59"
+  },
+  {
+    "title": "HAIKYU!!",
+    "normalized_title": "haikyu",
+    "anime_id": 20464,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-10T20:48:59.560648",
+    "date_readable": "2026-10-10 20:48:59"
   }
 ]

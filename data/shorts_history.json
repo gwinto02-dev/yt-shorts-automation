@@ -2590,5 +2590,26 @@
       "label": "Unforgettable Protagonist Journeys",
       "instruction": "Focus on the psychological depth, growth, and compelling flaws of the lead characters."
     }
+  },
+  {
+    "date": "2026-10-10T20:53:18.052758",
+    "date_readable": "2026-10-10",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight Trio: JoJo’s Bizarre Adventure, Your Name & Haikyū!! 🎥 #Shorts",
+    "hook": "What would you do if you woke up one morning swapping bodies with a girl living in a mountain town during a meteor shower?  \n\nProduction I",
+    "script": "What would you do if you woke up one morning swapping bodies with a girl living in a mountain town during a meteor shower?  \n\nProduction I.G paints *Haikyuu!!* with razor‑sharp court angles, tracking Shouyou Hinata’s relentless leap from a cracked middle‑school gym to the national stage.  \n\nThen there’s Mitsuha Miyamizu, a shrine maiden craving city lights, and Taki Tachibana, a Tokyo architecture student; the pair’s tangled fate earned the film an 8.3 on MyAnimeList.  \n\nStepping into the bizarre, David Production’s *Diamond is Unbreakable* scores an 8.4, chronicling Josuke Higashikata’s 1999 Morioh detective work as he hunts a murderous Stand user.  \n\nImagine feeling that meteor‑lit swap yourself—pick the series that sparks your imagination and share your thoughts below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would you do if",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "and share your thoughts below",
+      "transition_markers": []
+    },
+    "video_id": "ucH_VdKgc-Y",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]
