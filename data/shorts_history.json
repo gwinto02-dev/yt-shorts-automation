@@ -2525,5 +2525,28 @@
       "label": "How These Compare to What's Popular Instead",
       "instruction": "Frame these picks by contrasting them with typical mainstream genre tropes — explain how these shows subvert cliches and offer a far richer experience than standard popular hits (without naming/reviewing specific mainstream titles)."
     }
+  },
+  {
+    "date": "2026-10-10T03:42:33.531758",
+    "date_readable": "2026-10-10",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Demon Slayer, Attack on Titan S3 Part 2 & BOCCHI THE ROCK! 🎸 #Shorts",
+    "hook": "Did you know CloverWorks penciled over 300 hand‑drawn guitar chord sheets just to nail Bocchi’s first solo performance?\n\nCloverWorks gives Bocchi the Rock! a crisp pastel palette that mirrors high‑school band nerves, following introverted Hitori Gotō as she forces herself to join a club, chase a stage dream, and turn “Ah…” into a confident chord",
+    "script": "Did you know CloverWorks penciled over 300 hand‑drawn guitar chord sheets just to nail Bocchi’s first solo performance?\n\nCloverWorks gives Bocchi the Rock! a crisp pastel palette that mirrors high‑school band nerves, following introverted Hitori Gotō as she forces herself to join a club, chase a stage dream, and turn “Ah…” into a confident chord.\n\nWhen Eren finally masters his hardening power, the Scouts set their sights on the broken wall, and the tension spikes—Attack on Titan Season 3 Part 2 earned an 8.9 on MyAnimeList, showing the final push feels earned rather than padded.\n\nThe series that landed an 8.6, Demon Slayer: Kimetsu no Yaiba, drops you into Taishō‑era Japan where Tanjiro, a charcoal seller turned demon slayer, vows to cure sister Nezuko after a night of slaughter.\n\nIf you’re ready to rock with Bocchi or brace for the Titans’ wall siege, bookmark this Short for your next binge night! Which series gets on your watchlist first? Tell me in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know cloverworks penciled",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "tell me in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "LY0gRf-NrmQ",
+    "concept_angle": {
+      "key": "UNMATCHED_PAYOFF",
+      "label": "Unmatched Narrative Payoff",
+      "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
+    }
   }
 ]

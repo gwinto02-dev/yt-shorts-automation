@@ -4014,5 +4014,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-09T21:57:32.814023",
     "date_readable": "2026-10-09 21:57:32"
+  },
+  {
+    "title": "Demon Slayer: Kimetsu no Yaiba",
+    "normalized_title": "demon slayer kimetsu no yaiba",
+    "anime_id": "41370",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-10T03:39:50.868419",
+    "date_readable": "2026-10-10 03:39:50"
+  },
+  {
+    "title": "Attack on Titan Season 3 Part 2",
+    "normalized_title": "attack on titan season 3 part 2",
+    "anime_id": 104578,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-10T03:39:50.868419",
+    "date_readable": "2026-10-10 03:39:50"
+  },
+  {
+    "title": "BOCCHI THE ROCK!",
+    "normalized_title": "bocchi the rock",
+    "anime_id": 130003,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-10T03:39:50.868419",
+    "date_readable": "2026-10-10 03:39:50"
   }
 ]
