@@ -4062,5 +4062,21 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-10T12:02:09.128374",
     "date_readable": "2026-10-10 12:02:09"
+  },
+  {
+    "title": "One Piece",
+    "normalized_title": "one piece",
+    "anime_id": "12",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-10T16:41:57.520137",
+    "date_readable": "2026-10-10 16:41:57"
+  },
+  {
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+    "normalized_title": "steel ball run jojos bizarre adventure 2nd 3rd stage",
+    "anime_id": 210482,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-10T16:41:57.520137",
+    "date_readable": "2026-10-10 16:41:57"
   }
 ]

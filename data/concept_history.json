@@ -1241,5 +1241,11 @@
     "date": "2026-10-10T12:02:09.133084",
     "date_readable": "2026-10-10 12:02:09",
     "angle_key": "MAINSTREAM_CONTRAST"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-10-10T16:41:57.525121",
+    "date_readable": "2026-10-10 16:41:57",
+    "angle_key": "PROTAGONIST_GROWTH"
   }
 ]
