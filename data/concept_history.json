@@ -1265,5 +1265,11 @@
     "date": "2026-10-11T12:14:23.074690",
     "date_readable": "2026-10-11 12:14:23",
     "angle_key": "UNMATCHED_PAYOFF"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-10-11T17:07:57.889824",
+    "date_readable": "2026-10-11 17:07:57",
+    "angle_key": "DECISION_GUIDE"
   }
 ]

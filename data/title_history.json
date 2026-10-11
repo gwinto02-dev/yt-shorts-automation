@@ -4150,5 +4150,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-11T12:14:23.070557",
     "date_readable": "2026-10-11 12:14:23"
+  },
+  {
+    "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+    "normalized_title": "demon slayer kimetsu no yaiba the movie mugen train",
+    "anime_id": "42586",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-11T17:07:57.885901",
+    "date_readable": "2026-10-11 17:07:57"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Separation",
+    "normalized_title": "bleach thousandyear blood war the separation",
+    "anime_id": 159322,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-11T17:07:57.885901",
+    "date_readable": "2026-10-11 17:07:57"
+  },
+  {
+    "title": "Violet Evergarden",
+    "normalized_title": "violet evergarden",
+    "anime_id": 21827,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-11T17:07:57.885901",
+    "date_readable": "2026-10-11 17:07:57"
   }
 ]

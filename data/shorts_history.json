@@ -2657,5 +2657,26 @@
       "label": "Unmatched Narrative Payoff",
       "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
     }
+  },
+  {
+    "date": "2026-10-11T17:10:16.615515",
+    "date_readable": "2026-10-11",
+    "concept_type": "anime_comparison",
+    "title": "Head‑to‑Head Clash: Demon Slayer Mugen Train vs BLEACH BW vs Violet Evergarden ⚔️ #Shorts",
+    "hook": "What if you could rewrite a war‑torn past using only letters?  \n\nKyoto Animation paints Violet Evergarden with pastel‑washed tones, and the story begins in post‑war Telesis where former soldier Violet works as an Auto Memory Doll, delivering others’ feelings while searching for her own",
+    "script": "What if you could rewrite a war‑torn past using only letters?  \n\nKyoto Animation paints Violet Evergarden with pastel‑washed tones, and the story begins in post‑war Telesis where former soldier Violet works as an Auto Memory Doll, delivering others’ feelings while searching for her own.  \n\nRukia Kuchiki returns to the battered Soul Society, rallying the surviving captains after Yhwach’s surprise strike, and the arc sits at an 8.6 MyAnimeList rating.  \n\nAt 8.7/10, Mugen Train throws Tanjiro, Nezuko, Zenitsu and Inosuke into an endless dream that devours passengers’ nightmares.  \n\nSo whether you’re drawn to the post‑war Telesis setting, Rukia’s rebuild of the Soul Society, or the train’s nightmarish loop, which one will you start with? Share your pick below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if you could rewrite",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your pick below",
+      "transition_markers": []
+    },
+    "video_id": "fqy_d1cE7nw",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]
