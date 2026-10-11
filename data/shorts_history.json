@@ -2678,5 +2678,26 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-10-11T21:14:23.428527",
+    "date_readable": "2026-10-11",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Fullmetal Alchemist: Brotherhood + Attack on Titan: Final 🔥 #Shorts",
+    "hook": "Right when you think the war's over, the next episode drops a fresh set of candidates scrambling for Titan power",
+    "script": "Right when you think the war's over, the next episode drops a fresh set of candidates scrambling for Titan power.  \n\nFirst up, the final season leans on razor‑sharp line work and a muted color palette to frame Falco and Gabi’s desperate bid for the Warrior’s mantle. The story jumps four years after the Survey Corps reaches the shore, letting every episode push the stakes without filler.  \n\nSwitching gears, Edward Elric’s frantic search for the Philosopher’s Stone drives Fullmetal Alchemist: Brotherhood. Bones animates every alchemical clash with crisp detail, and the series holds a 9.0 on MyAnimeList, rewarding each sacrifice with genuine payoff.  \n\nLastly, an 8.7 rating backs Ufotable’s Demon Slayer, where Tanjiro’s hunt for the demon responsible for his family’s tragedy never lets a moment feel wasted.  \n\nIf the Titan candidates’ climb stuck with you, bookmark this short for your next marathon. Which narrative payoff are you chasing first?",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when you think the",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "payoff are you chasing first",
+      "transition_markers": []
+    },
+    "video_id": "RAP2Q20Dgjs",
+    "concept_angle": {
+      "key": "UNMATCHED_PAYOFF",
+      "label": "Unmatched Narrative Payoff",
+      "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
+    }
   }
 ]
