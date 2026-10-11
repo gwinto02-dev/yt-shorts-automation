@@ -4102,5 +4102,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-10T20:48:59.560648",
     "date_readable": "2026-10-10 20:48:59"
+  },
+  {
+    "title": "Spirited Away",
+    "normalized_title": "spirited away",
+    "anime_id": "176",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-11T03:12:57.214555",
+    "date_readable": "2026-10-11 03:12:57"
+  },
+  {
+    "title": "My Hero Academia Season 2",
+    "normalized_title": "my hero academia season 2",
+    "anime_id": "12268",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-11T03:12:57.214555",
+    "date_readable": "2026-10-11 03:12:57"
+  },
+  {
+    "title": "Assassination Classroom Second Season",
+    "normalized_title": "assassination classroom second season",
+    "anime_id": "10877",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-11T03:12:57.214555",
+    "date_readable": "2026-10-11 03:12:57"
   }
 ]

@@ -2611,5 +2611,26 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-10-11T03:16:30.254486",
+    "date_readable": "2026-10-11",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Spirited Away, My Hero Academia 2 & Assassination Cr. 2 🎉 #Shorts",
+    "hook": "Did you know *Spirited Away* cost about $19 million to produce, making it the most expensive Japanese film at the time of its 2001 release?  \n\nAssassination Classroom’s second season skips a listed studio, yet the bright, crisp animation keeps the class’s chaotic lessons vivid, and the story jumps right back to Class 3‑E as they resume studies after a summer island escapade",
+    "script": "Did you know *Spirited Away* cost about $19 million to produce, making it the most expensive Japanese film at the time of its 2001 release?  \n\nAssassination Classroom’s second season skips a listed studio, yet the bright, crisp animation keeps the class’s chaotic lessons vivid, and the story jumps right back to Class 3‑E as they resume studies after a summer island escapade.  \n\nIf nonstop action is what you crave, Midoriya’s frantic attempt to master One For All after the League of Villains attack drives *My Hero Academia* Season 2, which sits at an 8.3 rating on MyAnimeList and ramps up the U.A. Sports Festival drama.  \n\nFor a touch of magical realism, *Spirited Away* also scores an 8.3, and it follows ten‑year‑old Chihiro as she bargains with bathhouse spirits to rescue her transformed parents.  \n\nWhen that island episode left you hanging, you’ll want to keep the momentum going—bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know spirited away",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": []
+    },
+    "video_id": "UfA-TnhZoDs",
+    "concept_angle": {
+      "key": "IRRESISTIBLE_BINGE",
+      "label": "Impossible to Stop Bingeing",
+      "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
+    }
   }
 ]
