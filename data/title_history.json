@@ -4126,5 +4126,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-11T03:12:57.214555",
     "date_readable": "2026-10-11 03:12:57"
+  },
+  {
+    "title": "Assassination Classroom",
+    "normalized_title": "assassination classroom",
+    "anime_id": "8640",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-11T12:14:23.070557",
+    "date_readable": "2026-10-11 12:14:23"
+  },
+  {
+    "title": "One-Punch Man",
+    "normalized_title": "onepunch man",
+    "anime_id": 21087,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-11T12:14:23.070557",
+    "date_readable": "2026-10-11 12:14:23"
+  },
+  {
+    "title": "Kaguya-sama: Love is War",
+    "normalized_title": "kaguyasama love is war",
+    "anime_id": 101921,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-11T12:14:23.070557",
+    "date_readable": "2026-10-11 12:14:23"
   }
 ]
