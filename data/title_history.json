@@ -4230,5 +4230,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-12T14:37:41.948964",
     "date_readable": "2026-10-12 14:37:41"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 4",
+    "normalized_title": "rezero starting life in another world season 4",
+    "anime_id": 189046,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-12T20:40:29.909020",
+    "date_readable": "2026-10-12 20:40:29"
+  },
+  {
+    "title": "Steins;Gate",
+    "normalized_title": "steinsgate",
+    "anime_id": 9253,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-12T20:40:29.909020",
+    "date_readable": "2026-10-12 20:40:29"
+  },
+  {
+    "title": "Hunter x Hunter (2011)",
+    "normalized_title": "hunter x hunter 2011",
+    "anime_id": "6448",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-12T20:40:29.909020",
+    "date_readable": "2026-10-12 20:40:29"
   }
 ]

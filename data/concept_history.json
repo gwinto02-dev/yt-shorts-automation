@@ -1289,5 +1289,11 @@
     "date": "2026-10-12T14:37:41.953090",
     "date_readable": "2026-10-12 14:37:41",
     "angle_key": "INSIDER_FACT"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-12T20:40:29.912990",
+    "date_readable": "2026-10-12 20:40:29",
+    "angle_key": "MOOD_BASED"
   }
 ]
