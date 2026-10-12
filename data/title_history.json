@@ -4190,5 +4190,21 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-11T21:09:51.532899",
     "date_readable": "2026-10-11 21:09:51"
+  },
+  {
+    "title": "The Promised Neverland",
+    "normalized_title": "the promised neverland",
+    "anime_id": "41312",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-12T03:36:04.636152",
+    "date_readable": "2026-10-12 03:36:04"
+  },
+  {
+    "title": "Gachiakuta",
+    "normalized_title": "gachiakuta",
+    "anime_id": 178025,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-12T03:36:04.636152",
+    "date_readable": "2026-10-12 03:36:04"
   }
 ]
