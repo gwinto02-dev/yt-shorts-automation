@@ -4254,5 +4254,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-12T20:40:29.909020",
     "date_readable": "2026-10-12 20:40:29"
+  },
+  {
+    "title": "Code Geass: Lelouch of the Rebellion R2",
+    "normalized_title": "code geass lelouch of the rebellion r2",
+    "anime_id": "2634",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-12T23:54:51.552698",
+    "date_readable": "2026-10-12 23:54:51"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+    "normalized_title": "bleach thousandyear blood war the calamity",
+    "anime_id": 185874,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-12T23:54:51.552698",
+    "date_readable": "2026-10-12 23:54:51"
+  },
+  {
+    "title": "The Apothecary Diaries",
+    "normalized_title": "the apothecary diaries",
+    "anime_id": 161645,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-12T23:54:51.552698",
+    "date_readable": "2026-10-12 23:54:51"
   }
 ]
