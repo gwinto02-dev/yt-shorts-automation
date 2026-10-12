@@ -4206,5 +4206,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-12T03:36:04.636152",
     "date_readable": "2026-10-12 03:36:04"
+  },
+  {
+    "title": "Dragon Ball Super: Beerus",
+    "normalized_title": "dragon ball super beerus",
+    "anime_id": 206814,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-12T14:37:41.948964",
+    "date_readable": "2026-10-12 14:37:41"
+  },
+  {
+    "title": "Firefly Wedding",
+    "normalized_title": "firefly wedding",
+    "anime_id": 205909,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-12T14:37:41.948964",
+    "date_readable": "2026-10-12 14:37:41"
+  },
+  {
+    "title": "Iron Wok Jan!",
+    "normalized_title": "iron wok jan",
+    "anime_id": 204060,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-12T14:37:41.948964",
+    "date_readable": "2026-10-12 14:37:41"
   }
 ]
