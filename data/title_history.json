@@ -4278,5 +4278,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-12T23:54:51.552698",
     "date_readable": "2026-10-12 23:54:51"
+  },
+  {
+    "title": "Code Geass: Lelouch of the Rebellion",
+    "normalized_title": "code geass lelouch of the rebellion",
+    "anime_id": "1415",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-13T04:49:42.274715",
+    "date_readable": "2026-10-13 04:49:42"
+  },
+  {
+    "title": "Monster",
+    "normalized_title": "monster",
+    "anime_id": 19,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-13T04:49:42.274715",
+    "date_readable": "2026-10-13 04:49:42"
+  },
+  {
+    "title": "The Apothecary Diaries Season 2",
+    "normalized_title": "the apothecary diaries season 2",
+    "anime_id": 176301,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-13T04:49:42.274715",
+    "date_readable": "2026-10-13 04:49:42"
   }
 ]
