@@ -1319,5 +1319,11 @@
     "date": "2026-10-13T18:43:27.805379",
     "date_readable": "2026-10-13 18:43:27",
     "angle_key": "PROTAGONIST_GROWTH"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-13T22:02:39.498600",
+    "date_readable": "2026-10-13 22:02:39",
+    "angle_key": "MANGA_ARC_HYPE"
   }
 ]

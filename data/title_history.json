@@ -4350,5 +4350,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-13T18:43:27.801138",
     "date_readable": "2026-10-13 18:43:27"
+  },
+  {
+    "title": "Delicious in Dungeon Season 2",
+    "normalized_title": "delicious in dungeon season 2",
+    "anime_id": 178031,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-13T22:02:39.494942",
+    "date_readable": "2026-10-13 22:02:39"
+  },
+  {
+    "title": "MASHLE: Sanma Taisou Shinkakusha Saishuu Shiken-hen",
+    "normalized_title": "mashle sanma taisou shinkakusha saishuu shikenhen",
+    "anime_id": 177704,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-13T22:02:39.494942",
+    "date_readable": "2026-10-13 22:02:39"
+  },
+  {
+    "title": "Shangri-La Frontier Season 3",
+    "normalized_title": "shangrila frontier season 3",
+    "anime_id": 189323,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-13T22:02:39.494942",
+    "date_readable": "2026-10-13 22:02:39"
   }
 ]

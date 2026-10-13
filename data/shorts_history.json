@@ -2699,5 +2699,28 @@
       "label": "Unmatched Narrative Payoff",
       "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
     }
+  },
+  {
+    "date": "2026-10-13T22:10:06.817935",
+    "date_readable": "2026-10-13",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Anime Trio: Delicious in Dungeon S2, MASHLE S2, Shangri‑La Frontier S3 🎮 #Shorts",
+    "hook": "Did you know C2C is handling the third season of **Shangri‑La Frontier**, marking its first full‑season sequel for the series?\n\nStarting with C2C’s crisp sci‑fi visuals, the new season follows gamer‑turned‑hero Rei Saiga and his rival Towa Amane as they dive deeper into the frontier’s ever‑evolving quests",
+    "script": "Did you know C2C is handling the third season of **Shangri‑La Frontier**, marking its first full‑season sequel for the series?\n\nStarting with C2C’s crisp sci‑fi visuals, the new season follows gamer‑turned‑hero Rei Saiga and his rival Towa Amane as they dive deeper into the frontier’s ever‑evolving quests.  \n\nThen we have Lemon Irvine, the muscle‑magic prodigy who now faces the Tri‑Magic‑Athlon Divine Visionary Final Exam, and A‑1 Pictures promises an eagerly awaited clash of raw power and quirky spells.  \n\nStepping up next, **Highly anticipated** TRIGGER brings back Thistle and Laios Thorden, who must brave the dungeon’s lower levels where every monster could serve as the next dinner.  \n\nSo whether you’re itching for the final‑exam showdown, the next dungeon banquet, or the ultimate frontier battle, let me know which arc you’ll binge first!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know c2c is",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "which arc youll binge first",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "z9Z0v4K1K30",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
