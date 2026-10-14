@@ -4446,5 +4446,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-14T16:16:33.349270",
     "date_readable": "2026-10-14 16:16:33"
+  },
+  {
+    "title": "The Ramparts of Ice",
+    "normalized_title": "the ramparts of ice",
+    "anime_id": 186497,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-14T21:04:27.445592",
+    "date_readable": "2026-10-14 21:04:27"
+  },
+  {
+    "title": "Chitose Is in the Ramune Bottle 2nd Cour",
+    "normalized_title": "chitose is in the ramune bottle 2nd cour",
+    "anime_id": 198727,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-14T21:04:27.445592",
+    "date_readable": "2026-10-14 21:04:27"
+  },
+  {
+    "title": "Pokémon Horizons: The Series",
+    "normalized_title": "pokémon horizons the series",
+    "anime_id": 158871,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-14T21:04:27.445592",
+    "date_readable": "2026-10-14 21:04:27"
   }
 ]
