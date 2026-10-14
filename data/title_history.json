@@ -4374,5 +4374,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-13T22:02:39.494942",
     "date_readable": "2026-10-13 22:02:39"
+  },
+  {
+    "title": "Death Note",
+    "normalized_title": "death note",
+    "anime_id": "1376",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-14T02:57:52.895018",
+    "date_readable": "2026-10-14 02:57:52"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War - The Conflict",
+    "normalized_title": "bleach thousandyear blood war the conflict",
+    "anime_id": 169755,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-14T02:57:52.895018",
+    "date_readable": "2026-10-14 02:57:52"
+  },
+  {
+    "title": "Cowboy Bebop",
+    "normalized_title": "cowboy bebop",
+    "anime_id": 1,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-14T02:57:52.895018",
+    "date_readable": "2026-10-14 02:57:52"
   }
 ]
