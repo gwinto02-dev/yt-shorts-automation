@@ -4398,5 +4398,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-14T02:57:52.895018",
     "date_readable": "2026-10-14 02:57:52"
+  },
+  {
+    "title": "Jujutsu Kaisen",
+    "normalized_title": "jujutsu kaisen",
+    "anime_id": "42765",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-14T11:21:23.804890",
+    "date_readable": "2026-10-14 11:21:23"
+  },
+  {
+    "title": "Witch Hat Atelier",
+    "normalized_title": "witch hat atelier",
+    "anime_id": 147105,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-14T11:21:23.804890",
+    "date_readable": "2026-10-14 11:21:23"
+  },
+  {
+    "title": "Cyberpunk: Edgerunners",
+    "normalized_title": "cyberpunk edgerunners",
+    "anime_id": 120377,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-14T11:21:23.804890",
+    "date_readable": "2026-10-14 11:21:23"
   }
 ]
