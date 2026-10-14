@@ -4422,5 +4422,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-14T11:21:23.804890",
     "date_readable": "2026-10-14 11:21:23"
+  },
+  {
+    "title": "The World's Strongest Witch",
+    "normalized_title": "the worlds strongest witch",
+    "anime_id": 211778,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-14T16:16:33.349270",
+    "date_readable": "2026-10-14 16:16:33"
+  },
+  {
+    "title": "Jaadugar: A Witch in Mongolia",
+    "normalized_title": "jaadugar a witch in mongolia",
+    "anime_id": 190569,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-14T16:16:33.349270",
+    "date_readable": "2026-10-14 16:16:33"
+  },
+  {
+    "title": "Link Click Season 3",
+    "normalized_title": "link click season 3",
+    "anime_id": 191832,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-14T16:16:33.349270",
+    "date_readable": "2026-10-14 16:16:33"
   }
 ]

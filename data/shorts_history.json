@@ -2722,5 +2722,30 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-10-14T16:18:25.125575",
+    "date_readable": "2026-10-14",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Badass Leads: Witch Power & Mystery 📚 #Shorts",
+    "hook": "Right when Li Xiao thinks the case is finally closed, a new disappearance drags the studio back into chaos",
+    "script": "Right when Li Xiao thinks the case is finally closed, a new disappearance drags the studio back into chaos. First off, Link Click Season 3 keeps its split‑screen style, and the mystery deepens as another missing person pulls Vein and Qiao Ling into a tangled fate.\n\nMoving to Jaadugar: A Witch in Mongolia, Sitara’s grief over her mother fuels a fierce resolve; a nomadic family of scholars teaches her to bend reality with knowledge. The series sits at 8.4 on MyAnimeList, and Science SARU’s animation mixes sweeping steppe vistas with sharp character work.\n\nRounding out the trio, The World's Strongest Witch earned a 6.7 rating. After Lorna annihilates her former clan with the S‑rank “Internet” skill, she heads for Aquas, hunting food stalls and odd jobs while the comedy‑action tone stays crisp.\n\nIf Lorna’s road‑trip vibe in The World's Strongest Witch feels like your next binge, which of these three will you start with? Drop your pick below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when li xiao thinks",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your pick below",
+      "transition_markers": [
+        "first off",
+        "rounding out",
+        "finally"
+      ]
+    },
+    "video_id": "FwShin5B7Wo",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
