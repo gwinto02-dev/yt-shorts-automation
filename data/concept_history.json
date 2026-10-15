@@ -1367,5 +1367,11 @@
     "date": "2026-10-15T16:03:05.178674",
     "date_readable": "2026-10-15 16:03:05",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-15T20:38:33.943807",
+    "date_readable": "2026-10-15 20:38:33",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]

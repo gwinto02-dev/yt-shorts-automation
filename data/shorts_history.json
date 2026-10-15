@@ -2793,5 +2793,26 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-15T20:40:27.833660",
+    "date_readable": "2026-10-15",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Studio Showdown: MAPPA, TOHO & TRIGGER line‑up 🌊 #Shorts",
+    "hook": "Imagine a sprawling water‑borne metropolis where a secret treasure fuels intrigue— that's the setting of The Apothecary Diaries: The Late Lady’s Treasure",
+    "script": "Imagine a sprawling water‑borne metropolis where a secret treasure fuels intrigue— that's the setting of The Apothecary Diaries: The Late Lady’s Treasure. If you’re craving visceral gore with top‑tier animation, MAPPA returns with Chainsaw Man: Shikaku‑hen, continuing Denji’s clash against otherworldly threats while the studio pushes its signature fluid line work to new extremes. Meanwhile, Mu Qing, the clever palace maid with a nose for herbs, steps into the mystery, and fans are already calling the 2026 TOHO animation STUDIO production one of the season’s most eagerly awaited dramas. On the cyber‑future side, eager anticipation surrounds TRIGGER’s Cyberpunk: Edgerunners 2, where the chrome‑less legend Weak Kingsley navigates Night City’s underbelly in a story that promises darker stakes than its predecessor. Whether you start with MAPPA’s blood‑soaked sequel or keep the floating‑city intrigue of The Apothecary Diaries for later, bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "imagine a sprawling waterborne metropolis",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": []
+    },
+    "video_id": "kC25ILTyx1A",
+    "concept_angle": {
+      "key": "STUDIO_STAFF_TALENT",
+      "label": "Studio & Staff Pedigree",
+      "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
+    }
   }
 ]

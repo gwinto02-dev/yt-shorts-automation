@@ -4542,5 +4542,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-15T16:03:05.174366",
     "date_readable": "2026-10-15 16:03:05"
+  },
+  {
+    "title": "Cyberpunk: Edgerunners 2",
+    "normalized_title": "cyberpunk edgerunners 2",
+    "anime_id": 195539,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-15T20:38:33.940392",
+    "date_readable": "2026-10-15 20:38:33"
+  },
+  {
+    "title": "The Apothecary Diaries: The Late Lady’s Treasure",
+    "normalized_title": "the apothecary diaries the late ladys treasure",
+    "anime_id": 200929,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-15T20:38:33.940392",
+    "date_readable": "2026-10-15 20:38:33"
+  },
+  {
+    "title": "Chainsaw Man: Shikaku-hen",
+    "normalized_title": "chainsaw man shikakuhen",
+    "anime_id": 204429,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-15T20:38:33.940392",
+    "date_readable": "2026-10-15 20:38:33"
   }
 ]
