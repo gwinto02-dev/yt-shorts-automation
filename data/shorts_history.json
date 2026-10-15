@@ -2770,5 +2770,28 @@
       "label": "What Makes Them Worth Watching Despite Low Visibility",
       "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
     }
+  },
+  {
+    "date": "2026-10-15T16:10:44.228934",
+    "date_readable": "2026-10-15",
+    "concept_type": "anime_comparison",
+    "title": "Upcoming Anime Showdown: Solo Leveling vs JoJo Golden Wind vs Gintama 🍥 #Shorts",
+    "hook": "The sequel to Solo Leveling won’t hit screens until 2025, even though the original web novel wrapped four years earlier",
+    "script": "The sequel to Solo Leveling won’t hit screens until 2025, even though the original web novel wrapped four years earlier. Starting with the visuals, A‑1 Pictures renders Jin‑U’s shadow‑summoning fights in crisp detail, and the plot has him mastering secret abilities while scrambling to save his mother. Then we have JoJo’s Bizarre Adventure: Golden Wind, where Giorno Giovanna, a teen infused with DIO’s blood, aims to overthrow Naples’s mafia from within; the series holds an 8.5/10 score and david production preserves the franchise’s signature flamboyance. Stepping up next, Sunrise’s Gintama carries an 8.5 rating and drops viewers into a feudal Japan conquered by aliens, where swords are outlawed and the ragtag Yorozuya crew navigates absurd bureaucracy. So, which of these wildly different worlds—shadow battles, mafia intrigue, or alien‑ruled shogunate—would you jump into first? Let me know in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "the sequel to solo leveling",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know in the comments",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "7wpintS_cIc",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]

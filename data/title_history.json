@@ -4518,5 +4518,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-15T10:59:25.678650",
     "date_readable": "2026-10-15 10:59:25"
+  },
+  {
+    "title": "Gintama",
+    "normalized_title": "gintama",
+    "anime_id": 918,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-15T16:03:05.174366",
+    "date_readable": "2026-10-15 16:03:05"
+  },
+  {
+    "title": "JoJo's Bizarre Adventure: Golden Wind",
+    "normalized_title": "jojos bizarre adventure golden wind",
+    "anime_id": 102883,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-15T16:03:05.174366",
+    "date_readable": "2026-10-15 16:03:05"
+  },
+  {
+    "title": "Solo Leveling Season 2 -Arise from the Shadow-",
+    "normalized_title": "solo leveling season 2 arise from the shadow",
+    "anime_id": 176496,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-15T16:03:05.174366",
+    "date_readable": "2026-10-15 16:03:05"
   }
 ]

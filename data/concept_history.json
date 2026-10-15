@@ -1361,5 +1361,11 @@
     "date": "2026-10-15T10:59:25.681548",
     "date_readable": "2026-10-15 10:59:25",
     "angle_key": "STANDOUT_ELEMENT"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-10-15T16:03:05.178674",
+    "date_readable": "2026-10-15 16:03:05",
+    "angle_key": "THEMATIC_RIVALRY"
   }
 ]
