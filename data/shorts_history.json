@@ -2747,5 +2747,28 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-10-15T11:00:42.947547",
+    "date_readable": "2026-10-15",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Anime Trio: Reincarnated Aristocrat, Apothecary Diaries & Black Clover 🌟 #Shorts",
+    "hook": "Did you know OLM is animating The Apothecary Diaries Season 3, their first series centered on a pharmacist navigating a historic pleasure district?\n\nStarting with Studio MOTHER’s crisp line work, As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill to Rise in the World Season 2 follows Ars as he sharpens his appraisal talent to expand his fief and outwit the Couran‑Vasmarque power struggle",
+    "script": "Did you know OLM is animating The Apothecary Diaries Season 3, their first series centered on a pharmacist navigating a historic pleasure district?\n\nStarting with Studio MOTHER’s crisp line work, As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill to Rise in the World Season 2 follows Ars as he sharpens his appraisal talent to expand his fief and outwit the Couran‑Vasmarque power struggle.\n\nThen we have Maomao, the observant apothecary, back in the market after the Shi Clan’s rebellion, turning every diagnosis into a mystery that earned the season an 8.5 on MyAnimeList.\n\nStepping up next, the series sits at an 8.6, and Black Clover Season 2 sees Asta and the Magic Knights launch a daring raid on the Spade Kingdom, only to confront the Dark Triad in a game‑changing showdown.\n\nIf the allure of Ars’ appraisal skill or Asta’s Spade Kingdom raid catches your eye, save this Short for your next binge night. Which one you’ll queue first? Share below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know olm is",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share below",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "prmtGY7d2YQ",
+    "concept_angle": {
+      "key": "STANDOUT_ELEMENT",
+      "label": "What Makes Them Worth Watching Despite Low Visibility",
+      "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+    }
   }
 ]
