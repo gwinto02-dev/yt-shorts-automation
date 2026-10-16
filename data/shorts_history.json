@@ -2860,5 +2860,26 @@
       "label": "Hooking Unreleased Story Premises",
       "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
     }
+  },
+  {
+    "date": "2026-10-16T15:55:02.840683",
+    "date_readable": "2026-10-16",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Switch‑Up: Re:ZERO, Your Lie in April & My Hero Academia 🎭 #Shorts",
+    "hook": "What happens when Class 1-A and Class 1-B are forced into a joint training battle that blurs the line between rivalry and cooperation? Even without a listed studio, the bright animation of My Hero Academia Season 5 keeps the action crisp, and the rivalry between Class 1‑A and Class 1‑B ignites during a joint training match where the cunning Shinso plays both sides",
+    "script": "What happens when Class 1-A and Class 1-B are forced into a joint training battle that blurs the line between rivalry and cooperation? Even without a listed studio, the bright animation of My Hero Academia Season 5 keeps the action crisp, and the rivalry between Class 1‑A and Class 1‑B ignites during a joint training match where the cunning Shinso plays both sides. Switching gears, piano prodigy Kousei Arima, whose flawless performances once silenced every concert hall, faces a haunting silence after his mother's death in Your Lie in April, which holds an 8.4/10 rating on Crunchyroll. Meanwhile, Re:ZERO’s second half, also sitting at 8.4, pushes Subaru deeper into the Death Loop as he uncovers the true motives of the Witches of Sin and vows to break the cycle for Emilia. After seeing a class clash, a broken melody, and a looping fate, which of those twists sticks with you the most? Share your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when class 1a",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": []
+    },
+    "video_id": "Qp06kvEZJYw",
+    "concept_angle": {
+      "key": "PALATE_CLEANSER",
+      "label": "The Ultimate Genre Switch-Up",
+      "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
+    }
   }
 ]

@@ -4614,5 +4614,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-16T10:51:29.167696",
     "date_readable": "2026-10-16 10:51:29"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 2 Part 2",
+    "normalized_title": "rezero starting life in another world season 2 part 2",
+    "anime_id": 119661,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-16T15:51:30.161289",
+    "date_readable": "2026-10-16 15:51:30"
+  },
+  {
+    "title": "Your lie in April",
+    "normalized_title": "your lie in april",
+    "anime_id": 20665,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-16T15:51:30.161289",
+    "date_readable": "2026-10-16 15:51:30"
+  },
+  {
+    "title": "My Hero Academia Season 5",
+    "normalized_title": "my hero academia season 5",
+    "anime_id": "43108",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-16T15:51:30.161289",
+    "date_readable": "2026-10-16 15:51:30"
   }
 ]
