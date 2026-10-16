@@ -2658,5 +2658,19 @@
     "source_url": "https://media.kitsu.app/anime/poster_images/6589/original.png",
     "date": "2026-10-16T02:33:18.760600",
     "date_readable": "2026-10-16 02:33:18"
+  },
+  {
+    "hash": "deab083a729feb8967daa4204de4bcfb7bcbe4254362cd81fa313e089fa25f7b",
+    "title": "[Oshi no Ko] Final Season",
+    "source_url": "https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50624/poster_image/d0863cb5df934dc60e883a9022a5a589.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261016%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261016T105223Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=2da637facf6b3db3208029a5d4ee00364f5f08f6070a9f26a58dc7b2adaa733e",
+    "date": "2026-10-16T10:52:32.807447",
+    "date_readable": "2026-10-16 10:52:32"
+  },
+  {
+    "hash": "03126838b03abe3da4d7ee8e535ef1f1683e2c1a2f4eba5280c5a569ad7dec81",
+    "title": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru 2nd Season",
+    "source_url": "https://media.kitsu.app/anime/47986/poster_image/7460062604872f086cc1f3b864b4f086.jpg",
+    "date": "2026-10-16T10:52:32.807447",
+    "date_readable": "2026-10-16 10:52:32"
   }
 ]

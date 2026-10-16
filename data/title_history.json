@@ -4590,5 +4590,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-16T02:32:06.306869",
     "date_readable": "2026-10-16 02:32:06"
+  },
+  {
+    "title": "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+    "normalized_title": "tsuki ga michibiku isekai douchuu 3rd season",
+    "anime_id": 178467,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-16T10:51:29.167696",
+    "date_readable": "2026-10-16 10:51:29"
+  },
+  {
+    "title": "[Oshi no Ko] Final Season",
+    "normalized_title": "oshi no ko final season",
+    "anime_id": 209827,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-16T10:51:29.167696",
+    "date_readable": "2026-10-16 10:51:29"
+  },
+  {
+    "title": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru 2nd Season",
+    "normalized_title": "sekai saikou no ansatsusha isekai kizoku ni tensei suru 2nd season",
+    "anime_id": 169579,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-16T10:51:29.167696",
+    "date_readable": "2026-10-16 10:51:29"
   }
 ]

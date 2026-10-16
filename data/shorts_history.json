@@ -2837,5 +2837,28 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-10-16T10:53:23.462203",
+    "date_readable": "2026-10-16",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Anime Trio: Final Oshi no Ko, Moonlit Misumi & Reincarnated Assassin 🌙 #Shorts",
+    "hook": "Silver Link spent an entire year just perfecting the battle choreography for the climactic duel in the first season of Sekai Saikou no Ansatsusha",
+    "script": "Silver Link spent an entire year just perfecting the battle choreography for the climactic duel in the first season of Sekai Saikou no Ansatsusha. Silver Link returns with its crisp line work and saturated palettes for the second season, where reincarnated assassin Maha teams up with the enigmatic Epona Rhiannon to untangle a kingdom’s deadly intrigue. Moving on, Ai Hoshino’s twin—now reborn as MEM‑cho—steps into the shadows of fame, ready to expose the industry’s darkest secrets, and fans are already marking the final season as a must‑watch. Lastly, the upcoming third season is sparking a lot of anticipation, and it finally sends Makoto Misumi back to confront the celestial council that cursed his wander‑through moonlit world, while Tomoe’s scheming keeps the humor alive. If you’re counting down Makoto’s celestial showdown or waiting for Ai’s final reveal, bookmark this Short and drop a comment with the ending you can’t wait to see!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "silver link spent an entire",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "you cant wait to see",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "Q_ngLlbB9uA",
+    "concept_angle": {
+      "key": "PREMISE_INTRIGUE",
+      "label": "Hooking Unreleased Story Premises",
+      "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+    }
   }
 ]
