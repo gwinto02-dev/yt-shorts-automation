@@ -4638,5 +4638,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-16T15:51:30.161289",
     "date_readable": "2026-10-16 15:51:30"
+  },
+  {
+    "title": "Naruto",
+    "normalized_title": "naruto",
+    "anime_id": "11",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-16T20:11:25.692766",
+    "date_readable": "2026-10-16 20:11:25"
+  },
+  {
+    "title": "Mob Psycho 100",
+    "normalized_title": "mob psycho 100",
+    "anime_id": 21507,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-16T20:11:25.692766",
+    "date_readable": "2026-10-16 20:11:25"
+  },
+  {
+    "title": "That Time I Got Reincarnated as a Slime Season 4",
+    "normalized_title": "that time i got reincarnated as a slime season 4",
+    "anime_id": 182205,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-16T20:11:25.692766",
+    "date_readable": "2026-10-16 20:11:25"
   }
 ]

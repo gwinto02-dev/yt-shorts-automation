@@ -2881,5 +2881,29 @@
       "label": "The Ultimate Genre Switch-Up",
       "instruction": "Frame these 3 shows as the perfect palate cleanser trio for anime burnout — switching seamlessly across totally distinct tones and worlds."
     }
+  },
+  {
+    "date": "2026-10-16T20:13:42.921195",
+    "date_readable": "2026-10-16",
+    "concept_type": "character_spotlight",
+    "title": "Character Spotlight: Naruto Sage, Mob Psycho 100’s Shigeo, Slime S4 Hero 🌟 #Shorts",
+    "hook": "8-bit spent three years perfecting the slime’s transformation sequence for the fourth season of *That Time I Got Reincarnated as a Slime*",
+    "script": "8-bit spent three years perfecting the slime’s transformation sequence for the fourth season of *That Time I Got Reincarnated as a Slime*.\n\nStarting with that CG‑rich studio work, season 4 sees Rimuru’s dream of a human‑monster alliance teeter on the edge of a full‑scale conflict with Granville’s forces.\n\nThen we have *Mob Psycho 100*, where Mob, the quiet teen whose psychic meter explodes at 100 %, carries the show’s 8.4 MyAnimeList score, and Bones’ fluid animation makes his emotional outbursts feel visceral.\n\nFinally, *Naruto*’s 8.0 rating marks its status, and the story launches with the Nine‑Tailed Fox’s attack that forces the village to seal the beast inside the newborn Uzumaki.\n\nThinking back to Rimuru’s fragile treaty, which of these character moments would you dive into first? Let me know your choice below.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "8bit spent three years perfecting",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "me know your choice below",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "5kQiB5Dbmzk",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
