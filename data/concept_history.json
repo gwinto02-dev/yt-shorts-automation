@@ -1373,5 +1373,11 @@
     "date": "2026-10-15T20:38:33.943807",
     "date_readable": "2026-10-15 20:38:33",
     "angle_key": "STUDIO_STAFF_TALENT"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-10-16T02:32:06.311878",
+    "date_readable": "2026-10-16 02:32:06",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]

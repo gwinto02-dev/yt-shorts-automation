@@ -4566,5 +4566,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-15T20:38:33.940392",
     "date_readable": "2026-10-15 20:38:33"
+  },
+  {
+    "title": "Sword Art Online",
+    "normalized_title": "sword art online",
+    "anime_id": "6589",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-16T02:32:06.306869",
+    "date_readable": "2026-10-16 02:32:06"
+  },
+  {
+    "title": "You and I Are Polar Opposites Season 2",
+    "normalized_title": "you and i are polar opposites season 2",
+    "anime_id": 210031,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-16T02:32:06.306869",
+    "date_readable": "2026-10-16 02:32:06"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 3",
+    "normalized_title": "rezero starting life in another world season 3",
+    "anime_id": 163134,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-16T02:32:06.306869",
+    "date_readable": "2026-10-16 02:32:06"
   }
 ]

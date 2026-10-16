@@ -2814,5 +2814,28 @@
       "label": "Studio & Staff Pedigree",
       "instruction": "Focus on the animation studio and director credentials behind these upcoming releases."
     }
+  },
+  {
+    "date": "2026-10-16T02:34:04.816491",
+    "date_readable": "2026-10-16",
+    "concept_type": "character_spotlight",
+    "title": "Upcoming Badass Characters: Re:ZERO, Polar Opposites & SAO 🌟 #Shorts",
+    "hook": "Right when Subaru finally thinks the loop is over, a single envelope flips everything on its head",
+    "script": "Right when Subaru finally thinks the loop is over, a single envelope flips everything on its head.\n\nWhite Fox’s clean line work brings that post‑Sanctuary world to life, where Emilia’s camp prepares for the royal selection while new threats whisper from the shadows.\n\nIf you love a duo whose clash fuels both comedy and chemistry, Yeti’s deadpan sarcasm meets Tempura’s relentless optimism, and the pair’s push‑pull earned season 2 an 8.4 on MyAnimeList.\n\nSwitching to a pioneer of VR storytelling, Sword Art Online carries a 7.4 rating and drops you into 2022’s NerveGear launch, where players quickly discover that dying in the game means dying for real.\n\nSo whether you’re counting that fateful letter, the polar‑opposite romance, or the lethal headset, which of these three will you dive into first? Let me know below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when subaru finally thinks",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "Dab3J4FcVi4",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]
