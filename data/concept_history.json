@@ -1409,5 +1409,11 @@
     "date": "2026-10-17T10:15:50.403038",
     "date_readable": "2026-10-17 10:15:50",
     "angle_key": "GENRE_GOLD_STANDARD"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-10-17T14:44:37.243612",
+    "date_readable": "2026-10-17 14:44:37",
+    "angle_key": "THEMATIC_RIVALRY"
   }
 ]

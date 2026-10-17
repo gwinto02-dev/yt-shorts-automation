@@ -4710,5 +4710,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-17T10:15:50.398669",
     "date_readable": "2026-10-17 10:15:50"
+  },
+  {
+    "title": "DAN DA DAN",
+    "normalized_title": "dan da dan",
+    "anime_id": 171018,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-17T14:44:37.240612",
+    "date_readable": "2026-10-17 14:44:37"
+  },
+  {
+    "title": "The Disastrous Life of Saiki K.",
+    "normalized_title": "the disastrous life of saiki k",
+    "anime_id": 21804,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-17T14:44:37.240612",
+    "date_readable": "2026-10-17 14:44:37"
+  },
+  {
+    "title": "86 EIGHTY-SIX",
+    "normalized_title": "86 eightysix",
+    "anime_id": 116589,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-17T14:44:37.240612",
+    "date_readable": "2026-10-17 14:44:37"
   }
 ]
