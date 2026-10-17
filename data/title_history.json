@@ -4734,5 +4734,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-17T14:44:37.240612",
     "date_readable": "2026-10-17 14:44:37"
+  },
+  {
+    "title": "Grand Blue Dreaming Season 3",
+    "normalized_title": "grand blue dreaming season 3",
+    "anime_id": 199111,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-17T19:48:04.450550",
+    "date_readable": "2026-10-17 19:48:04"
+  },
+  {
+    "title": "Overgeared",
+    "normalized_title": "overgeared",
+    "anime_id": 212888,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-17T19:48:04.450550",
+    "date_readable": "2026-10-17 19:48:04"
+  },
+  {
+    "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+    "normalized_title": "the laidoff cheatgranting mage enjoys a second lease on life",
+    "anime_id": 207329,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-17T19:48:04.450550",
+    "date_readable": "2026-10-17 19:48:04"
   }
 ]
