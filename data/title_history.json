@@ -4686,5 +4686,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-17T02:24:45.300751",
     "date_readable": "2026-10-17 02:24:45"
+  },
+  {
+    "title": "No Game, No Life",
+    "normalized_title": "no game no life",
+    "anime_id": "7880",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-17T10:15:50.398669",
+    "date_readable": "2026-10-17 10:15:50"
+  },
+  {
+    "title": "You and I Are Polar Opposites",
+    "normalized_title": "you and i are polar opposites",
+    "anime_id": 184951,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-17T10:15:50.398669",
+    "date_readable": "2026-10-17 10:15:50"
+  },
+  {
+    "title": "Neon Genesis Evangelion",
+    "normalized_title": "neon genesis evangelion",
+    "anime_id": 30,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-17T10:15:50.398669",
+    "date_readable": "2026-10-17 10:15:50"
   }
 ]
