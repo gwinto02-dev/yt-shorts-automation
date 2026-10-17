@@ -4662,5 +4662,29 @@
     "concept_type": "character_spotlight",
     "date": "2026-10-16T20:11:25.692766",
     "date_readable": "2026-10-16 20:11:25"
+  },
+  {
+    "title": "Howl's Moving Castle",
+    "normalized_title": "howls moving castle",
+    "anime_id": "395",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-17T02:24:45.300751",
+    "date_readable": "2026-10-17 02:24:45"
+  },
+  {
+    "title": "Love Unseen Beneath the Clear Night Sky",
+    "normalized_title": "love unseen beneath the clear night sky",
+    "anime_id": 202269,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-17T02:24:45.300751",
+    "date_readable": "2026-10-17 02:24:45"
+  },
+  {
+    "title": "Chainsaw Man",
+    "normalized_title": "chainsaw man",
+    "anime_id": 127230,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-17T02:24:45.300751",
+    "date_readable": "2026-10-17 02:24:45"
   }
 ]
