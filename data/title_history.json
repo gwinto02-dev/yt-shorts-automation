@@ -4830,5 +4830,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-18T15:10:51.192118",
     "date_readable": "2026-10-18 15:10:51"
+  },
+  {
+    "title": "The Seven Deadly Sins",
+    "normalized_title": "the seven deadly sins",
+    "anime_id": "8699",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-18T19:47:56.764949",
+    "date_readable": "2026-10-18 19:47:56"
+  },
+  {
+    "title": "Parasyte -the maxim-",
+    "normalized_title": "parasyte the maxim",
+    "anime_id": "8147",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-18T19:47:56.764949",
+    "date_readable": "2026-10-18 19:47:56"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World-",
+    "normalized_title": "rezero starting life in another world",
+    "anime_id": "11209",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-18T19:47:56.764949",
+    "date_readable": "2026-10-18 19:47:56"
   }
 ]
