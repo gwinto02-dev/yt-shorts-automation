@@ -1421,5 +1421,11 @@
     "date": "2026-10-17T19:48:04.454533",
     "date_readable": "2026-10-17 19:48:04",
     "angle_key": "OVERLOOKED_REASON"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-10-18T02:24:55.529858",
+    "date_readable": "2026-10-18 02:24:55",
+    "angle_key": "THEMATIC_RIVALRY"
   }
 ]

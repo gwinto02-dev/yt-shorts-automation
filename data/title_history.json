@@ -4758,5 +4758,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-17T19:48:04.450550",
     "date_readable": "2026-10-17 19:48:04"
+  },
+  {
+    "title": "Demon Slayer: Kimetsu no Yaiba Entertainment District Arc",
+    "normalized_title": "demon slayer kimetsu no yaiba entertainment district arc",
+    "anime_id": 142329,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-18T02:24:55.525459",
+    "date_readable": "2026-10-18 02:24:55"
+  },
+  {
+    "title": "Haikyu!! 3rd Season",
+    "normalized_title": "haikyu 3rd season",
+    "anime_id": "11935",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-18T02:24:55.525459",
+    "date_readable": "2026-10-18 02:24:55"
+  },
+  {
+    "title": "Fullmetal Alchemist",
+    "normalized_title": "fullmetal alchemist",
+    "anime_id": "100",
+    "concept_type": "anime_comparison",
+    "date": "2026-10-18T02:24:55.525459",
+    "date_readable": "2026-10-18 02:24:55"
   }
 ]

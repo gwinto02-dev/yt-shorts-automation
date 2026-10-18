@@ -2953,5 +2953,29 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-18T02:27:50.441953",
+    "date_readable": "2026-10-18",
+    "concept_type": "anime_comparison",
+    "title": "Anime Head‑to‑Head: Demon Slayer vs Haikyu!! vs Fullmetal Alchemist ⚔️ #Shorts",
+    "hook": "The Entertainment District arc of Demon Slayer premiered in 2022, making it the newest entry among the three series",
+    "script": "The Entertainment District arc of Demon Slayer premiered in 2022, making it the newest entry among the three series. First off, the 2003 Fullmetal Alchemist relies on gritty, hand‑drawn animation that captures a bleak alchemy world, and it follows Edward and Alphonse after a failed human transmutation strips Edward of his arm and leaves Alphonse as a soul bound to armor. Moving to sports, Hinata Shoyo finally squares off against Tokyo’s elite in season three, and the 8.3 rating reflects how the series ramps up the volleyball tension and character growth. Then there’s Demon Slayer, which holds an 8.6/10 score; in the Entertainment District arc Tanjiro and Nezuko plunge into a neon‑lit pleasure quarter where demons hide behind lanterns and a fierce showdown with Upper Rank demon ensues. If you’re craving alchemical drama, high‑flying spikes, or sword‑clashing night streets, bookmark this Short and let me know which world you’ll jump into first.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "the entertainment district arc of",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "world youll jump into first",
+      "transition_markers": [
+        "first off",
+        "finally"
+      ]
+    },
+    "video_id": "27idyZ396Kw",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]
