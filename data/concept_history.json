@@ -1433,5 +1433,11 @@
     "date": "2026-10-18T10:31:16.415525",
     "date_readable": "2026-10-18 10:31:16",
     "angle_key": "BEST_IN_CLASS"
+  },
+  {
+    "concept_type": "hidden_gems",
+    "date": "2026-10-18T15:10:51.196818",
+    "date_readable": "2026-10-18 15:10:51",
+    "angle_key": "STANDOUT_ELEMENT"
   }
 ]

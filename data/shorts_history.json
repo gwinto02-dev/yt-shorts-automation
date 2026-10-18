@@ -3001,5 +3001,28 @@
       "label": "Peak Representatives of 3 Genres",
       "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
     }
+  },
+  {
+    "date": "2026-10-18T15:12:21.263063",
+    "date_readable": "2026-10-18",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Trio: Student Council, Diamond Baseball, & Rascal Twist 🌟 #Shorts",
+    "hook": "CloverWorks dedicated three months to the dim lighting of Rio’s bedroom reveal, a detail most viewers miss",
+    "script": "CloverWorks dedicated three months to the dim lighting of Rio’s bedroom reveal, a detail most viewers miss.\n\nPassione’s character designs give the student council a glossy, magazine‑ready shine, which makes the school setting feel cinematic. The plot drops first‑year Ume Mizunoe into Fujinasu Academy, where the elite council’s flawless image hides petty power plays that turn routine classes into comedy gold.\n\nPitcher Satoru Furuya finally gets his moment on the mound as Seido heads to Koshien, and the series holds a 7.4 on MyAnimeList. OLM’s crisp animation tracks each fastball, turning the spring invitational into a tense showdown against the nation’s toughest teams.\n\nWith an 8.1 rating, this series hooks you on the night Rio Futaba admits she’s the internet singer Touko Kirishima. CloverWorks blends teen drama with surreal body‑swap visuals, making each episode feel like a psychological puzzle.\n\nThat bedroom lighting moment in Rascal still gives me chills—so which of these three will you dive into first? Drop your choice in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "cloverworks dedicated three months to",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your choice in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "w9E6_IFPoXU",
+    "concept_angle": {
+      "key": "STANDOUT_ELEMENT",
+      "label": "What Makes Them Worth Watching Despite Low Visibility",
+      "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
+    }
   }
 ]
