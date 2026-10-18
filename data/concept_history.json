@@ -1427,5 +1427,11 @@
     "date": "2026-10-18T02:24:55.529858",
     "date_readable": "2026-10-18 02:24:55",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-18T10:31:16.415525",
+    "date_readable": "2026-10-18 10:31:16",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]

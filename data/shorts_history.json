@@ -2977,5 +2977,29 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-18T10:35:23.038504",
+    "date_readable": "2026-10-18",
+    "concept_type": "genre_spotlight",
+    "title": "Essential Genre Picks: Fruits Basket, Wistoria, ERASED 🍿 #Shorts",
+    "hook": "What would you do if a 29‑year‑old manga artist could magically rewind minutes before a disaster strikes?\nFirst off, TMS Entertainment paints Fruits Basket with soft, pastel tones, and the story drops Tohru Honda into the enigmatic Soma household after a rain‑soaked night in a tent, where each family member transforms into a Chinese zodiac animal when hugged",
+    "script": "What would you do if a 29‑year‑old manga artist could magically rewind minutes before a disaster strikes?\nFirst off, TMS Entertainment paints Fruits Basket with soft, pastel tones, and the story drops Tohru Honda into the enigmatic Soma household after a rain‑soaked night in a tent, where each family member transforms into a Chinese zodiac animal when hugged.\nMoving to Wistoria: Wand and Sword Season 2, the series follows Will—a magic‑less academy dropout determined to join the elite Magia Vander to keep a promise to his childhood friend—and it currently holds an 8.2 rating on MyAnimeList, reflecting its blend of high‑stakes duels and world‑building.\nRounding out today’s picks, scoring 8.2, the 2016 mystery thriller ERASED tracks Satoru Fujinuma as his inexplicable “Rewind” ability forces him to revisit his past and untangle a string of kidnappings while juggling a dead‑end manga gig.\nWhether you’re after the cozy supernatural charm of Fruits Basket or the time‑bending tension of ERASED, bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would you do if",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "R0tdJ08Tmgw",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]

@@ -4782,5 +4782,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-18T02:24:55.525459",
     "date_readable": "2026-10-18 02:24:55"
+  },
+  {
+    "title": "ERASED",
+    "normalized_title": "erased",
+    "anime_id": "11110",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-18T10:31:16.410875",
+    "date_readable": "2026-10-18 10:31:16"
+  },
+  {
+    "title": "Wistoria: Wand and Sword Season 2",
+    "normalized_title": "wistoria wand and sword season 2",
+    "anime_id": 182300,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-18T10:31:16.410875",
+    "date_readable": "2026-10-18 10:31:16"
+  },
+  {
+    "title": "Fruits Basket (2019)",
+    "normalized_title": "fruits basket 2019",
+    "anime_id": 105334,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-18T10:31:16.410875",
+    "date_readable": "2026-10-18 10:31:16"
   }
 ]
