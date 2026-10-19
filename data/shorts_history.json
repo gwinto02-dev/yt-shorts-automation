@@ -3070,5 +3070,30 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-10-19T18:05:04.254065",
+    "date_readable": "2026-10-19",
+    "concept_type": "hidden_gems",
+    "title": "Underrated 2026 Anime Trio: Tanya S2, Ice Ramparts S2 & Iruma‑kun S4 🎬 #Shorts",
+    "hook": "What if a teenage demon lord’s school suddenly turned its final exam into a chaotic music festival?\nFirst off, NUT’s crisp, militaristic animation keeps the battlefield feel gritty, and the second season thrusts Tanya back into a ruthless war where the enigmatic Sonzai X toys with reality for her",
+    "script": "What if a teenage demon lord’s school suddenly turned its final exam into a chaotic music festival?\nFirst off, NUT’s crisp, militaristic animation keeps the battlefield feel gritty, and the second season thrusts Tanya back into a ruthless war where the enigmatic Sonzai X toys with reality for her.\nMoving to the icy halls, Tsubasa Igarashi finally confronts her tangled feelings for the aloof Tsukiko, and the series holds an 8.1 / 10 rating that reflects its off‑beat romance and slice‑of‑life humor.\nRounding out the trio, the 8.1 / 10 score shows why Iruma‑kun’s fourth season feels fresh; Bandai Namco Pictures pours bright colors into the Misfit Class’s latest supernatural trials as they chase Rank 4.\nIf the music‑festival showdown in Iruma‑kun caught your ear, which of these three will be your next binge? Let me know!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if a teenage demon",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "let me know",
+      "transition_markers": [
+        "first off",
+        "rounding out",
+        "finally"
+      ]
+    },
+    "video_id": "vsiVXPuxmUY",
+    "concept_angle": {
+      "key": "INSIDER_FACT",
+      "label": "A Specific Detail Insider Fans Know",
+      "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
+    }
   }
 ]

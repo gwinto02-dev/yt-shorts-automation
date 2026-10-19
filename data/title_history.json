@@ -4926,5 +4926,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-19T12:32:38.857724",
     "date_readable": "2026-10-19 12:32:38"
+  },
+  {
+    "title": "Welcome to Demon School! Iruma-kun Season 4",
+    "normalized_title": "welcome to demon school irumakun season 4",
+    "anime_id": 184492,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-19T18:03:26.818392",
+    "date_readable": "2026-10-19 18:03:26"
+  },
+  {
+    "title": "The Ramparts of Ice Season 2",
+    "normalized_title": "the ramparts of ice season 2",
+    "anime_id": 213805,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-19T18:03:26.818392",
+    "date_readable": "2026-10-19 18:03:26"
+  },
+  {
+    "title": "Saga of Tanya the Evil Season 2",
+    "normalized_title": "saga of tanya the evil season 2",
+    "anime_id": 135865,
+    "concept_type": "hidden_gems",
+    "date": "2026-10-19T18:03:26.818392",
+    "date_readable": "2026-10-19 18:03:26"
   }
 ]
