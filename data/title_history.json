@@ -4950,5 +4950,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-19T18:03:26.818392",
     "date_readable": "2026-10-19 18:03:26"
+  },
+  {
+    "title": "Fool Night",
+    "normalized_title": "fool night",
+    "anime_id": 213457,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T21:48:50.441005",
+    "date_readable": "2026-10-19 21:48:50"
+  },
+  {
+    "title": "Tsue to Tsurugi no Wistoria Season 3",
+    "normalized_title": "tsue to tsurugi no wistoria season 3",
+    "anime_id": 213656,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T21:48:50.441005",
+    "date_readable": "2026-10-19 21:48:50"
+  },
+  {
+    "title": "Haikyuu!!: VS Chiisana Kyojin",
+    "normalized_title": "haikyuu vs chiisana kyojin",
+    "anime_id": 174871,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T21:48:50.441005",
+    "date_readable": "2026-10-19 21:48:50"
   }
 ]

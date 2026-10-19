@@ -3095,5 +3095,28 @@
       "label": "A Specific Detail Insider Fans Know",
       "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
     }
+  },
+  {
+    "date": "2026-10-19T21:52:50.040344",
+    "date_readable": "2026-10-19",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Manga Arc Trio: Haikyuu, Wistoria S3 & Fool Night 🌟 #Shorts",
+    "hook": "Right when the final serve rockets over the net, the arena erupts in a roar that drowns out every microphone",
+    "script": "Right when the final serve rockets over the net, the arena erupts in a roar that drowns out every microphone.\n\nProduction I.G keeps the spike‑filled courts crisp, and the sequel dives into the Gomi Suteba no Kessen showdown that caps the Haikyuu!! FINAL saga.\n\nWill Serfort finally wields the legendary sword that could end the kingdom’s curse, and fans are already marking the third season as a must‑watch.\n\nEven without a published rating, Fool Night’s 2026 debut is drawing attention, and it imagines a future where thick clouds block the sun, forcing humanity to graft machines onto bodies to survive.\n\nIf the cloud‑shrouded world of Fool Night sparks your curiosity, save this Short and add the trio to your watchlist!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "right when the final serve",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "the trio to your watchlist",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "AMztPHTR2vQ",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
