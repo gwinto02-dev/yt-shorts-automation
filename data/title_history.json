@@ -4878,5 +4878,53 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-19T02:39:04.286525",
     "date_readable": "2026-10-19 02:39:04"
+  },
+  {
+    "title": "THE ONE PIECE",
+    "normalized_title": "the one piece",
+    "anime_id": 171630,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T12:20:53.753166",
+    "date_readable": "2026-10-19 12:20:53"
+  },
+  {
+    "title": "Omniscient Reader",
+    "normalized_title": "omniscient reader",
+    "anime_id": 179068,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T12:20:53.753166",
+    "date_readable": "2026-10-19 12:20:53"
+  },
+  {
+    "title": "Gachiakuta Season 2",
+    "normalized_title": "gachiakuta season 2",
+    "anime_id": 204436,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T12:20:53.753166",
+    "date_readable": "2026-10-19 12:20:53"
+  },
+  {
+    "title": "THE ONE PIECE",
+    "normalized_title": "the one piece",
+    "anime_id": 171630,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T12:32:38.857724",
+    "date_readable": "2026-10-19 12:32:38"
+  },
+  {
+    "title": "Omniscient Reader",
+    "normalized_title": "omniscient reader",
+    "anime_id": 179068,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T12:32:38.857724",
+    "date_readable": "2026-10-19 12:32:38"
+  },
+  {
+    "title": "Gachiakuta Season 2",
+    "normalized_title": "gachiakuta season 2",
+    "anime_id": 204436,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-19T12:32:38.857724",
+    "date_readable": "2026-10-19 12:32:38"
   }
 ]

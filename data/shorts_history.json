@@ -3047,5 +3047,28 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-10-19T12:32:38.854124",
+    "date_readable": "2026-10-19",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Anime Trio: ONE PIECE, Omniscient Reader & Gachiakuta S2 🚀 #Shorts",
+    "hook": "WIT Studio spent three years rebuilding every East Blue ship and coastline to match the original manga panels",
+    "script": "WIT Studio spent three years rebuilding every East Blue ship and coastline to match the original manga panels. First up, BONES film returns for Gachiakuta Season 2, and the studio’s signature crisp action choreography is on display as the story picks up with Amo Empool and Jabber Wonger diving deeper into the fantasy war. Next, meet Dok‑Ja Kim from Omniscient Reader. He’s the office drone who suddenly becomes the only player able to navigate a world that turned his favorite web novel into reality, and fans are counting the days until its debut. Finally, the upcoming ONE PIECE project is being billed as a must‑watch celebration, with WIT Studio slated to re‑animate the entire East Blue saga for the 25th anniversary, giving us a fresh look at Buggy’s first clash with Luffy. If you’re itching for the East Blue reboot, the novel‑world survival twist, or the next chapter of Gachiakuta’s magic battles, tell me which one tops your list. Drop your pick in the comments!",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "wit studio spent three years",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "F07bq6AhDFs",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
