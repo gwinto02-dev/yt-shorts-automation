@@ -3024,5 +3024,28 @@
       "label": "What Makes Them Worth Watching Despite Low Visibility",
       "instruction": "Focus heavily on the single standout element that elevates each series above mainstream filler — whether it's jaw-dropping animation craft, an unbeatable plot twist, or a uniquely written protagonist."
     }
+  },
+  {
+    "date": "2026-10-19T02:42:44.042499",
+    "date_readable": "2026-10-19",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Manga Arc Trio: Dandadan, Alya‑san & Kage no Jitsuryokusha 🎬 #Shorts",
+    "hook": "What would the world look like if the shadow‑wielding hero finally faces the ultimate “Zankyou” arc?\n\nNexus brings its crisp line work to the theatrical Zankyou‑hen, picking up where the second season left off as Mordred and Yuuka chase the looming darkness that threatens their kingdom",
+    "script": "What would the world look like if the shadow‑wielding hero finally faces the ultimate “Zankyou” arc?\n\nNexus brings its crisp line work to the theatrical Zankyou‑hen, picking up where the second season left off as Mordred and Yuuka chase the looming darkness that threatens their kingdom.\n\nMoving on, Yuki Suou’s clumsy attempts at Russian phrases return in season two, and Doga Kobo’s bright color palette makes the romance feel like a summer diary; the continuation is already being called highly anticipated.\n\nAnticipation is sky‑high for the third Dandadan run, and Science SARU promises to crank the supernatural chaos up a notch as Turbo Babaa and Aira Shiratori plunge deeper into the interdimensional mystery.\n\nIf the shadow showdown in Kage no Jitsuryokusha’s Zankyou‑hen sounds like the most thrilling arc, let me know which of these three you’ll queue first.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what would the world look",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "these three youll queue first",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "dipPTwMOw6Q",
+    "concept_angle": {
+      "key": "MANGA_ARC_HYPE",
+      "label": "Upcoming Manga Arc Milestones",
+      "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
+    }
   }
 ]
