@@ -3166,5 +3166,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-10-20T16:09:17.810423",
+    "date_readable": "2026-10-20",
+    "concept_type": "hidden_gems",
+    "title": "Underrated Anime Trio: Harem Chaos, Villainess Swap & Timeless Mystery 🍥 #Shorts",
+    "hook": "What if the teen detective who never ages is still outsmarting murderers three decades after his first case?\n\nStarting with The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3, Bibury Animation Studios delivers a pastel‑rich visual style as Aashii Kedarui juggles over a hundred confessions while trying to keep his sanity intact",
+    "script": "What if the teen detective who never ages is still outsmarting murderers three decades after his first case?\n\nStarting with The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3, Bibury Animation Studios delivers a pastel‑rich visual style as Aashii Kedarui juggles over a hundred confessions while trying to keep his sanity intact.\n\nThen we have Though I Am an Inept Villainess, where Keikou Kou, a fallen noble turned maid, swaps bodies with the beloved Reirin and is thrust into the Five Clans' deadly courtship tournament; the show sits at 8.0 on MyAnimeList, showing steady approval from viewers.\n\nStepping up next, Detective Conan carries an 8.2 rating, and TMS Entertainment continues the long‑run of Shinichi Kudo‑in‑child form solving baffling crimes that even seasoned detectives miss.\n\nWhether you dive into the chaotic harem of Aashii or replay Conan’s endless puzzles, save this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if the teen detective",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "then we have"
+      ]
+    },
+    "video_id": "83SvMa5Zwgk",
+    "concept_angle": {
+      "key": "INSIDER_FACT",
+      "label": "A Specific Detail Insider Fans Know",
+      "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
+    }
   }
 ]
