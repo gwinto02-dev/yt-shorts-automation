@@ -3142,5 +3142,29 @@
       "label": "Match Your Viewing Mood",
       "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
     }
+  },
+  {
+    "date": "2026-10-20T11:07:42.990630",
+    "date_readable": "2026-10-20",
+    "concept_type": "anime_comparison",
+    "title": "Head‑to‑Head Showdown: Vinland Saga S2 vs Mob Psycho 100 II vs AOT Final ⚔️ #Shorts",
+    "hook": "MAPPA handled both Attack on Titan Final Season and Vinland Saga Season 2, tying two of this year’s highest‑rated anime under one roof",
+    "script": "MAPPA handled both Attack on Titan Final Season and Vinland Saga Season 2, tying two of this year’s highest‑rated anime under one roof. First up, the final season’s gritty, hand‑drawn visuals push the tension as the Scout Regiment finally reaches the shoreline and faces a new geopolitical scramble. Switching gears, Mob Psycho 100 II follows eighth‑grader Ritsu Kageyama, a nervous teen determined to stay ordinary despite his hidden psychic overload, and the series still holds an 8.7/10 rating. Rounding out the trio, Vinland Saga Season 2 earned an 8.8/10, and it shifts focus to Einar, a farmer yearning for peace after his village’s massacre, only to be drawn into the wider Viking conflict. If a quiet farm dream versus a titan‑filled shoreline is what pulls you, let me know which scenario you’d binge first.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "mappa handled both attack on",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "which scenario youd binge first",
+      "transition_markers": [
+        "rounding out",
+        "finally"
+      ]
+    },
+    "video_id": "b44vwSL9EqQ",
+    "concept_angle": {
+      "key": "DECISION_GUIDE",
+      "label": "Which One Should You Watch First?",
+      "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
+    }
   }
 ]

@@ -1475,5 +1475,11 @@
     "date": "2026-10-20T02:51:09.882265",
     "date_readable": "2026-10-20 02:51:09",
     "angle_key": "MOOD_BASED"
+  },
+  {
+    "concept_type": "anime_comparison",
+    "date": "2026-10-20T11:01:28.560416",
+    "date_readable": "2026-10-20 11:01:28",
+    "angle_key": "DECISION_GUIDE"
   }
 ]

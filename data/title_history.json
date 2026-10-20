@@ -4998,5 +4998,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-20T02:51:09.879297",
     "date_readable": "2026-10-20 02:51:09"
+  },
+  {
+    "title": "Vinland Saga Season 2",
+    "normalized_title": "vinland saga season 2",
+    "anime_id": 136430,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-20T11:01:28.555972",
+    "date_readable": "2026-10-20 11:01:28"
+  },
+  {
+    "title": "Mob Psycho 100 II",
+    "normalized_title": "mob psycho 100 ii",
+    "anime_id": 101338,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-20T11:01:28.555972",
+    "date_readable": "2026-10-20 11:01:28"
+  },
+  {
+    "title": "Attack on Titan Final Season",
+    "normalized_title": "attack on titan final season",
+    "anime_id": 110277,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-20T11:01:28.555972",
+    "date_readable": "2026-10-20 11:01:28"
   }
 ]
