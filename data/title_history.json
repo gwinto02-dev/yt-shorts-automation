@@ -4974,5 +4974,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-19T21:48:50.441005",
     "date_readable": "2026-10-19 21:48:50"
+  },
+  {
+    "title": "Chainsaw Man – The Movie: Reze Arc",
+    "normalized_title": "chainsaw man the movie reze arc",
+    "anime_id": 171627,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-20T02:51:09.879297",
+    "date_readable": "2026-10-20 02:51:09"
+  },
+  {
+    "title": "Delicious in Dungeon",
+    "normalized_title": "delicious in dungeon",
+    "anime_id": 153518,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-20T02:51:09.879297",
+    "date_readable": "2026-10-20 02:51:09"
+  },
+  {
+    "title": "Noragami Aragoto",
+    "normalized_title": "noragami aragoto",
+    "anime_id": "10800",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-20T02:51:09.879297",
+    "date_readable": "2026-10-20 02:51:09"
   }
 ]

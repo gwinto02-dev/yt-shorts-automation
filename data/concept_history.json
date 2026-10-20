@@ -1469,5 +1469,11 @@
     "date": "2026-10-19T21:48:50.445343",
     "date_readable": "2026-10-19 21:48:50",
     "angle_key": "MANGA_ARC_HYPE"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-20T02:51:09.882265",
+    "date_readable": "2026-10-20 02:51:09",
+    "angle_key": "MOOD_BASED"
   }
 ]

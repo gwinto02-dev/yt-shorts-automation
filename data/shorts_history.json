@@ -3118,5 +3118,29 @@
       "label": "Upcoming Manga Arc Milestones",
       "instruction": "Focus on the specific confirmed manga/light novel story arc being adapted and why fans of the source material are hyped."
     }
+  },
+  {
+    "date": "2026-10-20T02:56:38.754457",
+    "date_readable": "2026-10-20",
+    "concept_type": "genre_spotlight",
+    "title": "Genre‑Spotlight Trio: Chainsaw Man Reze, Delicious in Dungeon & Noragami 🍿 #Shorts",
+    "hook": "What mood are you after—pulse‑pounding action, a mystery that keeps you guessing, or a quiet moment of bittersweet resolve? Starting with Noragami Aragoto, even without a listed studio the series leans on clean, ink‑heavy animation, tracking minor god Yato and his Regalia Yukine as they finally mend their strained bond and resume odd‑job hustles in modern Tokyo",
+    "script": "What mood are you after—pulse‑pounding action, a mystery that keeps you guessing, or a quiet moment of bittersweet resolve? Starting with Noragami Aragoto, even without a listed studio the series leans on clean, ink‑heavy animation, tracking minor god Yato and his Regalia Yukine as they finally mend their strained bond and resume odd‑job hustles in modern Tokyo. Then we have Delicious in Dungeon, where rookie adventurer Laios barely survives a dragon’s bite and now, with an 8.5/10 rating, leads his crew on a frantic hunt for food, gold, and a missing teammate deep inside a monster‑filled labyrinth. Stepping up next, Chainsaw Man – The Movie: Reze Arc lands a 9.0/10, thrusting Denji into a rain‑soaked confession after a date with Makima, while he guards the enigmatic Reze against devils that bleed into his chainsaw nightmares. Which of these moods—Yato’s reluctant heroics, Laios’s dungeon scramble, or Denji’s blood‑soaked romance—will you dive into tonight? Share your thoughts below.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what mood are you afterpulsepounding",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your thoughts below",
+      "transition_markers": [
+        "finally",
+        "then we have"
+      ]
+    },
+    "video_id": "JW8pMafpL5A",
+    "concept_angle": {
+      "key": "MOOD_BASED",
+      "label": "Match Your Viewing Mood",
+      "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
+    }
   }
 ]
