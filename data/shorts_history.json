@@ -3189,5 +3189,26 @@
       "label": "A Specific Detail Insider Fans Know",
       "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
     }
+  },
+  {
+    "date": "2026-10-20T21:01:43.364217",
+    "date_readable": "2026-10-20",
+    "concept_type": "hidden_gems",
+    "title": "Top 3 Underrated Anime You're Sleeping On 🍿 #Shorts",
+    "hook": "Did you know OLM, the studio that brought Pokémon to life, also animated the 2026 fantasy adventure The Cat and the Dragon, where a fire‑breathing dragon is raised by a mother cat? Lay‑duce’s crisp, almost painterly animation returns for Clevatess Season 2, and the story shifts to Solsein’s divine academy as visitors from three realms hunt General Drel’s secret chamber",
+    "script": "Did you know OLM, the studio that brought Pokémon to life, also animated the 2026 fantasy adventure The Cat and the Dragon, where a fire‑breathing dragon is raised by a mother cat? Lay‑duce’s crisp, almost painterly animation returns for Clevatess Season 2, and the story shifts to Solsein’s divine academy as visitors from three realms hunt General Drel’s secret chamber. Switching gears, Mama‑nyan, the fiercely protective cat, leads the chase for the misunderstood “Uncle Wing,” and the series holds a solid 7.8 on MyAnimeList. Meanwhile, Blue Box Season 2, which currently scores an 8.1, picks up the shy romance between Kyou and Hina as they balance basketball practice with a growing confession. If a hidden room, a cat‑raised dragon, or a high‑school basketball court sounds like your next binge, drop the title that intrigues you most and add it to your watchlist!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know olm the",
+      "closing_style": "SPECIFIC_CALLBACK_OPINION",
+      "closing_prefix": "add it to your watchlist",
+      "transition_markers": []
+    },
+    "video_id": "_Tqcv04HKYQ",
+    "concept_angle": {
+      "key": "INSIDER_FACT",
+      "label": "A Specific Detail Insider Fans Know",
+      "instruction": "Frame the recommendations around concrete insider details — such as veteran animation staff who left major studios to work on them, legendary manga origins, or dedicated passion-project production histories."
+    }
   }
 ]
