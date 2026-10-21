@@ -1493,5 +1493,11 @@
     "date": "2026-10-20T20:58:27.956158",
     "date_readable": "2026-10-20 20:58:27",
     "angle_key": "INSIDER_FACT"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-10-21T02:45:31.255175",
+    "date_readable": "2026-10-21 02:45:31",
+    "angle_key": "UNMATCHED_PAYOFF"
   }
 ]

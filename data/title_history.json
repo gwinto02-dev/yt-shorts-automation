@@ -5070,5 +5070,29 @@
     "concept_type": "hidden_gems",
     "date": "2026-10-20T20:58:27.948802",
     "date_readable": "2026-10-20 20:58:27"
+  },
+  {
+    "title": "Toradora!",
+    "normalized_title": "toradora",
+    "anime_id": "3532",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-21T02:45:31.249121",
+    "date_readable": "2026-10-21 02:45:31"
+  },
+  {
+    "title": "Frieren: Beyond Journey’s End Season 2",
+    "normalized_title": "frieren beyond journeys end season 2",
+    "anime_id": 182255,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-21T02:45:31.249121",
+    "date_readable": "2026-10-21 02:45:31"
+  },
+  {
+    "title": "BLEACH: Thousand-Year Blood War",
+    "normalized_title": "bleach thousandyear blood war",
+    "anime_id": 116674,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-21T02:45:31.249121",
+    "date_readable": "2026-10-21 02:45:31"
   }
 ]
