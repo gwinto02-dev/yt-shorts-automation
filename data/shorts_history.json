@@ -3279,5 +3279,28 @@
       "label": "Match Your Viewing Mood",
       "instruction": "Frame the recommendations by viewing mood — what to watch when you want adrenaline, intense intrigue, or emotional depth."
     }
+  },
+  {
+    "date": "2026-10-21T21:08:55.721699",
+    "date_readable": "2026-10-21",
+    "concept_type": "character_spotlight",
+    "title": "Underrated Badass Leads: Lord of Mysteries, Jujutsu Kaisen & Tokyo Ghoul 🍥 #Shorts",
+    "hook": "Mappa spent four months perfecting the 90‑second opening for the Culling Game, a rarity for a weekly shōnen series",
+    "script": "Mappa spent four months perfecting the 90‑second opening for the Culling Game, a rarity for a weekly shōnen series.\n\nFirst up, Lord of Mysteries—while the animation studio is still under wraps, the visuals borrow the novel’s opulent Victorian vibe, splashing steam‑lit alleys and occult sigils across each frame. The story tracks Zhou Mingrui reborn as Klein Moretti, caught between rival churches and a darkness that threatens to consume him.\n\nNext, Jujutsu Kaisen Season 3 drops us into the Culling Game, where Yuji Itadori returns to a deadly tournament that spans ten colonies. It carries an 8.6 score on MyAnimeList, and every match forces sorcerers to outwit Kamo’s twisted rules.\n\nFinally, Tokyo Ghoul, rated 8.0, follows Kaneki Ken’s brutal shift from shy student to half‑ghoul fighting for survival in a city haunted by flesh‑eating predators.\n\nIf the Victorian occult clash in Lord of Mysteries intrigued you, start there— which of these three badass leads will you watch first? Tell me below.",
+    "structural_fingerprint": {
+      "opening_style": "SURPRISING_FACT",
+      "opening_prefix": "mappa spent four months perfecting",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "tell me below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "jHvENaiqStM",
+    "concept_angle": {
+      "key": "BADASS_MOMENTS",
+      "label": "Iconic Badass Character Arcs",
+      "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
+    }
   }
 ]

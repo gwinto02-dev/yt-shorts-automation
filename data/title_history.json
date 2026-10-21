@@ -5166,5 +5166,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-21T16:37:19.366272",
     "date_readable": "2026-10-21 16:37:19"
+  },
+  {
+    "title": "Tokyo Ghoul",
+    "normalized_title": "tokyo ghoul",
+    "anime_id": "8271",
+    "concept_type": "character_spotlight",
+    "date": "2026-10-21T20:59:39.327528",
+    "date_readable": "2026-10-21 20:59:39"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 3: The Culling Game Part 1",
+    "normalized_title": "jujutsu kaisen season 3 the culling game part 1",
+    "anime_id": 172463,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-21T20:59:39.327528",
+    "date_readable": "2026-10-21 20:59:39"
+  },
+  {
+    "title": "Lord of Mysteries",
+    "normalized_title": "lord of mysteries",
+    "anime_id": 137667,
+    "concept_type": "character_spotlight",
+    "date": "2026-10-21T20:59:39.327528",
+    "date_readable": "2026-10-21 20:59:39"
   }
 ]

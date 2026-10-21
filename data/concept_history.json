@@ -1511,5 +1511,11 @@
     "date": "2026-10-21T16:24:29.296109",
     "date_readable": "2026-10-21 16:24:29",
     "angle_key": "MOOD_BASED"
+  },
+  {
+    "concept_type": "character_spotlight",
+    "date": "2026-10-21T20:59:39.337907",
+    "date_readable": "2026-10-21 20:59:39",
+    "angle_key": "BADASS_MOMENTS"
   }
 ]
