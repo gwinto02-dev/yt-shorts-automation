@@ -1505,5 +1505,11 @@
     "date": "2026-10-21T11:18:50.542939",
     "date_readable": "2026-10-21 11:18:50",
     "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-21T16:24:29.296109",
+    "date_readable": "2026-10-21 16:24:29",
+    "angle_key": "MOOD_BASED"
   }
 ]

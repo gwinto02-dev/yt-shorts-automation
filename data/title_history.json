@@ -5118,5 +5118,53 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-21T11:18:50.539243",
     "date_readable": "2026-10-21 11:18:50"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 2",
+    "normalized_title": "jujutsu kaisen season 2",
+    "anime_id": 145064,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-21T16:24:29.286280",
+    "date_readable": "2026-10-21 16:24:29"
+  },
+  {
+    "title": "The Fragrant Flower Blooms With Dignity",
+    "normalized_title": "the fragrant flower blooms with dignity",
+    "anime_id": 181444,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-21T16:24:29.286280",
+    "date_readable": "2026-10-21 16:24:29"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+    "normalized_title": "mushoku tensei jobless reincarnation season 2 part 2",
+    "anime_id": 166873,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-21T16:24:29.286280",
+    "date_readable": "2026-10-21 16:24:29"
+  },
+  {
+    "title": "JUJUTSU KAISEN Season 2",
+    "normalized_title": "jujutsu kaisen season 2",
+    "anime_id": 145064,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-21T16:37:19.366272",
+    "date_readable": "2026-10-21 16:37:19"
+  },
+  {
+    "title": "The Fragrant Flower Blooms With Dignity",
+    "normalized_title": "the fragrant flower blooms with dignity",
+    "anime_id": 181444,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-21T16:37:19.366272",
+    "date_readable": "2026-10-21 16:37:19"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+    "normalized_title": "mushoku tensei jobless reincarnation season 2 part 2",
+    "anime_id": 166873,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-21T16:37:19.366272",
+    "date_readable": "2026-10-21 16:37:19"
   }
 ]
