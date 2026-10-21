@@ -5094,5 +5094,29 @@
     "concept_type": "top_recommendations",
     "date": "2026-10-21T02:45:31.249121",
     "date_readable": "2026-10-21 02:45:31"
+  },
+  {
+    "title": "Skip and Loafer Season 2",
+    "normalized_title": "skip and loafer season 2",
+    "anime_id": 185657,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-21T11:18:50.539243",
+    "date_readable": "2026-10-21 11:18:50"
+  },
+  {
+    "title": "Lycoris Recoil (Shinsaku Animation)",
+    "normalized_title": "lycoris recoil shinsaku animation",
+    "anime_id": 161410,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-21T11:18:50.539243",
+    "date_readable": "2026-10-21 11:18:50"
+  },
+  {
+    "title": "Sekiro: No Defeat",
+    "normalized_title": "sekiro no defeat",
+    "anime_id": 197620,
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-21T11:18:50.539243",
+    "date_readable": "2026-10-21 11:18:50"
   }
 ]

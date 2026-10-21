@@ -3231,5 +3231,29 @@
       "label": "Unmatched Narrative Payoff",
       "instruction": "Focus on why these titles deliver unmatched storytelling payoffs and zero wasted episodes for viewers seeking peak narrative quality."
     }
+  },
+  {
+    "date": "2026-10-21T11:23:59.953931",
+    "date_readable": "2026-10-21",
+    "concept_type": "upcoming_spotlight",
+    "title": "Upcoming Anime Trio: Sekiro, Lycoris Recoil & Skip & Loafer 🌟 #Shorts",
+    "hook": "Skip and Loafer Season 2 is set to drop in 2027, reuniting Yuzuki Murashige and Mika Egashira right as their scholarship showdown reaches its climax",
+    "script": "Skip and Loafer Season 2 is set to drop in 2027, reuniting Yuzuki Murashige and Mika Egashira right as their scholarship showdown reaches its climax. First off, Qzil.la brings a textured, ink‑heavy style to Sekiro: No Defeat, plunging viewers into the Sengoku‑riven world of Ashina where Isshin Ashina and Shinazu Hanbei navigate a fractured Japan scarred by endless war. Moving to Lycoris Recoil, the new Shinsaku Animation project follows a covert team of operatives who answer the city’s dead‑est crises, and it’s being treated as a highly anticipated fresh take on tactical drama. Rounding out the trio, the P.A.WORKS sequel is drawing plenty of anticipation, and this season expands the slice‑of‑life comedy as Yuzuki balances university exams, part‑time jobs, and the ever‑messy dynamics with Mika and their classmates. If the Ashina war of Sekiro, the covert ops of Lycoris Recoil, or Yuzuki’s scholarship race in Skip and Loafer catches your eye, which are you watching first? Drop your pick below!",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "skip and loafer season 2",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "drop your pick below",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "ljvtEXspjN8",
+    "concept_angle": {
+      "key": "PREMISE_INTRIGUE",
+      "label": "Hooking Unreleased Story Premises",
+      "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+    }
   }
 ]
