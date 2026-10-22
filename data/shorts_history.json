@@ -3349,5 +3349,28 @@
       "label": "Hooking Unreleased Story Premises",
       "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
     }
+  },
+  {
+    "date": "2026-10-22T16:42:34.211105",
+    "date_readable": "2026-10-22",
+    "concept_type": "genre_spotlight",
+    "title": "Genre Spotlight: Titans, Volleyball & Reincarnation Mashup! 🏐 #Shorts",
+    "hook": "Did you know the final season of *Attack on Titan* was released in two separate parts, with Part 2 airing in 2022?  \n\nFirst up, Studio Bind’s meticulous hand‑drawn backdrops give *Mushoku Tensei: Jobless Reincarnation* a painterly feel, and the story follows 34‑year‑old Rudeus, reborn as an infant in a magic‑filled world where he vows to rewrite his entire life",
+    "script": "Did you know the final season of *Attack on Titan* was released in two separate parts, with Part 2 airing in 2022?  \n\nFirst up, Studio Bind’s meticulous hand‑drawn backdrops give *Mushoku Tensei: Jobless Reincarnation* a painterly feel, and the story follows 34‑year‑old Rudeus, reborn as an infant in a magic‑filled world where he vows to rewrite his entire life.  \n\nSwitching gears, the second season of *Haikyu!!* jumps straight into Karasuno’s ace, Hinata, rallying his teammates after the Inter‑High, and it holds an 8.3/10 rating on MyAnimeList, reflecting how the series captures the grind of every practice match.  \n\nFinally, *Attack on Titan* Final Season Part 2 carries an 8.7/10 score, and MAPPA throws us into the brutal showdown at Shiganshina as Marley and Paradis clash in a desperate bid for survival.  \n\nIf the magic of Rudeus, the spike‑filled rallies of Hinata, or the Shiganshina showdown caught your eye, bookmark this Short for your next binge night!",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "did you know the final",
+      "closing_style": "SPECIFIC_CALLBACK_BINGE",
+      "closing_prefix": "for your next binge night",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "YSpek4gUJVI",
+    "concept_angle": {
+      "key": "BEST_IN_CLASS",
+      "label": "Peak Representatives of 3 Genres",
+      "instruction": "Highlight how each show represents the absolute gold standard of its specific genre."
+    }
   }
 ]

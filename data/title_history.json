@@ -5222,5 +5222,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-22T11:17:19.902659",
     "date_readable": "2026-10-22 11:17:19"
+  },
+  {
+    "title": "Attack on Titan Final Season Part 2",
+    "normalized_title": "attack on titan final season part 2",
+    "anime_id": 131681,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-22T16:38:44.885104",
+    "date_readable": "2026-10-22 16:38:44"
+  },
+  {
+    "title": "Haikyu!! 2nd Season",
+    "normalized_title": "haikyu 2nd season",
+    "anime_id": "10076",
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-22T16:38:44.885104",
+    "date_readable": "2026-10-22 16:38:44"
+  },
+  {
+    "title": "Mushoku Tensei: Jobless Reincarnation",
+    "normalized_title": "mushoku tensei jobless reincarnation",
+    "anime_id": 108465,
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-22T16:38:44.885104",
+    "date_readable": "2026-10-22 16:38:44"
   }
 ]

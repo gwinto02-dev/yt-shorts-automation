@@ -1529,5 +1529,11 @@
     "date": "2026-10-22T11:17:19.908024",
     "date_readable": "2026-10-22 11:17:19",
     "angle_key": "PREMISE_INTRIGUE"
+  },
+  {
+    "concept_type": "genre_spotlight",
+    "date": "2026-10-22T16:38:44.889264",
+    "date_readable": "2026-10-22 16:38:44",
+    "angle_key": "BEST_IN_CLASS"
   }
 ]
