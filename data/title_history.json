@@ -5246,5 +5246,29 @@
     "concept_type": "genre_spotlight",
     "date": "2026-10-22T16:38:44.885104",
     "date_readable": "2026-10-22 16:38:44"
+  },
+  {
+    "title": "Re:ZERO -Starting Life in Another World- Season 2",
+    "normalized_title": "rezero starting life in another world season 2",
+    "anime_id": 108632,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-22T20:56:54.970888",
+    "date_readable": "2026-10-22 20:56:54"
+  },
+  {
+    "title": "SPY x FAMILY",
+    "normalized_title": "spy x family",
+    "anime_id": 140960,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-22T20:56:54.970888",
+    "date_readable": "2026-10-22 20:56:54"
+  },
+  {
+    "title": "Dr. STONE SCIENCE FUTURE Cour 3",
+    "normalized_title": "dr stone science future cour 3",
+    "anime_id": 199221,
+    "concept_type": "anime_comparison",
+    "date": "2026-10-22T20:56:54.970888",
+    "date_readable": "2026-10-22 20:56:54"
   }
 ]
