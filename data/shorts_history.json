@@ -3326,5 +3326,28 @@
       "label": "Thematic & Style Head-to-Head",
       "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
     }
+  },
+  {
+    "date": "2026-10-22T11:22:33.783613",
+    "date_readable": "2026-10-22",
+    "concept_type": "upcoming_spotlight",
+    "title": "Fresh 2026‑27 Anime Lineup: Rock Band, Abyss Mystery & Elf Mage 🎸 #Shorts",
+    "hook": "The Made in Abyss sequel is set to launch in 2026, marking the franchise’s first new TV season after a three‑year break",
+    "script": "The Made in Abyss sequel is set to launch in 2026, marking the franchise’s first new TV season after a three‑year break. CloverWorks returns for Bocchi the Rock! 2nd Season, keeping its crisp color palette and guitar‑centric animation, and the story picks up with Hitori and Nijika gearing up for another campus‑band showdown. If you’re craving a descent into mystery, Prushka teams up with the stoic explorer Cravali to venture deeper than ever before, and the upcoming arc has already become a hot topic among Abyss fans. For those who love lingering farewells, the upcoming third season of Sousou no Frieren, eagerly awaited by its fanbase, will finally follow the immortal mage Macht as she confronts the lingering shadows of her past. So, does Prushka’s risky plunge into the Abyss intrigue you more than a new song‑filled school band or an elf’s final reckoning? Share your thoughts below.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "the made in abyss sequel",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "share your thoughts below",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "-mh_AM-u26A",
+    "concept_angle": {
+      "key": "PREMISE_INTRIGUE",
+      "label": "Hooking Unreleased Story Premises",
+      "instruction": "Focus strictly on the high-concept story premises and character hooks that make these upcoming releases stand out."
+    }
   }
 ]

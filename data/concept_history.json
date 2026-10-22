@@ -1523,5 +1523,11 @@
     "date": "2026-10-22T02:44:37.264588",
     "date_readable": "2026-10-22 02:44:37",
     "angle_key": "THEMATIC_RIVALRY"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-22T11:17:19.908024",
+    "date_readable": "2026-10-22 11:17:19",
+    "angle_key": "PREMISE_INTRIGUE"
   }
 ]
