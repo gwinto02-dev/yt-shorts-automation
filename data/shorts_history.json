@@ -3302,5 +3302,29 @@
       "label": "Iconic Badass Character Arcs",
       "instruction": "Focus on iconic screen presence, tactical intelligence, and memorable high-stakes character moments."
     }
+  },
+  {
+    "date": "2026-10-22T02:47:38.915815",
+    "date_readable": "2026-10-22",
+    "concept_type": "anime_comparison",
+    "title": "Mecha Showdown: Gurren Lagann vs Evangelion vs Kill la Kill ⚔️ #Shorts",
+    "hook": "What if the only way to see the stars is to break through an endless underground cavern? First off, Gainax’s hand‑drawn, hyper‑color palette turns the tunnel world into a riot of neon, and the story rockets from a lone drill to planet‑shattering battles",
+    "script": "What if the only way to see the stars is to break through an endless underground cavern? First off, Gainax’s hand‑drawn, hyper‑color palette turns the tunnel world into a riot of neon, and the story rockets from a lone drill to planet‑shattering battles. Moving to the other side of the mecha coin, Shinji Ikari’s reluctant cockpit moments anchor Neon Genesis Evangelion. The series holds an 8.3/10 score on MyAnimeList, rewarding its blend of psychological angst with giant‑robot spectacle. Rounding out the matchup, Trigger’s Kill la Kill explodes onto the screen with a 7.9/10 rating. It follows Ryuko Matoi hunting her father’s killer through a school where outfits grant literal super‑powers, turning fashion into rebellion. If the “Spiral Power” chant still rings in your ears, start with Gurren Lagann; which of these three rebellions are you diving into first?",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what if the only way",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "are you diving into first",
+      "transition_markers": [
+        "first off",
+        "rounding out"
+      ]
+    },
+    "video_id": "M72od5XomuM",
+    "concept_angle": {
+      "key": "THEMATIC_RIVALRY",
+      "label": "Thematic & Style Head-to-Head",
+      "instruction": "Compare how these powerhouse series tackle similar themes or genres with completely different narrative philosophies."
+    }
   }
 ]
