@@ -1559,5 +1559,11 @@
     "date": "2026-10-23T16:12:10.957765",
     "date_readable": "2026-10-23 16:12:10",
     "angle_key": "ANIMATION_CRAFT"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T21:13:03.201146",
+    "date_readable": "2026-10-23 21:13:03",
+    "angle_key": "GENRE_GOLD_STANDARD"
   }
 ]
