@@ -1547,5 +1547,11 @@
     "date": "2026-10-23T02:47:19.412333",
     "date_readable": "2026-10-23 02:47:19",
     "angle_key": "IRRESISTIBLE_BINGE"
+  },
+  {
+    "concept_type": "upcoming_spotlight",
+    "date": "2026-10-23T11:08:37.195404",
+    "date_readable": "2026-10-23 11:08:37",
+    "angle_key": "STUDIO_STAFF_TALENT"
   }
 ]
