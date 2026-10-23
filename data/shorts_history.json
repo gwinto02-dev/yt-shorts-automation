@@ -3396,5 +3396,28 @@
       "label": "Which One Should You Watch First?",
       "instruction": "Provide a clear decision guide for viewers torn between top-tier heavyweights."
     }
+  },
+  {
+    "date": "2026-10-23T02:50:06.026494",
+    "date_readable": "2026-10-23",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Fate/Zero, Food Wars! & My Hero Academia S7 🍜 #Shorts",
+    "hook": "What happens when a class of aspiring heroes finally faces a war that threatens public trust?\n\nBones’ crisp line work and dynamic color palette carry My Hero Academia Season 7, picking up right after the all‑out clash with the Paranormal Liberation Front and showing how pro heroes scramble to restore confidence while new quirks flare",
+    "script": "What happens when a class of aspiring heroes finally faces a war that threatens public trust?\n\nBones’ crisp line work and dynamic color palette carry My Hero Academia Season 7, picking up right after the all‑out clash with the Paranormal Liberation Front and showing how pro heroes scramble to restore confidence while new quirks flare.\n\nIf you crave kitchen drama, Souma Yukihira’s relentless push to outcook every opponent defines Food Wars! Shokugeki no Soma, and the series still holds an 8.2 /10 on MyAnimeList—proof that its tasting battles keep viewers hungry for the next plate.\n\nFor a darker twist, Fate/Zero also scores 8.2 /10; the Holy Grail’s promise of any wish ignites a brutal three‑faction war, each mastermind wielding historic magecraft and grim ambition.\n\nIf the PLF fallout left you glued, which of these three will you binge next? Let me know your pick in the comments.",
+    "structural_fingerprint": {
+      "opening_style": "SPECIFIC_QUESTION",
+      "opening_prefix": "what happens when a class",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "your pick in the comments",
+      "transition_markers": [
+        "finally"
+      ]
+    },
+    "video_id": "Lat1HCUX65k",
+    "concept_angle": {
+      "key": "IRRESISTIBLE_BINGE",
+      "label": "Impossible to Stop Bingeing",
+      "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
+    }
   }
 ]

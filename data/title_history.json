@@ -5270,5 +5270,29 @@
     "concept_type": "anime_comparison",
     "date": "2026-10-22T20:56:54.970888",
     "date_readable": "2026-10-22 20:56:54"
+  },
+  {
+    "title": "Fate/Zero",
+    "normalized_title": "fatezero",
+    "anime_id": "6028",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T02:47:19.409494",
+    "date_readable": "2026-10-23 02:47:19"
+  },
+  {
+    "title": "Food Wars! Shokugeki no Soma",
+    "normalized_title": "food wars shokugeki no soma",
+    "anime_id": "9967",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T02:47:19.409494",
+    "date_readable": "2026-10-23 02:47:19"
+  },
+  {
+    "title": "My Hero Academia Season 7",
+    "normalized_title": "my hero academia season 7",
+    "anime_id": 163139,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T02:47:19.409494",
+    "date_readable": "2026-10-23 02:47:19"
   }
 ]

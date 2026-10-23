@@ -1541,5 +1541,11 @@
     "date": "2026-10-22T20:56:54.975503",
     "date_readable": "2026-10-22 20:56:54",
     "angle_key": "DECISION_GUIDE"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T02:47:19.412333",
+    "date_readable": "2026-10-23 02:47:19",
+    "angle_key": "IRRESISTIBLE_BINGE"
   }
 ]
