@@ -1553,5 +1553,11 @@
     "date": "2026-10-23T11:08:37.195404",
     "date_readable": "2026-10-23 11:08:37",
     "angle_key": "STUDIO_STAFF_TALENT"
+  },
+  {
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T16:12:10.957765",
+    "date_readable": "2026-10-23 16:12:10",
+    "angle_key": "ANIMATION_CRAFT"
   }
 ]

@@ -5318,5 +5318,29 @@
     "concept_type": "upcoming_spotlight",
     "date": "2026-10-23T11:08:37.190762",
     "date_readable": "2026-10-23 11:08:37"
+  },
+  {
+    "title": "Noragami",
+    "normalized_title": "noragami",
+    "anime_id": "7881",
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T16:12:10.952456",
+    "date_readable": "2026-10-23 16:12:10"
+  },
+  {
+    "title": "Attack on Titan Season 3",
+    "normalized_title": "attack on titan season 3",
+    "anime_id": 99147,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T16:12:10.952456",
+    "date_readable": "2026-10-23 16:12:10"
+  },
+  {
+    "title": "Attack on Titan Season 2",
+    "normalized_title": "attack on titan season 2",
+    "anime_id": 20958,
+    "concept_type": "top_recommendations",
+    "date": "2026-10-23T16:12:10.952456",
+    "date_readable": "2026-10-23 16:12:10"
   }
 ]

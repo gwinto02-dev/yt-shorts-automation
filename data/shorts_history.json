@@ -3419,5 +3419,26 @@
       "label": "Impossible to Stop Bingeing",
       "instruction": "Focus on the irresistible momentum, cliffhangers, and pacing that make it impossible to stop watching after episode one."
     }
+  },
+  {
+    "date": "2026-10-23T16:18:45.788145",
+    "date_readable": "2026-10-23",
+    "concept_type": "top_recommendations",
+    "title": "Top Recommendations: Noragami & Attack on Titan S2 & S3 – Must‑Watch! ⚔️ #Shorts",
+    "hook": "WIT Studio logged more than 1,200 overtime hours just to nail the 3D maneuver gear spin in the Battle of Trost",
+    "script": "WIT Studio logged more than 1,200 overtime hours just to nail the 3D maneuver gear spin in the Battle of Trost. WIT Studio’s crisp line work gives Attack on Titan Season 2 a raw, almost tactile feel, and Eren’s sudden transformation forces him to battle the very monsters he once feared, turning every clash into a fight for humanity’s future. Switching gears to a covert battlefield, Attack on Titan Season 3 drops Eren into the elite Levi Squad, where hidden agendas erupt—this arc earned an 8.6 /10 on MyAnimeList, reflecting its tight intrigue and expanded world‑building. Noragami, sitting at 8.2 /10, follows the stray god Yato who trades odd jobs for a single prayer, dragging a high‑schooler into divine brawls that blend street‑level humor with polished supernatural action. If the image of a god hustling for a red‑inked phone number stuck with you, let me know which of these series you’ll queue up first.",
+    "structural_fingerprint": {
+      "opening_style": "IN_SCENE_MID_THOUGHT",
+      "opening_prefix": "wit studio logged more than",
+      "closing_style": "SPECIFIC_CALLBACK_QUESTION",
+      "closing_prefix": "series youll queue up first",
+      "transition_markers": []
+    },
+    "video_id": "LCUJvWeLnYw",
+    "concept_angle": {
+      "key": "ANIMATION_CRAFT",
+      "label": "Visual & Audio Craft Benchmark",
+      "instruction": "Focus on the technical mastery of the animation studios, fight choreography, soundtrack design, and cinematic presentation."
+    }
   }
 ]
